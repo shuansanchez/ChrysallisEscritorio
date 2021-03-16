@@ -19,7 +19,7 @@ namespace Chrysallis
 
         private void buttonAñadir_Click(object sender, EventArgs e)
         {
-            if(textBoxApellidos.Text.Equals("")|| textBoxCP.Text.Equals("") || textBoxDireccion.Text.Equals("") || textBoxID.Text.Equals("") ||
+            if(textBoxApellidos.Text.Equals("")|| textBoxCP.Text.Equals("ALEJANDRO") || textBoxDireccion.Text.Equals("") || textBoxID.Text.Equals("") ||
             textBoxNombre.Text.Equals("") || textBoxEmail.Text.Equals("") || textBoxTelefono.Text.Equals("") || textBoxLocalidad.Text.Equals("") ||
             textBoxDNI.Text.Equals(""))
             {
