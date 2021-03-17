@@ -16,5 +16,18 @@ namespace Chrysallis
         {
             InitializeComponent();
         }
+
+        private void buttonAñadir_Click(object sender, EventArgs e)
+        {
+            Añadir_Administrador adminNuevo = new Añadir_Administrador(true);
+            adminNuevo.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Añadir_Administrador adminMod = new Añadir_Administrador(false);
+            adminMod.ShowDialog();
+        }
     }
 }

@@ -96,16 +96,16 @@
             this.checkBoxActivo.AutoSize = true;
             this.checkBoxActivo.Location = new System.Drawing.Point(378, 248);
             this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(76, 21);
+            this.checkBoxActivo.Size = new System.Drawing.Size(84, 21);
             this.checkBoxActivo.TabIndex = 6;
-            this.checkBoxActivo.Text = "Activdo";
+            this.checkBoxActivo.Text = "Activado";
             this.checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(364, 310);
+            this.buttonCancelar.Location = new System.Drawing.Point(349, 316);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(146, 55);
+            this.buttonCancelar.Size = new System.Drawing.Size(113, 42);
             this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(123, 310);
+            this.buttonAceptar.Location = new System.Drawing.Point(179, 310);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(142, 55);
             this.buttonAceptar.TabIndex = 8;
@@ -147,7 +147,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Añadir_Administrador";
-            this.Text = "Añadir_Administrador";
+            this.Text = "Gestión administradores";
             this.Load += new System.EventHandler(this.Añadir_Administrador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

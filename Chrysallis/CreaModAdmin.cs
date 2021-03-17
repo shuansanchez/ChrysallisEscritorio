@@ -12,9 +12,13 @@ namespace Chrysallis
 {
     public partial class Añadir_Administrador : Form
     {
-        public Añadir_Administrador()
+        public Añadir_Administrador(Boolean crear)
         {
             InitializeComponent();
+            if (!crear)
+            {
+                buttonAceptar.Text = "Modificar";
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
