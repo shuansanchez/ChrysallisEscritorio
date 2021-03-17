@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AñadirAdministrador.cs">
+    <Compile Include="CreaModAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AñadirAdministrador.Designer.cs">
-      <DependentUpon>AñadirAdministrador.cs</DependentUpon>
+    <Compile Include="CreaModAdmin.Designer.cs">
+      <DependentUpon>CreaModAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="AñadirSocio.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AñadirAdministrador.resx">
-      <DependentUpon>AñadirAdministrador.cs</DependentUpon>
+    <EmbeddedResource Include="CreaModAdmin.resx">
+      <DependentUpon>CreaModAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AñadirSocio.resx">
       <DependentUpon>AñadirSocio.cs</DependentUpon>
