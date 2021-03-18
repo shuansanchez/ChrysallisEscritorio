@@ -10,6 +10,6 @@ namespace Chrysallis
     class bdconnection
     {
         public static SqlConnection connection =
-            new SqlConnection("Data Source=localhost\\sqlexpress;DATABASE=chrysallis;User ID=sa; Password=Informatica_2020;");
+            new SqlConnection("Data Source=localhost\\sqlexpress;DATABASE=chrysallis;User ID=sa; Password=misteryatu;");
     }
 }

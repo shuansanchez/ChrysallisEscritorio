@@ -89,6 +89,7 @@
       <DependentUpon>BDCHRYSALLIS.edmx</DependentUpon>
     </Compile>
     <Compile Include="bdconnection.cs" />
+    <Compile Include="ComunidadesOrm.cs" />
     <Compile Include="comunitats.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
@@ -168,6 +169,7 @@
     <Compile Include="menors_socis.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Orm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="provincies.cs">
@@ -233,6 +235,34 @@
       <DependentUpon>BDCHRYSALLIS.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\assistir.datasource" />
+    <None Include="Properties\DataSources\Añadir_Administrador.datasource" />
+    <None Include="Properties\DataSources\Añadir_Socio.datasource" />
+    <None Include="Properties\DataSources\bdconnection.datasource" />
+    <None Include="Properties\DataSources\CHRYSALLISEntities.datasource" />
+    <None Include="Properties\DataSources\ComunidadesOrm.datasource" />
+    <None Include="Properties\DataSources\comunitats.datasource" />
+    <None Include="Properties\DataSources\Control_Administradores.datasource" />
+    <None Include="Properties\DataSources\Control_de_Eventos.datasource" />
+    <None Include="Properties\DataSources\Control_de_Usuarios.datasource" />
+    <None Include="Properties\DataSources\CreaModEventos.datasource" />
+    <None Include="Properties\DataSources\documents.datasource" />
+    <None Include="Properties\DataSources\esdeveniments.datasource" />
+    <None Include="Properties\DataSources\Evento.datasource" />
+    <None Include="Properties\DataSources\Eventos.datasource" />
+    <None Include="Properties\DataSources\Lobby.datasource" />
+    <None Include="Properties\DataSources\localitats.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\menors.datasource" />
+    <None Include="Properties\DataSources\menors_socis.datasource" />
+    <None Include="Properties\DataSources\Modificar_Socios.datasource" />
+    <None Include="Properties\DataSources\Orm.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\provincies.datasource" />
+    <None Include="Properties\DataSources\rols.datasource" />
+    <None Include="Properties\DataSources\socis.datasource" />
+    <None Include="Properties\DataSources\usuaris.datasource" />
+    <None Include="Properties\DataSources\valoracions.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
