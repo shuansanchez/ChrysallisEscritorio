@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chrysallis
 {
-   public static class ComunidadesOrm
+   public static class ConsultaOrm
     {
         public static List<comunitats> Select()
         {
@@ -15,6 +15,14 @@ namespace Chrysallis
                 from c in Orm.bdconnection.comunitats select c
             ).ToList();
             return _comunidades;
+        }
+        public static List<provincies> SelectProvincias(int id)
+        {
+            List<provincies> _provincies =
+            (
+                from c in Orm.bdconnection.provincies where c.id_comunitat == id select c
+            ).ToList();
+            return _provincies;
         }
     }
 }

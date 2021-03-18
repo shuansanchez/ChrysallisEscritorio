@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreaModEventos));
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.buttonImagen = new System.Windows.Forms.Button();
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@
             this.textBoxLugar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,13 +52,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxProvincia = new System.Windows.Forms.ComboBox();
+            this.provinciesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.checkBoxGratis = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(293, 416);
+            this.buttonModificar.Location = new System.Drawing.Point(290, 436);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(95, 44);
             this.buttonModificar.TabIndex = 38;
@@ -70,21 +73,13 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(436, 416);
+            this.buttonCancelar.Location = new System.Drawing.Point(424, 436);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(91, 44);
             this.buttonCancelar.TabIndex = 37;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(112, 177);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(352, 24);
-            this.comboBox.TabIndex = 36;
             // 
             // buttonImagen
             // 
@@ -97,7 +92,7 @@
             // 
             // textBoxDescripcion
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 312);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 344);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(352, 86);
@@ -105,7 +100,7 @@
             // 
             // textBoxPrecio
             // 
-            this.textBoxPrecio.Location = new System.Drawing.Point(112, 237);
+            this.textBoxPrecio.Location = new System.Drawing.Point(112, 267);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(352, 22);
             this.textBoxPrecio.TabIndex = 31;
@@ -141,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 284);
+            this.label7.Location = new System.Drawing.Point(37, 324);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 26;
@@ -150,20 +145,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 240);
+            this.label6.Location = new System.Drawing.Point(12, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 17);
             this.label6.TabIndex = 25;
             this.label6.Text = "PRECIO";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "TIPO";
             // 
             // label4
             // 
@@ -238,11 +224,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 210);
+            this.label9.Location = new System.Drawing.Point(12, 240);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 17);
+            this.label9.Size = new System.Drawing.Size(81, 17);
             this.label9.TabIndex = 42;
-            this.label9.Text = "COMUNIDAD";
+            this.label9.Text = "PROVINCIA";
             // 
             // comboBoxComunidad
             // 
@@ -261,12 +247,53 @@
             // 
             this.comunitatsBindingSource.DataSource = typeof(Chrysallis.comunitats);
             // 
+            // comboBoxProvincia
+            // 
+            this.comboBoxProvincia.DataSource = this.provinciesBindingSource;
+            this.comboBoxProvincia.DisplayMember = "nom";
+            this.comboBoxProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProvincia.FormattingEnabled = true;
+            this.comboBoxProvincia.Location = new System.Drawing.Point(112, 237);
+            this.comboBoxProvincia.Name = "comboBoxProvincia";
+            this.comboBoxProvincia.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxProvincia.TabIndex = 45;
+            this.comboBoxProvincia.ValueMember = "id";
+            // 
+            // provinciesBindingSource
+            // 
+            this.provinciesBindingSource.DataSource = typeof(Chrysallis.provincies);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 210);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 17);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "COMUNIDAD";
+            // 
+            // checkBoxGratis
+            // 
+            this.checkBoxGratis.AutoSize = true;
+            this.checkBoxGratis.Checked = true;
+            this.checkBoxGratis.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxGratis.Location = new System.Drawing.Point(470, 268);
+            this.checkBoxGratis.Name = "checkBoxGratis";
+            this.checkBoxGratis.Size = new System.Drawing.Size(68, 21);
+            this.checkBoxGratis.TabIndex = 46;
+            this.checkBoxGratis.Text = "Gratis";
+            this.checkBoxGratis.UseVisualStyleBackColor = true;
+            this.checkBoxGratis.CheckedChanged += new System.EventHandler(this.checkBoxGratis_CheckedChanged);
+            // 
             // CreaModEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(848, 492);
+            this.Controls.Add(this.checkBoxGratis);
+            this.Controls.Add(this.comboBoxProvincia);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBoxComunidad);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxCiudad);
@@ -274,7 +301,6 @@
             this.Controls.Add(this.ArchivoBuscar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.buttonImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDescripcion);
@@ -285,7 +311,6 @@
             this.Controls.Add(this.textBoxLugar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -293,9 +318,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreaModEventos";
             this.Text = "ModificarEventos";
+            this.Activated += new System.EventHandler(this.CreaModEventos_Activated);
             this.Load += new System.EventHandler(this.CreaModEventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,7 +332,6 @@
 
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Button buttonImagen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxDescripcion;
@@ -316,7 +342,6 @@
         private System.Windows.Forms.TextBox textBoxLugar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -327,5 +352,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxComunidad;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxProvincia;
+        private System.Windows.Forms.BindingSource provinciesBindingSource;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkBoxGratis;
     }
 }

@@ -13,6 +13,8 @@ namespace Chrysallis
 {
     public partial class CreaModEventos : Form
     {
+        BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.Select());
+        comunitats co = new comunitats();
         public CreaModEventos(Boolean creacion)
         {
             InitializeComponent();
@@ -48,13 +50,39 @@ namespace Chrysallis
 
         private void CreaModEventos_Load(object sender, EventArgs e)
         {
-            comunitatsBindingSource.DataSource = ComunidadesOrm.Select();
-           
+            textBoxPrecio.Enabled = false;
+            comunitatsBindingSource.DataSource = ConsultaOrm.Select();
+
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+            
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
 
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+        }
+
+        private void CreaModEventos_Activated(object sender, EventArgs e)
+        {
+              
+        }
+
+        private void checkBoxGratis_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxGratis.Checked == false)
+            {
+                textBoxPrecio.Enabled = true;
+            }
+            else
+            {
+                textBoxPrecio.Enabled = false;
+            }
         }
     }
 }

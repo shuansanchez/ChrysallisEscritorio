@@ -89,7 +89,7 @@
       <DependentUpon>BDCHRYSALLIS.edmx</DependentUpon>
     </Compile>
     <Compile Include="bdconnection.cs" />
-    <Compile Include="ComunidadesOrm.cs" />
+    <Compile Include="ConsultaOrm.cs" />
     <Compile Include="comunitats.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
