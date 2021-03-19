@@ -6,7 +6,7 @@ namespace Chrysallis
 {
     public partial class CreaModEventos : Form
     {
-        //provisional
+        //provisional 
         OpenFileDialog rutaCarpeta = new OpenFileDialog();
         String rutaImagen;
 
@@ -48,7 +48,7 @@ namespace Chrysallis
                     co = comunidades[comboBoxComunidad.SelectedIndex];
                     DateTime dt = dateTimePickerHora.Value;
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-
+                    //suerte
                     esdeveniments eventoPasar = new esdeveniments(textBoxTitulo.Text, textBoxDescripcion.Text, dateTimePickerFecha.Value,st,
                         textBoxLugar.Text, co.id, null, null, 0, Int32.Parse(textBoxmax.Text), Int32.Parse(textBoxminimo.Text), Int32.Parse(textBoxPrecio.Text), checkBoxGratis.Checked,
                         dateTimePickerFecha.MinDate, 0, null);
