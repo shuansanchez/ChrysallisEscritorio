@@ -54,8 +54,17 @@
             this.provinciesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
             this.checkBoxGratis = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHora = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxVirtual = new System.Windows.Forms.CheckBox();
+            this.textBoxEnlace = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxMinima = new System.Windows.Forms.CheckBox();
+            this.textBoxminimo = new System.Windows.Forms.TextBox();
+            this.textBoxmax = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBoxmax = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
@@ -63,7 +72,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(254, 436);
+            this.buttonModificar.Location = new System.Drawing.Point(232, 497);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(95, 44);
             this.buttonModificar.TabIndex = 38;
@@ -73,7 +82,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(384, 445);
+            this.buttonCancelar.Location = new System.Drawing.Point(384, 506);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(80, 27);
             this.buttonCancelar.TabIndex = 37;
@@ -93,7 +102,7 @@
             // 
             // textBoxDescripcion
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 344);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 391);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(352, 86);
@@ -101,7 +110,7 @@
             // 
             // textBoxPrecio
             // 
-            this.textBoxPrecio.Location = new System.Drawing.Point(112, 267);
+            this.textBoxPrecio.Location = new System.Drawing.Point(112, 239);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(352, 22);
             this.textBoxPrecio.TabIndex = 31;
@@ -115,7 +124,7 @@
             // 
             // textBoxLugar
             // 
-            this.textBoxLugar.Location = new System.Drawing.Point(112, 149);
+            this.textBoxLugar.Location = new System.Drawing.Point(112, 211);
             this.textBoxLugar.Name = "textBoxLugar";
             this.textBoxLugar.Size = new System.Drawing.Size(352, 22);
             this.textBoxLugar.TabIndex = 27;
@@ -123,7 +132,7 @@
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(37, 324);
+            this.labelDescripcion.Location = new System.Drawing.Point(38, 371);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(100, 17);
             this.labelDescripcion.TabIndex = 26;
@@ -132,7 +141,7 @@
             // labelPrecio
             // 
             this.labelPrecio.AutoSize = true;
-            this.labelPrecio.Location = new System.Drawing.Point(12, 270);
+            this.labelPrecio.Location = new System.Drawing.Point(13, 241);
             this.labelPrecio.Name = "labelPrecio";
             this.labelPrecio.Size = new System.Drawing.Size(59, 17);
             this.labelPrecio.TabIndex = 25;
@@ -141,7 +150,7 @@
             // labelDireccion
             // 
             this.labelDireccion.AutoSize = true;
-            this.labelDireccion.Location = new System.Drawing.Point(12, 152);
+            this.labelDireccion.Location = new System.Drawing.Point(12, 214);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(82, 17);
             this.labelDireccion.TabIndex = 23;
@@ -185,7 +194,7 @@
             // 
             // buttonArchivoBuscar
             // 
-            this.buttonArchivoBuscar.Location = new System.Drawing.Point(614, 324);
+            this.buttonArchivoBuscar.Location = new System.Drawing.Point(680, 314);
             this.buttonArchivoBuscar.Name = "buttonArchivoBuscar";
             this.buttonArchivoBuscar.Size = new System.Drawing.Size(109, 28);
             this.buttonArchivoBuscar.TabIndex = 39;
@@ -195,7 +204,7 @@
             // 
             // textBoxCiudad
             // 
-            this.textBoxCiudad.Location = new System.Drawing.Point(112, 120);
+            this.textBoxCiudad.Location = new System.Drawing.Point(112, 182);
             this.textBoxCiudad.Name = "textBoxCiudad";
             this.textBoxCiudad.Size = new System.Drawing.Size(352, 22);
             this.textBoxCiudad.TabIndex = 41;
@@ -203,16 +212,16 @@
             // labelCiudad
             // 
             this.labelCiudad.AutoSize = true;
-            this.labelCiudad.Location = new System.Drawing.Point(12, 123);
+            this.labelCiudad.Location = new System.Drawing.Point(12, 185);
             this.labelCiudad.Name = "labelCiudad";
-            this.labelCiudad.Size = new System.Drawing.Size(59, 17);
+            this.labelCiudad.Size = new System.Drawing.Size(85, 17);
             this.labelCiudad.TabIndex = 40;
-            this.labelCiudad.Text = "CIUDAD";
+            this.labelCiudad.Text = "LOCALIDAD";
             // 
             // labelProvincia
             // 
             this.labelProvincia.AutoSize = true;
-            this.labelProvincia.Location = new System.Drawing.Point(12, 240);
+            this.labelProvincia.Location = new System.Drawing.Point(13, 152);
             this.labelProvincia.Name = "labelProvincia";
             this.labelProvincia.Size = new System.Drawing.Size(81, 17);
             this.labelProvincia.TabIndex = 42;
@@ -224,7 +233,7 @@
             this.comboBoxComunidad.DisplayMember = "nom";
             this.comboBoxComunidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunidad.FormattingEnabled = true;
-            this.comboBoxComunidad.Location = new System.Drawing.Point(112, 207);
+            this.comboBoxComunidad.Location = new System.Drawing.Point(112, 119);
             this.comboBoxComunidad.Name = "comboBoxComunidad";
             this.comboBoxComunidad.Size = new System.Drawing.Size(352, 24);
             this.comboBoxComunidad.TabIndex = 43;
@@ -241,7 +250,7 @@
             this.comboBoxProvincia.DisplayMember = "nom";
             this.comboBoxProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProvincia.FormattingEnabled = true;
-            this.comboBoxProvincia.Location = new System.Drawing.Point(112, 237);
+            this.comboBoxProvincia.Location = new System.Drawing.Point(112, 149);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(352, 24);
             this.comboBoxProvincia.TabIndex = 45;
@@ -254,7 +263,7 @@
             // labelComunidad
             // 
             this.labelComunidad.AutoSize = true;
-            this.labelComunidad.Location = new System.Drawing.Point(12, 210);
+            this.labelComunidad.Location = new System.Drawing.Point(12, 122);
             this.labelComunidad.Name = "labelComunidad";
             this.labelComunidad.Size = new System.Drawing.Size(91, 17);
             this.labelComunidad.TabIndex = 44;
@@ -265,7 +274,7 @@
             this.checkBoxGratis.AutoSize = true;
             this.checkBoxGratis.Checked = true;
             this.checkBoxGratis.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxGratis.Location = new System.Drawing.Point(470, 268);
+            this.checkBoxGratis.Location = new System.Drawing.Point(470, 241);
             this.checkBoxGratis.Name = "checkBoxGratis";
             this.checkBoxGratis.Size = new System.Drawing.Size(68, 21);
             this.checkBoxGratis.TabIndex = 46;
@@ -273,12 +282,12 @@
             this.checkBoxGratis.UseVisualStyleBackColor = true;
             this.checkBoxGratis.CheckedChanged += new System.EventHandler(this.checkBoxGratis_CheckedChanged);
             // 
-            // dateTimePicker
+            // dateTimePickerFecha
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(112, 62);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(352, 22);
-            this.dateTimePicker.TabIndex = 47;
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(112, 62);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(352, 22);
+            this.dateTimePickerFecha.TabIndex = 47;
             // 
             // dateTimePickerHora
             // 
@@ -286,15 +295,108 @@
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.Size = new System.Drawing.Size(352, 22);
             this.dateTimePickerHora.TabIndex = 48;
+            this.dateTimePickerHora.ValueChanged += new System.EventHandler(this.dateTimePickerHora_ValueChanged);
+            // 
+            // checkBoxVirtual
+            // 
+            this.checkBoxVirtual.AutoSize = true;
+            this.checkBoxVirtual.Location = new System.Drawing.Point(470, 269);
+            this.checkBoxVirtual.Name = "checkBoxVirtual";
+            this.checkBoxVirtual.Size = new System.Drawing.Size(70, 21);
+            this.checkBoxVirtual.TabIndex = 51;
+            this.checkBoxVirtual.Text = "Virtual";
+            this.checkBoxVirtual.UseVisualStyleBackColor = true;
+            this.checkBoxVirtual.CheckedChanged += new System.EventHandler(this.checkBoxVirtual_CheckedChanged);
+            // 
+            // textBoxEnlace
+            // 
+            this.textBoxEnlace.Location = new System.Drawing.Point(112, 267);
+            this.textBoxEnlace.Name = "textBoxEnlace";
+            this.textBoxEnlace.Size = new System.Drawing.Size(352, 22);
+            this.textBoxEnlace.TabIndex = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 269);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "ENLACE";
+            // 
+            // checkBoxMinima
+            // 
+            this.checkBoxMinima.AutoSize = true;
+            this.checkBoxMinima.Location = new System.Drawing.Point(470, 325);
+            this.checkBoxMinima.Name = "checkBoxMinima";
+            this.checkBoxMinima.Size = new System.Drawing.Size(104, 21);
+            this.checkBoxMinima.TabIndex = 56;
+            this.checkBoxMinima.Text = "Asis mínima";
+            this.checkBoxMinima.UseVisualStyleBackColor = true;
+            this.checkBoxMinima.CheckedChanged += new System.EventHandler(this.checkBoxMinima_CheckedChanged);
+            // 
+            // textBoxminimo
+            // 
+            this.textBoxminimo.Location = new System.Drawing.Point(112, 323);
+            this.textBoxminimo.Name = "textBoxminimo";
+            this.textBoxminimo.Size = new System.Drawing.Size(352, 22);
+            this.textBoxminimo.TabIndex = 55;
+            // 
+            // textBoxmax
+            // 
+            this.textBoxmax.Location = new System.Drawing.Point(112, 295);
+            this.textBoxmax.Name = "textBoxmax";
+            this.textBoxmax.Size = new System.Drawing.Size(352, 22);
+            this.textBoxmax.TabIndex = 54;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "ASIS. MÍNIMA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 298);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 17);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "ASIS. MÁX";
+            // 
+            // checkBoxmax
+            // 
+            this.checkBoxmax.AutoSize = true;
+            this.checkBoxmax.Checked = true;
+            this.checkBoxmax.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxmax.Location = new System.Drawing.Point(470, 298);
+            this.checkBoxmax.Name = "checkBoxmax";
+            this.checkBoxmax.Size = new System.Drawing.Size(85, 21);
+            this.checkBoxmax.TabIndex = 57;
+            this.checkBoxmax.Text = "Asis máx";
+            this.checkBoxmax.UseVisualStyleBackColor = true;
+            this.checkBoxmax.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // CreaModEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(848, 492);
+            this.ClientSize = new System.Drawing.Size(848, 578);
+            this.Controls.Add(this.checkBoxmax);
+            this.Controls.Add(this.checkBoxMinima);
+            this.Controls.Add(this.textBoxminimo);
+            this.Controls.Add(this.textBoxmax);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.checkBoxVirtual);
+            this.Controls.Add(this.textBoxEnlace);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerHora);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.checkBoxGratis);
             this.Controls.Add(this.comboBoxProvincia);
             this.Controls.Add(this.labelComunidad);
@@ -356,7 +458,16 @@
         private System.Windows.Forms.BindingSource provinciesBindingSource;
         private System.Windows.Forms.Label labelComunidad;
         private System.Windows.Forms.CheckBox checkBoxGratis;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private System.Windows.Forms.DateTimePicker dateTimePickerHora;
+        private System.Windows.Forms.CheckBox checkBoxVirtual;
+        private System.Windows.Forms.TextBox textBoxEnlace;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxMinima;
+        private System.Windows.Forms.TextBox textBoxminimo;
+        private System.Windows.Forms.TextBox textBoxmax;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBoxmax;
     }
 }
