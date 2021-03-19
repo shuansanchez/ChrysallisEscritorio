@@ -1,18 +1,18 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chrysallis
 {
    public static class ConsultaOrm
     {
-        public static List<comunitats> Select()
+        
+          public static List<comunitats> Select()
         {
             List<comunitats> _comunidades =
             (
-                from c in Orm.bdconnection.comunitats select c
+                from c in Orm.bdconnection.comunitats 
+                select c
             ).ToList();
             return _comunidades;
         }
@@ -20,9 +20,13 @@ namespace Chrysallis
         {
             List<provincies> _provincies =
             (
-                from c in Orm.bdconnection.provincies where c.id_comunitat == id select c
+                from c in Orm.bdconnection.provincies 
+                where c.id_comunitat == id 
+                select c
             ).ToList();
             return _provincies;
         }
+        
+
     }
 }
