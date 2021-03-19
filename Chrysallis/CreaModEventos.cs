@@ -17,10 +17,9 @@ namespace Chrysallis
         {
             InitializeComponent();
 
-            DateTimePicker timePicker = new DateTimePicker();
-            timePicker.Format = DateTimePickerFormat.Custom;
-            timePicker.CustomFormat = "HH:mm"; // Only use hours and minutes
-            timePicker.ShowUpDown = true;
+            dateTimePickerHora.Format = DateTimePickerFormat.Custom;
+            dateTimePickerHora.CustomFormat = "HH:mm"; // Only use hours and minutes
+            dateTimePickerHora.ShowUpDown = true;
 
             if (creacion)
             {
@@ -58,9 +57,6 @@ namespace Chrysallis
 
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
-            
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,13 +116,13 @@ namespace Chrysallis
             }
         }
 
-        private bool compruebaArchivo()        //PROVISIONAL
+        private bool compruebaArchivo()       //PROVISIONAL
         {
             bool correcto = false;
 
             using (rutaCarpeta = new OpenFileDialog())
             {
-                rutaCarpeta.Filter = "Image files (*.pdf,  *.doc, *.docx, *.txt, *.xls, *.xlsx, *.ppt, *.pptx, *.zip, *.rar) | *.jpg; *.doc; *.docx; *.txt; *.xls; *.xlsx; *.ppt; *.pptx; *.zip; *.rar";
+                rutaCarpeta.Filter = "Image files (*.pdf,  *.doc, *.docx, *.txt, *.xls, *.xlsx, *.ppt, *.pptx, *.zip, *.rar) | *.pdf; *.doc; *.docx; *.txt; *.xls; *.xlsx; *.ppt; *.pptx; *.zip; *.rar";
                 rutaCarpeta.Multiselect = false;
                 if (rutaCarpeta.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(rutaCarpeta.FileName))
                 {

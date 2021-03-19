@@ -282,6 +282,7 @@
             // 
             // dateTimePickerHora
             // 
+            this.dateTimePickerHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerHora.Location = new System.Drawing.Point(112, 91);
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.Size = new System.Drawing.Size(352, 22);
