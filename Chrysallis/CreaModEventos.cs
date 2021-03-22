@@ -36,7 +36,7 @@ namespace Chrysallis
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             Boolean correcto = compruebaDatos();
-            if (!correcto)
+            if (!correcto) //arreglar
             {
                 MessageBox.Show("Faltan datos por introducir");
             }
