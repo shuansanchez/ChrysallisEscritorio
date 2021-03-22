@@ -8,7 +8,7 @@ namespace Chrysallis
     {
         
         //COMUNITATS
-          public static List<comunitats> Select()
+          public static List<comunitats> SelectComunidades()
         {
             List<comunitats> _comunidades =
             (
@@ -32,7 +32,7 @@ namespace Chrysallis
 
 
         //ESDEVENIMENTS
-        public static void Insert(esdeveniments evento)
+        public static void InsertEvento(esdeveniments evento)
         {
             Orm.bdconnection.esdeveniments.Add(evento);
             Orm.bdconnection.SaveChanges();
@@ -48,6 +48,40 @@ namespace Chrysallis
             return _eventos;
         }
 
+
+        //USUARIS
+        public static void InsertUsuario(usuaris usuari)
+        {
+            Orm.bdconnection.usuaris.Add(usuari);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static List<usuaris> SelectUsuarios()
+        {
+            List<usuaris> _usuarios =
+             (
+                 from c in Orm.bdconnection.usuaris
+                 select c
+             ).ToList();
+            return _usuarios;
+        }
+
+        //SOCIOS
+        public static void InsertSocio(socis socio)
+        {
+            Orm.bdconnection.socis.Add(socio);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static List<socis> SelectSocios()
+        {
+            List<socis> _socios =
+             (
+                 from c in Orm.bdconnection.socis
+                 select c
+             ).ToList();
+            return _socios;
+        }
 
     }
 }

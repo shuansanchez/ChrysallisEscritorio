@@ -32,7 +32,7 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Activo = new System.Windows.Forms.CheckBox();
+            this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.textBoxCP = new System.Windows.Forms.TextBox();
             this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
@@ -82,15 +82,15 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
-            // Activo
+            // checkBoxActivo
             // 
-            this.Activo.AutoSize = true;
-            this.Activo.Location = new System.Drawing.Point(399, 339);
-            this.Activo.Name = "Activo";
-            this.Activo.Size = new System.Drawing.Size(68, 21);
-            this.Activo.TabIndex = 41;
-            this.Activo.Text = "Activo";
-            this.Activo.UseVisualStyleBackColor = true;
+            this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Location = new System.Drawing.Point(399, 339);
+            this.checkBoxActivo.Name = "checkBoxActivo";
+            this.checkBoxActivo.Size = new System.Drawing.Size(68, 21);
+            this.checkBoxActivo.TabIndex = 41;
+            this.checkBoxActivo.Text = "Activo";
+            this.checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // textBoxCP
             // 
@@ -246,7 +246,7 @@
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Activo);
+            this.Controls.Add(this.checkBoxActivo);
             this.Controls.Add(this.textBoxCP);
             this.Controls.Add(this.textBoxCiudad);
             this.Controls.Add(this.textBoxTelefono);
@@ -279,7 +279,7 @@
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox Activo;
+        private System.Windows.Forms.CheckBox checkBoxActivo;
         private System.Windows.Forms.TextBox textBoxCP;
         private System.Windows.Forms.TextBox textBoxCiudad;
         private System.Windows.Forms.TextBox textBoxTelefono;

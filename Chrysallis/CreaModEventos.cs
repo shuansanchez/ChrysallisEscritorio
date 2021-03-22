@@ -12,7 +12,7 @@ namespace Chrysallis
         String rutaImagen;
 
         /*************************************/
-        BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.Select());
+        BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
         comunitats co = new comunitats();
         public CreaModEventos(Boolean creacion)
         {
@@ -109,7 +109,7 @@ namespace Chrysallis
                 //-------------------------------------------------------------
 
 
-                ConsultaOrm.Insert(eventoPasar);                            //INSERCIÓN
+                ConsultaOrm.InsertEvento(eventoPasar);                            //INSERCIÓN
                     this.Close();                                           //SE CERRARÁ EL FORMULARIO DE AÑADIR
             }
         }
@@ -171,7 +171,7 @@ namespace Chrysallis
             textBoxmax.Enabled = false;
             textBoxPrecio.Enabled = false;
             textBoxEnlace.Enabled = false;
-            comunitatsBindingSource.DataSource = ConsultaOrm.Select();
+            comunitatsBindingSource.DataSource = ConsultaOrm.SelectEventos();
 
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);

@@ -28,5 +28,10 @@ namespace Chrysallis
             Modificar_Socios cambiaSocio = new Modificar_Socios();
             cambiaSocio.ShowDialog();
         }
+
+        private void Control_de_Usuarios_Load(object sender, EventArgs e)
+        {
+            dataGridViewSocios.DataSource = ConsultaOrm.SelectSocios();
+        }
     }
 }
