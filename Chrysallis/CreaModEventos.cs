@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Chrysallis
 {
@@ -68,11 +69,11 @@ namespace Chrysallis
             {
                 //campos de texto correctos
                 if (!checkBoxGratis.Checked && textBoxPrecio.Text != "" && Int32.TryParse(textBoxPrecio.Text, out int resultadoGratis))
-                {
+                {//si no gratis i hi ha preu
                     if (checkBoxMinima.Checked && textBoxminimo.Text != "" && Int32.TryParse(textBoxminimo.Text, out int resultadoMin))
-                    {
+                    {//si hi ha minima i hi ha text
                         if (checkBoxmax.Checked && textBoxmax.Text != "" && Int32.TryParse(textBoxmax.Text, out int resultadoMax))
-                        {
+                        {//si hi ha maxima i hi ha text
                             if (checkBoxVirtual.Checked && textBoxEnlace.Text != "")
                             {
                                 correcto = true;
@@ -150,7 +151,8 @@ namespace Chrysallis
         {
             if (compruebaArchivo()){
                 //añadimos a la label
-                labelArchivo.Text = rutaCarpeta.FileName;
+                //labelArchivo.Text = rutaCarpeta.FileName;
+                labelArchivo.Text = Path.GetFileName(rutaImagen);
             }
         }
 
