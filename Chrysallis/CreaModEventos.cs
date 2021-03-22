@@ -17,7 +17,6 @@ namespace Chrysallis
         {
             InitializeComponent();
 
-
             dateTimePickerHora.Format = DateTimePickerFormat.Custom;
             dateTimePickerHora.CustomFormat = "HH:mm"; // Only use hours and minutes
             dateTimePickerHora.ShowUpDown = true;
@@ -59,8 +58,6 @@ namespace Chrysallis
                 {
                     MessageBox.Show("Error de entrada de datos");
                 }
-
-               
             }
         }
 

@@ -434,7 +434,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreaModEventos";
             this.Text = "ModificarEventos";
-            this.Activated += new System.EventHandler(this.CreaModEventos_Activated);
             this.Load += new System.EventHandler(this.CreaModEventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
