@@ -101,20 +101,12 @@ namespace Chrysallis
 
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
-            
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
-        }
-
-        private void CreaModEventos_Activated(object sender, EventArgs e)
-        {
-              
         }
 
         private void checkBoxGratis_CheckedChanged(object sender, EventArgs e)
