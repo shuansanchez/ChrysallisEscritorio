@@ -137,7 +137,7 @@
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(100, 17);
             this.labelDescripcion.TabIndex = 26;
-            this.labelDescripcion.Text = "DESCRIPCION";
+            this.labelDescripcion.Text = "DESCRIPCIÓN";
             // 
             // labelPrecio
             // 
@@ -331,9 +331,9 @@
             this.checkBoxMinima.AutoSize = true;
             this.checkBoxMinima.Location = new System.Drawing.Point(470, 325);
             this.checkBoxMinima.Name = "checkBoxMinima";
-            this.checkBoxMinima.Size = new System.Drawing.Size(112, 21);
+            this.checkBoxMinima.Size = new System.Drawing.Size(119, 21);
             this.checkBoxMinima.TabIndex = 56;
-            this.checkBoxMinima.Text = "Asist. mínima";
+            this.checkBoxMinima.Text = "Asist. mínimos";
             this.checkBoxMinima.UseVisualStyleBackColor = true;
             this.checkBoxMinima.CheckedChanged += new System.EventHandler(this.checkBoxMinima_CheckedChanged);
             // 
@@ -356,29 +356,27 @@
             this.labelAsistMin.AutoSize = true;
             this.labelAsistMin.Location = new System.Drawing.Point(12, 325);
             this.labelAsistMin.Name = "labelAsistMin";
-            this.labelAsistMin.Size = new System.Drawing.Size(102, 17);
+            this.labelAsistMin.Size = new System.Drawing.Size(83, 17);
             this.labelAsistMin.TabIndex = 53;
-            this.labelAsistMin.Text = "ASIST. MÍNIMA";
+            this.labelAsistMin.Text = "ASIST. MIN.";
             // 
             // labelAsistMax
             // 
             this.labelAsistMax.AutoSize = true;
             this.labelAsistMax.Location = new System.Drawing.Point(12, 298);
             this.labelAsistMax.Name = "labelAsistMax";
-            this.labelAsistMax.Size = new System.Drawing.Size(84, 17);
+            this.labelAsistMax.Size = new System.Drawing.Size(88, 17);
             this.labelAsistMax.TabIndex = 52;
-            this.labelAsistMax.Text = "ASIST. MÁX";
+            this.labelAsistMax.Text = "ASIST. MAX.";
             // 
             // checkBoxmax
             // 
             this.checkBoxmax.AutoSize = true;
-            this.checkBoxmax.Checked = true;
-            this.checkBoxmax.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxmax.Location = new System.Drawing.Point(470, 298);
             this.checkBoxmax.Name = "checkBoxmax";
-            this.checkBoxmax.Size = new System.Drawing.Size(93, 21);
+            this.checkBoxmax.Size = new System.Drawing.Size(122, 21);
             this.checkBoxmax.TabIndex = 57;
-            this.checkBoxmax.Text = "Asist. máx";
+            this.checkBoxmax.Text = "Asist. máximos";
             this.checkBoxmax.UseVisualStyleBackColor = true;
             this.checkBoxmax.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 

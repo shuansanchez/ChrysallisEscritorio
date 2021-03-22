@@ -108,6 +108,7 @@ namespace Chrysallis
         private void CreaModEventos_Load(object sender, EventArgs e)
         {
             textBoxminimo.Enabled = false;
+            textBoxmax.Enabled = false;
             textBoxPrecio.Enabled = false;
             textBoxEnlace.Enabled = false;
             comunitatsBindingSource.DataSource = ConsultaOrm.Select();
