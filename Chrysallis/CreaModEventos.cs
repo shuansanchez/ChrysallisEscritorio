@@ -41,34 +41,76 @@ namespace Chrysallis
             }
             else
             {
-                    co = comunidades[comboBoxComunidad.SelectedIndex];
-                    DateTime dt = dateTimePickerHora.Value;
-                    TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-                //suerte
-                esdeveniments eventoPasar = new esdeveniments();
+                
+                co = comunidades[comboBoxComunidad.SelectedIndex];          //Se recoge la comunidad escogida en el comboBox
 
-                //intento de insert versión 2----------------------------------
+                DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
+                TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
+                
+                esdeveniments eventoPasar = new esdeveniments();            //Se crea un evento vacío para rellenar y luego añadir a la BD
+
+                //Insert versión 2----------------------------------
+                eventoPasar.cont_assitents = 0;                             //al crear, siempre será cero
                 eventoPasar.titol = textBoxTitulo.Text;
                 eventoPasar.descripcio = textBoxDescripcion.Text;
-                eventoPasar.data = dateTimePickerFecha.Value;
-                eventoPasar.hora = st;
                 eventoPasar.adreca = textBoxDireccion.Text;
                 eventoPasar.id_comunitat = co.id;
-                eventoPasar.latitud = null;
-                eventoPasar.longitud = null;
-                eventoPasar.imatge = 0;
-                eventoPasar.quantitat_max = Int32.Parse(textBoxmax.Text);
-                eventoPasar.quantitat_mínima = Int32.Parse(textBoxminimo.Text);
-                eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
-                eventoPasar.pagament = !checkBoxGratis.Checked;         //esta va al reves de la bd
-                eventoPasar.data_max = dateTimePickerFecha.MinDate;
-                eventoPasar.cont_assitents = 0;                         //al crear, siempre será cero
-                eventoPasar.meet = null;
 
-              
-                    ConsultaOrm.Insert(eventoPasar);
-                    this.Close();
+                eventoPasar.latitud = null;                                 //falta añadir este campo en el form
+                eventoPasar.longitud = null;                                //falta añadir este campo en el form
+
+
+                eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
+                
+                
+                eventoPasar.pagament = !checkBoxGratis.Checked;             //esta variable tiene valor al REVÉS de la bd, de ahí el !
+
+                //fecha y hora
+                eventoPasar.data_max = dateTimePickerFecha.MinDate;
+                eventoPasar.data = dateTimePickerFecha.Value;
+                eventoPasar.hora = st;
+
+                if (!checkBoxVirtual.Checked)                               //Si no es virtual, en enlace será NULL
+                {
+                    eventoPasar.meet = null;
+                }   
+                else
+                {
+                    eventoPasar.meet = textBoxEnlace.Text;                  //Si es virtual, en enlace no será NULL
+                }
+                
+
+                if (!checkBoxGratis.Checked)                                //Si no es gratis, el precio no será CERO
+                {
+                    eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
+                }
+                else
+                {
+                    eventoPasar.preu = 0;                                   //Si es gratis, el precio será CERO
+                }
+
+                if (!checkBoxMinima.Checked)                                //Si no hay mínimo, será CERO
+                {
+                    eventoPasar.quantitat_mínima = 0;
+                }
+                else
+                {
+                    eventoPasar.quantitat_mínima = Int32.Parse(textBoxminimo.Text);
+                }
+
+                if (!checkBoxmax.Checked)                                   //Si no hay máximo, será CERO
+                {
+                    eventoPasar.quantitat_max = 0;
+                }
+                else
+                {
+                    eventoPasar.quantitat_max = Int32.Parse(textBoxmax.Text);
+                }
                 //-------------------------------------------------------------
+
+
+                ConsultaOrm.Insert(eventoPasar);                            //INSERCIÓN
+                    this.Close();                                           //SE CERRARÁ EL FORMULARIO DE AÑADIR
             }
         }
 

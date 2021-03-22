@@ -33,5 +33,10 @@ namespace Chrysallis
             CreaModEventos cambiaEvento = new CreaModEventos(false);
             cambiaEvento.ShowDialog();
         }
+
+        private void Control_de_Eventos_Load(object sender, EventArgs e)
+        {
+            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+        }
     }
 }
