@@ -36,7 +36,6 @@ textBoxDNI.Text.Equals(""))
             
 
             //NOT NULL OBLIGADOS
-            nuevoSocio.id = 4000;
             nuevoSocio.num = Int32.Parse(textBoxID.Text);
             nuevoSocio.nom = textBoxNombre.Text;
             nuevoSocio.actiu = checkBoxActivo.Checked;
@@ -48,8 +47,8 @@ textBoxDNI.Text.Equals(""))
             nuevoSocio.id_localitat = 1; //malgrat de mar
 
             //PUEDEN SER NULL
-            nuevoSocio.cognoms = textBoxApellidos.Text;
-            nuevoSocio.codi_postal = textBoxCP.Text;
+            nuevoSocio.cognoms = null;
+            nuevoSocio.codi_postal = null;
             nuevoSocio.telefon2 = null;
             nuevoSocio.contrasenya = null;
             nuevoSocio.data_baixa = null;
