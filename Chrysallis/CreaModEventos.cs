@@ -35,8 +35,8 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            if (textBoxCiudad.Text.Equals("") || textBoxDescripcion.Text.Equals("") || textBoxLugar.Text.Equals("") ||
-    textBoxTitulo.Text.Equals(""))
+            Boolean correcto = compruebaDatos();
+            if (!correcto)
             {
                 MessageBox.Show("Faltan datos por introducir");
             }
@@ -50,7 +50,7 @@ namespace Chrysallis
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
                     //suerte
                     esdeveniments eventoPasar = new esdeveniments(textBoxTitulo.Text, textBoxDescripcion.Text, dateTimePickerFecha.Value,st,
-                        textBoxLugar.Text, co.id, null, null, 0, Int32.Parse(textBoxmax.Text), Int32.Parse(textBoxminimo.Text), Int32.Parse(textBoxPrecio.Text), checkBoxGratis.Checked,
+                        textBoxDireccion.Text, co.id, null, null, 0, Int32.Parse(textBoxmax.Text), Int32.Parse(textBoxminimo.Text), Int32.Parse(textBoxPrecio.Text), checkBoxGratis.Checked,
                         dateTimePickerFecha.MinDate, 0, null);
                     ConsultaOrm.Insert(eventoPasar);
                     this.Close();
@@ -62,6 +62,29 @@ namespace Chrysallis
 
                
             }
+        }
+
+        private bool compruebaDatos()
+        {
+            Boolean correcto = false;
+            if(textBoxTitulo.Text.Equals("")||textBoxLocalidad.Text.Equals("") || textBoxDireccion.Text.Equals(""))
+            {
+                //campos de texto correctos
+                if (!checkBoxGratis.Checked && textBoxPrecio.Text != "" && Int32.TryParse(textBoxPrecio.Text, out int resultadoGratis))
+                {
+                    if (checkBoxMinima.Checked && textBoxminimo.Text != "" && Int32.TryParse(textBoxminimo.Text, out int resultadoMin))
+                    {
+                        if (checkBoxmax.Checked && textBoxmax.Text != "" && Int32.TryParse(textBoxmax.Text, out int resultadoMax))
+                        {
+                            if (checkBoxVirtual.Checked && textBoxEnlace.Text != "")
+                            {
+                                correcto = true;
+                            }
+                        }
+                    }
+                }
+            }
+             return correcto;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

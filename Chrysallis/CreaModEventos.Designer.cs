@@ -36,7 +36,7 @@
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
-            this.textBoxLugar = new System.Windows.Forms.TextBox();
+            this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.labelPrecio = new System.Windows.Forms.Label();
             this.labelDireccion = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.pictureBoxImagenEvento = new System.Windows.Forms.PictureBox();
             this.buttonArchivoBuscar = new System.Windows.Forms.Button();
-            this.textBoxCiudad = new System.Windows.Forms.TextBox();
-            this.labelCiudad = new System.Windows.Forms.Label();
+            this.textBoxLocalidad = new System.Windows.Forms.TextBox();
+            this.labelLocalidad = new System.Windows.Forms.Label();
             this.labelProvincia = new System.Windows.Forms.Label();
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,12 +58,12 @@
             this.dateTimePickerHora = new System.Windows.Forms.DateTimePicker();
             this.checkBoxVirtual = new System.Windows.Forms.CheckBox();
             this.textBoxEnlace = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEnlace = new System.Windows.Forms.Label();
             this.checkBoxMinima = new System.Windows.Forms.CheckBox();
             this.textBoxminimo = new System.Windows.Forms.TextBox();
             this.textBoxmax = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelAsistMin = new System.Windows.Forms.Label();
+            this.labelAsistMax = new System.Windows.Forms.Label();
             this.checkBoxmax = new System.Windows.Forms.CheckBox();
             this.labelArchivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
@@ -123,12 +123,12 @@
             this.textBoxTitulo.Size = new System.Drawing.Size(352, 22);
             this.textBoxTitulo.TabIndex = 28;
             // 
-            // textBoxLugar
+            // textBoxDireccion
             // 
-            this.textBoxLugar.Location = new System.Drawing.Point(112, 211);
-            this.textBoxLugar.Name = "textBoxLugar";
-            this.textBoxLugar.Size = new System.Drawing.Size(352, 22);
-            this.textBoxLugar.TabIndex = 27;
+            this.textBoxDireccion.Location = new System.Drawing.Point(112, 211);
+            this.textBoxDireccion.Name = "textBoxDireccion";
+            this.textBoxDireccion.Size = new System.Drawing.Size(352, 22);
+            this.textBoxDireccion.TabIndex = 27;
             // 
             // labelDescripcion
             // 
@@ -195,7 +195,7 @@
             // 
             // buttonArchivoBuscar
             // 
-            this.buttonArchivoBuscar.Location = new System.Drawing.Point(680, 314);
+            this.buttonArchivoBuscar.Location = new System.Drawing.Point(614, 314);
             this.buttonArchivoBuscar.Name = "buttonArchivoBuscar";
             this.buttonArchivoBuscar.Size = new System.Drawing.Size(109, 28);
             this.buttonArchivoBuscar.TabIndex = 39;
@@ -203,21 +203,21 @@
             this.buttonArchivoBuscar.UseVisualStyleBackColor = true;
             this.buttonArchivoBuscar.Click += new System.EventHandler(this.ArchivoBuscar_Click);
             // 
-            // textBoxCiudad
+            // textBoxLocalidad
             // 
-            this.textBoxCiudad.Location = new System.Drawing.Point(112, 182);
-            this.textBoxCiudad.Name = "textBoxCiudad";
-            this.textBoxCiudad.Size = new System.Drawing.Size(352, 22);
-            this.textBoxCiudad.TabIndex = 41;
+            this.textBoxLocalidad.Location = new System.Drawing.Point(112, 182);
+            this.textBoxLocalidad.Name = "textBoxLocalidad";
+            this.textBoxLocalidad.Size = new System.Drawing.Size(352, 22);
+            this.textBoxLocalidad.TabIndex = 41;
             // 
-            // labelCiudad
+            // labelLocalidad
             // 
-            this.labelCiudad.AutoSize = true;
-            this.labelCiudad.Location = new System.Drawing.Point(12, 185);
-            this.labelCiudad.Name = "labelCiudad";
-            this.labelCiudad.Size = new System.Drawing.Size(85, 17);
-            this.labelCiudad.TabIndex = 40;
-            this.labelCiudad.Text = "LOCALIDAD";
+            this.labelLocalidad.AutoSize = true;
+            this.labelLocalidad.Location = new System.Drawing.Point(12, 185);
+            this.labelLocalidad.Name = "labelLocalidad";
+            this.labelLocalidad.Size = new System.Drawing.Size(85, 17);
+            this.labelLocalidad.TabIndex = 40;
+            this.labelLocalidad.Text = "LOCALIDAD";
             // 
             // labelProvincia
             // 
@@ -317,14 +317,14 @@
             this.textBoxEnlace.Size = new System.Drawing.Size(352, 22);
             this.textBoxEnlace.TabIndex = 50;
             // 
-            // label1
+            // labelEnlace
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 269);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "ENLACE";
+            this.labelEnlace.AutoSize = true;
+            this.labelEnlace.Location = new System.Drawing.Point(13, 269);
+            this.labelEnlace.Name = "labelEnlace";
+            this.labelEnlace.Size = new System.Drawing.Size(62, 17);
+            this.labelEnlace.TabIndex = 49;
+            this.labelEnlace.Text = "ENLACE";
             // 
             // checkBoxMinima
             // 
@@ -351,23 +351,23 @@
             this.textBoxmax.Size = new System.Drawing.Size(352, 22);
             this.textBoxmax.TabIndex = 54;
             // 
-            // label2
+            // labelAsistMin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 325);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 17);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "ASIST. MÍNIMA";
+            this.labelAsistMin.AutoSize = true;
+            this.labelAsistMin.Location = new System.Drawing.Point(12, 325);
+            this.labelAsistMin.Name = "labelAsistMin";
+            this.labelAsistMin.Size = new System.Drawing.Size(102, 17);
+            this.labelAsistMin.TabIndex = 53;
+            this.labelAsistMin.Text = "ASIST. MÍNIMA";
             // 
-            // label3
+            // labelAsistMax
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 298);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "ASIST. MÁX";
+            this.labelAsistMax.AutoSize = true;
+            this.labelAsistMax.Location = new System.Drawing.Point(12, 298);
+            this.labelAsistMax.Name = "labelAsistMax";
+            this.labelAsistMax.Size = new System.Drawing.Size(84, 17);
+            this.labelAsistMax.TabIndex = 52;
+            this.labelAsistMax.Text = "ASIST. MÁX";
             // 
             // checkBoxmax
             // 
@@ -402,11 +402,11 @@
             this.Controls.Add(this.checkBoxMinima);
             this.Controls.Add(this.textBoxminimo);
             this.Controls.Add(this.textBoxmax);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelAsistMin);
+            this.Controls.Add(this.labelAsistMax);
             this.Controls.Add(this.checkBoxVirtual);
             this.Controls.Add(this.textBoxEnlace);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelEnlace);
             this.Controls.Add(this.dateTimePickerHora);
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.checkBoxGratis);
@@ -414,8 +414,8 @@
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.comboBoxComunidad);
             this.Controls.Add(this.labelProvincia);
-            this.Controls.Add(this.textBoxCiudad);
-            this.Controls.Add(this.labelCiudad);
+            this.Controls.Add(this.textBoxLocalidad);
+            this.Controls.Add(this.labelLocalidad);
             this.Controls.Add(this.buttonArchivoBuscar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonCancelar);
@@ -424,7 +424,7 @@
             this.Controls.Add(this.textBoxDescripcion);
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.textBoxTitulo);
-            this.Controls.Add(this.textBoxLugar);
+            this.Controls.Add(this.textBoxDireccion);
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelPrecio);
             this.Controls.Add(this.labelDireccion);
@@ -453,7 +453,7 @@
         private System.Windows.Forms.TextBox textBoxDescripcion;
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.TextBox textBoxTitulo;
-        private System.Windows.Forms.TextBox textBoxLugar;
+        private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.Label labelPrecio;
         private System.Windows.Forms.Label labelDireccion;
@@ -461,8 +461,8 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonArchivoBuscar;
-        private System.Windows.Forms.TextBox textBoxCiudad;
-        private System.Windows.Forms.Label labelCiudad;
+        private System.Windows.Forms.TextBox textBoxLocalidad;
+        private System.Windows.Forms.Label labelLocalidad;
         private System.Windows.Forms.Label labelProvincia;
         private System.Windows.Forms.ComboBox comboBoxComunidad;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
@@ -474,12 +474,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerHora;
         private System.Windows.Forms.CheckBox checkBoxVirtual;
         private System.Windows.Forms.TextBox textBoxEnlace;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEnlace;
         private System.Windows.Forms.CheckBox checkBoxMinima;
         private System.Windows.Forms.TextBox textBoxminimo;
         private System.Windows.Forms.TextBox textBoxmax;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelAsistMin;
+        private System.Windows.Forms.Label labelAsistMax;
         private System.Windows.Forms.CheckBox checkBoxmax;
         private System.Windows.Forms.Label labelArchivo;
     }
