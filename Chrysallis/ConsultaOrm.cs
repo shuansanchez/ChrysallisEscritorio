@@ -26,6 +26,12 @@ namespace Chrysallis
             ).ToList();
             return _provincies;
         }
+
+        public static void Insert(esdeveniments evento)
+        {
+            Orm.bdconnection.esdeveniments.Add(evento);
+            Orm.bdconnection.SaveChanges();
+        }
         
 
     }
