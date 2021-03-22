@@ -330,9 +330,9 @@
             this.checkBoxMinima.AutoSize = true;
             this.checkBoxMinima.Location = new System.Drawing.Point(470, 325);
             this.checkBoxMinima.Name = "checkBoxMinima";
-            this.checkBoxMinima.Size = new System.Drawing.Size(104, 21);
+            this.checkBoxMinima.Size = new System.Drawing.Size(112, 21);
             this.checkBoxMinima.TabIndex = 56;
-            this.checkBoxMinima.Text = "Asis mínima";
+            this.checkBoxMinima.Text = "Asist. mínima";
             this.checkBoxMinima.UseVisualStyleBackColor = true;
             this.checkBoxMinima.CheckedChanged += new System.EventHandler(this.checkBoxMinima_CheckedChanged);
             // 
@@ -355,18 +355,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.Size = new System.Drawing.Size(102, 17);
             this.label2.TabIndex = 53;
-            this.label2.Text = "ASIS. MÍNIMA";
+            this.label2.Text = "ASIST. MÍNIMA";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 298);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 52;
-            this.label3.Text = "ASIS. MÁX";
+            this.label3.Text = "ASIST. MÁX";
             // 
             // checkBoxmax
             // 
@@ -375,9 +375,9 @@
             this.checkBoxmax.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxmax.Location = new System.Drawing.Point(470, 298);
             this.checkBoxmax.Name = "checkBoxmax";
-            this.checkBoxmax.Size = new System.Drawing.Size(85, 21);
+            this.checkBoxmax.Size = new System.Drawing.Size(93, 21);
             this.checkBoxmax.TabIndex = 57;
-            this.checkBoxmax.Text = "Asis máx";
+            this.checkBoxmax.Text = "Asist. máx";
             this.checkBoxmax.UseVisualStyleBackColor = true;
             this.checkBoxmax.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
