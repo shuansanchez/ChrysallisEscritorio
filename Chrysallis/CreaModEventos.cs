@@ -44,13 +44,31 @@ namespace Chrysallis
                     co = comunidades[comboBoxComunidad.SelectedIndex];
                     DateTime dt = dateTimePickerHora.Value;
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-                    //suerte
-                    esdeveniments eventoPasar = new esdeveniments(textBoxTitulo.Text, textBoxDescripcion.Text, dateTimePickerFecha.Value,st,
-                        textBoxDireccion.Text, co.id, null, null, 0, Int32.Parse(textBoxmax.Text), Int32.Parse(textBoxminimo.Text), Int32.Parse(textBoxPrecio.Text), checkBoxGratis.Checked,
-                        dateTimePickerFecha.MinDate, 0, null);
+                //suerte
+                esdeveniments eventoPasar = new esdeveniments();
+
+                //intento de insert versión 2----------------------------------
+                eventoPasar.titol = textBoxTitulo.Text;
+                eventoPasar.descripcio = textBoxDescripcion.Text;
+                eventoPasar.data = dateTimePickerFecha.Value;
+                eventoPasar.hora = st;
+                eventoPasar.adreca = textBoxDireccion.Text;
+                eventoPasar.id_comunitat = co.id;
+                eventoPasar.latitud = null;
+                eventoPasar.longitud = null;
+                eventoPasar.imatge = 0;
+                eventoPasar.quantitat_max = Int32.Parse(textBoxmax.Text);
+                eventoPasar.quantitat_mínima = Int32.Parse(textBoxminimo.Text);
+                eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
+                eventoPasar.pagament = !checkBoxGratis.Checked;         //esta va al reves de la bd
+                eventoPasar.data_max = dateTimePickerFecha.MinDate;
+                eventoPasar.cont_assitents = 0;                         //al crear, siempre será cero
+                eventoPasar.meet = null;
+
+              
                     ConsultaOrm.Insert(eventoPasar);
                     this.Close();
-              
+                //-------------------------------------------------------------
             }
         }
 
