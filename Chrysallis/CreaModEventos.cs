@@ -111,6 +111,7 @@ namespace Chrysallis
             if (compruebaImagen())
             {
                 //añadimos al picturebox
+                pictureBoxImagenEvento.ImageLocation = rutaImagen; ;
             }
         }
 
@@ -137,6 +138,7 @@ namespace Chrysallis
         {
             if (compruebaArchivo()){
                 //añadimos a la label
+                labelArchivo.Text = rutaCarpeta.FileName;
             }
         }
 

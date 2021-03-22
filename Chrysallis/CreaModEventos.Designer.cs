@@ -65,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxmax = new System.Windows.Forms.CheckBox();
+            this.labelArchivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
@@ -381,12 +382,22 @@
             this.checkBoxmax.UseVisualStyleBackColor = true;
             this.checkBoxmax.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // labelArchivo
+            // 
+            this.labelArchivo.AutoSize = true;
+            this.labelArchivo.Location = new System.Drawing.Point(614, 285);
+            this.labelArchivo.Name = "labelArchivo";
+            this.labelArchivo.Size = new System.Drawing.Size(18, 17);
+            this.labelArchivo.TabIndex = 58;
+            this.labelArchivo.Text = "--";
+            // 
             // CreaModEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(848, 578);
+            this.Controls.Add(this.labelArchivo);
             this.Controls.Add(this.checkBoxmax);
             this.Controls.Add(this.checkBoxMinima);
             this.Controls.Add(this.textBoxminimo);
@@ -470,5 +481,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxmax;
+        private System.Windows.Forms.Label labelArchivo;
     }
 }
