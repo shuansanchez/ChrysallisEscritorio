@@ -35,16 +35,12 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            Boolean correcto = compruebaDatos();
-            if (!correcto) //arreglar
+            if (!compruebaDatos()) //arreglar
             {
                 MessageBox.Show("Faltan datos por introducir");
             }
             else
             {
-                if(float.TryParse(textBoxPrecio.Text , out float numero) || Int32.TryParse(textBoxminimo.Text, out int numero2)|| 
-                    Int32.TryParse(textBoxmax.Text, out int numero3))
-                {
                     co = comunidades[comboBoxComunidad.SelectedIndex];
                     DateTime dt = dateTimePickerHora.Value;
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
@@ -54,35 +50,54 @@ namespace Chrysallis
                         dateTimePickerFecha.MinDate, 0, null);
                     ConsultaOrm.Insert(eventoPasar);
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error de entrada de datos");
-                }
+              
             }
         }
 
         private bool compruebaDatos()
         {
             Boolean correcto = false;
-            if(textBoxTitulo.Text.Equals("")||textBoxLocalidad.Text.Equals("") || textBoxDireccion.Text.Equals(""))
-            {
-                //campos de texto correctos
-                if (!checkBoxGratis.Checked && textBoxPrecio.Text != "" && Int32.TryParse(textBoxPrecio.Text, out int resultadoGratis))
-                {//si no gratis i hi ha preu
-                    if (checkBoxMinima.Checked && textBoxminimo.Text != "" && Int32.TryParse(textBoxminimo.Text, out int resultadoMin))
-                    {//si hi ha minima i hi ha text
-                        if (checkBoxmax.Checked && textBoxmax.Text != "" && Int32.TryParse(textBoxmax.Text, out int resultadoMax))
-                        {//si hi ha maxima i hi ha text
-                            if (checkBoxVirtual.Checked && textBoxEnlace.Text != "")
-                            {
-                                correcto = true;
-                            }
-                        }
-                    }
-                }
-            }
-             return correcto;
+            /* if(!textBoxTitulo.Text.Equals("")||!textBoxLocalidad.Text.Equals("") || !textBoxDireccion.Text.Equals(""))
+             {
+
+                 //campos de texto correctos
+                 if (!checkBoxGratis.Checked && !textBoxPrecio.Text.Equals("") && Int32.TryParse(textBoxPrecio.Text, out int resultadoGratis))
+                 {//si no gratis i hi ha preu
+
+                     if (checkBoxMinima.Checked && textBoxminimo.Text.Equals("") && Int32.TryParse(textBoxminimo.Text, out int resultadoMin))
+                     {//si hi ha minima i hi ha text
+                         if (checkBoxmax.Checked && textBoxmax.Text.Equals("") && Int32.TryParse(textBoxmax.Text, out int resultadoMax))
+                         {//si hi ha maxima i hi ha text
+                             if (checkBoxVirtual.Checked && textBoxEnlace.Text.Equals(""))
+                             {
+                                 correcto = true;
+                             }
+                             else
+                             {
+                                 MessageBox.Show("Enlace mal");
+                             }
+                         }
+                         else
+                         {
+                             MessageBox.Show("Maximo mal");
+                         }
+                     }
+                     else
+                     {
+                         MessageBox.Show("Minimo mal");
+                     }
+                 }
+                 else
+                 {
+                     MessageBox.Show("Precio mal");
+                 }
+             }
+             else
+             {
+                 MessageBox.Show("Titulo Localidad Direccion mal");
+             }*/
+            correcto = true;
+            return correcto;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
