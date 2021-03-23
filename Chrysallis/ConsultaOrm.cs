@@ -19,6 +19,16 @@ namespace Chrysallis
             return _comunidades;
         }
 
+        public static List<string> SelectComunidadesNombres()
+        {
+            List<string> _comunidades =
+            (
+                from c in Orm.bdconnection.comunitats
+                select c.nom
+            ).ToList();
+            return _comunidades;
+        }
+
         //PROVINCIAS
         public static List<provincies> SelectProvincias(int id)
         {

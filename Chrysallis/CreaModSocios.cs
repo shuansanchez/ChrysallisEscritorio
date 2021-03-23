@@ -18,7 +18,9 @@ namespace Chrysallis
         {
             InitializeComponent();
             this.modificar = modificar;
+            comboBoxComunidades.Enabled = false;
             checkBoxBaja.Checked = false;
+            buttonModificar.Text = "Crear";
         }
 
         public Modificar_Socios(Boolean modificar, socis socioModificar)
@@ -26,6 +28,8 @@ namespace Chrysallis
             InitializeComponent();
             this.modificar = modificar;
             this.socioModificar = socioModificar;
+            comboBoxComunidades.Enabled = false;
+            
             if (modificar)
             {
                 
@@ -131,6 +135,15 @@ namespace Chrysallis
         private void Modificar_Socios_Load(object sender, EventArgs e)
         {
             rolsBindingSource.DataSource = ConsultaOrm.SelectRoles();
+        }
+
+        private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxRoles.SelectedIndex.Equals(1) || comboBoxRoles.SelectedIndex.Equals(2))
+            {
+                comboBoxComunidades.Enabled = true;
+                comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidadesNombres();
+            }
         }
     }
 }

@@ -65,10 +65,14 @@
             this.dateTimePickerAlta = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerBaja = new System.Windows.Forms.DateTimePicker();
             this.comboBoxRoles = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.rolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
+            this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
@@ -94,7 +98,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(574, 87);
+            this.pictureBox1.Location = new System.Drawing.Point(596, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 230);
             this.pictureBox1.TabIndex = 42;
@@ -328,7 +332,7 @@
             this.checkBoxBaja.AutoSize = true;
             this.checkBoxBaja.Checked = true;
             this.checkBoxBaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBaja.Location = new System.Drawing.Point(477, 404);
+            this.checkBoxBaja.Location = new System.Drawing.Point(473, 404);
             this.checkBoxBaja.Name = "checkBoxBaja";
             this.checkBoxBaja.Size = new System.Drawing.Size(104, 21);
             this.checkBoxBaja.TabIndex = 56;
@@ -360,31 +364,58 @@
             // comboBoxRoles
             // 
             this.comboBoxRoles.DataSource = this.rolsBindingSource;
+            this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(574, 347);
+            this.comboBoxRoles.Location = new System.Drawing.Point(596, 349);
             this.comboBoxRoles.Name = "comboBoxRoles";
             this.comboBoxRoles.Size = new System.Drawing.Size(211, 24);
             this.comboBoxRoles.TabIndex = 60;
+            this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
+            // 
+            // rolsBindingSource
+            // 
+            this.rolsBindingSource.DataSource = typeof(Chrysallis.rols);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(574, 324);
+            this.label4.Location = new System.Drawing.Point(596, 326);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 17);
             this.label4.TabIndex = 61;
             this.label4.Text = "Rol";
             // 
-            // rolsBindingSource
+            // comboBoxComunidades
             // 
-            this.rolsBindingSource.DataSource = typeof(Chrysallis.rols);
+            this.comboBoxComunidades.DataSource = this.comunitatsBindingSource;
+            this.comboBoxComunidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxComunidades.FormattingEnabled = true;
+            this.comboBoxComunidades.Location = new System.Drawing.Point(596, 396);
+            this.comboBoxComunidades.Name = "comboBoxComunidades";
+            this.comboBoxComunidades.Size = new System.Drawing.Size(211, 24);
+            this.comboBoxComunidades.TabIndex = 62;
+            // 
+            // comunitatsBindingSource
+            // 
+            this.comunitatsBindingSource.DataSource = typeof(Chrysallis.comunitats);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(596, 375);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Comunidad";
             // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 517);
+            this.ClientSize = new System.Drawing.Size(819, 517);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxComunidades);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxRoles);
             this.Controls.Add(this.dateTimePickerBaja);
@@ -427,6 +458,7 @@
             this.Load += new System.EventHandler(this.Modificar_Socios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,5 +503,8 @@
         private System.Windows.Forms.ComboBox comboBoxRoles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource rolsBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxComunidades;
+        private System.Windows.Forms.BindingSource comunitatsBindingSource;
+        private System.Windows.Forms.Label label5;
     }
 }
