@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace Chrysallis
@@ -32,9 +33,9 @@ namespace Chrysallis
 
 
         //ESDEVENIMENTS
-        public static void InsertEvento(esdeveniments evento)
+        public static void InsertEvento(esdeveniments _evento)
         {
-            Orm.bdconnection.esdeveniments.Add(evento);
+            Orm.bdconnection.esdeveniments.Add(_evento);
             Orm.bdconnection.SaveChanges();
         }
 
@@ -46,6 +47,18 @@ namespace Chrysallis
                  select c
              ).ToList();
             return _eventos;
+        }
+
+        public static void DeleteEvento(esdeveniments _evento)
+        {
+            Orm.bdconnection.esdeveniments.Remove(_evento);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static void UpdateEvento(esdeveniments _evento)
+        {
+            //Orm.bdconnection.esdeveniments.AddOrUpdate(_evento);
+            Orm.bdconnection.SaveChanges();
         }
 
 

@@ -147,7 +147,6 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(351, 22);
             this.textBoxNombre.TabIndex = 33;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBoxID
             // 

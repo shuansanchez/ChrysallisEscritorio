@@ -14,6 +14,8 @@ namespace Chrysallis
         /*************************************/
         BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
         comunitats co = new comunitats();
+        esdeveniments modificaEvento = new esdeveniments();
+        Boolean modificar;
         public CreaModEventos(Boolean creacion)
         {
             InitializeComponent();
@@ -25,93 +27,143 @@ namespace Chrysallis
             if (creacion)
             {
                 //añadiremos
+                this.modificar = !creacion;
             }
             else
             {
                 //modificaremos
                 buttonImagen.Text = "Cargar imagen";
             }
-        }   
+        }
 
-        private void buttonModificar_Click(object sender, EventArgs e)
+        public CreaModEventos(Boolean creacion, esdeveniments modificaEvento)
         {
-            if (!compruebaDatos()) //arreglar
+            InitializeComponent();
+
+            dateTimePickerHora.Format = DateTimePickerFormat.Custom;
+            dateTimePickerHora.CustomFormat = "HH:mm"; // Only use hours and minutes
+            dateTimePickerHora.ShowUpDown = true;
+
+            this.modificaEvento = modificaEvento;
+            if (!creacion)
             {
-                MessageBox.Show("Faltan datos por introducir");
+                this.modificar = !creacion;
+                //modificaremos
+                buttonImagen.Text = "Cargar imagen";
+                textBoxTitulo.Text = modificaEvento.titol;
+                textBoxDescripcion.Text = modificaEvento.descripcio;
+                textBoxEnlace.Text = modificaEvento.meet;
+                dateTimePickerFecha.Value = modificaEvento.data.Date;
+                //dateTimePickerHora.Value = modificaEvento.hora.;
+                comboBoxComunidad.SelectedItem = modificaEvento.comunitats.id;
+                //comboBoxProvincia.SelectedItem=modificaEvento.provincia??
+                //textBoxLocalidad.Text=modificaEvento.
+                textBoxDireccion.Text = modificaEvento.adreca;
+                textBoxmax.Text =modificaEvento.quantitat_max.ToString();
+                textBoxPrecio.Text = modificaEvento.quantitat_mínima.ToString();
+                //FALTA ARCHIVO E IMAGEN TAMBIEN
+            }
+        }
+
+        private esdeveniments copiaDatos(esdeveniments eventoPasar)
+        {
+            esdeveniments modificado = new esdeveniments();
+            DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
+            TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
+            //Insert versión 2----------------------------------
+            eventoPasar.cont_assitents = 0;                             //al crear, siempre será cero
+            eventoPasar.titol = textBoxTitulo.Text;
+            eventoPasar.descripcio = textBoxDescripcion.Text;
+            eventoPasar.adreca = textBoxDireccion.Text;
+            eventoPasar.id_comunitat = co.id;
+
+            eventoPasar.latitud = null;                                 //falta añadir este campo en el form
+            eventoPasar.longitud = null;                                //falta añadir este campo en el form
+
+
+            eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
+
+
+            eventoPasar.pagament = !checkBoxGratis.Checked;             //esta variable tiene valor al REVÉS de la bd, de ahí el !
+
+            //fecha y hora
+            eventoPasar.data_max = dateTimePickerFecha.MinDate;
+            eventoPasar.data = dateTimePickerFecha.Value;
+            eventoPasar.hora = st;
+
+            if (!checkBoxVirtual.Checked)                               //Si no es virtual, en enlace será NULL
+            {
+                eventoPasar.meet = null;
             }
             else
             {
-                
-                co = comunidades[comboBoxComunidad.SelectedIndex];          //Se recoge la comunidad escogida en el comboBox
-
-                DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
-                TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
-                
-                esdeveniments eventoPasar = new esdeveniments();            //Se crea un evento vacío para rellenar y luego añadir a la BD
-
-                //Insert versión 2----------------------------------
-                eventoPasar.cont_assitents = 0;                             //al crear, siempre será cero
-                eventoPasar.titol = textBoxTitulo.Text;
-                eventoPasar.descripcio = textBoxDescripcion.Text;
-                eventoPasar.adreca = textBoxDireccion.Text;
-                eventoPasar.id_comunitat = co.id;
-
-                eventoPasar.latitud = null;                                 //falta añadir este campo en el form
-                eventoPasar.longitud = null;                                //falta añadir este campo en el form
-
-
-                eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
-                
-                
-                eventoPasar.pagament = !checkBoxGratis.Checked;             //esta variable tiene valor al REVÉS de la bd, de ahí el !
-
-                //fecha y hora
-                eventoPasar.data_max = dateTimePickerFecha.MinDate;
-                eventoPasar.data = dateTimePickerFecha.Value;
-                eventoPasar.hora = st;
-
-                if (!checkBoxVirtual.Checked)                               //Si no es virtual, en enlace será NULL
-                {
-                    eventoPasar.meet = null;
-                }   
-                else
-                {
-                    eventoPasar.meet = textBoxEnlace.Text;                  //Si es virtual, en enlace no será NULL
-                }
-                
-
-                if (!checkBoxGratis.Checked)                                //Si no es gratis, el precio no será CERO
-                {
-                    eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
-                }
-                else
-                {
-                    eventoPasar.preu = 0;                                   //Si es gratis, el precio será CERO
-                }
-
-                if (!checkBoxMinima.Checked)                                //Si no hay mínimo, será CERO
-                {
-                    eventoPasar.quantitat_mínima = 0;
-                }
-                else
-                {
-                    eventoPasar.quantitat_mínima = Int32.Parse(textBoxminimo.Text);
-                }
-
-                if (!checkBoxmax.Checked)                                   //Si no hay máximo, será CERO
-                {
-                    eventoPasar.quantitat_max = 0;
-                }
-                else
-                {
-                    eventoPasar.quantitat_max = Int32.Parse(textBoxmax.Text);
-                }
-                //-------------------------------------------------------------
-
-
-                ConsultaOrm.InsertEvento(eventoPasar);                            //INSERCIÓN
-                    this.Close();                                           //SE CERRARÁ EL FORMULARIO DE AÑADIR
+                eventoPasar.meet = textBoxEnlace.Text;                  //Si es virtual, en enlace no será NULL
             }
+
+
+            if (!checkBoxGratis.Checked)                                //Si no es gratis, el precio no será CERO
+            {
+                eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
+            }
+            else
+            {
+                eventoPasar.preu = 0;                                   //Si es gratis, el precio será CERO
+            }
+
+            if (!checkBoxMinima.Checked)                                //Si no hay mínimo, será CERO
+            {
+                eventoPasar.quantitat_mínima = 0;
+            }
+            else
+            {
+                eventoPasar.quantitat_mínima = Int32.Parse(textBoxminimo.Text);
+            }
+
+            if (!checkBoxmax.Checked)                                   //Si no hay máximo, será CERO
+            {
+                eventoPasar.quantitat_max = 0;
+            }
+            else
+            {
+                eventoPasar.quantitat_max = Int32.Parse(textBoxmax.Text);
+            }
+
+            modificado.id = eventoPasar.id;
+            modificado = eventoPasar;
+            return modificado;
+        }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            esdeveniments eventoPasar = new esdeveniments();            //Se crea un evento vacío para rellenar y luego añadir a la BD
+
+            co = comunidades[comboBoxComunidad.SelectedIndex];          //Se recoge la comunidad escogida en el comboBox
+            if (modificar)
+            {
+                eventoPasar=copiaDatos(eventoPasar);
+                
+                ConsultaOrm.UpdateEvento(eventoPasar);
+            }
+            else
+            {
+                if (!compruebaDatos()) //arreglar
+                {
+                    MessageBox.Show("Faltan datos por introducir");
+                }
+                else
+                {
+                    DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
+                    TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
+
+                    eventoPasar=copiaDatos(eventoPasar);
+                    //-------------------------------------------------------------
+
+                    ConsultaOrm.InsertEvento(eventoPasar);                            //INSERCIÓN
+                }
+            
+                    
+            }
+            this.Close();                                           //SE CERRARÁ EL FORMULARIO DE AÑADIR
         }
 
         private bool compruebaDatos()
@@ -171,10 +223,12 @@ namespace Chrysallis
             textBoxmax.Enabled = false;
             textBoxPrecio.Enabled = false;
             textBoxEnlace.Enabled = false;
-            comunitatsBindingSource.DataSource = ConsultaOrm.SelectEventos();
+            comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidades();
 
+           
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,8 +280,7 @@ namespace Chrysallis
         private void ArchivoBuscar_Click(object sender, EventArgs e) 
         {
             if (compruebaArchivo()){
-                //añadimos a la label
-                //labelArchivo.Text = rutaCarpeta.FileName;
+                //añadimos a la label de archivo
                 labelArchivo.Text = Path.GetFileName(rutaImagen);
             }
         }
@@ -248,11 +301,6 @@ namespace Chrysallis
                 }
             }
             return correcto;
-        }
-
-        private void dateTimePickerHora_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBoxVirtual_CheckedChanged(object sender, EventArgs e)

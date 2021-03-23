@@ -22,31 +22,6 @@ namespace Chrysallis
             this.valoracions = new HashSet<valoracions>();
             this.socis = new HashSet<socis>();
         }
-        public esdeveniments(String titulo, String descripcion, DateTime fecha, TimeSpan hora, String direccion, int id_comunidad, String latitud, String longitud,
-            int imagen, int cantMax, int cantMin, float precio, Boolean gratis, DateTime fechaLimite, int contadorAsis,  String enlace)
-        {
-            this.titol = titulo;
-            this.descripcio = descripcion;
-            this.data = fecha;
-            this.hora = hora;
-            this.adreca = direccion;
-            this.id_comunitat = id_comunidad;
-            this.latitud = latitud;
-            this.longitud = longitud;
-            this.imatge = imagen;
-            this.quantitat_max = cantMax;
-            this.quantitat_mínima = cantMin;
-            this.preu = precio;
-            this.pagament = gratis;
-            this.data_max = fechaLimite;
-            this.cont_assitents = contadorAsis;
-            this.meet = enlace;
-
-            this.assistir = new HashSet<assistir>();
-            this.documents = new HashSet<documents>();
-            this.valoracions = new HashSet<valoracions>();
-            this.socis = new HashSet<socis>();
-        }
 
         public int id { get; set; }
         public string titol { get; set; }

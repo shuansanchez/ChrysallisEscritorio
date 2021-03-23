@@ -155,7 +155,7 @@
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(82, 17);
             this.labelDireccion.TabIndex = 23;
-            this.labelDireccion.Text = "DIRECCION";
+            this.labelDireccion.Text = "DIRECCIÓN";
             // 
             // labelHora
             // 
@@ -297,7 +297,7 @@
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.Size = new System.Drawing.Size(352, 22);
             this.dateTimePickerHora.TabIndex = 48;
-            this.dateTimePickerHora.ValueChanged += new System.EventHandler(this.dateTimePickerHora_ValueChanged);
+            
             // 
             // checkBoxVirtual
             // 

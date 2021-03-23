@@ -84,7 +84,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridViewEventos
             // 
@@ -111,12 +110,14 @@
             this.documentsDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.esdevenimentsBindingSource;
             this.dataGridViewEventos.Enabled = false;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(65, 81);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(66, 81);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.RowHeadersWidth = 51;
             this.dataGridViewEventos.RowTemplate.Height = 24;
+            this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEventos.Size = new System.Drawing.Size(663, 288);
             this.dataGridViewEventos.TabIndex = 3;
+            this.dataGridViewEventos.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridViewEventos_UserDeletingRow);
             // 
             // buttonBorrar
             // 
@@ -126,6 +127,7 @@
             this.buttonBorrar.TabIndex = 4;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // buttonModificar
             // 
@@ -321,6 +323,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Control_de_Eventos";
             this.Text = "Control_de_Eventos";
+            this.Activated += new System.EventHandler(this.Control_de_Eventos_Activated);
             this.Load += new System.EventHandler(this.Control_de_Eventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();

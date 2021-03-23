@@ -19,22 +19,10 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            /*if (textBoxApellidos.Text.Equals("") || textBoxCP.Text.Equals("") || textBoxDireccion.Text.Equals("") || textBoxID.Text.Equals("") ||
-textBoxNombre.Text.Equals("") || textBoxEmail.Text.Equals("") || textBoxTelefono.Text.Equals("") || textBoxCiudad.Text.Equals("") ||
-textBoxDNI.Text.Equals(""))
-            {
-                MessageBox.Show("Faltan datos por introducir");
-            }
-            else
-            {
-                this.Close();
-            }*/
-
+           
             //POR AHORA NO SE COMPRUEBA NADA
             socis nuevoSocio = new socis();
            
-            
-
             //NOT NULL OBLIGADOS
             nuevoSocio.num = Int32.Parse(textBoxID.Text);
             nuevoSocio.nom = textBoxNombre.Text;
@@ -59,9 +47,5 @@ textBoxDNI.Text.Equals(""))
             this.Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

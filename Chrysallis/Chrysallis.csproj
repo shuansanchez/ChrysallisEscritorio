@@ -135,7 +135,6 @@
     <Compile Include="esdeveniments.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Evento.cs" />
     <Compile Include="Eventos.cs">
       <SubType>Form</SubType>
     </Compile>
