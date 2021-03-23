@@ -105,12 +105,6 @@
     <Compile Include="CreaModAdmin.Designer.cs">
       <DependentUpon>CreaModAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AñadirSocio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AñadirSocio.Designer.cs">
-      <DependentUpon>AñadirSocio.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlAdministradores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,9 +182,6 @@
     </Compile>
     <EmbeddedResource Include="CreaModAdmin.resx">
       <DependentUpon>CreaModAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AñadirSocio.resx">
-      <DependentUpon>AñadirSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlAdministradores.resx">
       <DependentUpon>ControlAdministradores.cs</DependentUpon>
