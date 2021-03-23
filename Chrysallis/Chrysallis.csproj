@@ -135,12 +135,6 @@
     <Compile Include="esdeveniments.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Eventos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eventos.Designer.cs">
-      <DependentUpon>Eventos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlSocios.resx">
       <DependentUpon>ControlSocios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Eventos.resx">
-      <DependentUpon>Eventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>

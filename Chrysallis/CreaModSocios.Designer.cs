@@ -42,7 +42,7 @@
             this.textBoxApellidos = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelNum = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(160, 373);
+            this.buttonModificar.Location = new System.Drawing.Point(219, 373);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(104, 44);
             this.buttonModificar.TabIndex = 44;
@@ -66,16 +66,16 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(361, 373);
+            this.buttonCancelar.Location = new System.Drawing.Point(385, 382);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(106, 44);
+            this.buttonCancelar.Size = new System.Drawing.Size(82, 26);
             this.buttonCancelar.TabIndex = 43;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.ImagenChrysallis;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(574, 87);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 230);
@@ -155,14 +155,14 @@
             this.textBoxID.Size = new System.Drawing.Size(351, 22);
             this.textBoxID.TabIndex = 32;
             // 
-            // label9
+            // labelNum
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 17);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "ID";
+            this.labelNum.AutoSize = true;
+            this.labelNum.Location = new System.Drawing.Point(19, 33);
+            this.labelNum.Name = "labelNum";
+            this.labelNum.Size = new System.Drawing.Size(76, 17);
+            this.labelNum.TabIndex = 31;
+            this.labelNum.Text = "Num Socio";
             // 
             // label8
             // 
@@ -255,7 +255,7 @@
             this.Controls.Add(this.textBoxApellidos);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxID);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelNum);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -288,7 +288,7 @@
         private System.Windows.Forms.TextBox textBoxApellidos;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

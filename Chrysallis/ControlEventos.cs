@@ -34,7 +34,7 @@ namespace Chrysallis
             dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
         }
 
-        private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+       /* private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if (dataGridViewEventos.SelectedRows.Count > 0)
             {
@@ -48,7 +48,7 @@ namespace Chrysallis
                     e.Cancel = true;
                 }
             }
-        }
+        }*/
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
@@ -57,14 +57,15 @@ namespace Chrysallis
                 DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
-                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
-                    this.Control_de_Eventos_Load(sender, e);
+                        ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                        this.Control_de_Eventos_Load(sender, e);
                 }
             }
         }
 
         private void Control_de_Eventos_Activated(object sender, EventArgs e)
         {
+            dataGridViewEventos.ReadOnly = true;
             dataGridViewEventos.DataSource = null;
             dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
         }

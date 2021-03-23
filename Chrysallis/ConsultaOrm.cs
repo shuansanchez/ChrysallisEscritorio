@@ -57,7 +57,6 @@ namespace Chrysallis
 
         public static void UpdateEvento(esdeveniments _evento)
         {
-            //Orm.bdconnection.esdeveniments.AddOrUpdate(_evento);
             Orm.bdconnection.SaveChanges();
         }
 
@@ -94,6 +93,17 @@ namespace Chrysallis
                  select c
              ).ToList();
             return _socios;
+        }
+
+        public static void DeleteSocio(socis _socio)
+        {
+            Orm.bdconnection.socis.Remove(_socio);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static void UpdateSocio(socis _socio)
+        {
+            Orm.bdconnection.SaveChanges();
         }
 
     }

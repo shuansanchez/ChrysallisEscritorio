@@ -34,10 +34,6 @@
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
-            this.buttonBorrar = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
-            this.buttonAñadir = new System.Windows.Forms.Button();
-            this.buttonSocios = new System.Windows.Forms.Button();
             this.titolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +53,10 @@
             this.comunitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esdevenimentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonBorrar = new System.Windows.Forms.Button();
+            this.buttonModificar = new System.Windows.Forms.Button();
+            this.buttonAñadir = new System.Windows.Forms.Button();
+            this.buttonSocios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +109,6 @@
             this.comunitatsDataGridViewTextBoxColumn,
             this.documentsDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.esdevenimentsBindingSource;
-            this.dataGridViewEventos.Enabled = false;
             this.dataGridViewEventos.Location = new System.Drawing.Point(66, 81);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.RowHeadersWidth = 51;
@@ -117,46 +116,6 @@
             this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEventos.Size = new System.Drawing.Size(663, 288);
             this.dataGridViewEventos.TabIndex = 3;
-            this.dataGridViewEventos.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridViewEventos_UserDeletingRow);
-            // 
-            // buttonBorrar
-            // 
-            this.buttonBorrar.Location = new System.Drawing.Point(396, 394);
-            this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(111, 35);
-            this.buttonBorrar.TabIndex = 4;
-            this.buttonBorrar.Text = "Borrar";
-            this.buttonBorrar.UseVisualStyleBackColor = true;
-            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
-            // 
-            // buttonModificar
-            // 
-            this.buttonModificar.Location = new System.Drawing.Point(237, 394);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(112, 35);
-            this.buttonModificar.TabIndex = 5;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
-            // 
-            // buttonAñadir
-            // 
-            this.buttonAñadir.Location = new System.Drawing.Point(96, 394);
-            this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(102, 34);
-            this.buttonAñadir.TabIndex = 6;
-            this.buttonAñadir.Text = "Añadir";
-            this.buttonAñadir.UseVisualStyleBackColor = true;
-            this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
-            // 
-            // buttonSocios
-            // 
-            this.buttonSocios.Location = new System.Drawing.Point(548, 393);
-            this.buttonSocios.Name = "buttonSocios";
-            this.buttonSocios.Size = new System.Drawing.Size(111, 35);
-            this.buttonSocios.TabIndex = 7;
-            this.buttonSocios.Text = "Lista Socios";
-            this.buttonSocios.UseVisualStyleBackColor = true;
             // 
             // titolDataGridViewTextBoxColumn
             // 
@@ -305,6 +264,45 @@
             // esdevenimentsBindingSource
             // 
             this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
+            // 
+            // buttonBorrar
+            // 
+            this.buttonBorrar.Location = new System.Drawing.Point(396, 394);
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(111, 35);
+            this.buttonBorrar.TabIndex = 4;
+            this.buttonBorrar.Text = "Borrar";
+            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
+            // 
+            // buttonModificar
+            // 
+            this.buttonModificar.Location = new System.Drawing.Point(237, 394);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(112, 35);
+            this.buttonModificar.TabIndex = 5;
+            this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            // 
+            // buttonAñadir
+            // 
+            this.buttonAñadir.Location = new System.Drawing.Point(96, 394);
+            this.buttonAñadir.Name = "buttonAñadir";
+            this.buttonAñadir.Size = new System.Drawing.Size(102, 34);
+            this.buttonAñadir.TabIndex = 6;
+            this.buttonAñadir.Text = "Añadir";
+            this.buttonAñadir.UseVisualStyleBackColor = true;
+            this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
+            // 
+            // buttonSocios
+            // 
+            this.buttonSocios.Location = new System.Drawing.Point(548, 393);
+            this.buttonSocios.Name = "buttonSocios";
+            this.buttonSocios.Size = new System.Drawing.Size(111, 35);
+            this.buttonSocios.TabIndex = 7;
+            this.buttonSocios.Text = "Lista Socios";
+            this.buttonSocios.UseVisualStyleBackColor = true;
             // 
             // Control_de_Eventos
             // 

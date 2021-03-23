@@ -19,7 +19,9 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-           
+
+            //funciona insert into socis values (666, 'alejandro', 'saavedra', 1, '99999', null, 'maricon', '44555A', null, null, null, '12/06/17', 1, null, 1);
+
             //POR AHORA NO SE COMPRUEBA NADA
             socis nuevoSocio = new socis();
            
@@ -43,7 +45,7 @@ namespace Chrysallis
             nuevoSocio.data_naixement = null;
            
             ConsultaOrm.InsertSocio(nuevoSocio);
-
+            
             this.Close();
         }
 

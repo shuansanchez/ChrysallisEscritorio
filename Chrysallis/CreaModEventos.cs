@@ -135,14 +135,12 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            esdeveniments eventoPasar = new esdeveniments();            //Se crea un evento vacío para rellenar y luego añadir a la BD
-
+           
             co = comunidades[comboBoxComunidad.SelectedIndex];          //Se recoge la comunidad escogida en el comboBox
             if (modificar)
             {
-                eventoPasar=copiaDatos(eventoPasar);
-                
-                ConsultaOrm.UpdateEvento(eventoPasar);
+                modificaEvento=copiaDatos(modificaEvento);
+                ConsultaOrm.UpdateEvento(modificaEvento);
             }
             else
             {
@@ -155,10 +153,10 @@ namespace Chrysallis
                     DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
 
-                    eventoPasar=copiaDatos(eventoPasar);
+                    modificaEvento=copiaDatos(modificaEvento);
                     //-------------------------------------------------------------
 
-                    ConsultaOrm.InsertEvento(eventoPasar);                            //INSERCIÓN
+                    ConsultaOrm.InsertEvento(modificaEvento);                            //INSERCIÓN
                 }
             
                     
@@ -275,7 +273,6 @@ namespace Chrysallis
             }
             return correcto;
         }
-
 
         private void ArchivoBuscar_Click(object sender, EventArgs e) 
         {

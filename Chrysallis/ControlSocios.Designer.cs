@@ -35,10 +35,6 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
             this.codipostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menorssocisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,7 @@
             this.buttonBorrar.TabIndex = 12;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // dataGridViewSocios
             // 
@@ -117,36 +118,9 @@
             this.dataGridViewSocios.Name = "dataGridViewSocios";
             this.dataGridViewSocios.RowHeadersWidth = 51;
             this.dataGridViewSocios.RowTemplate.Height = 24;
+            this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSocios.Size = new System.Drawing.Size(663, 288);
             this.dataGridViewSocios.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(480, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(117, 28);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(357, 22);
-            this.textBoxFiltrar.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtrar";
-            // 
-            // socisBindingSource
-            // 
-            this.socisBindingSource.DataSource = typeof(Chrysallis.socis);
             // 
             // numDataGridViewTextBoxColumn
             // 
@@ -252,6 +226,34 @@
             this.menorssocisDataGridViewTextBoxColumn.Name = "menorssocisDataGridViewTextBoxColumn";
             this.menorssocisDataGridViewTextBoxColumn.Width = 125;
             // 
+            // socisBindingSource
+            // 
+            this.socisBindingSource.DataSource = typeof(Chrysallis.socis);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(480, 26);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // textBoxFiltrar
+            // 
+            this.textBoxFiltrar.Location = new System.Drawing.Point(117, 28);
+            this.textBoxFiltrar.Name = "textBoxFiltrar";
+            this.textBoxFiltrar.Size = new System.Drawing.Size(357, 22);
+            this.textBoxFiltrar.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(67, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Filtrar";
+            // 
             // Control_de_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,6 +271,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Control_de_Usuarios";
             this.Text = "Control_de_Socios";
+            this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
             this.Load += new System.EventHandler(this.Control_de_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
