@@ -169,7 +169,6 @@ namespace Chrysallis
             Boolean correcto = false;
             /* if(!textBoxTitulo.Text.Equals("")||!textBoxLocalidad.Text.Equals("") || !textBoxDireccion.Text.Equals(""))
              {
-
                  //campos de texto correctos
                  if (!checkBoxGratis.Checked && !textBoxPrecio.Text.Equals("") && Int32.TryParse(textBoxPrecio.Text, out int resultadoGratis))
                  {//si no gratis i hi ha preu

@@ -19,13 +19,13 @@ namespace Chrysallis
 
         private void buttonAñadir_Click(object sender, EventArgs e)
         {
-            Modificar_Socios nuevoUsuario = new Modificar_Socios();
+            Modificar_Socios nuevoUsuario = new Modificar_Socios(false);
             nuevoUsuario.ShowDialog();
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            Modificar_Socios cambiaSocio = new Modificar_Socios();
+            Modificar_Socios cambiaSocio = new Modificar_Socios(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             cambiaSocio.ShowDialog();
         }
 
