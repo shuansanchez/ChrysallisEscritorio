@@ -99,18 +99,6 @@
     <Compile Include="comunitats.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <Compile Include="CreaModAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreaModAdmin.Designer.cs">
-      <DependentUpon>CreaModAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlAdministradores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlAdministradores.Designer.cs">
-      <DependentUpon>ControlAdministradores.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlEventos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +110,12 @@
     </Compile>
     <Compile Include="ControlSocios.Designer.cs">
       <DependentUpon>ControlSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlValoraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlValoraciones.Designer.cs">
+      <DependentUpon>ControlValoraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="documents.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
@@ -180,17 +174,14 @@
     <Compile Include="valoracions.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreaModAdmin.resx">
-      <DependentUpon>CreaModAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlAdministradores.resx">
-      <DependentUpon>ControlAdministradores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ControlEventos.resx">
       <DependentUpon>ControlEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlSocios.resx">
       <DependentUpon>ControlSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlValoraciones.resx">
+      <DependentUpon>ControlValoraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>

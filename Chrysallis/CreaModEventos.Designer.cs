@@ -66,6 +66,10 @@
             this.labelAsistMax = new System.Windows.Forms.Label();
             this.checkBoxmax = new System.Windows.Forms.CheckBox();
             this.labelArchivo = new System.Windows.Forms.Label();
+            this.textBoxLongitud = new System.Windows.Forms.TextBox();
+            this.labelLongitud = new System.Windows.Forms.Label();
+            this.textBoxLatitud = new System.Windows.Forms.TextBox();
+            this.labelLatitud = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
@@ -73,7 +77,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(232, 497);
+            this.buttonModificar.Location = new System.Drawing.Point(232, 532);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(95, 44);
             this.buttonModificar.TabIndex = 38;
@@ -83,7 +87,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(384, 506);
+            this.buttonCancelar.Location = new System.Drawing.Point(384, 541);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(80, 27);
             this.buttonCancelar.TabIndex = 37;
@@ -103,7 +107,7 @@
             // 
             // textBoxDescripcion
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 391);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(112, 426);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(352, 86);
@@ -133,7 +137,7 @@
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(38, 371);
+            this.labelDescripcion.Location = new System.Drawing.Point(38, 406);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(100, 17);
             this.labelDescripcion.TabIndex = 26;
@@ -297,7 +301,6 @@
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.Size = new System.Drawing.Size(352, 22);
             this.dateTimePickerHora.TabIndex = 48;
-            
             // 
             // checkBoxVirtual
             // 
@@ -389,12 +392,48 @@
             this.labelArchivo.TabIndex = 58;
             this.labelArchivo.Text = "--";
             // 
+            // textBoxLongitud
+            // 
+            this.textBoxLongitud.Location = new System.Drawing.Point(112, 379);
+            this.textBoxLongitud.Name = "textBoxLongitud";
+            this.textBoxLongitud.Size = new System.Drawing.Size(352, 22);
+            this.textBoxLongitud.TabIndex = 60;
+            // 
+            // labelLongitud
+            // 
+            this.labelLongitud.AutoSize = true;
+            this.labelLongitud.Location = new System.Drawing.Point(12, 381);
+            this.labelLongitud.Name = "labelLongitud";
+            this.labelLongitud.Size = new System.Drawing.Size(80, 17);
+            this.labelLongitud.TabIndex = 59;
+            this.labelLongitud.Text = "LONGITUD";
+            // 
+            // textBoxLatitud
+            // 
+            this.textBoxLatitud.Location = new System.Drawing.Point(112, 351);
+            this.textBoxLatitud.Name = "textBoxLatitud";
+            this.textBoxLatitud.Size = new System.Drawing.Size(352, 22);
+            this.textBoxLatitud.TabIndex = 62;
+            // 
+            // labelLatitud
+            // 
+            this.labelLatitud.AutoSize = true;
+            this.labelLatitud.Location = new System.Drawing.Point(12, 353);
+            this.labelLatitud.Name = "labelLatitud";
+            this.labelLatitud.Size = new System.Drawing.Size(66, 17);
+            this.labelLatitud.TabIndex = 61;
+            this.labelLatitud.Text = "LATITUD";
+            // 
             // CreaModEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(848, 578);
+            this.Controls.Add(this.textBoxLatitud);
+            this.Controls.Add(this.labelLatitud);
+            this.Controls.Add(this.textBoxLongitud);
+            this.Controls.Add(this.labelLongitud);
             this.Controls.Add(this.labelArchivo);
             this.Controls.Add(this.checkBoxmax);
             this.Controls.Add(this.checkBoxMinima);
@@ -479,5 +518,9 @@
         private System.Windows.Forms.Label labelAsistMax;
         private System.Windows.Forms.CheckBox checkBoxmax;
         private System.Windows.Forms.Label labelArchivo;
+        private System.Windows.Forms.TextBox textBoxLongitud;
+        private System.Windows.Forms.Label labelLongitud;
+        private System.Windows.Forms.TextBox textBoxLatitud;
+        private System.Windows.Forms.Label labelLatitud;
     }
 }

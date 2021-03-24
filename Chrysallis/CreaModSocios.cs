@@ -29,10 +29,17 @@ namespace Chrysallis
             this.modificar = modificar;
             this.socioModificar = socioModificar;
             comboBoxComunidades.Enabled = false;
-            
+            textBoxNum.Enabled = false;
             if (modificar)
             {
-                
+                usuaris usuarioSocio = new usuaris();
+                usuarioSocio = ConsultaOrm.SelectUsuariosSocios(socioModificar);
+                if (usuarioSocio!=null)
+                {
+                    comboBoxRoles.SelectedIndex = usuarioSocio.id_rol - 4;
+                    //falta guardar la comunidad del admin
+                }
+
                 textBoxNum.Text = socioModificar.num.ToString();
                 textBoxNombre.Text = socioModificar.nom;
                 textBoxApellidos.Text = socioModificar.cognoms;
@@ -83,7 +90,18 @@ namespace Chrysallis
                 socioModificar.data_baixa = dateTimePickerBaja.Value;
                 socioModificar.data_naixement = dateTimePickerNacimiento.Value;
 
-                ConsultaOrm.UpdateSocio(socioModificar);
+                ConsultaOrm.UpdateSocio();
+
+                usuaris usuarioSocio = new usuaris();
+                //usuarioSocio = ConsultaOrm.SelectUsuarioSocio(socioModificar); SOBRA
+                //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex+4;
+                usuarioSocio.id = socioModificar.id;
+                usuarioSocio.contrasenya = socioModificar.contrasenya;
+                usuarioSocio.email = socioModificar.email;
+                //debe crearse un campo para el nombre de usuario en creaModSocios
+                usuarioSocio.username = "hola";
+                ConsultaOrm.InsertUsuario(usuarioSocio);
             }
             else
             {
@@ -111,6 +129,21 @@ namespace Chrysallis
                 nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
 
                 ConsultaOrm.InsertSocio(nuevoSocio);
+
+                //-------------------------------------------
+                usuaris usuarioSocio = new usuaris();
+                //no funcionará, debería ir de 1 a 3, no de 4 a 6
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
+                usuarioSocio.id = nuevoSocio.id;
+                usuarioSocio.contrasenya = nuevoSocio.contrasenya;
+                usuarioSocio.email = nuevoSocio.email;
+                //debe crearse un campo para el nombre de usuario en creaModSocios
+                usuarioSocio.username = "hola";
+                ConsultaOrm.InsertUsuario(usuarioSocio);
+
+                //--------------------------------------------
+
+                documents nuevoDocumento = new documents(); 
             }
             this.Close();
         }

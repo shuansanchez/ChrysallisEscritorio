@@ -88,6 +88,17 @@ namespace Chrysallis
             return _usuarios;
         }
 
+        public static usuaris SelectUsuariosSocios(socis _modificaSocio)
+        {
+            usuaris _usuarioSocio =
+             (
+                 from c in Orm.bdconnection.usuaris
+                 where _modificaSocio.id==c.id
+                 select c
+             ).FirstOrDefault();
+            return _usuarioSocio;
+        }
+
         //SOCIOS
         public static void InsertSocio(socis socio)
         {
@@ -111,7 +122,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        public static void UpdateSocio(socis _socio)
+        public static void UpdateSocio()
         {
             Orm.bdconnection.SaveChanges();
         }
@@ -128,6 +139,38 @@ namespace Chrysallis
             return _roles;
         }
 
+        //VALORACIONES
+        public static List<valoracions> SelectValoracionesEvento(esdeveniments _evento)
+        {
+            List<valoracions> _valoraciones =
+             (
+                 from c in Orm.bdconnection.valoracions
+                 where _evento.id==c.id_esdeveniment
+                 select c
+             ).ToList();
+            return _valoraciones;
+        }
+
+        public static List<valoracions> SelectValoracionesSocio(socis _socio)
+        {
+            List<valoracions> _valoraciones =
+             (
+                 from c in Orm.bdconnection.valoracions
+                 where _socio.id == c.id_soci
+                 select c
+             ).ToList();
+            return _valoraciones;
+        }
+
+        public static List<valoracions> SelectValoraciones()
+        {
+            List<valoracions> _valoraciones =
+             (
+                 from c in Orm.bdconnection.valoracions
+                 select c
+             ).ToList();
+            return _valoraciones;
+        }
 
     }
 }

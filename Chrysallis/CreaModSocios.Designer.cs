@@ -70,6 +70,8 @@
             this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
+            this.labelNombreUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
@@ -77,7 +79,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(543, 455);
+            this.buttonModificar.Location = new System.Drawing.Point(571, 458);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(104, 44);
             this.buttonModificar.TabIndex = 44;
@@ -87,7 +89,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(703, 464);
+            this.buttonCancelar.Location = new System.Drawing.Point(731, 467);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(82, 26);
             this.buttonCancelar.TabIndex = 43;
@@ -98,7 +100,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(596, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(624, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 230);
             this.pictureBox1.TabIndex = 42;
@@ -107,7 +109,7 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
-            this.checkBoxActivo.Location = new System.Drawing.Point(399, 455);
+            this.checkBoxActivo.Location = new System.Drawing.Point(399, 483);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(68, 21);
             this.checkBoxActivo.TabIndex = 41;
@@ -261,7 +263,7 @@
             // checkBoxApp
             // 
             this.checkBoxApp.AutoSize = true;
-            this.checkBoxApp.Location = new System.Drawing.Point(116, 455);
+            this.checkBoxApp.Location = new System.Drawing.Point(116, 483);
             this.checkBoxApp.Name = "checkBoxApp";
             this.checkBoxApp.Size = new System.Drawing.Size(129, 21);
             this.checkBoxApp.TabIndex = 45;
@@ -286,7 +288,7 @@
             // 
             // textBoxPassw
             // 
-            this.textBoxPassw.Location = new System.Drawing.Point(116, 314);
+            this.textBoxPassw.Location = new System.Drawing.Point(116, 342);
             this.textBoxPassw.Name = "textBoxPassw";
             this.textBoxPassw.Size = new System.Drawing.Size(351, 22);
             this.textBoxPassw.TabIndex = 49;
@@ -294,7 +296,7 @@
             // labelPassw
             // 
             this.labelPassw.AutoSize = true;
-            this.labelPassw.Location = new System.Drawing.Point(15, 317);
+            this.labelPassw.Location = new System.Drawing.Point(15, 345);
             this.labelPassw.Name = "labelPassw";
             this.labelPassw.Size = new System.Drawing.Size(81, 17);
             this.labelPassw.TabIndex = 48;
@@ -303,7 +305,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 345);
+            this.label1.Location = new System.Drawing.Point(15, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 50;
@@ -312,7 +314,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 373);
+            this.label2.Location = new System.Drawing.Point(15, 401);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 52;
@@ -321,7 +323,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 401);
+            this.label3.Location = new System.Drawing.Point(15, 429);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 54;
@@ -332,7 +334,7 @@
             this.checkBoxBaja.AutoSize = true;
             this.checkBoxBaja.Checked = true;
             this.checkBoxBaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBaja.Location = new System.Drawing.Point(473, 404);
+            this.checkBoxBaja.Location = new System.Drawing.Point(473, 428);
             this.checkBoxBaja.Name = "checkBoxBaja";
             this.checkBoxBaja.Size = new System.Drawing.Size(104, 21);
             this.checkBoxBaja.TabIndex = 56;
@@ -342,21 +344,21 @@
             // 
             // dateTimePickerNacimiento
             // 
-            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(116, 345);
+            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(116, 373);
             this.dateTimePickerNacimiento.Name = "dateTimePickerNacimiento";
             this.dateTimePickerNacimiento.Size = new System.Drawing.Size(351, 22);
             this.dateTimePickerNacimiento.TabIndex = 57;
             // 
             // dateTimePickerAlta
             // 
-            this.dateTimePickerAlta.Location = new System.Drawing.Point(116, 374);
+            this.dateTimePickerAlta.Location = new System.Drawing.Point(116, 402);
             this.dateTimePickerAlta.Name = "dateTimePickerAlta";
             this.dateTimePickerAlta.Size = new System.Drawing.Size(351, 22);
             this.dateTimePickerAlta.TabIndex = 58;
             // 
             // dateTimePickerBaja
             // 
-            this.dateTimePickerBaja.Location = new System.Drawing.Point(116, 403);
+            this.dateTimePickerBaja.Location = new System.Drawing.Point(116, 431);
             this.dateTimePickerBaja.Name = "dateTimePickerBaja";
             this.dateTimePickerBaja.Size = new System.Drawing.Size(351, 22);
             this.dateTimePickerBaja.TabIndex = 59;
@@ -366,7 +368,7 @@
             this.comboBoxRoles.DataSource = this.rolsBindingSource;
             this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(596, 349);
+            this.comboBoxRoles.Location = new System.Drawing.Point(624, 352);
             this.comboBoxRoles.Name = "comboBoxRoles";
             this.comboBoxRoles.Size = new System.Drawing.Size(211, 24);
             this.comboBoxRoles.TabIndex = 60;
@@ -379,7 +381,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(596, 326);
+            this.label4.Location = new System.Drawing.Point(624, 329);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 17);
             this.label4.TabIndex = 61;
@@ -390,7 +392,7 @@
             this.comboBoxComunidades.DataSource = this.comunitatsBindingSource;
             this.comboBoxComunidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunidades.FormattingEnabled = true;
-            this.comboBoxComunidades.Location = new System.Drawing.Point(596, 396);
+            this.comboBoxComunidades.Location = new System.Drawing.Point(624, 399);
             this.comboBoxComunidades.Name = "comboBoxComunidades";
             this.comboBoxComunidades.Size = new System.Drawing.Size(211, 24);
             this.comboBoxComunidades.TabIndex = 62;
@@ -402,18 +404,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(596, 375);
+            this.label5.Location = new System.Drawing.Point(624, 378);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 63;
             this.label5.Text = "Comunidad";
+            // 
+            // textBoxNombreUsuario
+            // 
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(116, 314);
+            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
+            this.textBoxNombreUsuario.Size = new System.Drawing.Size(351, 22);
+            this.textBoxNombreUsuario.TabIndex = 65;
+            // 
+            // labelNombreUsuario
+            // 
+            this.labelNombreUsuario.AutoSize = true;
+            this.labelNombreUsuario.Location = new System.Drawing.Point(15, 317);
+            this.labelNombreUsuario.Name = "labelNombreUsuario";
+            this.labelNombreUsuario.Size = new System.Drawing.Size(73, 17);
+            this.labelNombreUsuario.TabIndex = 64;
+            this.labelNombreUsuario.Text = "Username";
             // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(819, 517);
+            this.ClientSize = new System.Drawing.Size(847, 546);
+            this.Controls.Add(this.textBoxNombreUsuario);
+            this.Controls.Add(this.labelNombreUsuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxComunidades);
             this.Controls.Add(this.label4);
@@ -506,5 +526,7 @@
         private System.Windows.Forms.ComboBox comboBoxComunidades;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxNombreUsuario;
+        private System.Windows.Forms.Label labelNombreUsuario;
     }
 }

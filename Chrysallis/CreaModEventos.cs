@@ -61,6 +61,8 @@ namespace Chrysallis
                 textBoxDireccion.Text = modificaEvento.adreca;
                 textBoxmax.Text =modificaEvento.quantitat_max.ToString();
                 textBoxPrecio.Text = modificaEvento.quantitat_mínima.ToString();
+                textBoxLatitud.Text = modificaEvento.latitud;
+                textBoxLongitud.Text = modificaEvento.longitud;
                 //FALTA ARCHIVO E IMAGEN TAMBIEN
             }
         }
@@ -77,8 +79,8 @@ namespace Chrysallis
             eventoPasar.adreca = textBoxDireccion.Text;
             eventoPasar.id_comunitat = co.id;
 
-            eventoPasar.latitud = null;                                 //falta añadir este campo en el form
-            eventoPasar.longitud = null;                                //falta añadir este campo en el form
+            eventoPasar.latitud = textBoxLatitud.Text;                                 //falta añadir este campo en el form
+            eventoPasar.longitud = textBoxLongitud.Text;                                //falta añadir este campo en el form
 
 
             eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?

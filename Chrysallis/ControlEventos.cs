@@ -69,5 +69,11 @@ namespace Chrysallis
             dataGridViewEventos.DataSource = null;
             dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
         }
+
+        private void buttonSocios_Click(object sender, EventArgs e)
+        {
+            ControlValoraciones nuevoValoraciones = new ControlValoraciones(true, (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+            nuevoValoraciones.ShowDialog();
+        }
     }
 }
