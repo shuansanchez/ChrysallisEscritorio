@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Chrysallis
 
 {
-
+    
     public partial class Modificar_Socios : Form
     {
         socis socioModificar;
@@ -191,8 +191,20 @@ namespace Chrysallis
 
         private void button1_Click(object sender, EventArgs e)
         {
-  CreacioMenor creaM = new CreacioMenor(llistaMenors);
+            CreacioMenor creaM = new CreacioMenor(llistaMenors);
             creaM.ShowDialog();
+        }
+
+        private void verMenorBtt_Click(object sender, EventArgs e)
+        {
+            VerMenores verM = new VerMenores(llistaMenors);
+            verM.ShowDialog();
+        }
+
+        private void crearMenorBtn_Click(object sender, EventArgs e)
+        {
+            CrearModMenor formMenor = new CrearModMenor(llistaMenors);
+            formMenor.ShowDialog();
         }
     }
 }

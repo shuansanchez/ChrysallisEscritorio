@@ -55,7 +55,6 @@
             this.checkBoxApp = new System.Windows.Forms.CheckBox();
             this.textBoxTelefono2 = new System.Windows.Forms.TextBox();
             this.labelTelf2 = new System.Windows.Forms.Label();
-            this.textBoxPassw = new System.Windows.Forms.TextBox();
             this.labelPassw = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,8 +69,12 @@
             this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
             this.labelNombreUsuario = new System.Windows.Forms.Label();
+            this.crearMenorBtn = new System.Windows.Forms.Button();
+            this.labelMenores = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPassw = new System.Windows.Forms.TextBox();
+            this.verMenorBtt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
@@ -79,7 +82,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(571, 458);
+            this.buttonModificar.Location = new System.Drawing.Point(624, 459);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(78, 36);
             this.buttonModificar.TabIndex = 44;
@@ -89,9 +92,9 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(731, 467);
+            this.buttonCancelar.Location = new System.Drawing.Point(709, 460);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(62, 21);
+            this.buttonCancelar.Size = new System.Drawing.Size(74, 34);
             this.buttonCancelar.TabIndex = 43;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -109,7 +112,7 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
-            this.checkBoxActivo.Location = new System.Drawing.Point(399, 483);
+            this.checkBoxActivo.Location = new System.Drawing.Point(391, 465);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(56, 17);
             this.checkBoxActivo.TabIndex = 41;
@@ -120,69 +123,69 @@
             // 
             this.textBoxCP.Location = new System.Drawing.Point(116, 286);
             this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.Size = new System.Drawing.Size(351, 22);
+            this.textBoxCP.Size = new System.Drawing.Size(351, 20);
             this.textBoxCP.TabIndex = 40;
             // 
             // textBoxCiudad
             // 
             this.textBoxCiudad.Location = new System.Drawing.Point(116, 258);
             this.textBoxCiudad.Name = "textBoxCiudad";
-            this.textBoxCiudad.Size = new System.Drawing.Size(351, 22);
+            this.textBoxCiudad.Size = new System.Drawing.Size(351, 20);
             this.textBoxCiudad.TabIndex = 39;
             // 
             // textBoxTelefono1
             // 
             this.textBoxTelefono1.Location = new System.Drawing.Point(116, 202);
             this.textBoxTelefono1.Name = "textBoxTelefono1";
-            this.textBoxTelefono1.Size = new System.Drawing.Size(351, 22);
+            this.textBoxTelefono1.Size = new System.Drawing.Size(351, 20);
             this.textBoxTelefono1.TabIndex = 38;
             // 
             // textBoxDNI
             // 
             this.textBoxDNI.Location = new System.Drawing.Point(116, 173);
             this.textBoxDNI.Name = "textBoxDNI";
-            this.textBoxDNI.Size = new System.Drawing.Size(351, 22);
+            this.textBoxDNI.Size = new System.Drawing.Size(351, 20);
             this.textBoxDNI.TabIndex = 37;
             // 
             // textBoxDireccion
             // 
             this.textBoxDireccion.Location = new System.Drawing.Point(116, 145);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(351, 22);
+            this.textBoxDireccion.Size = new System.Drawing.Size(351, 20);
             this.textBoxDireccion.TabIndex = 36;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(116, 117);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(351, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(351, 20);
             this.textBoxEmail.TabIndex = 35;
             // 
             // textBoxApellidos
             // 
             this.textBoxApellidos.Location = new System.Drawing.Point(116, 89);
             this.textBoxApellidos.Name = "textBoxApellidos";
-            this.textBoxApellidos.Size = new System.Drawing.Size(351, 22);
+            this.textBoxApellidos.Size = new System.Drawing.Size(351, 20);
             this.textBoxApellidos.TabIndex = 34;
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(116, 62);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(351, 22);
+            this.textBoxNombre.Size = new System.Drawing.Size(351, 20);
             this.textBoxNombre.TabIndex = 33;
             // 
             // textBoxNum
             // 
-            this.textBoxNum.Location = new System.Drawing.Point(116, 34);
+            this.textBoxNum.Location = new System.Drawing.Point(116, 29);
             this.textBoxNum.Name = "textBoxNum";
-            this.textBoxNum.Size = new System.Drawing.Size(351, 22);
+            this.textBoxNum.Size = new System.Drawing.Size(351, 20);
             this.textBoxNum.TabIndex = 32;
             // 
             // labelNum
             // 
             this.labelNum.AutoSize = true;
-            this.labelNum.Location = new System.Drawing.Point(14, 27);
+            this.labelNum.Location = new System.Drawing.Point(27, 32);
             this.labelNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(59, 13);
@@ -192,7 +195,7 @@
             // labelCP
             // 
             this.labelCP.AutoSize = true;
-            this.labelCP.Location = new System.Drawing.Point(11, 235);
+            this.labelCP.Location = new System.Drawing.Point(14, 289);
             this.labelCP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCP.Name = "labelCP";
             this.labelCP.Size = new System.Drawing.Size(72, 13);
@@ -202,7 +205,7 @@
             // labelLocalidad
             // 
             this.labelLocalidad.AutoSize = true;
-            this.labelLocalidad.Location = new System.Drawing.Point(14, 212);
+            this.labelLocalidad.Location = new System.Drawing.Point(17, 258);
             this.labelLocalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLocalidad.Name = "labelLocalidad";
             this.labelLocalidad.Size = new System.Drawing.Size(53, 13);
@@ -212,7 +215,7 @@
             // labelTelf1
             // 
             this.labelTelf1.AutoSize = true;
-            this.labelTelf1.Location = new System.Drawing.Point(14, 167);
+            this.labelTelf1.Location = new System.Drawing.Point(15, 202);
             this.labelTelf1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTelf1.Name = "labelTelf1";
             this.labelTelf1.Size = new System.Drawing.Size(58, 13);
@@ -222,7 +225,7 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(14, 143);
+            this.labelDNI.Location = new System.Drawing.Point(31, 173);
             this.labelDNI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(26, 13);
@@ -232,7 +235,7 @@
             // labelDireccion
             // 
             this.labelDireccion.AutoSize = true;
-            this.labelDireccion.Location = new System.Drawing.Point(14, 120);
+            this.labelDireccion.Location = new System.Drawing.Point(23, 145);
             this.labelDireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(52, 13);
@@ -242,7 +245,7 @@
             // labelCorreo
             // 
             this.labelCorreo.AutoSize = true;
-            this.labelCorreo.Location = new System.Drawing.Point(14, 98);
+            this.labelCorreo.Location = new System.Drawing.Point(31, 117);
             this.labelCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(32, 13);
@@ -252,7 +255,7 @@
             // labelApellidos
             // 
             this.labelApellidos.AutoSize = true;
-            this.labelApellidos.Location = new System.Drawing.Point(14, 75);
+            this.labelApellidos.Location = new System.Drawing.Point(25, 92);
             this.labelApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelApellidos.Name = "labelApellidos";
             this.labelApellidos.Size = new System.Drawing.Size(54, 13);
@@ -262,7 +265,7 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(14, 53);
+            this.labelNombre.Location = new System.Drawing.Point(29, 65);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
@@ -272,7 +275,7 @@
             // checkBoxApp
             // 
             this.checkBoxApp.AutoSize = true;
-            this.checkBoxApp.Location = new System.Drawing.Point(116, 483);
+            this.checkBoxApp.Location = new System.Drawing.Point(116, 504);
             this.checkBoxApp.Name = "checkBoxApp";
             this.checkBoxApp.Size = new System.Drawing.Size(99, 17);
             this.checkBoxApp.TabIndex = 45;
@@ -283,30 +286,23 @@
             // 
             this.textBoxTelefono2.Location = new System.Drawing.Point(116, 230);
             this.textBoxTelefono2.Name = "textBoxTelefono2";
-            this.textBoxTelefono2.Size = new System.Drawing.Size(351, 22);
+            this.textBoxTelefono2.Size = new System.Drawing.Size(351, 20);
             this.textBoxTelefono2.TabIndex = 47;
             // 
             // labelTelf2
             // 
             this.labelTelf2.AutoSize = true;
-            this.labelTelf2.Location = new System.Drawing.Point(14, 189);
+            this.labelTelf2.Location = new System.Drawing.Point(15, 230);
             this.labelTelf2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTelf2.Name = "labelTelf2";
             this.labelTelf2.Size = new System.Drawing.Size(58, 13);
             this.labelTelf2.TabIndex = 46;
             this.labelTelf2.Text = "Teléfono 2";
             // 
-            // textBoxPassw
-            // 
-            this.textBoxPassw.Location = new System.Drawing.Point(116, 342);
-            this.textBoxPassw.Name = "textBoxPassw";
-            this.textBoxPassw.Size = new System.Drawing.Size(351, 22);
-            this.textBoxPassw.TabIndex = 49;
-            // 
             // labelPassw
             // 
             this.labelPassw.AutoSize = true;
-            this.labelPassw.Location = new System.Drawing.Point(11, 280);
+            this.labelPassw.Location = new System.Drawing.Point(18, 347);
             this.labelPassw.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassw.Name = "labelPassw";
             this.labelPassw.Size = new System.Drawing.Size(61, 13);
@@ -316,7 +312,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 303);
+            this.label1.Location = new System.Drawing.Point(17, 376);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
@@ -326,7 +322,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 326);
+            this.label2.Location = new System.Drawing.Point(18, 406);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
@@ -336,7 +332,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 349);
+            this.label3.Location = new System.Drawing.Point(15, 435);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
@@ -348,7 +344,7 @@
             this.checkBoxBaja.AutoSize = true;
             this.checkBoxBaja.Checked = true;
             this.checkBoxBaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBaja.Location = new System.Drawing.Point(473, 428);
+            this.checkBoxBaja.Location = new System.Drawing.Point(474, 432);
             this.checkBoxBaja.Name = "checkBoxBaja";
             this.checkBoxBaja.Size = new System.Drawing.Size(81, 17);
             this.checkBoxBaja.TabIndex = 56;
@@ -358,23 +354,23 @@
             // 
             // dateTimePickerNacimiento
             // 
-            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(116, 373);
+            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(116, 370);
             this.dateTimePickerNacimiento.Name = "dateTimePickerNacimiento";
-            this.dateTimePickerNacimiento.Size = new System.Drawing.Size(351, 22);
+            this.dateTimePickerNacimiento.Size = new System.Drawing.Size(351, 20);
             this.dateTimePickerNacimiento.TabIndex = 57;
             // 
             // dateTimePickerAlta
             // 
-            this.dateTimePickerAlta.Location = new System.Drawing.Point(116, 402);
+            this.dateTimePickerAlta.Location = new System.Drawing.Point(116, 399);
             this.dateTimePickerAlta.Name = "dateTimePickerAlta";
-            this.dateTimePickerAlta.Size = new System.Drawing.Size(351, 22);
+            this.dateTimePickerAlta.Size = new System.Drawing.Size(351, 20);
             this.dateTimePickerAlta.TabIndex = 58;
             // 
             // dateTimePickerBaja
             // 
-            this.dateTimePickerBaja.Location = new System.Drawing.Point(116, 431);
+            this.dateTimePickerBaja.Location = new System.Drawing.Point(116, 428);
             this.dateTimePickerBaja.Name = "dateTimePickerBaja";
-            this.dateTimePickerBaja.Size = new System.Drawing.Size(351, 22);
+            this.dateTimePickerBaja.Size = new System.Drawing.Size(351, 20);
             this.dateTimePickerBaja.TabIndex = 59;
             // 
             // comboBoxRoles
@@ -395,7 +391,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(468, 267);
+            this.label4.Location = new System.Drawing.Point(626, 336);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
@@ -419,37 +415,77 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(468, 307);
+            this.label5.Location = new System.Drawing.Point(626, 383);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 63;
             this.label5.Text = "Comunidad";
             // 
-            // textBoxNombreUsuario
-            // 
-            this.textBoxNombreUsuario.Location = new System.Drawing.Point(116, 314);
-            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
-            this.textBoxNombreUsuario.Size = new System.Drawing.Size(351, 22);
-            this.textBoxNombreUsuario.TabIndex = 65;
-            // 
             // labelNombreUsuario
             // 
             this.labelNombreUsuario.AutoSize = true;
-            this.labelNombreUsuario.Location = new System.Drawing.Point(11, 258);
+            this.labelNombreUsuario.Location = new System.Drawing.Point(18, 316);
             this.labelNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
             this.labelNombreUsuario.Size = new System.Drawing.Size(55, 13);
             this.labelNombreUsuario.TabIndex = 64;
             this.labelNombreUsuario.Text = "Username";
             // 
+            // crearMenorBtn
+            // 
+            this.crearMenorBtn.Location = new System.Drawing.Point(116, 457);
+            this.crearMenorBtn.Name = "crearMenorBtn";
+            this.crearMenorBtn.Size = new System.Drawing.Size(83, 31);
+            this.crearMenorBtn.TabIndex = 66;
+            this.crearMenorBtn.Text = "Añadir Menor";
+            this.crearMenorBtn.UseVisualStyleBackColor = true;
+            this.crearMenorBtn.Click += new System.EventHandler(this.crearMenorBtn_Click);
+            // 
+            // labelMenores
+            // 
+            this.labelMenores.AutoSize = true;
+            this.labelMenores.Location = new System.Drawing.Point(31, 463);
+            this.labelMenores.Name = "labelMenores";
+            this.labelMenores.Size = new System.Drawing.Size(48, 13);
+            this.labelMenores.TabIndex = 68;
+            this.labelMenores.Text = "Menores";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(116, 313);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(351, 20);
+            this.textBox1.TabIndex = 69;
+            // 
+            // textBoxPassw
+            // 
+            this.textBoxPassw.Location = new System.Drawing.Point(116, 340);
+            this.textBoxPassw.Name = "textBoxPassw";
+            this.textBoxPassw.Size = new System.Drawing.Size(351, 20);
+            this.textBoxPassw.TabIndex = 70;
+            // 
+            // verMenorBtt
+            // 
+            this.verMenorBtt.Location = new System.Drawing.Point(216, 457);
+            this.verMenorBtt.Name = "verMenorBtt";
+            this.verMenorBtt.Size = new System.Drawing.Size(83, 31);
+            this.verMenorBtt.TabIndex = 71;
+            this.verMenorBtt.Text = "Ver menores";
+            this.verMenorBtt.UseVisualStyleBackColor = true;
+            this.verMenorBtt.Click += new System.EventHandler(this.verMenorBtt_Click);
+            // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(847, 546);
-            this.Controls.Add(this.textBoxNombreUsuario);
+            this.ClientSize = new System.Drawing.Size(849, 571);
+            this.Controls.Add(this.verMenorBtt);
+            this.Controls.Add(this.textBoxPassw);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelMenores);
+            this.Controls.Add(this.crearMenorBtn);
             this.Controls.Add(this.labelNombreUsuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxComunidades);
@@ -462,7 +498,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPassw);
             this.Controls.Add(this.labelPassw);
             this.Controls.Add(this.textBoxTelefono2);
             this.Controls.Add(this.labelTelf2);
@@ -528,7 +563,6 @@
         private System.Windows.Forms.CheckBox checkBoxApp;
         private System.Windows.Forms.TextBox textBoxTelefono2;
         private System.Windows.Forms.Label labelTelf2;
-        private System.Windows.Forms.TextBox textBoxPassw;
         private System.Windows.Forms.Label labelPassw;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -543,7 +577,11 @@
         private System.Windows.Forms.ComboBox comboBoxComunidades;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxNombreUsuario;
         private System.Windows.Forms.Label labelNombreUsuario;
+        private System.Windows.Forms.Button crearMenorBtn;
+        private System.Windows.Forms.Label labelMenores;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPassw;
+        private System.Windows.Forms.Button verMenorBtt;
     }
 }

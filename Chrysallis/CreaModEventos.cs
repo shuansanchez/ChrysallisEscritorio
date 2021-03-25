@@ -105,7 +105,7 @@ namespace Chrysallis
 
             if (!checkBoxGratis.Checked)                                //Si no es gratis, el precio no será CERO
             {
-                eventoPasar.preu = Int32.Parse(textBoxPrecio.Text);
+                eventoPasar.preu = float.Parse(textBoxPrecio.Text);
             }
             else
             {
