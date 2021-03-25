@@ -93,9 +93,9 @@ namespace Chrysallis
                 ConsultaOrm.UpdateSocio();
 
                 usuaris usuarioSocio = new usuaris();
-                //usuarioSocio = ConsultaOrm.SelectUsuarioSocio(socioModificar); SOBRA
+
                 //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex+4;
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
                 usuarioSocio.id = socioModificar.id;
                 usuarioSocio.contrasenya = socioModificar.contrasenya;
                 usuarioSocio.email = socioModificar.email;
@@ -132,13 +132,13 @@ namespace Chrysallis
 
                 //-------------------------------------------
                 usuaris usuarioSocio = new usuaris();
-                //no funcionará, debería ir de 1 a 3, no de 4 a 6
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
+               
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
                 usuarioSocio.id = nuevoSocio.id;
                 usuarioSocio.contrasenya = nuevoSocio.contrasenya;
                 usuarioSocio.email = nuevoSocio.email;
                 //debe crearse un campo para el nombre de usuario en creaModSocios
-                usuarioSocio.username = "hola";
+                usuarioSocio.username = textBoxNombreUsuario.Text;
                 ConsultaOrm.InsertUsuario(usuarioSocio);
                 //--------------------------------------------
                 //RELACION USUARIO - COMUNIDAD

@@ -79,7 +79,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(571, 458);
+            this.buttonModificar.Location = new System.Drawing.Point(599, 465);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(104, 44);
             this.buttonModificar.TabIndex = 44;
@@ -89,7 +89,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(731, 467);
+            this.buttonCancelar.Location = new System.Drawing.Point(753, 483);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(82, 26);
             this.buttonCancelar.TabIndex = 43;
