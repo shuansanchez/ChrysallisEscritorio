@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis
+
 {
+
     public partial class Modificar_Socios : Form
     {
         socis socioModificar;
+        BindingList<menors> llistaMenors = new BindingList<menors>();
         Boolean modificar;
         public Modificar_Socios(Boolean modificar)
         {
@@ -105,6 +108,7 @@ namespace Chrysallis
             }
             else
             {
+                //CREAR
                 //POR AHORA NO SE COMPRUEBA NADA
                 socis nuevoSocio = new socis();
 
@@ -135,6 +139,7 @@ namespace Chrysallis
                 //no funcionará, debería ir de 1 a 3, no de 4 a 6
                 usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
                 usuarioSocio.id = nuevoSocio.id;
+                
                 usuarioSocio.contrasenya = nuevoSocio.contrasenya;
                 usuarioSocio.email = nuevoSocio.email;
                 //debe crearse un campo para el nombre de usuario en creaModSocios
@@ -177,6 +182,17 @@ namespace Chrysallis
                 comboBoxComunidades.Enabled = true;
                 comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidadesNombres();
             }
+        }
+
+        private void nomMenorText_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+  CreacioMenor creaM = new CreacioMenor(llistaMenors);
+            creaM.ShowDialog();
         }
     }
 }

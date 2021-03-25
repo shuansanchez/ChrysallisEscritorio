@@ -117,6 +117,12 @@
     <Compile Include="ControlValoraciones.Designer.cs">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreacioMenor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreacioMenor.Designer.cs">
+      <DependentUpon>CreacioMenor.cs</DependentUpon>
+    </Compile>
     <Compile Include="documents.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlValoraciones.resx">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreacioMenor.resx">
+      <DependentUpon>CreacioMenor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>

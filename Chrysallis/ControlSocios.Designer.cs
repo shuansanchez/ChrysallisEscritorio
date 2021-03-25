@@ -35,9 +35,6 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,15 +49,19 @@
             this.localitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menorssocisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUsers
             // 
-            this.buttonUsers.Location = new System.Drawing.Point(553, 388);
+            this.buttonUsers.Location = new System.Drawing.Point(415, 315);
+            this.buttonUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(138, 35);
+            this.buttonUsers.Size = new System.Drawing.Size(104, 28);
             this.buttonUsers.TabIndex = 15;
             this.buttonUsers.Text = "Lista Valoraciones";
             this.buttonUsers.UseVisualStyleBackColor = true;
@@ -68,9 +69,10 @@
             // 
             // buttonAñadir
             // 
-            this.buttonAñadir.Location = new System.Drawing.Point(101, 389);
+            this.buttonAñadir.Location = new System.Drawing.Point(76, 316);
+            this.buttonAñadir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(102, 34);
+            this.buttonAñadir.Size = new System.Drawing.Size(76, 28);
             this.buttonAñadir.TabIndex = 14;
             this.buttonAñadir.Text = "Añadir";
             this.buttonAñadir.UseVisualStyleBackColor = true;
@@ -78,9 +80,10 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(242, 389);
+            this.buttonModificar.Location = new System.Drawing.Point(182, 316);
+            this.buttonModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(112, 35);
+            this.buttonModificar.Size = new System.Drawing.Size(84, 28);
             this.buttonModificar.TabIndex = 13;
             this.buttonModificar.Text = "Modificar";
             this.buttonModificar.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(401, 389);
+            this.buttonBorrar.Location = new System.Drawing.Point(301, 316);
+            this.buttonBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(111, 35);
+            this.buttonBorrar.Size = new System.Drawing.Size(83, 28);
             this.buttonBorrar.TabIndex = 12;
             this.buttonBorrar.Text = "Borrar";
             this.buttonBorrar.UseVisualStyleBackColor = true;
@@ -115,37 +119,14 @@
             this.localitatsDataGridViewTextBoxColumn,
             this.menorssocisDataGridViewTextBoxColumn});
             this.dataGridViewSocios.DataSource = this.socisBindingSource;
-            this.dataGridViewSocios.Location = new System.Drawing.Point(70, 76);
+            this.dataGridViewSocios.Location = new System.Drawing.Point(52, 62);
+            this.dataGridViewSocios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewSocios.Name = "dataGridViewSocios";
             this.dataGridViewSocios.RowHeadersWidth = 51;
             this.dataGridViewSocios.RowTemplate.Height = 24;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSocios.Size = new System.Drawing.Size(663, 288);
+            this.dataGridViewSocios.Size = new System.Drawing.Size(574, 234);
             this.dataGridViewSocios.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(480, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(117, 28);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(357, 22);
-            this.textBoxFiltrar.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtrar";
             // 
             // numDataGridViewTextBoxColumn
             // 
@@ -255,12 +236,39 @@
             // 
             this.socisBindingSource.DataSource = typeof(Chrysallis.socis);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(374, 23);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // textBoxFiltrar
+            // 
+            this.textBoxFiltrar.Location = new System.Drawing.Point(88, 23);
+            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltrar.Name = "textBoxFiltrar";
+            this.textBoxFiltrar.Size = new System.Drawing.Size(269, 20);
+            this.textBoxFiltrar.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Filtrar";
+            // 
             // Control_de_Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(677, 377);
             this.Controls.Add(this.buttonUsers);
             this.Controls.Add(this.buttonAñadir);
             this.Controls.Add(this.buttonModificar);
@@ -270,6 +278,7 @@
             this.Controls.Add(this.textBoxFiltrar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Control_de_Usuarios";
             this.Text = "Control_de_Socios";
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
