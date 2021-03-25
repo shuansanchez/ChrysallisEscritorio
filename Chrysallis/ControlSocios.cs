@@ -56,7 +56,7 @@ namespace Chrysallis
 
         private void buttonUsers_Click(object sender, EventArgs e)
         {
-            ControlValoraciones nuevoValoraciones = new ControlValoraciones(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+            ControlValoraciones nuevoValoraciones = new ControlValoraciones(false, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             nuevoValoraciones.ShowDialog();
         }
     }

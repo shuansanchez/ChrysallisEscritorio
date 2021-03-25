@@ -145,7 +145,7 @@ namespace Chrysallis
             List<valoracions> _valoraciones =
              (
                  from c in Orm.bdconnection.valoracions
-                 where _evento.id==c.id_esdeveniment
+                 where _evento.id == c.id_esdeveniment
                  select c
              ).ToList();
             return _valoraciones;
