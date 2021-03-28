@@ -16,6 +16,7 @@ namespace Chrysallis
     {
         socis socioModificar;
         BindingList<menors> llistaMenors = new BindingList<menors>();
+        String relacionMenor;
         Boolean modificar;
         public Modificar_Socios(Boolean modificar)
         {
@@ -132,7 +133,24 @@ namespace Chrysallis
                 nuevoSocio.data_baixa = dateTimePickerBaja.Value;
                 nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
 
+                //confirmem creacio soci
+                
                 ConsultaOrm.InsertSocio(nuevoSocio);
+                int idnuevoSocio= ConsultaOrm.SelectIDSocio(nuevoSocio.dni);
+                
+
+                for (int i = 0; i <llistaMenors.Count(); i++)
+                {
+                    ConsultaOrm.InsertMenor(llistaMenors[i]);
+                    //get id menor
+                    //ConsultaOrm.Sele(llistaMenors[i]);
+
+                    ConsultaOrm.InsertRelacionMenor(idnuevoSocio, llistaMenors[i].id, relacionMenor);
+                    
+                }
+
+                //crear menors, agafar id i afegir menors al soci creat
+
 
                 //-------------------------------------------
                 usuaris usuarioSocio = new usuaris();
@@ -203,7 +221,7 @@ namespace Chrysallis
 
         private void crearMenorBtn_Click(object sender, EventArgs e)
         {
-            CrearModMenor formMenor = new CrearModMenor(llistaMenors);
+            CrearModMenor formMenor = new CrearModMenor(llistaMenors, relacionMenor);
             formMenor.ShowDialog();
         }
     }

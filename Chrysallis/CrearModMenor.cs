@@ -13,11 +13,13 @@ namespace Chrysallis
     public partial class CrearModMenor : Form
     {
         BindingList<menors> llistaMenors;
+        String relacionMenor;
 
-        public CrearModMenor(BindingList<menors> llistaMenors)
+        public CrearModMenor(BindingList<menors> llistaMenors, String relacionMenor)
         {
             InitializeComponent();
             this.llistaMenors = llistaMenors;
+            this.relacionMenor = relacionMenor;
         }
 
         private void CrearModMenor_Load(object sender, EventArgs e)
@@ -33,7 +35,8 @@ namespace Chrysallis
             m1.nom = nomText.Text.ToString();
             m1.menors_socis.Add(relacio);
 
-            llistaMenors.Add(m1);
+            relacionMenor= relacioMenor.Text.ToString();
+            //llistaMenors.Add(m1);
             this.Close();
         }
     }

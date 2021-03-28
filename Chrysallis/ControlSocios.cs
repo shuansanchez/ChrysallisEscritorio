@@ -59,5 +59,10 @@ namespace Chrysallis
             ControlValoraciones nuevoValoraciones = new ControlValoraciones(false, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             nuevoValoraciones.ShowDialog();
         }
+
+        private void btnMenores_Click(object sender, EventArgs e)
+        {
+            //escoger datos del user seleccionar y llamar formulario crear menores
+        }
     }
 }
