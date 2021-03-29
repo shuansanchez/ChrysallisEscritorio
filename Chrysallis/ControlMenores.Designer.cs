@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlMenores));
             this.dataGridViewMenores = new System.Windows.Forms.DataGridView();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripCrearMenor = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModMenor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBorrarMenor = new System.Windows.Forms.ToolStripButton();
             this.bindingSourceRelacion = new System.Windows.Forms.BindingSource(this.components);
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).BeginInit();
             this.toolStripCrearMenor.SuspendLayout();
@@ -61,6 +61,14 @@
             this.dataGridViewMenores.TabIndex = 0;
             this.dataGridViewMenores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMenores_CellFormatting);
             // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.Width = 125;
+            // 
             // menorsBindingSource
             // 
             this.menorsBindingSource.DataSource = typeof(Chrysallis.menors);
@@ -74,52 +82,40 @@
             this.toolStripButtonBorrarMenor});
             this.toolStripCrearMenor.Location = new System.Drawing.Point(0, 0);
             this.toolStripCrearMenor.Name = "toolStripCrearMenor";
-            this.toolStripCrearMenor.Size = new System.Drawing.Size(800, 27);
+            this.toolStripCrearMenor.Size = new System.Drawing.Size(800, 31);
             this.toolStripCrearMenor.TabIndex = 1;
             this.toolStripCrearMenor.Text = "toolStrip1";
-            
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
+            this.toolStripButton2.Text = "Crear";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButtonModMenor
             // 
-            this.toolStripButtonModMenor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonModMenor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModMenor.Image")));
             this.toolStripButtonModMenor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonModMenor.Name = "toolStripButtonModMenor";
-            this.toolStripButtonModMenor.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonModMenor.Text = "toolStripButton1";
+            this.toolStripButtonModMenor.Size = new System.Drawing.Size(97, 28);
+            this.toolStripButtonModMenor.Text = "Modificar";
             this.toolStripButtonModMenor.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonBorrarMenor
             // 
-            this.toolStripButtonBorrarMenor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonBorrarMenor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBorrarMenor.Image")));
             this.toolStripButtonBorrarMenor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonBorrarMenor.Name = "toolStripButtonBorrarMenor";
-            this.toolStripButtonBorrarMenor.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonBorrarMenor.Text = "toolStripButton3";
+            this.toolStripButtonBorrarMenor.Size = new System.Drawing.Size(74, 28);
+            this.toolStripButtonBorrarMenor.Text = "Borrar";
             this.toolStripButtonBorrarMenor.Click += new System.EventHandler(this.toolStripButtonBorrarMenor_Click);
             // 
             // bindingSourceRelacion
             // 
             this.bindingSourceRelacion.DataSource = typeof(Chrysallis.menors_socis);
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.Width = 125;
             // 
             // ControlMenores
             // 

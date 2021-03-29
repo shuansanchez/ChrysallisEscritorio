@@ -27,6 +27,8 @@ namespace Chrysallis
                 menorsBindingSource.DataSource = ConsultaOrm.SelectRelaciones(listaRelaciones[i], gestionarSocio);
             }*/
             
+            //mostrar menores del socio con el id de gestionarSocio
+
             
         }
 
