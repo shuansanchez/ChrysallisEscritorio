@@ -54,6 +54,7 @@
             this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -258,33 +259,39 @@
             // 
             // toolStripButtonCrear
             // 
-            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
             this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCrear.Name = "toolStripButtonCrear";
-            this.toolStripButtonCrear.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonCrear.Text = "toolStripButton1";
+            this.toolStripButtonCrear.Size = new System.Drawing.Size(68, 24);
+            this.toolStripButtonCrear.Text = "Crear";
             this.toolStripButtonCrear.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonModificar
             // 
-            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
             this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonModificar.Name = "toolStripButtonModificar";
-            this.toolStripButtonModificar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonModificar.Text = "toolStripButton3";
+            this.toolStripButtonModificar.Size = new System.Drawing.Size(97, 24);
+            this.toolStripButtonModificar.Text = "Modificar";
             this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
             // 
             // toolStripButtonEliminar
             // 
-            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
             this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
-            this.toolStripButtonEliminar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonEliminar.Text = "toolStripButton2";
+            this.toolStripButtonEliminar.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButtonEliminar.Text = "Eliminar";
             this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(318, 386);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
             // Control_de_Usuarios
             // 
@@ -292,6 +299,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1046, 464);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonMenores);
             this.Controls.Add(this.buttonValoraciones);
@@ -340,5 +348,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonCrear;
         private System.Windows.Forms.ToolStripButton toolStripButtonModificar;
         private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
+        private System.Windows.Forms.Label label2;
     }
 }

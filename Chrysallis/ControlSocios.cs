@@ -97,7 +97,7 @@ namespace Chrysallis
                         //aqui borramos las valoraciones del evento a borrar
                         for (int i = 0; i < listaMenores.Count; i++)
                         {
-                            List<menors> listaMenor = ConsultaOrm.SelectRelacionesMenor(listaMenores[i]);
+                            List<menors> listaMenor = ConsultaOrm.SelectRelacionMenor(listaMenores[i]);
                             ConsultaOrm.DeleteSocioMenor(listaMenores[i]);
                             ConsultaOrm.DeleteMenor(listaMenor[i]);
                         }
@@ -110,7 +110,6 @@ namespace Chrysallis
 
         private void buttonMenores_Click(object sender, EventArgs e)
         {
-            //
             //(socis)dataGridViewSocios.SelectedRows[0].DataBoundItem
             ControlMenores gestionaMenores = new ControlMenores((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             gestionaMenores.ShowDialog();

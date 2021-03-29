@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menors_socis.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="menorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -130,7 +127,7 @@
   <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABltSURBVHhe7d0xjmXXdYVhNWFYnBPnIIAzUcBYYEzNgoES
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAABltSURBVHhe7d0xjmXXdYVhNWFYnBPnIIAzUcBYYEzNgoES
         R54AA42CgBIxEmMqb/seWbYlarG7quu9dfa99/uAHxCoZlWw9z3vNKvq1a9u6LOjL46+Ofru6Pujn47+
         S9K4/nr0p6M/Hv3+aD276xkGeLHPj746+vEoHTSSztFfjn579OsjgA/68uiHo3SYSDpnfz76zRHAv3h3
         9PXR+6N0gEg6d+vZ/t3RetYB/mYdCN8epUND0rX6w9G/HQH87W/+6aCQdM3+48glAG5ufc3ff/aX7pdL
@@ -245,7 +242,7 @@
   <data name="toolStripButtonModMenor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACONSURBVHhe7d17tPZpWdDxAWYYwEjiMIAoEnhKQkAUEMSQ
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACONSURBVHhe7d17tPZpWdDxAWYYwEjiMIAoEnhKQkAUEMSQ
         KJe5kAxa1TJRxIBShJYQJyVC5WDmMUhAU4ckAjNKJRc6yLBAMRDkTBGsAIcIFjAKwzAcpq4f79rN6Xrf
         2c9+7ut5rvv3fD5rfdeCP/f9u+e+7r3f3372WQAAAHAobhjdKfo70eOj50e/H70+eld0UfSx6P9Gl0Qf
         jt4d/Un0B9GLoh+NHhJ9Q3TzCABo5sbR/aNnRq+OLouW4T6yD0Qvjh4e3TG6TgQA7NjtoidFb4w+F2VD
@@ -403,7 +400,7 @@
   <data name="toolStripButtonBorrarMenor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACmYSURBVHhe7d1fzLzpXddxdgttt+5i1AOTUkxAY2qDyJFo
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACmYSURBVHhe7d1fzLzpXddxdgttt+5i1AOTUkxAY2qDyJFo
         u1sOjHgEpm7bA2OipYiJUQH7J+3J7qahYZfdJdF4UhpClMSWkAgcIIkSBW3ZHpgYlyoQq9JtY7qrAQ2i
         3bJd/V6hG37+8n6eZ2aeuT73d677/UreSbNpOzPX97pn7p1n5p6v2qFXVW+tnq6eqZ6vvlT9XzOzr/S/
         ql+tfrF6onqwGs8dki7QfdUHqhcqOuDNzK5r/MvCe6vXVpIuxDurz1d0UJuZHdNz1cOVpMbuqR6rXq7o

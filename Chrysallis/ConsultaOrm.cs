@@ -9,7 +9,7 @@ namespace Chrysallis
     {
         
         //COMUNIDADES
-          public static List<comunitats> SelectComunidades()
+        public static List<comunitats> SelectComunidades()
         {
             List<comunitats> _comunidades =
             (
@@ -65,13 +65,10 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-
-
         public static void UpdateEvento(esdeveniments _evento)
         {
             Orm.bdconnection.SaveChanges();
         }
-
 
         //USUARIOS
         public static void InsertUsuario(usuaris usuari)
@@ -155,21 +152,7 @@ namespace Chrysallis
 
         }
 
-        public static int SelectIDSocio(string dniSocio)
-        {
-
-           int _id =
-                (
-                    from c in Orm.bdconnection.socis
-                    where c.dni==dniSocio
-                    select c.id).First();
-            return _id;
-
-        }
-
-
         //ROLES
-
         public static List<string> SelectRoles()
         {
             List<string> _roles =
@@ -219,11 +202,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-
-
         //MENORES
-
-
         public static List<menors> SelectMenores()
         {
             List<menors> _menores =
@@ -245,7 +224,18 @@ namespace Chrysallis
             return _menores;
         }
 
-        public static List<menors> SelectRelacionesMenor(menors_socis _relacion)
+        public static menors SelectRelacionesMenor(menors_socis _relacion)
+        {
+            menors _menores =
+             (
+                 from c in Orm.bdconnection.menors
+                 where _relacion.id_menor == c.id
+                 select c
+             ).FirstOrDefault();
+            return _menores;
+        }
+
+        public static List<menors> SelectRelacionMenor(menors_socis _relacion)
         {
             List<menors> _menores =
              (
@@ -256,18 +246,16 @@ namespace Chrysallis
             return _menores;
         }
 
-        //FUNCION PARA MOSTRAR LOS MENORES DE X PERSONA
-        /*public static List<menors> SelectRelacionesSocio(socis _socio)
-         {
-             List<menors_socis> _menores =
-              (
-                  from c in Orm.bdconnection.menors_socis
-                  where _socio.id == c.id_soci
-                  select c
-              ).ToList();
-             return _menores;
-         }*/
-
+        public static List<menors> SelectRelaciones(menors_socis _relacion, socis _socio)
+        {
+            List<menors> _menores =
+             (
+                 from c in Orm.bdconnection.menors
+                 where (_relacion.id_menor == c.id) && (_socio.id == _relacion.id_soci)
+                 select c
+             ).ToList();
+            return _menores;
+        }
 
         public static void DeleteMenor(menors _menor)
         {
