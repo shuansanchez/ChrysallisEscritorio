@@ -291,7 +291,6 @@
             // 
             // socisBindingSource
             // 
-            this.socisBindingSource.DataSource = typeof(Chrysallis.socis);
             // 
             // Control_de_Usuarios
             // 
@@ -312,7 +311,6 @@
             this.Name = "Control_de_Usuarios";
             this.Text = "Control_de_Socios";
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
-            this.Load += new System.EventHandler(this.Control_de_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

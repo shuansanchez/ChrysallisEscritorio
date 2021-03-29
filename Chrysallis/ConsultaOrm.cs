@@ -218,7 +218,7 @@ namespace Chrysallis
                  select c
              ).ToList();
             return _menores;
-        }
+        } //PASO 1 SOCIS-MENORS
 
         public static void InsertMenor(menors menor)
         {
@@ -242,6 +242,17 @@ namespace Chrysallis
                  where _socio.id == c.id_soci
                  select c
              ).ToList();
+            return _menores;
+        }
+
+        public static menors SelectRelacionSocio(menors_socis _menorsocio)
+        {
+            menors _menores =
+             (
+                 from c in Orm.bdconnection.menors
+                 where c.id == _menorsocio.id_menor
+                 select c
+             ).FirstOrDefault() ;
             return _menores;
         }
 

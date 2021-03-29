@@ -276,7 +276,6 @@
             // 
             // esdevenimentsBindingSource
             // 
-            this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
             // 
             // toolStrip1
             // 
