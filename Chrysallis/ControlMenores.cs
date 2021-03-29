@@ -55,5 +55,19 @@ namespace Chrysallis
 
             ConsultaOrm.DeleteMenor(borrar);
         }
+
+        private void toolStripCrearMenor_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewMenores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                //menors_socis _relacio = (menors_socis)dataGridViewMenores.Rows[e.RowIndex].DataBoundItem;
+               // e.Value = _relacio.relacio;
+            }
+        }
     }
 }

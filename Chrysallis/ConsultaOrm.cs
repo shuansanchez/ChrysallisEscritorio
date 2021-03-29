@@ -213,11 +213,6 @@ namespace Chrysallis
 
         //MENORES
 
-        public static void InsertMenor(menors _menor)
-        {
-            Orm.bdconnection.menors.Add(_menor);
-            Orm.bdconnection.SaveChanges();
-        }
 
         public static List<menors> SelectMenores()
         {
