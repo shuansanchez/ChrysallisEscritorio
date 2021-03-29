@@ -30,6 +30,7 @@ namespace Chrysallis
             creaMenor.ShowDialog();
         }
 
+        //obrir formulari omplint els camps amb la info de l'usuari
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             CrearModMenor creaMenor = new CrearModMenor(false, gestionarSocio, (menors)dataGridViewMenores.SelectedRows[0].DataBoundItem);
@@ -65,8 +66,8 @@ namespace Chrysallis
         {
             if (e.ColumnIndex == 1)
             {
-                //menors_socis _relacio = (menors_socis)dataGridViewMenores.Rows[e.RowIndex].DataBoundItem;
-               // e.Value = _relacio.relacio;
+               // menors_socis _relacio = (menors_socis)dataGridViewMenores.Rows[e.RowIndex].DataBoundItem;
+               //e.Value = _relacio.relacio;
             }
         }
     }

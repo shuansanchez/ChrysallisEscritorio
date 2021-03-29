@@ -267,8 +267,5 @@ namespace Chrysallis
             Orm.bdconnection.menors_socis.Remove(_relacion);
             Orm.bdconnection.SaveChanges();
         }
-
-
-
     }
 }

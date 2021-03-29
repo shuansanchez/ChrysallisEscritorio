@@ -35,13 +35,15 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModMenor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBorrarMenor = new System.Windows.Forms.ToolStripButton();
-            this.menors_socis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menorssocisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceRelacion = new System.Windows.Forms.BindingSource(this.components);
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menors_socis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenores)).BeginInit();
             this.toolStripCrearMenor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menorssocisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRelacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,12 +56,12 @@
             this.menors_socis});
             this.dataGridViewMenores.DataSource = this.menorsBindingSource;
             this.dataGridViewMenores.Location = new System.Drawing.Point(9, 24);
-            this.dataGridViewMenores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewMenores.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewMenores.Name = "dataGridViewMenores";
             this.dataGridViewMenores.RowHeadersWidth = 51;
             this.dataGridViewMenores.RowTemplate.Height = 24;
             this.dataGridViewMenores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMenores.Size = new System.Drawing.Size(582, 332);
+            this.dataGridViewMenores.Size = new System.Drawing.Size(556, 300);
             this.dataGridViewMenores.TabIndex = 0;
             this.dataGridViewMenores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMenores_CellFormatting);
             // 
@@ -107,11 +109,17 @@
             this.toolStripButtonBorrarMenor.Text = "toolStripButton3";
             this.toolStripButtonBorrarMenor.Click += new System.EventHandler(this.toolStripButtonBorrarMenor_Click);
             // 
-            // menors_socis
+            // menorsBindingSource
             // 
-            this.menors_socis.DataPropertyName = "menors_socis";
-            this.menors_socis.HeaderText = "menors_socis";
-            this.menors_socis.Name = "menors_socis";
+            this.menorsBindingSource.DataSource = typeof(Chrysallis.menors);
+            // 
+            // menorssocisBindingSource
+            // 
+            this.menorssocisBindingSource.DataSource = typeof(Chrysallis.menors_socis);
+            // 
+            // bindingSourceRelacion
+            // 
+            this.bindingSourceRelacion.DataSource = typeof(Chrysallis.menors_socis);
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -119,15 +127,15 @@
             this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
             this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.Width = 125;
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 200;
             // 
-            // menorsBindingSource
+            // menors_socis
             // 
-            this.menorsBindingSource.DataSource = typeof(Chrysallis.menors);
-            // 
-            // bindingSourceRelacion
-            // 
-            this.bindingSourceRelacion.DataSource = typeof(Chrysallis.menors_socis);
+            this.menors_socis.DataPropertyName = "menors_socis";
+            this.menors_socis.HeaderText = "Relación";
+            this.menors_socis.Name = "menors_socis";
+            this.menors_socis.ReadOnly = true;
             // 
             // ControlMenores
             // 
@@ -136,7 +144,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.toolStripCrearMenor);
             this.Controls.Add(this.dataGridViewMenores);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ControlMenores";
             this.Text = "ControlMenores";
             this.Activated += new System.EventHandler(this.ControlMenores_Activated);
@@ -145,6 +153,7 @@
             this.toolStripCrearMenor.ResumeLayout(false);
             this.toolStripCrearMenor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menorssocisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRelacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonModMenor;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrarMenor;
         private System.Windows.Forms.BindingSource bindingSourceRelacion;
+        private System.Windows.Forms.BindingSource menorssocisBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn menors_socis;
     }
