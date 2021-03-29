@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -161,7 +162,9 @@ namespace Chrysallis
         {
             if (compruebaArchivo()){
                 //añadimos a la label
-                labelArchivo.Text = rutaCarpeta.FileName;
+               
+                labelArchivo.Text = Path.GetFileName(rutaImagen);
+
             }
         }
 
