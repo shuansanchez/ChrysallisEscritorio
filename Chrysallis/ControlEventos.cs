@@ -49,12 +49,13 @@ namespace Chrysallis
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            esdeveniments eventoElegido = (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem;
             if (dataGridViewEventos.SelectedRows.Count > 0)
             {
                 DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
-                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesEvento(eventoElegido);
                     if (listaValoraciones.Count <= 1)
                     {
                         //aqui borramos las valoraciones del evento a borrar
@@ -68,7 +69,7 @@ namespace Chrysallis
                     {
                         ConsultaOrm.DeleteDocumento(ConsultaOrm.SelectDocumentoEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem)[0]);
                     }
-                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    ConsultaOrm.DeleteEvento(eventoElegido);
                     this.Control_de_Eventos_Load(sender, e);
 
                 }

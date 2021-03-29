@@ -21,12 +21,14 @@ namespace Chrysallis
 
         private void ControlMenores_Load(object sender, EventArgs e)
         {
-            //mostrar menores del socio con el id de gestionarSocio
             List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio(gestionarSocio);
+            List<menors> resultado = new List<menors>();
             for (int i = 0; i < listaRelaciones.Count; i++)
             {
-                menorsBindingSource.DataSource = ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]);
+                resultado.Add(ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]));
             }
+            menorsBindingSource.DataSource = null;
+            menorsBindingSource.DataSource = resultado;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -43,27 +45,33 @@ namespace Chrysallis
 
         private void ControlMenores_Activated(object sender, EventArgs e)
         {
-            //menorsBindingSource.DataSource = ConsultaOrm.SelectMenores();
             List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio(gestionarSocio);
+            List<menors> resultado = new List<menors>();
             for (int i = 0; i < listaRelaciones.Count; i++)
             {
-                menorsBindingSource.DataSource = ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]);
+                resultado.Add(ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]));
             }
+            menorsBindingSource.DataSource = null;
+            menorsBindingSource.DataSource = resultado;
         }
 
         private void toolStripButtonBorrarMenor_Click(object sender, EventArgs e)
         {
-            menors borrar = (menors)dataGridViewMenores.SelectedRows[0].DataBoundItem;
 
-            menors_socis borraRelacion = new menors_socis();
-            borraRelacion.id_soci = gestionarSocio.id;
-            borraRelacion.id_menor = borrar.id;
-            borraRelacion.socis = gestionarSocio;
-            borraRelacion.menors = borrar;
-            borraRelacion.relacio = "";
-            ConsultaOrm.DeleteRelacion(borraRelacion);
+            DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialogConfirmaBorra == DialogResult.OK)
+            {
+                menors borrar = (menors)dataGridViewMenores.CurrentRow.DataBoundItem;
 
-            ConsultaOrm.DeleteMenor(borrar);
+                menors_socis borraRelacion = ConsultaOrm.SelectRelacion(gestionarSocio);
+
+                //BORRABA DOBLE
+                //ConsultaOrm.DeleteRelacion(borraRelacion);
+
+                ConsultaOrm.DeleteMenor(borrar);
+                this.ControlMenores_Activated(sender, e);
+            }
+             
         }
 
         private void dataGridViewMenores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

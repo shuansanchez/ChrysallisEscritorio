@@ -145,30 +145,6 @@ namespace Chrysallis
                 //debe crearse un campo para el nombre de usuario en creaModSocios
                 usuarioSocio.username = textBoxNombreUsuario.Text;
                 ConsultaOrm.InsertUsuario(usuarioSocio);
-                //--------------------------------------------
-                //RELACION USUARIO - COMUNIDAD
-
-                int ROL_ADMIN_BOOMER = 5;
-                if (usuarioSocio.id_rol == ROL_ADMIN_BOOMER)
-                {
-                    comunitats maricon = new comunitats();
-                    usuarioSocio.comunitats.Add(maricon);
-                }
-
-                //--------------------------------------------
-                //RELACION SOCIO - MENOR
-
-                int ROL_USUARIO_BOOMER = 4;
-
-                if (usuarioSocio.id_rol == ROL_USUARIO_BOOMER)
-                {
-                    menors menorNuevo = new menors();
-                    menors_socis nuevaRelacion = new menors_socis();
-                    nuevaRelacion.id_soci = socioModificar.id;
-                    nuevaRelacion.id_menor = menorNuevo.id;
-                    nuevaRelacion.relacio = "Abuelo";
-                    socioModificar.menors_socis.Add(nuevaRelacion);
-                }
 
                 //--------------------------------------------
 

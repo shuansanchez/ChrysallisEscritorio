@@ -252,7 +252,18 @@ namespace Chrysallis
                  from c in Orm.bdconnection.menors
                  where c.id == _menorsocio.id_menor
                  select c
-             ).FirstOrDefault() ;
+             ).FirstOrDefault();
+            return _menores;
+        } //PASO 2 SOCIS-MENORS
+
+        public static menors_socis SelectRelacion(socis _socio)
+        {
+            menors_socis _menores =
+             (
+                 from c in Orm.bdconnection.menors_socis
+                 where c.id_soci == _socio.id
+                 select c
+             ).First();
             return _menores;
         }
 

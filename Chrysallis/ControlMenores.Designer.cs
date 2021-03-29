@@ -37,11 +37,9 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModMenor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBorrarMenor = new System.Windows.Forms.ToolStripButton();
-            this.bindingSourceRelacion = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).BeginInit();
             this.toolStripCrearMenor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRelacion)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewMenores
@@ -100,7 +98,7 @@
             this.toolStripButtonModMenor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModMenor.Image")));
             this.toolStripButtonModMenor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonModMenor.Name = "toolStripButtonModMenor";
-            this.toolStripButtonModMenor.Size = new System.Drawing.Size(97, 28);
+            this.toolStripButtonModMenor.Size = new System.Drawing.Size(97, 24);
             this.toolStripButtonModMenor.Text = "Modificar";
             this.toolStripButtonModMenor.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -109,13 +107,9 @@
             this.toolStripButtonBorrarMenor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBorrarMenor.Image")));
             this.toolStripButtonBorrarMenor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonBorrarMenor.Name = "toolStripButtonBorrarMenor";
-            this.toolStripButtonBorrarMenor.Size = new System.Drawing.Size(74, 28);
+            this.toolStripButtonBorrarMenor.Size = new System.Drawing.Size(74, 24);
             this.toolStripButtonBorrarMenor.Text = "Borrar";
             this.toolStripButtonBorrarMenor.Click += new System.EventHandler(this.toolStripButtonBorrarMenor_Click);
-            // 
-            // bindingSourceRelacion
-            // 
-            this.bindingSourceRelacion.DataSource = typeof(Chrysallis.menors_socis);
             // 
             // ControlMenores
             // 
@@ -133,7 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).EndInit();
             this.toolStripCrearMenor.ResumeLayout(false);
             this.toolStripCrearMenor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRelacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +140,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButtonModMenor;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrarMenor;
-        private System.Windows.Forms.BindingSource bindingSourceRelacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
     }
 }

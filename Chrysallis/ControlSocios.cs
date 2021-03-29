@@ -44,35 +44,34 @@ namespace Chrysallis
 
         private void toolStripButtonEliminar_Click(object sender, EventArgs e)
         {
+            socis socioElegido = (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem;
             if (dataGridViewSocios.SelectedRows.Count > 0)
             {
                 DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
-                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
-                    if (listaValoraciones.Count <= 1)
+                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesSocio(socioElegido);
+                    if (listaValoraciones.Count >= 1)
                     {
                         //aqui borramos las valoraciones del evento a borrar
                         for (int i = 0; i < listaValoraciones.Count; i++)
                         {
                             ConsultaOrm.DeleteValoracion(listaValoraciones[i]);
                         }
-
                     }
-                    List<menors_socis> listaMenores = ConsultaOrm.SelectRelacionesSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
-                    
-                    if (listaMenores.Count <= 1)
+
+                    List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio(socioElegido);
+                    if (listaRelaciones.Count >= 1)
                     {
-                        
                         //aqui borramos las valoraciones del evento a borrar
-                        for (int i = 0; i < listaMenores.Count; i++)
+                        for (int i = 0; i < listaRelaciones.Count; i++)
                         {
-                            List<menors> listaMenor = ConsultaOrm.SelectRelacionMenor(listaMenores[i]);
-                            ConsultaOrm.DeleteRelacion(listaMenores[i]);
+                            List<menors> listaMenor = ConsultaOrm.SelectRelacionMenor(listaRelaciones[i]);
+                            ConsultaOrm.DeleteRelacion(listaRelaciones[i]);
                             ConsultaOrm.DeleteMenor(listaMenor[i]);
                         }
                     }
-                    ConsultaOrm.DeleteSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    ConsultaOrm.DeleteSocio(socioElegido);
                     this.Control_de_Usuarios_Activated(sender, e);
                 }
             }
@@ -80,7 +79,6 @@ namespace Chrysallis
 
         private void buttonMenores_Click(object sender, EventArgs e)
         {
-            //(socis)dataGridViewSocios.SelectedRows[0].DataBoundItem
             ControlMenores gestionaMenores = new ControlMenores((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             gestionaMenores.ShowDialog();
         }
