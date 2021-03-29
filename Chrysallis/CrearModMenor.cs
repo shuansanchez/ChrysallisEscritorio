@@ -74,7 +74,7 @@ namespace Chrysallis
             nuevaRelacion.id_menor = m1.id;
             socioGestion.menors_socis.Add(nuevaRelacion);
 
-            ConsultaOrm.InsertSocioMenor(nuevaRelacion);
+            ConsultaOrm.InsertRelacion(nuevaRelacion);
 
             this.Close();
         }

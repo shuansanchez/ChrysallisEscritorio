@@ -15,7 +15,7 @@ namespace Chrysallis
         BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
         comunitats co = new comunitats();
         esdeveniments modificaEvento = new esdeveniments();
-        Boolean modificar;
+        Boolean modificar, documento;
         public CreaModEventos(Boolean creacion)
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Chrysallis
             dateTimePickerHora.Format = DateTimePickerFormat.Custom;
             dateTimePickerHora.CustomFormat = "HH:mm"; // Only use hours and minutes
             dateTimePickerHora.ShowUpDown = true;
-
+            documento = false;
             if (creacion)
             {
                 //añadiremos
@@ -157,8 +157,19 @@ namespace Chrysallis
 
                     modificaEvento=copiaDatos(modificaEvento);
                     //-------------------------------------------------------------
-
+                    //modificaEvento.imatge = ;
                     ConsultaOrm.InsertEvento(modificaEvento);                            //INSERCIÓN
+
+                    if (documento)
+                    {
+                        //AÑADE DOCUMENTOS CORRECTAMENTE
+                        documents nuevoDocumento = new documents();
+                        nuevoDocumento.id_esdeveniment = modificaEvento.id;
+                        nuevoDocumento.nom = Path.GetFileName(rutaImagen);
+                        nuevoDocumento.ruta = rutaCarpeta.FileName;
+                        ConsultaOrm.InsertDocumento(nuevoDocumento);
+                    }
+                    
                 }
             
                     
@@ -253,7 +264,7 @@ namespace Chrysallis
             if (compruebaImagen())
             {
                 //añadimos al picturebox
-                pictureBoxImagenEvento.ImageLocation = rutaImagen; ;
+                pictureBoxImagenEvento.ImageLocation = rutaImagen;
             }
         }
 
@@ -280,6 +291,7 @@ namespace Chrysallis
             if (compruebaArchivo()){
                 //añadimos a la label de archivo
                 labelArchivo.Text = Path.GetFileName(rutaImagen);
+                documento = true;
             }
         }
 

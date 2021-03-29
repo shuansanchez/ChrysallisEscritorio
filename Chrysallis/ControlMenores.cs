@@ -21,7 +21,15 @@ namespace Chrysallis
 
         private void ControlMenores_Load(object sender, EventArgs e)
         {
-            menorsBindingSource.DataSource = ConsultaOrm.SelectMenores();
+            /*List<menors_socis> listaRelaciones= ConsultaOrm.SelectRelacionesSocio(gestionarSocio);
+            for(int i=0; i < listaRelaciones.Count; i++)
+            {
+                menorsBindingSource.DataSource = ConsultaOrm.SelectRelaciones(listaRelaciones[i], gestionarSocio);
+            }*/
+
+            //mostrar menores del socio con el id de gestionarSocio
+           
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -52,14 +60,9 @@ namespace Chrysallis
             borraRelacion.socis = gestionarSocio;
             borraRelacion.menors = borrar;
             borraRelacion.relacio = "";
-            ConsultaOrm.DeleteSocioMenor(borraRelacion);
+            ConsultaOrm.DeleteRelacion(borraRelacion);
 
             ConsultaOrm.DeleteMenor(borrar);
-        }
-
-        private void toolStripCrearMenor_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void dataGridViewMenores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

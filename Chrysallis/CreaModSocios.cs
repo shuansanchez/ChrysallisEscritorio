@@ -172,7 +172,7 @@ namespace Chrysallis
 
                 //--------------------------------------------
 
-                documents nuevoDocumento = new documents(); 
+                
             }
             this.Close();
         }

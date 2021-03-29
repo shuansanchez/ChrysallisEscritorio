@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Usuarios));
             this.buttonValoraciones = new System.Windows.Forms.Button();
-            this.buttonAñadir = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
-            this.buttonBorrar = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
@@ -43,6 +40,7 @@
             this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +62,7 @@
             // 
             // buttonValoraciones
             // 
-            this.buttonValoraciones.Location = new System.Drawing.Point(524, 377);
+            this.buttonValoraciones.Location = new System.Drawing.Point(524, 388);
             this.buttonValoraciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonValoraciones.Name = "buttonValoraciones";
             this.buttonValoraciones.Size = new System.Drawing.Size(139, 34);
@@ -72,39 +70,6 @@
             this.buttonValoraciones.Text = "Listar valoraciones";
             this.buttonValoraciones.UseVisualStyleBackColor = true;
             this.buttonValoraciones.Click += new System.EventHandler(this.buttonUsers_Click);
-            // 
-            // buttonAñadir
-            // 
-            this.buttonAñadir.Location = new System.Drawing.Point(818, 143);
-            this.buttonAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(101, 34);
-            this.buttonAñadir.TabIndex = 14;
-            this.buttonAñadir.Text = "Añadir";
-            this.buttonAñadir.UseVisualStyleBackColor = true;
-            this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
-            // 
-            // buttonModificar
-            // 
-            this.buttonModificar.Location = new System.Drawing.Point(925, 143);
-            this.buttonModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(101, 34);
-            this.buttonModificar.TabIndex = 13;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
-            // 
-            // buttonBorrar
-            // 
-            this.buttonBorrar.Location = new System.Drawing.Point(877, 181);
-            this.buttonBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(101, 34);
-            this.buttonBorrar.TabIndex = 12;
-            this.buttonBorrar.Text = "Borrar";
-            this.buttonBorrar.UseVisualStyleBackColor = true;
-            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // dataGridViewSocios
             // 
@@ -162,7 +127,7 @@
             // 
             // buttonMenores
             // 
-            this.buttonMenores.Location = new System.Drawing.Point(673, 377);
+            this.buttonMenores.Location = new System.Drawing.Point(673, 388);
             this.buttonMenores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMenores.Name = "buttonMenores";
             this.buttonMenores.Size = new System.Drawing.Size(139, 34);
@@ -186,33 +151,39 @@
             // 
             // toolStripButtonCrear
             // 
-            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
             this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCrear.Name = "toolStripButtonCrear";
-            this.toolStripButtonCrear.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonCrear.Text = "toolStripButton1";
+            this.toolStripButtonCrear.Size = new System.Drawing.Size(68, 24);
+            this.toolStripButtonCrear.Text = "Crear";
             this.toolStripButtonCrear.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonModificar
             // 
-            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
             this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonModificar.Name = "toolStripButtonModificar";
-            this.toolStripButtonModificar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonModificar.Text = "toolStripButton3";
+            this.toolStripButtonModificar.Size = new System.Drawing.Size(97, 24);
+            this.toolStripButtonModificar.Text = "Modificar";
             this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
             // 
             // toolStripButtonEliminar
             // 
-            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
             this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
-            this.toolStripButtonEliminar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonEliminar.Text = "toolStripButton2";
+            this.toolStripButtonEliminar.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButtonEliminar.Text = "Eliminar";
             this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(318, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
             // numDataGridViewTextBoxColumn
             // 
@@ -327,13 +298,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1046, 464);
+            this.ClientSize = new System.Drawing.Size(1046, 440);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonMenores);
             this.Controls.Add(this.buttonValoraciones);
-            this.Controls.Add(this.buttonAñadir);
-            this.Controls.Add(this.buttonModificar);
-            this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.dataGridViewSocios);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBoxFiltrar);
@@ -356,9 +325,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonValoraciones;
-        private System.Windows.Forms.Button buttonAñadir;
-        private System.Windows.Forms.Button buttonModificar;
-        private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.DataGridView dataGridViewSocios;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBoxFiltrar;
@@ -382,5 +348,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonCrear;
         private System.Windows.Forms.ToolStripButton toolStripButtonModificar;
         private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
+        private System.Windows.Forms.Label label2;
     }
 }

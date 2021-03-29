@@ -34,22 +34,6 @@ namespace Chrysallis
             dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
         }
 
-       /* private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            if (dataGridViewEventos.SelectedRows.Count > 0)
-            {
-                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dialogConfirmaBorra == DialogResult.OK)
-                {
-                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
-        }*/
-
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
             if (dataGridViewEventos.SelectedRows.Count > 0)
@@ -57,8 +41,19 @@ namespace Chrysallis
                 DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
-                        ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
-                        this.Control_de_Eventos_Load(sender, e);
+                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    if (listaValoraciones.Count <= 1)
+                    {
+                        //aqui borramos las valoraciones del evento a borrar
+                        for(int i=0; i < listaValoraciones.Count; i++)
+                        {
+                            ConsultaOrm.DeleteValoracion(listaValoraciones[i]);
+                        }
+                        
+                    }
+                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    this.Control_de_Eventos_Load(sender, e);
+
                 }
             }
         }
@@ -74,6 +69,46 @@ namespace Chrysallis
         {
             ControlValoraciones nuevoValoraciones = new ControlValoraciones(true, (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
             nuevoValoraciones.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            CreaModEventos nuevoEvento = new CreaModEventos(true);
+            nuevoEvento.ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            CreaModEventos cambiaEvento = new CreaModEventos(false, (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+            cambiaEvento.ShowDialog();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEventos.SelectedRows.Count > 0)
+            {
+                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialogConfirmaBorra == DialogResult.OK)
+                {
+                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    if (listaValoraciones.Count <= 1)
+                    {
+                        //aqui borramos las valoraciones del evento a borrar
+                        for (int i = 0; i < listaValoraciones.Count; i++)
+                        {
+                            ConsultaOrm.DeleteValoracion(listaValoraciones[i]);
+                        }
+
+                    }
+                    if (ConsultaOrm.SelectDocumentoEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem).Count > 0)
+                    {
+                        ConsultaOrm.DeleteDocumento(ConsultaOrm.SelectDocumentoEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem)[0]);
+                    }
+                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                    this.Control_de_Eventos_Load(sender, e);
+
+                }
+            }
         }
     }
 }
