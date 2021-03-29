@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Usuarios));
             this.buttonValoraciones = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
+            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,23 +42,9 @@
             this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cognomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actiuDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.telefon1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.databaixaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataaltaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permisappDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codipostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menorssocisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonValoraciones
@@ -75,20 +62,6 @@
             // 
             this.dataGridViewSocios.AutoGenerateColumns = false;
             this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSocios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numDataGridViewTextBoxColumn,
-            this.nomDataGridViewTextBoxColumn,
-            this.cognomsDataGridViewTextBoxColumn,
-            this.actiuDataGridViewCheckBoxColumn,
-            this.telefon1DataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.dniDataGridViewTextBoxColumn,
-            this.databaixaDataGridViewTextBoxColumn,
-            this.dataaltaDataGridViewTextBoxColumn,
-            this.permisappDataGridViewCheckBoxColumn,
-            this.codipostalDataGridViewTextBoxColumn,
-            this.localitatsDataGridViewTextBoxColumn,
-            this.menorssocisDataGridViewTextBoxColumn});
             this.dataGridViewSocios.DataSource = this.socisBindingSource;
             this.dataGridViewSocios.Location = new System.Drawing.Point(12, 38);
             this.dataGridViewSocios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -185,113 +158,6 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
-            // numDataGridViewTextBoxColumn
-            // 
-            this.numDataGridViewTextBoxColumn.DataPropertyName = "num";
-            this.numDataGridViewTextBoxColumn.HeaderText = "num";
-            this.numDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
-            this.numDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cognomsDataGridViewTextBoxColumn
-            // 
-            this.cognomsDataGridViewTextBoxColumn.DataPropertyName = "cognoms";
-            this.cognomsDataGridViewTextBoxColumn.HeaderText = "cognoms";
-            this.cognomsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cognomsDataGridViewTextBoxColumn.Name = "cognomsDataGridViewTextBoxColumn";
-            this.cognomsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // actiuDataGridViewCheckBoxColumn
-            // 
-            this.actiuDataGridViewCheckBoxColumn.DataPropertyName = "actiu";
-            this.actiuDataGridViewCheckBoxColumn.HeaderText = "actiu";
-            this.actiuDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.actiuDataGridViewCheckBoxColumn.Name = "actiuDataGridViewCheckBoxColumn";
-            this.actiuDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // telefon1DataGridViewTextBoxColumn
-            // 
-            this.telefon1DataGridViewTextBoxColumn.DataPropertyName = "telefon1";
-            this.telefon1DataGridViewTextBoxColumn.HeaderText = "telefon1";
-            this.telefon1DataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefon1DataGridViewTextBoxColumn.Name = "telefon1DataGridViewTextBoxColumn";
-            this.telefon1DataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dniDataGridViewTextBoxColumn
-            // 
-            this.dniDataGridViewTextBoxColumn.DataPropertyName = "dni";
-            this.dniDataGridViewTextBoxColumn.HeaderText = "dni";
-            this.dniDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
-            this.dniDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // databaixaDataGridViewTextBoxColumn
-            // 
-            this.databaixaDataGridViewTextBoxColumn.DataPropertyName = "data_baixa";
-            this.databaixaDataGridViewTextBoxColumn.HeaderText = "data_baixa";
-            this.databaixaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.databaixaDataGridViewTextBoxColumn.Name = "databaixaDataGridViewTextBoxColumn";
-            this.databaixaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataaltaDataGridViewTextBoxColumn
-            // 
-            this.dataaltaDataGridViewTextBoxColumn.DataPropertyName = "data_alta";
-            this.dataaltaDataGridViewTextBoxColumn.HeaderText = "data_alta";
-            this.dataaltaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataaltaDataGridViewTextBoxColumn.Name = "dataaltaDataGridViewTextBoxColumn";
-            this.dataaltaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // permisappDataGridViewCheckBoxColumn
-            // 
-            this.permisappDataGridViewCheckBoxColumn.DataPropertyName = "permis_app";
-            this.permisappDataGridViewCheckBoxColumn.HeaderText = "permis_app";
-            this.permisappDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.permisappDataGridViewCheckBoxColumn.Name = "permisappDataGridViewCheckBoxColumn";
-            this.permisappDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // codipostalDataGridViewTextBoxColumn
-            // 
-            this.codipostalDataGridViewTextBoxColumn.DataPropertyName = "codi_postal";
-            this.codipostalDataGridViewTextBoxColumn.HeaderText = "codi_postal";
-            this.codipostalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codipostalDataGridViewTextBoxColumn.Name = "codipostalDataGridViewTextBoxColumn";
-            this.codipostalDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // localitatsDataGridViewTextBoxColumn
-            // 
-            this.localitatsDataGridViewTextBoxColumn.DataPropertyName = "localitats";
-            this.localitatsDataGridViewTextBoxColumn.HeaderText = "localitats";
-            this.localitatsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.localitatsDataGridViewTextBoxColumn.Name = "localitatsDataGridViewTextBoxColumn";
-            this.localitatsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // menorssocisDataGridViewTextBoxColumn
-            // 
-            this.menorssocisDataGridViewTextBoxColumn.DataPropertyName = "menors_socis";
-            this.menorssocisDataGridViewTextBoxColumn.HeaderText = "menors_socis";
-            this.menorssocisDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.menorssocisDataGridViewTextBoxColumn.Name = "menorssocisDataGridViewTextBoxColumn";
-            this.menorssocisDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // socisBindingSource
-            // 
-            // 
             // Control_de_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -312,9 +178,9 @@
             this.Text = "Control_de_Socios";
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

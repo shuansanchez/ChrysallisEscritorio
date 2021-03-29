@@ -27,7 +27,6 @@ namespace Chrysallis
             {
                 resultado.Add(ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]));
             }
-            menorsBindingSource.DataSource = null;
             menorsBindingSource.DataSource = resultado;
         }
 
@@ -51,7 +50,6 @@ namespace Chrysallis
             {
                 resultado.Add(ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]));
             }
-            menorsBindingSource.DataSource = null;
             menorsBindingSource.DataSource = resultado;
         }
 

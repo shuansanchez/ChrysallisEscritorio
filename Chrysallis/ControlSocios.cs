@@ -22,6 +22,7 @@ namespace Chrysallis
             dataGridViewSocios.ReadOnly = true;
             dataGridViewSocios.DataSource = null;
             dataGridViewSocios.DataSource = ConsultaOrm.SelectSocios();
+            dataGridViewSocios.AutoGenerateColumns = true;
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
