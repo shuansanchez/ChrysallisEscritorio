@@ -12,28 +12,53 @@ namespace Chrysallis
 {
     public partial class CrearModMenor : Form
     {
-        BindingList<menors> llistaMenors;
+        bool crear;
+        socis socioGestion;
 
-        public CrearModMenor(BindingList<menors> llistaMenors)
+        public CrearModMenor(bool crear, socis socioGestion)
         {
             InitializeComponent();
-            this.llistaMenors = llistaMenors;
+            this.crear = crear;
+            this.socioGestion = socioGestion;
+            if (!crear)
+            {
+                crearBtn.Text = "Modificar";
+            }
+        }
+        public CrearModMenor(bool crear, socis socioGestion, menors menorGestion)
+        {
+            InitializeComponent();
+            this.crear = crear;
+            this.socioGestion = socioGestion;
+            if (!crear)
+            {
+                crearBtn.Text = "Modificar";
+            }
         }
 
         private void CrearModMenor_Load(object sender, EventArgs e)
         {
-
+            if (!crear)
+            {
+                //carregar textbox si modifiquem
+            }
         }
 
         private void crearBtn_Click(object sender, EventArgs e)
         {
             menors m1 = new menors();
-            menors_socis relacio = new menors_socis();
-            relacio.relacio= relacioMenor.Text.ToString();
             m1.nom = nomText.Text.ToString();
-            m1.menors_socis.Add(relacio);
+            ConsultaOrm.InsertMenor(m1);
 
-            llistaMenors.Add(m1);
+            menors_socis nuevaRelacion = new menors_socis();
+            nuevaRelacion.relacio = relacioMenor.Text.ToString();
+
+            nuevaRelacion.id_soci = socioGestion.id;
+            nuevaRelacion.id_menor = m1.id;
+            socioGestion.menors_socis.Add(nuevaRelacion);
+
+            ConsultaOrm.InsertSocioMenor(nuevaRelacion);
+
             this.Close();
         }
     }

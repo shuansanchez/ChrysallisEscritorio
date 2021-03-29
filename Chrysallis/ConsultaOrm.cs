@@ -116,6 +116,17 @@ namespace Chrysallis
             return _socios;
         }
 
+        public static socis SelectSocio(socis socio)
+        {
+            socis _socio =
+             (
+                 from c in Orm.bdconnection.socis
+                 where socio.id == c.id
+                 select c
+             ).FirstOrDefault();
+            return _socio;
+        }
+
         public static void DeleteSocio(socis _socio)
         {
             Orm.bdconnection.socis.Remove(_socio);
@@ -171,6 +182,70 @@ namespace Chrysallis
              ).ToList();
             return _valoraciones;
         }
+
+        //MENORES
+
+        public static void InsertMenor(menors _menor)
+        {
+            Orm.bdconnection.menors.Add(_menor);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static List<menors> SelectMenores()
+        {
+            List<menors> _menores =
+             (
+                 from c in Orm.bdconnection.menors
+                 select c
+             ).ToList();
+            return _menores;
+        }
+
+        public static List<menors_socis> SelectRelacionesSocio(socis _socio)
+        {
+            List<menors_socis> _menores =
+             (
+                 from c in Orm.bdconnection.menors_socis
+                 where _socio.id == c.id_soci
+                 select c
+             ).ToList();
+            return _menores;
+        }
+
+        //FUNCION PARA MOSTRAR LOS MENORES DE X PERSONA
+        /*public static List<menors> SelectRelacionesSocio(socis _socio)
+         {
+             List<menors_socis> _menores =
+              (
+                  from c in Orm.bdconnection.menors_socis
+                  where _socio.id == c.id_soci
+                  select c
+              ).ToList();
+             return _menores;
+         }*/
+
+
+        public static void DeleteMenor(menors _menor)
+        {
+            Orm.bdconnection.menors.Remove(_menor);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        //SOCIOS_MENORES
+
+        public static void InsertSocioMenor(menors_socis relacio)
+        {
+            Orm.bdconnection.menors_socis.Add(relacio);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static void DeleteSocioMenor(menors_socis _relacion)
+        {
+            Orm.bdconnection.menors_socis.Remove(_relacion);
+            Orm.bdconnection.SaveChanges();
+        }
+
+
 
     }
 }

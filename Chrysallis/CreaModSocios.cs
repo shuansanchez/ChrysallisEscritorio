@@ -215,8 +215,7 @@ namespace Chrysallis
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreacioMenor creaM = new CreacioMenor(llistaMenors);
-            creaM.ShowDialog();
+         
         }
 
         private void verMenorBtt_Click(object sender, EventArgs e)
@@ -227,8 +226,8 @@ namespace Chrysallis
 
         private void crearMenorBtn_Click(object sender, EventArgs e)
         {
-            CrearModMenor formMenor = new CrearModMenor(llistaMenors);
-            formMenor.ShowDialog();
+           // CrearModMenor formMenor = new CrearModMenor(true);
+            //formMenor.ShowDialog();
         }
     }
 }

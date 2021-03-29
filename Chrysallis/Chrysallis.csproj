@@ -105,6 +105,12 @@
     <Compile Include="ControlEventos.Designer.cs">
       <DependentUpon>ControlEventos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlMenores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlMenores.Designer.cs">
+      <DependentUpon>ControlMenores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlSocios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,12 +122,6 @@
     </Compile>
     <Compile Include="ControlValoraciones.Designer.cs">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreacioMenor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreacioMenor.Designer.cs">
-      <DependentUpon>CreacioMenor.cs</DependentUpon>
     </Compile>
     <Compile Include="CrearModMenor.cs">
       <SubType>Form</SubType>
@@ -195,14 +195,14 @@
     <EmbeddedResource Include="ControlEventos.resx">
       <DependentUpon>ControlEventos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlMenores.resx">
+      <DependentUpon>ControlMenores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlSocios.resx">
       <DependentUpon>ControlSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlValoraciones.resx">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreacioMenor.resx">
-      <DependentUpon>CreacioMenor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearModMenor.resx">
       <DependentUpon>CrearModMenor.cs</DependentUpon>
