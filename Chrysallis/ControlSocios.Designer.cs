@@ -31,18 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Usuarios));
             this.buttonValoraciones = new System.Windows.Forms.Button();
-            this.buttonAñadir = new System.Windows.Forms.Button();
-            this.buttonModificar = new System.Windows.Forms.Button();
-            this.buttonBorrar = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonMenores = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +46,17 @@
             this.localitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menorssocisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonMenores = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonValoraciones
@@ -72,39 +69,6 @@
             this.buttonValoraciones.Text = "Listar valoraciones";
             this.buttonValoraciones.UseVisualStyleBackColor = true;
             this.buttonValoraciones.Click += new System.EventHandler(this.buttonUsers_Click);
-            // 
-            // buttonAñadir
-            // 
-            this.buttonAñadir.Location = new System.Drawing.Point(818, 143);
-            this.buttonAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonAñadir.Name = "buttonAñadir";
-            this.buttonAñadir.Size = new System.Drawing.Size(101, 34);
-            this.buttonAñadir.TabIndex = 14;
-            this.buttonAñadir.Text = "Añadir";
-            this.buttonAñadir.UseVisualStyleBackColor = true;
-            this.buttonAñadir.Click += new System.EventHandler(this.buttonAñadir_Click);
-            // 
-            // buttonModificar
-            // 
-            this.buttonModificar.Location = new System.Drawing.Point(925, 143);
-            this.buttonModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(101, 34);
-            this.buttonModificar.TabIndex = 13;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
-            // 
-            // buttonBorrar
-            // 
-            this.buttonBorrar.Location = new System.Drawing.Point(877, 181);
-            this.buttonBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(101, 34);
-            this.buttonBorrar.TabIndex = 12;
-            this.buttonBorrar.Text = "Borrar";
-            this.buttonBorrar.UseVisualStyleBackColor = true;
-            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // dataGridViewSocios
             // 
@@ -133,86 +97,6 @@
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSocios.Size = new System.Drawing.Size(800, 335);
             this.dataGridViewSocios.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(905, 38);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(836, 80);
-            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(190, 22);
-            this.textBoxFiltrar.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(833, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtrar";
-            // 
-            // buttonMenores
-            // 
-            this.buttonMenores.Location = new System.Drawing.Point(673, 377);
-            this.buttonMenores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMenores.Name = "buttonMenores";
-            this.buttonMenores.Size = new System.Drawing.Size(139, 34);
-            this.buttonMenores.TabIndex = 16;
-            this.buttonMenores.Text = "Gestionar menores";
-            this.buttonMenores.UseVisualStyleBackColor = true;
-            this.buttonMenores.Click += new System.EventHandler(this.buttonMenores_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonCrear,
-            this.toolStripButtonModificar,
-            this.toolStripButtonEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1046, 27);
-            this.toolStrip1.TabIndex = 17;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonCrear
-            // 
-            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
-            this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCrear.Name = "toolStripButtonCrear";
-            this.toolStripButtonCrear.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonCrear.Text = "toolStripButton1";
-            this.toolStripButtonCrear.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButtonModificar
-            // 
-            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
-            this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonModificar.Name = "toolStripButtonModificar";
-            this.toolStripButtonModificar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonModificar.Text = "toolStripButton3";
-            this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
-            // 
-            // toolStripButtonEliminar
-            // 
-            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
-            this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
-            this.toolStripButtonEliminar.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButtonEliminar.Text = "toolStripButton2";
-            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
             // numDataGridViewTextBoxColumn
             // 
@@ -322,6 +206,86 @@
             // 
             this.socisBindingSource.DataSource = typeof(Chrysallis.socis);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(905, 38);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // textBoxFiltrar
+            // 
+            this.textBoxFiltrar.Location = new System.Drawing.Point(836, 80);
+            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxFiltrar.Name = "textBoxFiltrar";
+            this.textBoxFiltrar.Size = new System.Drawing.Size(190, 22);
+            this.textBoxFiltrar.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(833, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Filtrar";
+            // 
+            // buttonMenores
+            // 
+            this.buttonMenores.Location = new System.Drawing.Point(673, 377);
+            this.buttonMenores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMenores.Name = "buttonMenores";
+            this.buttonMenores.Size = new System.Drawing.Size(139, 34);
+            this.buttonMenores.TabIndex = 16;
+            this.buttonMenores.Text = "Gestionar menores";
+            this.buttonMenores.UseVisualStyleBackColor = true;
+            this.buttonMenores.Click += new System.EventHandler(this.buttonMenores_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonCrear,
+            this.toolStripButtonModificar,
+            this.toolStripButtonEliminar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1046, 27);
+            this.toolStrip1.TabIndex = 17;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonCrear
+            // 
+            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
+            this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCrear.Name = "toolStripButtonCrear";
+            this.toolStripButtonCrear.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonCrear.Text = "toolStripButton1";
+            this.toolStripButtonCrear.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButtonModificar
+            // 
+            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
+            this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonModificar.Name = "toolStripButtonModificar";
+            this.toolStripButtonModificar.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonModificar.Text = "toolStripButton3";
+            this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
+            // 
+            // toolStripButtonEliminar
+            // 
+            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
+            this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
+            this.toolStripButtonEliminar.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonEliminar.Text = "toolStripButton2";
+            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
+            // 
             // Control_de_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,9 +295,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonMenores);
             this.Controls.Add(this.buttonValoraciones);
-            this.Controls.Add(this.buttonAñadir);
-            this.Controls.Add(this.buttonModificar);
-            this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.dataGridViewSocios);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBoxFiltrar);
@@ -345,9 +306,9 @@
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
             this.Load += new System.EventHandler(this.Control_de_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,9 +317,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonValoraciones;
-        private System.Windows.Forms.Button buttonAñadir;
-        private System.Windows.Forms.Button buttonModificar;
-        private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.DataGridView dataGridViewSocios;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBoxFiltrar;

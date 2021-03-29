@@ -65,6 +65,8 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+
+
         public static void UpdateEvento(esdeveniments _evento)
         {
             Orm.bdconnection.SaveChanges();
@@ -211,6 +213,14 @@ namespace Chrysallis
             return _valoraciones;
         }
 
+        public static void DeleteValoracion(valoracions _valoracion)
+        {
+            Orm.bdconnection.valoracions.Remove(_valoracion);
+            Orm.bdconnection.SaveChanges();
+        }
+
+
+
         //MENORES
 
 
@@ -230,6 +240,17 @@ namespace Chrysallis
              (
                  from c in Orm.bdconnection.menors_socis
                  where _socio.id == c.id_soci
+                 select c
+             ).ToList();
+            return _menores;
+        }
+
+        public static List<menors> SelectRelacionesMenor(menors_socis _relacion)
+        {
+            List<menors> _menores =
+             (
+                 from c in Orm.bdconnection.menors
+                 where _relacion.id_menor == c.id
                  select c
              ).ToList();
             return _menores;
@@ -268,7 +289,13 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+        //DOCUMENTOS
 
+        public static void InsertDocumento(documents _documento)
+        {
+            Orm.bdconnection.documents.Add(_documento);
+            Orm.bdconnection.SaveChanges();
+        }
 
     }
 }

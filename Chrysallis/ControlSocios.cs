@@ -79,6 +79,29 @@ namespace Chrysallis
                 DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
+                    List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    if (listaValoraciones.Count <= 1)
+                    {
+                        //aqui borramos las valoraciones del evento a borrar
+                        for (int i = 0; i < listaValoraciones.Count; i++)
+                        {
+                            ConsultaOrm.DeleteValoracion(listaValoraciones[i]);
+                        }
+
+                    }
+                    List<menors_socis> listaMenores = ConsultaOrm.SelectRelacionesSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    
+                    if (listaMenores.Count <= 1)
+                    {
+                        
+                        //aqui borramos las valoraciones del evento a borrar
+                        for (int i = 0; i < listaMenores.Count; i++)
+                        {
+                            List<menors> listaMenor = ConsultaOrm.SelectRelacionesMenor(listaMenores[i]);
+                            ConsultaOrm.DeleteSocioMenor(listaMenores[i]);
+                            ConsultaOrm.DeleteMenor(listaMenor[i]);
+                        }
+                    }
                     ConsultaOrm.DeleteSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
                     this.Control_de_Usuarios_Load(sender, e);
                 }

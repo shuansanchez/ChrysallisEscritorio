@@ -36,6 +36,7 @@ namespace Chrysallis
 
         private void ControlValoraciones_Activated(object sender, EventArgs e)
         {
+            valoracionsBindingSource.DataSource = null;
             if (!evento)
             {
                 valoracionsBindingSource.DataSource = ConsultaOrm.SelectValoracionesSocio(socioValoracion);
@@ -44,7 +45,7 @@ namespace Chrysallis
             {
                 valoracionsBindingSource.DataSource = ConsultaOrm.SelectValoracionesEvento(eventoValoracion);
             }
-            
+            this.ControlValoraciones_Load(sender, e);
         }
 
         private void ControlValoraciones_Load(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace Chrysallis
             {
                 valoracionsBindingSource.DataSource = ConsultaOrm.SelectValoracionesEvento(eventoValoracion);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ConsultaOrm.DeleteValoracion((valoracions)dataGridViewValoraciones.SelectedRows[0].DataBoundItem);
         }
     }
 }
