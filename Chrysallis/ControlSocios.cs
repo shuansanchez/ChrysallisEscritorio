@@ -98,7 +98,7 @@ namespace Chrysallis
                         for (int i = 0; i < listaMenores.Count; i++)
                         {
                             List<menors> listaMenor = ConsultaOrm.SelectRelacionMenor(listaMenores[i]);
-                            ConsultaOrm.DeleteSocioMenor(listaMenores[i]);
+                            ConsultaOrm.DeleteRelacion(listaMenores[i]);
                             ConsultaOrm.DeleteMenor(listaMenor[i]);
                         }
                     }

@@ -8,7 +8,7 @@ namespace Chrysallis
    public static class ConsultaOrm
     {
         
-        //COMUNIDADES
+        //COMUNIDADES-----------------------------------------------------
         public static List<comunitats> SelectComunidades()
         {
             List<comunitats> _comunidades =
@@ -29,7 +29,7 @@ namespace Chrysallis
             return _comunidades;
         }
 
-        //PROVINCIAS
+        //PROVINCIAS------------------------------------------------------
         public static List<provincies> SelectProvincias(int id)
         {
             List<provincies> _provincies =
@@ -42,7 +42,7 @@ namespace Chrysallis
         }
 
 
-        //EVENTOS
+        //EVENTOS---------------------------------------------------------
         public static void InsertEvento(esdeveniments _evento)
         {
             Orm.bdconnection.esdeveniments.Add(_evento);
@@ -70,7 +70,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        //USUARIOS
+        //USUARIOS--------------------------------------------------------
         public static void InsertUsuario(usuaris usuari)
         {
             Orm.bdconnection.usuaris.Add(usuari);
@@ -98,7 +98,7 @@ namespace Chrysallis
             return _usuarioSocio;
         }
 
-        //SOCIOS
+        //SOCIOS----------------------------------------------------------
         public static void InsertSocio(socis socio)
         {
             Orm.bdconnection.socis.Add(socio);
@@ -137,22 +137,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        //MENORES
-        public static void InsertMenor(menors menor)
-        {
-            Orm.bdconnection.menors.Add(menor);
-            Orm.bdconnection.SaveChanges();
-        }
-
-        public static void InsertRelacionMenor(int idSocio, int idMenor, string relacionMenor)
-        {
-           // menors_socis men = new menors_socis(idSocio, idMenor, relacionMenor);
-          //  Orm.bdconnection.menors_socis.Add(men);
-            Orm.bdconnection.SaveChanges();
-
-        }
-
-        //ROLES
+        //ROLES-----------------------------------------------------------
         public static List<string> SelectRoles()
         {
             List<string> _roles =
@@ -163,7 +148,7 @@ namespace Chrysallis
             return _roles;
         }
 
-        //VALORACIONES
+        //VALORACIONES----------------------------------------------------
         public static List<valoracions> SelectValoracionesEvento(esdeveniments _evento)
         {
             List<valoracions> _valoraciones =
@@ -202,7 +187,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        //MENORES
+        //MENORES---------------------------------------------------------
         public static List<menors> SelectMenores()
         {
             List<menors> _menores =
@@ -210,28 +195,6 @@ namespace Chrysallis
                  from c in Orm.bdconnection.menors
                  select c
              ).ToList();
-            return _menores;
-        }
-
-        public static List<menors_socis> SelectRelacionesSocio(socis _socio)
-        {
-            List<menors_socis> _menores =
-             (
-                 from c in Orm.bdconnection.menors_socis
-                 where _socio.id == c.id_soci
-                 select c
-             ).ToList();
-            return _menores;
-        }
-
-        public static menors SelectRelacionesMenor(menors_socis _relacion)
-        {
-            menors _menores =
-             (
-                 from c in Orm.bdconnection.menors
-                 where _relacion.id_menor == c.id
-                 select c
-             ).FirstOrDefault();
             return _menores;
         }
 
@@ -246,15 +209,21 @@ namespace Chrysallis
             return _menores;
         }
 
-        public static List<menors> SelectRelaciones(menors_socis _relacion, socis _socio)
+        public static List<menors> SelectMenoresDeSocio(socis _socio)
         {
             List<menors> _menores =
              (
                  from c in Orm.bdconnection.menors
-                 where (_relacion.id_menor == c.id) && (_socio.id == _relacion.id_soci)
+                 where _socio.id == c.id
                  select c
              ).ToList();
             return _menores;
+        }
+
+        public static void InsertMenor(menors menor)
+        {
+            Orm.bdconnection.menors.Add(menor);
+            Orm.bdconnection.SaveChanges();
         }
 
         public static void DeleteMenor(menors _menor)
@@ -263,21 +232,43 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        //SOCIOS_MENORES
+        //SOCIOS_MENORES--------------------------------------------------
 
-        public static void InsertSocioMenor(menors_socis relacio)
+        public static List<menors_socis> SelectRelacionesSocio(socis _socio)
+        {
+            List<menors_socis> _menores =
+             (
+                 from c in Orm.bdconnection.menors_socis
+                 where _socio.id == c.id_soci
+                 select c
+             ).ToList();
+            return _menores;
+        }
+
+        public static void InsertRelacion(menors_socis relacio)
         {
             Orm.bdconnection.menors_socis.Add(relacio);
             Orm.bdconnection.SaveChanges();
         }
 
-        public static void DeleteSocioMenor(menors_socis _relacion)
+        public static void DeleteRelacion(menors_socis _relacion)
         {
             Orm.bdconnection.menors_socis.Remove(_relacion);
             Orm.bdconnection.SaveChanges();
         }
 
-        //DOCUMENTOS
+        //DOCUMENTOS------------------------------------------------------
+
+        public static List<documents> SelectDocumentoEvento(esdeveniments _evento)
+        {
+            List<documents> _documento =
+             (
+                 from c in Orm.bdconnection.documents
+                 where _evento.id==c.id_esdeveniment
+                 select c
+             ).ToList();
+            return _documento;
+        }
 
         public static void InsertDocumento(documents _documento)
         {
@@ -285,5 +276,10 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+        public static void DeleteDocumento(documents _documento)
+        {
+            Orm.bdconnection.documents.Remove(_documento);
+            Orm.bdconnection.SaveChanges();
+        }
     }
 }

@@ -26,10 +26,10 @@ namespace Chrysallis
             {
                 menorsBindingSource.DataSource = ConsultaOrm.SelectRelaciones(listaRelaciones[i], gestionarSocio);
             }*/
-            
-            //mostrar menores del socio con el id de gestionarSocio
 
-            
+            //mostrar menores del socio con el id de gestionarSocio
+           
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Chrysallis
             borraRelacion.socis = gestionarSocio;
             borraRelacion.menors = borrar;
             borraRelacion.relacio = "";
-            ConsultaOrm.DeleteSocioMenor(borraRelacion);
+            ConsultaOrm.DeleteRelacion(borraRelacion);
 
             ConsultaOrm.DeleteMenor(borrar);
         }

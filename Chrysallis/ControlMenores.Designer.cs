@@ -82,7 +82,7 @@
             this.toolStripButtonBorrarMenor});
             this.toolStripCrearMenor.Location = new System.Drawing.Point(0, 0);
             this.toolStripCrearMenor.Name = "toolStripCrearMenor";
-            this.toolStripCrearMenor.Size = new System.Drawing.Size(800, 31);
+            this.toolStripCrearMenor.Size = new System.Drawing.Size(800, 27);
             this.toolStripCrearMenor.TabIndex = 1;
             this.toolStripCrearMenor.Text = "toolStrip1";
             // 
@@ -91,7 +91,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 24);
             this.toolStripButton2.Text = "Crear";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 

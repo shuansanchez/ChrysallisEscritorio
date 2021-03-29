@@ -100,6 +100,10 @@ namespace Chrysallis
                         }
 
                     }
+                    if (ConsultaOrm.SelectDocumentoEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem).Count > 0)
+                    {
+                        ConsultaOrm.DeleteDocumento(ConsultaOrm.SelectDocumentoEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem)[0]);
+                    }
                     ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
                     this.Control_de_Eventos_Load(sender, e);
 
