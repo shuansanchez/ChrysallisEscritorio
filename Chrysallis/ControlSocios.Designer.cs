@@ -71,6 +71,7 @@
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSocios.Size = new System.Drawing.Size(800, 335);
             this.dataGridViewSocios.TabIndex = 11;
+            this.dataGridViewSocios.DoubleClick += new System.EventHandler(this.dataGridViewSocios_DoubleClick);
             // 
             // comboBox1
             // 

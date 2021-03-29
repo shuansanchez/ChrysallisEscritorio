@@ -60,7 +60,6 @@ namespace Chrysallis
                             ConsultaOrm.DeleteValoracion(listaValoraciones[i]);
                         }
                     }
-
                     List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio(socioElegido);
                     if (listaRelaciones.Count >= 1)
                     {
@@ -82,6 +81,11 @@ namespace Chrysallis
         {
             ControlMenores gestionaMenores = new ControlMenores((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
             gestionaMenores.ShowDialog();
+        }
+
+        private void dataGridViewSocios_DoubleClick(object sender, EventArgs e)
+        {
+            toolStripButtonModificar_Click(sender, e);
         }
     }
 }

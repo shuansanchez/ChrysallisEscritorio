@@ -36,7 +36,7 @@ namespace Chrysallis
             if (modificar)
             {
                 usuaris usuarioSocio = new usuaris();
-                usuarioSocio = ConsultaOrm.SelectUsuariosSocios(socioModificar);
+                usuarioSocio = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                 if (usuarioSocio!=null)
                 {
                     comboBoxRoles.SelectedIndex = usuarioSocio.id_rol - 4;
@@ -56,6 +56,14 @@ namespace Chrysallis
                 checkBoxApp.Checked = socioModificar.permis_app;
                 checkBoxBaja.Checked = socioModificar.data_baixa.HasValue;
                 textBoxPassw.Text = socioModificar.contrasenya;
+
+                if (usuarioSocio!=null)
+                {
+                    textBoxNum.Text = usuarioSocio.username;
+                }
+                
+                
+
                 dateTimePickerNacimiento.Value = socioModificar.data_naixement.Value;
                 dateTimePickerAlta.Value = socioModificar.data_alta;
                 if (!socioModificar.data_baixa.HasValue)
@@ -74,6 +82,7 @@ namespace Chrysallis
         {
             if (modificar)
             {
+                
                 socioModificar.num = Int32.Parse(textBoxNum.Text);
                 socioModificar.nom = textBoxNombre.Text;
                 socioModificar.actiu = checkBoxActivo.Checked;
@@ -95,16 +104,16 @@ namespace Chrysallis
 
                 ConsultaOrm.UpdateSocio();
 
-                usuaris usuarioSocio = new usuaris();
 
+                usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                 //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioSocio.id = socioModificar.id;
-                usuarioSocio.contrasenya = socioModificar.contrasenya;
-                usuarioSocio.email = socioModificar.email;
+                usuarioModificar.id_rol = comboBoxRoles.SelectedIndex;
+                usuarioModificar.id = socioModificar.id;
+                usuarioModificar.contrasenya = socioModificar.contrasenya;
+                usuarioModificar.email = socioModificar.email;
                 //debe crearse un campo para el nombre de usuario en creaModSocios
-                usuarioSocio.username = "hola";
-                ConsultaOrm.InsertUsuario(usuarioSocio);
+                usuarioModificar.username = textBoxNombreUsuario.Text;
+                ConsultaOrm.UpdateUsuario();
             }
             else
             {
@@ -136,7 +145,8 @@ namespace Chrysallis
 
                 //-------------------------------------------
                 usuaris usuarioSocio = new usuaris();
-               
+
+                //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
                 usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
                 usuarioSocio.id = nuevoSocio.id;
                 
@@ -189,11 +199,6 @@ namespace Chrysallis
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         private void verMenorBtt_Click(object sender, EventArgs e)
         {
             VerMenores verM = new VerMenores(llistaMenors);
@@ -205,5 +210,6 @@ namespace Chrysallis
            // CrearModMenor formMenor = new CrearModMenor(true);
             //formMenor.ShowDialog();
         }
+
     }
 }

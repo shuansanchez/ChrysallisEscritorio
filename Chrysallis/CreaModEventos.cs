@@ -52,18 +52,60 @@ namespace Chrysallis
                 buttonImagen.Text = "Cargar imagen";
                 textBoxTitulo.Text = modificaEvento.titol;
                 textBoxDescripcion.Text = modificaEvento.descripcio;
-                textBoxEnlace.Text = modificaEvento.meet;
                 dateTimePickerFecha.Value = modificaEvento.data.Date;
-                //dateTimePickerHora.Value = modificaEvento.hora.;
                 comboBoxComunidad.SelectedItem = modificaEvento.comunitats.id;
                 //comboBoxProvincia.SelectedItem=modificaEvento.provincia??
                 //textBoxLocalidad.Text=modificaEvento.
                 textBoxDireccion.Text = modificaEvento.adreca;
-                textBoxmax.Text =modificaEvento.quantitat_max.ToString();
-                textBoxPrecio.Text = modificaEvento.quantitat_mínima.ToString();
                 textBoxLatitud.Text = modificaEvento.latitud;
                 textBoxLongitud.Text = modificaEvento.longitud;
+
+
+
+
                 //FALTA ARCHIVO E IMAGEN TAMBIEN
+
+                if (modificaEvento.pagament==true)
+                {
+                    textBoxPrecio.Text = modificaEvento.preu.ToString();
+                }
+                else
+                {
+                    textBoxPrecio.Enabled = false;
+                    checkBoxGratis.Checked = true;
+                }
+
+                if (modificaEvento.quantitat_max!=0)
+                {
+                    textBoxmax.Text = modificaEvento.quantitat_max.ToString();
+                }
+                else
+                {
+                    textBoxmax.Enabled = false;
+                    checkBoxmax.Checked = false;
+                }
+
+                if (modificaEvento.quantitat_mínima != 0)
+                {
+                    textBoxminimo.Text = modificaEvento.quantitat_mínima.ToString();
+                }
+                else
+                {
+                    textBoxPrecio.Enabled = false;
+                    checkBoxMinima.Checked = false;
+                }
+
+                if (string.IsNullOrEmpty(modificaEvento.meet))
+                {
+                    textBoxEnlace.Text = modificaEvento.meet;
+                }
+                else
+                {
+                    textBoxEnlace.Enabled = false;
+                    checkBoxVirtual.Checked = false;
+                }
+
+
             }
         }
 
@@ -95,7 +137,7 @@ namespace Chrysallis
 
             if (!checkBoxVirtual.Checked)                               //Si no es virtual, en enlace será NULL
             {
-                eventoPasar.meet = null;
+                eventoPasar.meet = "";
             }
             else
             {
@@ -142,7 +184,7 @@ namespace Chrysallis
             if (modificar)
             {
                 modificaEvento=copiaDatos(modificaEvento);
-                ConsultaOrm.UpdateEvento(modificaEvento);
+                ConsultaOrm.UpdateEvento();
             }
             else
             {

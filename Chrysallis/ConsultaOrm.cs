@@ -65,7 +65,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        public static void UpdateEvento(esdeveniments _evento)
+        public static void UpdateEvento()
         {
             Orm.bdconnection.SaveChanges();
         }
@@ -87,7 +87,7 @@ namespace Chrysallis
             return _usuarios;
         }
 
-        public static usuaris SelectUsuariosSocios(socis _modificaSocio)
+        public static usuaris SelectUsuarioSocio(socis _modificaSocio)
         {
             usuaris _usuarioSocio =
              (
@@ -96,6 +96,11 @@ namespace Chrysallis
                  select c
              ).FirstOrDefault();
             return _usuarioSocio;
+        }
+
+        public static void UpdateUsuario()
+        {
+            Orm.bdconnection.SaveChanges();
         }
 
         //SOCIOS----------------------------------------------------------

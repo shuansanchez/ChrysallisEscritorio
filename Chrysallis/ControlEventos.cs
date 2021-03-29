@@ -27,6 +27,7 @@ namespace Chrysallis
             dataGridViewEventos.ReadOnly = true;
             dataGridViewEventos.DataSource = null;
             dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+            dataGridViewEventos.AutoGenerateColumns = true;
         }
 
         private void buttonSocios_Click(object sender, EventArgs e)
@@ -74,6 +75,11 @@ namespace Chrysallis
 
                 }
             }
+        }
+
+        private void dataGridViewEventos_DoubleClick(object sender, EventArgs e)
+        {
+            toolStripButton1_Click(sender, e);
         }
     }
 }
