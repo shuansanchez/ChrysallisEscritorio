@@ -138,6 +138,34 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+        //MENORES
+        public static void InsertMenor(menors menor)
+        {
+            Orm.bdconnection.menors.Add(menor);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        public static void InsertRelacionMenor(int idSocio, int idMenor, string relacionMenor)
+        {
+           // menors_socis men = new menors_socis(idSocio, idMenor, relacionMenor);
+          //  Orm.bdconnection.menors_socis.Add(men);
+            Orm.bdconnection.SaveChanges();
+
+        }
+
+        public static int SelectIDSocio(string dniSocio)
+        {
+
+           int _id =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.dni==dniSocio
+                    select c.id).First();
+            return _id;
+
+        }
+
+
         //ROLES
 
         public static List<string> SelectRoles()
