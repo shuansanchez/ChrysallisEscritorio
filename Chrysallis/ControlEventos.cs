@@ -31,7 +31,9 @@ namespace Chrysallis
 
         private void Control_de_Eventos_Load(object sender, EventArgs e)
         {
-            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+            //dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
+
         }
 
         private void buttonBorrar_Click(object sender, EventArgs e)
@@ -61,8 +63,8 @@ namespace Chrysallis
         private void Control_de_Eventos_Activated(object sender, EventArgs e)
         {
             dataGridViewEventos.ReadOnly = true;
-            dataGridViewEventos.DataSource = null;
-            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+            //dataGridViewEventos.DataSource = null;
+           dataGridViewEventos.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
         }
 
         private void buttonSocios_Click(object sender, EventArgs e)
@@ -109,6 +111,83 @@ namespace Chrysallis
 
                 }
             }
+        }
+
+        private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxFiltrar.Text.Equals(""))
+            {
+                dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+            }
+            else
+            {
+            switch (comboFiltros.SelectedIndex)
+            {
+                case 0:
+                    esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
+                    this.Control_de_Eventos_Load(sender, e);
+                    break;
+                case 1:
+                        int value;
+                        if (int.TryParse(textBoxFiltrar.Text.ToString(), out value)) {
+
+                            esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMayorDe(float.Parse(textBoxFiltrar.Text.ToString()));
+                            this.Control_de_Eventos_Load(sender, e);
+                        }
+                        /*
+                        if (!string.IsNullOrEmpty(textBoxFiltrar.Text))
+                    {
+                        esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMayorDe(float.Parse(textBoxFiltrar.Text));
+                        this.Control_de_Eventos_Load(sender, e);
+                    }
+                 
+                    */
+                    break;
+                case 2:
+                        int value2;
+                        if (int.TryParse(textBoxFiltrar.Text.ToString(), out value2))
+                        {
+
+                            esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMenorDe(float.Parse(textBoxFiltrar.Text));
+                            this.Control_de_Eventos_Load(sender, e);
+                        }
+                      
+                    break;
+                    case 3:
+                        dataGridViewEventos.Sort(dataGridViewEventos.Columns["preu"], ListSortDirection.Ascending);
+                        this.Control_de_Eventos_Load(sender, e);
+                        break;
+            }
+
+            }
+        
+
+        
+               
+            
+        }
+
+        private void comboFiltros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxFiltrar.Visible = true;
+      switch (comboFiltros.SelectedIndex)
+            {
+
+
+                case 0:
+                    infoFiltroText.Text = "Nombre";
+                    break;
+                case 1:
+                    infoFiltroText.Text = "Precio";
+                    break;
+
+
+            }
+        }
+
+        private void infoFiltroText_Click(object sender, EventArgs e)
+        {
+      
         }
     }
 }

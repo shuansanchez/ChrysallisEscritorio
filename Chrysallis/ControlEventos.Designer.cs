@@ -32,11 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Eventos));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboFiltros = new System.Windows.Forms.ComboBox();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
             this.buttonSocios = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.infoFiltroText = new System.Windows.Forms.Label();
             this.titolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adrecaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +52,6 @@
             this.imatgeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantitatmaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantitatmínimaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datamaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contassitentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,39 +60,46 @@
             this.comunitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esdevenimentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(794, 46);
+            this.label1.Location = new System.Drawing.Point(596, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar";
             // 
             // textBoxFiltrar
             // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(794, 85);
+            this.textBoxFiltrar.Location = new System.Drawing.Point(602, 98);
+            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(210, 22);
+            this.textBoxFiltrar.Size = new System.Drawing.Size(152, 20);
             this.textBoxFiltrar.TabIndex = 1;
+            this.textBoxFiltrar.Visible = false;
+            this.textBoxFiltrar.TextChanged += new System.EventHandler(this.textBoxFiltrar_TextChanged);
             // 
-            // comboBox1
+            // comboFiltros
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(858, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 24);
-            this.comboBox1.TabIndex = 2;
+            this.comboFiltros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFiltros.FormattingEnabled = true;
+            this.comboFiltros.Items.AddRange(new object[] {
+            "Por nombre",
+            "Precio: mayor o igual que",
+            "Precio: menor o igual que",
+            "Precio:mayor a menor"});
+            this.comboFiltros.Location = new System.Drawing.Point(644, 35);
+            this.comboFiltros.Margin = new System.Windows.Forms.Padding(2);
+            this.comboFiltros.Name = "comboFiltros";
+            this.comboFiltros.Size = new System.Drawing.Size(110, 21);
+            this.comboFiltros.TabIndex = 2;
+            this.comboFiltros.SelectedIndexChanged += new System.EventHandler(this.comboFiltros_SelectedIndexChanged);
             // 
             // dataGridViewEventos
             // 
@@ -95,6 +108,7 @@
             this.dataGridViewEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titolDataGridViewTextBoxColumn,
             this.descripcioDataGridViewTextBoxColumn,
+            this.preuDataGridViewTextBoxColumn,
             this.dataDataGridViewTextBoxColumn,
             this.horaDataGridViewTextBoxColumn,
             this.adrecaDataGridViewTextBoxColumn,
@@ -103,7 +117,6 @@
             this.imatgeDataGridViewTextBoxColumn,
             this.quantitatmaxDataGridViewTextBoxColumn,
             this.quantitatmínimaDataGridViewTextBoxColumn,
-            this.preuDataGridViewTextBoxColumn,
             this.pagamentDataGridViewTextBoxColumn,
             this.datamaxDataGridViewTextBoxColumn,
             this.contassitentsDataGridViewTextBoxColumn,
@@ -112,23 +125,84 @@
             this.comunitatsDataGridViewTextBoxColumn,
             this.documentsDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.esdevenimentsBindingSource;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(12, 43);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(9, 35);
+            this.dataGridViewEventos.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.RowHeadersWidth = 51;
             this.dataGridViewEventos.RowTemplate.Height = 24;
             this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEventos.Size = new System.Drawing.Size(776, 347);
+            this.dataGridViewEventos.Size = new System.Drawing.Size(582, 282);
             this.dataGridViewEventos.TabIndex = 3;
             // 
             // buttonSocios
             // 
-            this.buttonSocios.Location = new System.Drawing.Point(587, 396);
+            this.buttonSocios.Location = new System.Drawing.Point(440, 322);
+            this.buttonSocios.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSocios.Name = "buttonSocios";
-            this.buttonSocios.Size = new System.Drawing.Size(155, 35);
+            this.buttonSocios.Size = new System.Drawing.Size(116, 28);
             this.buttonSocios.TabIndex = 7;
             this.buttonSocios.Text = "Lista valoraciones";
             this.buttonSocios.UseVisualStyleBackColor = true;
             this.buttonSocios.Click += new System.EventHandler(this.buttonSocios_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2,
+            this.toolStripButton1,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(762, 27);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(59, 24);
+            this.toolStripButton2.Text = "Crear";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(82, 24);
+            this.toolStripButton1.Text = "Modificar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(74, 24);
+            this.toolStripButton3.Text = "Eliminar";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(279, 329);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Acciones sobre la fila elegida: ";
+            // 
+            // infoFiltroText
+            // 
+            this.infoFiltroText.AutoSize = true;
+            this.infoFiltroText.Location = new System.Drawing.Point(601, 75);
+            this.infoFiltroText.Name = "infoFiltroText";
+            this.infoFiltroText.Size = new System.Drawing.Size(0, 13);
+            this.infoFiltroText.TabIndex = 10;
+            this.infoFiltroText.Click += new System.EventHandler(this.infoFiltroText_Click);
             // 
             // titolDataGridViewTextBoxColumn
             // 
@@ -145,6 +219,14 @@
             this.descripcioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descripcioDataGridViewTextBoxColumn.Name = "descripcioDataGridViewTextBoxColumn";
             this.descripcioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // preuDataGridViewTextBoxColumn
+            // 
+            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
+            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
+            this.preuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
+            this.preuDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -210,14 +292,6 @@
             this.quantitatmínimaDataGridViewTextBoxColumn.Name = "quantitatmínimaDataGridViewTextBoxColumn";
             this.quantitatmínimaDataGridViewTextBoxColumn.Width = 125;
             // 
-            // preuDataGridViewTextBoxColumn
-            // 
-            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
-            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
-            this.preuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
-            this.preuDataGridViewTextBoxColumn.Width = 125;
-            // 
             // pagamentDataGridViewTextBoxColumn
             // 
             this.pagamentDataGridViewTextBoxColumn.DataPropertyName = "pagament";
@@ -278,77 +352,30 @@
             // 
             this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripButton1,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1016, 31);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(97, 28);
-            this.toolStripButton1.Text = "Modificar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
-            this.toolStripButton2.Text = "Crear";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(87, 28);
-            this.toolStripButton3.Text = "Eliminar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 405);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Acciones sobre la fila elegida: ";
-            // 
             // Control_de_Eventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1016, 450);
+            this.ClientSize = new System.Drawing.Size(762, 366);
+            this.Controls.Add(this.infoFiltroText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonSocios);
             this.Controls.Add(this.dataGridViewEventos);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboFiltros);
             this.Controls.Add(this.textBoxFiltrar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Control_de_Eventos";
             this.Text = "Control_de_Eventos";
             this.Activated += new System.EventHandler(this.Control_de_Eventos_Activated);
             this.Load += new System.EventHandler(this.Control_de_Eventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,11 +385,19 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFiltrar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboFiltros;
         private System.Windows.Forms.DataGridView dataGridViewEventos;
         private System.Windows.Forms.Button buttonSocios;
+        private System.Windows.Forms.BindingSource esdevenimentsBindingSource;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label infoFiltroText;
         private System.Windows.Forms.DataGridViewTextBoxColumn titolDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adrecaDataGridViewTextBoxColumn;
@@ -371,7 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn imatgeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantitatmaxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantitatmínimaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datamaxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contassitentsDataGridViewTextBoxColumn;
@@ -379,11 +413,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn assistirDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn comunitatsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource esdevenimentsBindingSource;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.Label label2;
     }
 }

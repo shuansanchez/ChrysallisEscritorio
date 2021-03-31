@@ -58,7 +58,38 @@ namespace Chrysallis
              ).ToList();
             return _eventos;
         }
+        //buscar por nombre
+        public static List<esdeveniments> SelectEventoPorNombre(string eventoEscrito)
+        {
+            List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
+                                   where c.titol.Contains(eventoEscrito)
+                                   select c).ToList();
 
+            return eventos;
+        }
+
+        //buscar por precio mayor de
+
+        public static List<esdeveniments> SelectEventoPorPrecioMayorDe(float precioFiltro)
+        {
+            List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
+                                           where c.preu.Value>precioFiltro
+                                           select c).ToList();
+
+            return eventos;
+        }
+        //buscar por precio menor de
+
+        public static List<esdeveniments> SelectEventoPorPrecioMenorDe(float precioFiltro)
+        {
+            List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
+                                           where c.preu.Value <= (precioFiltro)
+                                           select c).ToList();
+
+            return eventos;
+        }
+
+      
         public static void DeleteEvento(esdeveniments _evento)
         {
             Orm.bdconnection.esdeveniments.Remove(_evento);
