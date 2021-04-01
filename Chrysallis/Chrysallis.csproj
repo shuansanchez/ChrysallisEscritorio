@@ -99,29 +99,17 @@
     <Compile Include="comunitats.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <Compile Include="CreaModAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreaModAdmin.Designer.cs">
-      <DependentUpon>CreaModAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AñadirSocio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AñadirSocio.Designer.cs">
-      <DependentUpon>AñadirSocio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlAdministradores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlAdministradores.Designer.cs">
-      <DependentUpon>ControlAdministradores.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlEventos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ControlEventos.Designer.cs">
       <DependentUpon>ControlEventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMenores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlMenores.Designer.cs">
+      <DependentUpon>ControlMenores.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlSocios.cs">
       <SubType>Form</SubType>
@@ -129,18 +117,23 @@
     <Compile Include="ControlSocios.Designer.cs">
       <DependentUpon>ControlSocios.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlValoraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlValoraciones.Designer.cs">
+      <DependentUpon>ControlValoraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearModMenor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearModMenor.Designer.cs">
+      <DependentUpon>CrearModMenor.cs</DependentUpon>
+    </Compile>
     <Compile Include="documents.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
     <Compile Include="esdeveniments.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Evento.cs" />
-    <Compile Include="Eventos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eventos.Designer.cs">
-      <DependentUpon>Eventos.cs</DependentUpon>
     </Compile>
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
@@ -193,23 +186,26 @@
     <Compile Include="valoracions.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreaModAdmin.resx">
-      <DependentUpon>CreaModAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AñadirSocio.resx">
-      <DependentUpon>AñadirSocio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlAdministradores.resx">
-      <DependentUpon>ControlAdministradores.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="VerMenores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerMenores.Designer.cs">
+      <DependentUpon>VerMenores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ControlEventos.resx">
       <DependentUpon>ControlEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMenores.resx">
+      <DependentUpon>ControlMenores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlSocios.resx">
       <DependentUpon>ControlSocios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Eventos.resx">
-      <DependentUpon>Eventos.cs</DependentUpon>
+    <EmbeddedResource Include="ControlValoraciones.resx">
+      <DependentUpon>ControlValoraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearModMenor.resx">
+      <DependentUpon>CrearModMenor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>
@@ -233,6 +229,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VerMenores.resx">
+      <DependentUpon>VerMenores.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="BDCHRYSALLIS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BDCHRYSALLIS.Designer.cs</LastGenOutput>

@@ -17,11 +17,6 @@ namespace Chrysallis
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAñadir_Click(object sender, EventArgs e)
         {
             CreaModEventos nuevoEvento = new CreaModEventos(true);
@@ -30,8 +25,55 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            CreaModEventos cambiaEvento = new CreaModEventos(false);
+            CreaModEventos cambiaEvento = new CreaModEventos(false, (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
             cambiaEvento.ShowDialog();
+        }
+
+        private void Control_de_Eventos_Load(object sender, EventArgs e)
+        {
+            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+        }
+
+       /* private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            if (dataGridViewEventos.SelectedRows.Count > 0)
+            {
+                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialogConfirmaBorra == DialogResult.OK)
+                {
+                    ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }*/
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEventos.SelectedRows.Count > 0)
+            {
+                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialogConfirmaBorra == DialogResult.OK)
+                {
+                        ConsultaOrm.DeleteEvento((esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+                        this.Control_de_Eventos_Load(sender, e);
+                }
+            }
+        }
+
+        private void Control_de_Eventos_Activated(object sender, EventArgs e)
+        {
+            dataGridViewEventos.ReadOnly = true;
+            dataGridViewEventos.DataSource = null;
+            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
+        }
+
+        private void buttonSocios_Click(object sender, EventArgs e)
+        {
+            ControlValoraciones nuevoValoraciones = new ControlValoraciones(true, (esdeveniments)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+            nuevoValoraciones.ShowDialog();
         }
     }
 }
