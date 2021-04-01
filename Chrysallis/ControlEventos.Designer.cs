@@ -68,16 +68,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(596, 37);
+            this.label1.Location = new System.Drawing.Point(612, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Filtrar";
+            this.label1.Text = "Filtrar por";
             // 
             // textBoxFiltrar
             // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(602, 98);
+            this.textBoxFiltrar.Location = new System.Drawing.Point(605, 114);
             this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFiltrar.Name = "textBoxFiltrar";
             this.textBoxFiltrar.Size = new System.Drawing.Size(152, 20);
@@ -90,11 +90,10 @@
             this.comboFiltros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFiltros.FormattingEnabled = true;
             this.comboFiltros.Items.AddRange(new object[] {
-            "Por nombre",
-            "Precio: mayor o igual que",
-            "Precio: menor o igual que",
-            "Precio:mayor a menor"});
-            this.comboFiltros.Location = new System.Drawing.Point(644, 35);
+            "Nombre",
+            "C.Autónoma",
+            "Provincia"});
+            this.comboFiltros.Location = new System.Drawing.Point(615, 57);
             this.comboFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.comboFiltros.Name = "comboFiltros";
             this.comboFiltros.Size = new System.Drawing.Size(110, 21);
@@ -125,7 +124,7 @@
             this.comunitatsDataGridViewTextBoxColumn,
             this.documentsDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.esdevenimentsBindingSource;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(9, 35);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(19, 35);
             this.dataGridViewEventos.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.RowHeadersWidth = 51;

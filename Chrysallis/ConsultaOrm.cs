@@ -67,13 +67,35 @@ namespace Chrysallis
 
             return eventos;
         }
-
-        //buscar por precio mayor de
-
-        public static List<esdeveniments> SelectEventoPorPrecioMayorDe(float precioFiltro)
+        //buscar por CA
+        public static List<esdeveniments> SelectEventoPorCAutonoma(string CAescrita)
         {
             List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
-                                           where c.preu.Value>precioFiltro
+                                           where c.comunitats.nom.Contains(CAescrita)
+                                           select c).ToList();
+
+            return eventos;
+        }
+        //buscar por Provincia
+        /*
+        public static List<esdeveniments> SelectEventoPorProvincia(string provincia)
+        { 
+            List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
+                                           where c.provincies.Contains(provincia)
+                                           select c).ToList();
+            
+            return eventos;
+        }
+        //buscar por precio mayor de
+*/
+        public static List<esdeveniments> SelectEventoPorPrecioMayorDe(float precioFiltro)
+        {
+           
+
+       
+
+            List<esdeveniments> eventos = (from c in Orm.bdconnection.esdeveniments
+                                           where c.preu.Value> precioFiltro
                                            select c).ToList();
 
             return eventos;

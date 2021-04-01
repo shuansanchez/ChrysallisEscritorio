@@ -128,35 +128,14 @@ namespace Chrysallis
                     this.Control_de_Eventos_Load(sender, e);
                     break;
                 case 1:
-                        int value;
-                        if (int.TryParse(textBoxFiltrar.Text.ToString(), out value)) {
-
-                            esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMayorDe(float.Parse(textBoxFiltrar.Text.ToString()));
-                            this.Control_de_Eventos_Load(sender, e);
-                        }
-                        /*
-                        if (!string.IsNullOrEmpty(textBoxFiltrar.Text))
-                    {
-                        esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMayorDe(float.Parse(textBoxFiltrar.Text));
-                        this.Control_de_Eventos_Load(sender, e);
-                    }
-                 
-                    */
-                    break;
-                case 2:
-                        int value2;
-                        if (int.TryParse(textBoxFiltrar.Text.ToString(), out value2))
-                        {
-
-                            esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorPrecioMenorDe(float.Parse(textBoxFiltrar.Text));
-                            this.Control_de_Eventos_Load(sender, e);
-                        }
-                      
-                    break;
-                    case 3:
-                        dataGridViewEventos.Sort(dataGridViewEventos.Columns["preu"], ListSortDirection.Ascending);
+                        esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorCAutonoma(textBoxFiltrar.Text);
                         this.Control_de_Eventos_Load(sender, e);
                         break;
+                case 2:
+                        esdevenimentsBindingSource.DataSource = ConsultaOrm.SelectEventoPorCAutonoma(textBoxFiltrar.Text);
+                        this.Control_de_Eventos_Load(sender, e);
+                        break;
+               
             }
 
             }
@@ -179,6 +158,9 @@ namespace Chrysallis
                     break;
                 case 1:
                     infoFiltroText.Text = "Precio";
+                    break;
+                case 2:
+                    infoFiltroText.Text = "Província";
                     break;
 
 
