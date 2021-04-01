@@ -40,12 +40,30 @@ namespace Chrysallis
             ).ToList();
             return _provincies;
         }
+        //LOCALIDADES
+        public static List<localitats> SelectLocalidades(int id)
+        {
+            List<localitats> _localitats =
+            (
+                from c in Orm.bdconnection.localitats
+                where c.id_provincia == id
+                select c
+            ).ToList();
+            return _localitats;
+        }
 
 
         //EVENTOS---------------------------------------------------------
         public static void InsertEvento(esdeveniments _evento)
         {
             Orm.bdconnection.esdeveniments.Add(_evento);
+            Orm.bdconnection.SaveChanges();
+        }
+
+        //LOCALIDADES
+        public static void InsertLocalidad(localitats localidad)
+        {
+            Orm.bdconnection.localitats.Add(localidad);
             Orm.bdconnection.SaveChanges();
         }
 

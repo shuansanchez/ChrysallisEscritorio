@@ -45,7 +45,6 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.pictureBoxImagenEvento = new System.Windows.Forms.PictureBox();
             this.buttonArchivoBuscar = new System.Windows.Forms.Button();
-            this.textBoxLocalidad = new System.Windows.Forms.TextBox();
             this.labelLocalidad = new System.Windows.Forms.Label();
             this.labelProvincia = new System.Windows.Forms.Label();
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
@@ -70,9 +69,13 @@
             this.labelLongitud = new System.Windows.Forms.Label();
             this.textBoxLatitud = new System.Windows.Forms.TextBox();
             this.labelLatitud = new System.Windows.Forms.Label();
+            this.comboBoxLocalidad = new System.Windows.Forms.ComboBox();
+            this.localitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AñadirLocalidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
@@ -81,7 +84,7 @@
             this.buttonModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(95, 44);
-            this.buttonModificar.TabIndex = 22;
+            this.buttonModificar.TabIndex = 38;
             this.buttonModificar.Text = "Aceptar";
             this.buttonModificar.UseVisualStyleBackColor = true;
             this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
@@ -92,7 +95,7 @@
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(80, 27);
-            this.buttonCancelar.TabIndex = 21;
+            this.buttonCancelar.TabIndex = 37;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -103,7 +106,7 @@
             this.buttonImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonImagen.Name = "buttonImagen";
             this.buttonImagen.Size = new System.Drawing.Size(125, 28);
-            this.buttonImagen.TabIndex = 19;
+            this.buttonImagen.TabIndex = 35;
             this.buttonImagen.Text = "Buscar imagen";
             this.buttonImagen.UseVisualStyleBackColor = true;
             this.buttonImagen.Click += new System.EventHandler(this.buttonImagen_Click);
@@ -115,7 +118,7 @@
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(352, 86);
-            this.textBoxDescripcion.TabIndex = 18;
+            this.textBoxDescripcion.TabIndex = 32;
             // 
             // textBoxPrecio
             // 
@@ -123,7 +126,7 @@
             this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(352, 22);
-            this.textBoxPrecio.TabIndex = 8;
+            this.textBoxPrecio.TabIndex = 31;
             // 
             // textBoxTitulo
             // 
@@ -131,7 +134,7 @@
             this.textBoxTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTitulo.Name = "textBoxTitulo";
             this.textBoxTitulo.Size = new System.Drawing.Size(352, 22);
-            this.textBoxTitulo.TabIndex = 1;
+            this.textBoxTitulo.TabIndex = 28;
             // 
             // textBoxDireccion
             // 
@@ -139,7 +142,7 @@
             this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(352, 22);
-            this.textBoxDireccion.TabIndex = 7;
+            this.textBoxDireccion.TabIndex = 27;
             // 
             // labelDescripcion
             // 
@@ -211,18 +214,10 @@
             this.buttonArchivoBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonArchivoBuscar.Name = "buttonArchivoBuscar";
             this.buttonArchivoBuscar.Size = new System.Drawing.Size(109, 28);
-            this.buttonArchivoBuscar.TabIndex = 20;
+            this.buttonArchivoBuscar.TabIndex = 39;
             this.buttonArchivoBuscar.Text = "Elegir archivo";
             this.buttonArchivoBuscar.UseVisualStyleBackColor = true;
             this.buttonArchivoBuscar.Click += new System.EventHandler(this.ArchivoBuscar_Click);
-            // 
-            // textBoxLocalidad
-            // 
-            this.textBoxLocalidad.Location = new System.Drawing.Point(112, 182);
-            this.textBoxLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLocalidad.Name = "textBoxLocalidad";
-            this.textBoxLocalidad.Size = new System.Drawing.Size(352, 22);
-            this.textBoxLocalidad.TabIndex = 6;
             // 
             // labelLocalidad
             // 
@@ -252,9 +247,13 @@
             this.comboBoxComunidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxComunidad.Name = "comboBoxComunidad";
             this.comboBoxComunidad.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxComunidad.TabIndex = 4;
+            this.comboBoxComunidad.TabIndex = 43;
             this.comboBoxComunidad.ValueMember = "id";
             this.comboBoxComunidad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comunitatsBindingSource
+            // 
+            this.comunitatsBindingSource.DataSource = typeof(Chrysallis.comunitats);
             // 
             // comboBoxProvincia
             // 
@@ -266,8 +265,13 @@
             this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(352, 24);
-            this.comboBoxProvincia.TabIndex = 5;
+            this.comboBoxProvincia.TabIndex = 45;
             this.comboBoxProvincia.ValueMember = "id";
+            this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
+            // 
+            // provinciesBindingSource
+            // 
+            this.provinciesBindingSource.DataSource = typeof(Chrysallis.provincies);
             // 
             // labelComunidad
             // 
@@ -287,7 +291,7 @@
             this.checkBoxGratis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxGratis.Name = "checkBoxGratis";
             this.checkBoxGratis.Size = new System.Drawing.Size(68, 21);
-            this.checkBoxGratis.TabIndex = 9;
+            this.checkBoxGratis.TabIndex = 46;
             this.checkBoxGratis.Text = "Gratis";
             this.checkBoxGratis.UseVisualStyleBackColor = true;
             this.checkBoxGratis.CheckedChanged += new System.EventHandler(this.checkBoxGratis_CheckedChanged);
@@ -298,7 +302,7 @@
             this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(352, 22);
-            this.dateTimePickerFecha.TabIndex = 2;
+            this.dateTimePickerFecha.TabIndex = 47;
             // 
             // dateTimePickerHora
             // 
@@ -307,7 +311,7 @@
             this.dateTimePickerHora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.Size = new System.Drawing.Size(352, 22);
-            this.dateTimePickerHora.TabIndex = 3;
+            this.dateTimePickerHora.TabIndex = 48;
             // 
             // checkBoxVirtual
             // 
@@ -316,7 +320,7 @@
             this.checkBoxVirtual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxVirtual.Name = "checkBoxVirtual";
             this.checkBoxVirtual.Size = new System.Drawing.Size(70, 21);
-            this.checkBoxVirtual.TabIndex = 11;
+            this.checkBoxVirtual.TabIndex = 51;
             this.checkBoxVirtual.Text = "Virtual";
             this.checkBoxVirtual.UseVisualStyleBackColor = true;
             this.checkBoxVirtual.CheckedChanged += new System.EventHandler(this.checkBoxVirtual_CheckedChanged);
@@ -327,7 +331,7 @@
             this.textBoxEnlace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEnlace.Name = "textBoxEnlace";
             this.textBoxEnlace.Size = new System.Drawing.Size(352, 22);
-            this.textBoxEnlace.TabIndex = 10;
+            this.textBoxEnlace.TabIndex = 50;
             // 
             // labelEnlace
             // 
@@ -345,7 +349,7 @@
             this.checkBoxMinima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMinima.Name = "checkBoxMinima";
             this.checkBoxMinima.Size = new System.Drawing.Size(119, 21);
-            this.checkBoxMinima.TabIndex = 15;
+            this.checkBoxMinima.TabIndex = 56;
             this.checkBoxMinima.Text = "Asist. mínimos";
             this.checkBoxMinima.UseVisualStyleBackColor = true;
             this.checkBoxMinima.CheckedChanged += new System.EventHandler(this.checkBoxMinima_CheckedChanged);
@@ -356,7 +360,7 @@
             this.textBoxminimo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxminimo.Name = "textBoxminimo";
             this.textBoxminimo.Size = new System.Drawing.Size(352, 22);
-            this.textBoxminimo.TabIndex = 14;
+            this.textBoxminimo.TabIndex = 55;
             // 
             // textBoxmax
             // 
@@ -364,7 +368,7 @@
             this.textBoxmax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxmax.Name = "textBoxmax";
             this.textBoxmax.Size = new System.Drawing.Size(352, 22);
-            this.textBoxmax.TabIndex = 12;
+            this.textBoxmax.TabIndex = 54;
             // 
             // labelAsistMin
             // 
@@ -391,7 +395,7 @@
             this.checkBoxmax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxmax.Name = "checkBoxmax";
             this.checkBoxmax.Size = new System.Drawing.Size(122, 21);
-            this.checkBoxmax.TabIndex = 13;
+            this.checkBoxmax.TabIndex = 57;
             this.checkBoxmax.Text = "Asist. máximos";
             this.checkBoxmax.UseVisualStyleBackColor = true;
             this.checkBoxmax.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -411,7 +415,7 @@
             this.textBoxLongitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLongitud.Name = "textBoxLongitud";
             this.textBoxLongitud.Size = new System.Drawing.Size(352, 22);
-            this.textBoxLongitud.TabIndex = 17;
+            this.textBoxLongitud.TabIndex = 60;
             // 
             // labelLongitud
             // 
@@ -428,7 +432,7 @@
             this.textBoxLatitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLatitud.Name = "textBoxLatitud";
             this.textBoxLatitud.Size = new System.Drawing.Size(352, 22);
-            this.textBoxLatitud.TabIndex = 16;
+            this.textBoxLatitud.TabIndex = 62;
             // 
             // labelLatitud
             // 
@@ -439,12 +443,42 @@
             this.labelLatitud.TabIndex = 61;
             this.labelLatitud.Text = "LATITUD";
             // 
+            // comboBoxLocalidad
+            // 
+            this.comboBoxLocalidad.DataSource = this.localitatsBindingSource;
+            this.comboBoxLocalidad.DisplayMember = "nom";
+            this.comboBoxLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLocalidad.FormattingEnabled = true;
+            this.comboBoxLocalidad.Location = new System.Drawing.Point(112, 178);
+            this.comboBoxLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxLocalidad.Name = "comboBoxLocalidad";
+            this.comboBoxLocalidad.Size = new System.Drawing.Size(352, 24);
+            this.comboBoxLocalidad.TabIndex = 63;
+            this.comboBoxLocalidad.ValueMember = "id";
+            this.comboBoxLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocalidad_SelectedIndexChanged);
+            // 
+            // localitatsBindingSource
+            // 
+            this.localitatsBindingSource.DataSource = typeof(Chrysallis.localitats);
+            // 
+            // AñadirLocalidad
+            // 
+            this.AñadirLocalidad.Location = new System.Drawing.Point(469, 178);
+            this.AñadirLocalidad.Name = "AñadirLocalidad";
+            this.AñadirLocalidad.Size = new System.Drawing.Size(93, 24);
+            this.AñadirLocalidad.TabIndex = 64;
+            this.AñadirLocalidad.Text = "Crear loc.";
+            this.AñadirLocalidad.UseVisualStyleBackColor = true;
+            this.AñadirLocalidad.Click += new System.EventHandler(this.AñadirLocalidad_Click);
+            // 
             // CreaModEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(848, 578);
+            this.Controls.Add(this.AñadirLocalidad);
+            this.Controls.Add(this.comboBoxLocalidad);
             this.Controls.Add(this.textBoxLatitud);
             this.Controls.Add(this.labelLatitud);
             this.Controls.Add(this.textBoxLongitud);
@@ -466,7 +500,6 @@
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.comboBoxComunidad);
             this.Controls.Add(this.labelProvincia);
-            this.Controls.Add(this.textBoxLocalidad);
             this.Controls.Add(this.labelLocalidad);
             this.Controls.Add(this.buttonArchivoBuscar);
             this.Controls.Add(this.buttonModificar);
@@ -487,10 +520,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreaModEventos";
             this.Text = "ModificarEventos";
+            this.Activated += new System.EventHandler(this.CreaModEventos_Activated);
             this.Load += new System.EventHandler(this.CreaModEventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,7 +548,6 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonArchivoBuscar;
-        private System.Windows.Forms.TextBox textBoxLocalidad;
         private System.Windows.Forms.Label labelLocalidad;
         private System.Windows.Forms.Label labelProvincia;
         private System.Windows.Forms.ComboBox comboBoxComunidad;
@@ -538,5 +572,8 @@
         private System.Windows.Forms.Label labelLongitud;
         private System.Windows.Forms.TextBox textBoxLatitud;
         private System.Windows.Forms.Label labelLatitud;
+        private System.Windows.Forms.ComboBox comboBoxLocalidad;
+        private System.Windows.Forms.BindingSource localitatsBindingSource;
+        private System.Windows.Forms.Button AñadirLocalidad;
     }
 }
