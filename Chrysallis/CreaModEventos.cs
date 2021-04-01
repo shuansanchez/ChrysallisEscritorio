@@ -14,6 +14,7 @@ namespace Chrysallis
         /*************************************/
         BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
         comunitats co = new comunitats();
+        provincies pr = new provincies();
         esdeveniments modificaEvento = new esdeveniments();
         Boolean modificar;
         public CreaModEventos(Boolean creacion)
@@ -218,6 +219,7 @@ namespace Chrysallis
 
         private void CreaModEventos_Load(object sender, EventArgs e)
         {
+           
             textBoxminimo.Enabled = false;
             textBoxmax.Enabled = false;
             textBoxPrecio.Enabled = false;
@@ -227,13 +229,19 @@ namespace Chrysallis
            
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
-           
+
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
         }
 
         private void checkBoxGratis_CheckedChanged(object sender, EventArgs e)
@@ -335,6 +343,29 @@ namespace Chrysallis
             {
                 textBoxmax.Enabled = false;
             }
+        }
+
+        private void comboBoxLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void CreaModEventos_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+        }
+
+        private void AñadirLocalidad_Click(object sender, EventArgs e)
+        {
+            AñadirLocalidad añadir = new AñadirLocalidad(comunidades);
+
+            añadir.ShowDialog();
         }
     }
 }
