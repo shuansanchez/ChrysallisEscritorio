@@ -86,7 +86,7 @@
             // 
             // buttonSocios
             // 
-            this.buttonSocios.Location = new System.Drawing.Point(587, 396);
+            this.buttonSocios.Location = new System.Drawing.Point(633, 403);
             this.buttonSocios.Name = "buttonSocios";
             this.buttonSocios.Size = new System.Drawing.Size(155, 35);
             this.buttonSocios.TabIndex = 7;
@@ -137,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 405);
+            this.label2.Location = new System.Drawing.Point(418, 412);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 17);
             this.label2.TabIndex = 9;

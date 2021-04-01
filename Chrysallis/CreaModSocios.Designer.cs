@@ -90,10 +90,10 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(945, 566);
+            this.buttonCancelar.Location = new System.Drawing.Point(945, 574);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(99, 42);
+            this.buttonCancelar.Size = new System.Drawing.Size(98, 31);
             this.buttonCancelar.TabIndex = 21;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;

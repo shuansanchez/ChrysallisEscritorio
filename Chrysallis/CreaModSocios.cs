@@ -155,10 +155,7 @@ namespace Chrysallis
                 //debe crearse un campo para el nombre de usuario en creaModSocios
                 usuarioSocio.username = textBoxNombreUsuario.Text;
                 ConsultaOrm.InsertUsuario(usuarioSocio);
-
                 //--------------------------------------------
-
-                
             }
             this.Close();
         }
