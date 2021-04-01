@@ -156,7 +156,7 @@ namespace Chrysallis
                 case 0:
                     infoFiltroText.Text = "Nombre";
                     break;
-                case 1:
+                case 1://fuera
                     infoFiltroText.Text = "Precio";
                     break;
                 case 2:
@@ -167,9 +167,9 @@ namespace Chrysallis
             }
         }
 
-        private void infoFiltroText_Click(object sender, EventArgs e)
+        private void dataGridViewEventos_DoubleClick(object sender, EventArgs e)
         {
-      
+            toolStripButton1_Click(sender, e);
         }
     }
 }

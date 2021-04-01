@@ -68,19 +68,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(612, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(816, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar por";
             // 
             // textBoxFiltrar
             // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(605, 114);
-            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFiltrar.Location = new System.Drawing.Point(807, 140);
+            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(152, 20);
+            this.textBoxFiltrar.Size = new System.Drawing.Size(201, 22);
             this.textBoxFiltrar.TabIndex = 1;
             this.textBoxFiltrar.Visible = false;
             this.textBoxFiltrar.TextChanged += new System.EventHandler(this.textBoxFiltrar_TextChanged);
@@ -93,10 +92,10 @@
             "Nombre",
             "C.Autónoma",
             "Provincia"});
-            this.comboFiltros.Location = new System.Drawing.Point(615, 57);
-            this.comboFiltros.Margin = new System.Windows.Forms.Padding(2);
+            this.comboFiltros.Location = new System.Drawing.Point(820, 70);
+            this.comboFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboFiltros.Name = "comboFiltros";
-            this.comboFiltros.Size = new System.Drawing.Size(110, 21);
+            this.comboFiltros.Size = new System.Drawing.Size(145, 24);
             this.comboFiltros.TabIndex = 2;
             this.comboFiltros.SelectedIndexChanged += new System.EventHandler(this.comboFiltros_SelectedIndexChanged);
             // 
@@ -124,21 +123,22 @@
             this.comunitatsDataGridViewTextBoxColumn,
             this.documentsDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.esdevenimentsBindingSource;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(19, 35);
-            this.dataGridViewEventos.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(25, 43);
+            this.dataGridViewEventos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.RowHeadersWidth = 51;
             this.dataGridViewEventos.RowTemplate.Height = 24;
             this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEventos.Size = new System.Drawing.Size(582, 282);
+            this.dataGridViewEventos.Size = new System.Drawing.Size(776, 347);
             this.dataGridViewEventos.TabIndex = 3;
+            this.dataGridViewEventos.DoubleClick += new System.EventHandler(this.dataGridViewEventos_DoubleClick);
             // 
             // buttonSocios
             // 
-            this.buttonSocios.Location = new System.Drawing.Point(440, 322);
-            this.buttonSocios.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSocios.Location = new System.Drawing.Point(587, 396);
+            this.buttonSocios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSocios.Name = "buttonSocios";
-            this.buttonSocios.Size = new System.Drawing.Size(116, 28);
+            this.buttonSocios.Size = new System.Drawing.Size(155, 34);
             this.buttonSocios.TabIndex = 7;
             this.buttonSocios.Text = "Lista valoraciones";
             this.buttonSocios.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(762, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1016, 31);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -162,7 +162,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(59, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
             this.toolStripButton2.Text = "Crear";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -171,7 +171,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(82, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(97, 28);
             this.toolStripButton1.Text = "Modificar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -180,28 +180,27 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(74, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(87, 28);
             this.toolStripButton3.Text = "Eliminar";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 329);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(372, 405);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 13);
+            this.label2.Size = new System.Drawing.Size(200, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
             // infoFiltroText
             // 
             this.infoFiltroText.AutoSize = true;
-            this.infoFiltroText.Location = new System.Drawing.Point(601, 75);
+            this.infoFiltroText.Location = new System.Drawing.Point(801, 92);
+            this.infoFiltroText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.infoFiltroText.Name = "infoFiltroText";
-            this.infoFiltroText.Size = new System.Drawing.Size(0, 13);
+            this.infoFiltroText.Size = new System.Drawing.Size(0, 17);
             this.infoFiltroText.TabIndex = 10;
-            this.infoFiltroText.Click += new System.EventHandler(this.infoFiltroText_Click);
             // 
             // titolDataGridViewTextBoxColumn
             // 
@@ -353,10 +352,10 @@
             // 
             // Control_de_Eventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(762, 366);
+            this.ClientSize = new System.Drawing.Size(1016, 450);
             this.Controls.Add(this.infoFiltroText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
@@ -366,7 +365,7 @@
             this.Controls.Add(this.textBoxFiltrar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Control_de_Eventos";
             this.Text = "Control_de_Eventos";
             this.Activated += new System.EventHandler(this.Control_de_Eventos_Activated);
