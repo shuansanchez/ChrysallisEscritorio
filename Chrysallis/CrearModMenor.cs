@@ -14,6 +14,23 @@ namespace Chrysallis
     {
         bool crear;
         socis socioGestion;
+        String nombreActual;
+        String relacionActual;
+
+        //si es para modificar
+
+        public CrearModMenor(String nombreActual, String relacionActual)
+        {
+            InitializeComponent();
+            this.nombreActual = nombreActual;
+            this.relacionActual = relacionActual;
+            if (!crear)
+            {
+                crearBtn.Text = "Modificar";
+                nomText.Text = nombreActual;
+                relacioMenor.Text = relacionActual;
+            }
+        }
 
         public CrearModMenor(bool crear, socis socioGestion)
         {
