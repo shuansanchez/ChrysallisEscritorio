@@ -71,7 +71,7 @@
             this.labelLatitud = new System.Windows.Forms.Label();
             this.comboBoxLocalidad = new System.Windows.Forms.ComboBox();
             this.localitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AñadirLocalidad = new System.Windows.Forms.Button();
+            this.ModificarLocalidadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
@@ -461,15 +461,15 @@
             // 
             this.localitatsBindingSource.DataSource = typeof(Chrysallis.localitats);
             // 
-            // AñadirLocalidad
+            // ModificarLocalidadButton
             // 
-            this.AñadirLocalidad.Location = new System.Drawing.Point(469, 178);
-            this.AñadirLocalidad.Name = "AñadirLocalidad";
-            this.AñadirLocalidad.Size = new System.Drawing.Size(93, 24);
-            this.AñadirLocalidad.TabIndex = 64;
-            this.AñadirLocalidad.Text = "Crear loc.";
-            this.AñadirLocalidad.UseVisualStyleBackColor = true;
-            this.AñadirLocalidad.Click += new System.EventHandler(this.AñadirLocalidad_Click);
+            this.ModificarLocalidadButton.Location = new System.Drawing.Point(469, 178);
+            this.ModificarLocalidadButton.Name = "ModificarLocalidadButton";
+            this.ModificarLocalidadButton.Size = new System.Drawing.Size(93, 24);
+            this.ModificarLocalidadButton.TabIndex = 64;
+            this.ModificarLocalidadButton.Text = "Editar Loc.";
+            this.ModificarLocalidadButton.UseVisualStyleBackColor = true;
+            this.ModificarLocalidadButton.Click += new System.EventHandler(this.AñadirLocalidad_Click);
             // 
             // CreaModEventos
             // 
@@ -477,7 +477,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(848, 578);
-            this.Controls.Add(this.AñadirLocalidad);
+            this.Controls.Add(this.ModificarLocalidadButton);
             this.Controls.Add(this.comboBoxLocalidad);
             this.Controls.Add(this.textBoxLatitud);
             this.Controls.Add(this.labelLatitud);
@@ -574,6 +574,6 @@
         private System.Windows.Forms.Label labelLatitud;
         private System.Windows.Forms.ComboBox comboBoxLocalidad;
         private System.Windows.Forms.BindingSource localitatsBindingSource;
-        private System.Windows.Forms.Button AñadirLocalidad;
+        private System.Windows.Forms.Button ModificarLocalidadButton;
     }
 }

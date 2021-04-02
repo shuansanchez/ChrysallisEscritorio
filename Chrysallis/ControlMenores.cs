@@ -81,5 +81,10 @@ namespace Chrysallis
                //e.Value = _relacio.relacio;
             }
         }
+
+        private void dataGridViewMenores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

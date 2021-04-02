@@ -14,9 +14,9 @@ namespace Chrysallis
     {
         BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
         comunitats co = new comunitats();
-        public AñadirLocalidad(BindingList<comunitats> comunidades)
+        public AñadirLocalidad()
         {
-            this.comunidades = comunidades;
+            
             InitializeComponent();
         }
 

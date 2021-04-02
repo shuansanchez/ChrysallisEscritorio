@@ -52,6 +52,25 @@ namespace Chrysallis
             return _localitats;
         }
 
+        //LOCALIDADES MOSTRAR
+        public static List<localitats> SelectMostrarLoc()
+        {
+            List<localitats> _localitats =
+            (
+                from c in Orm.bdconnection.localitats
+                select c
+            ).ToList();
+            return _localitats;
+        }
+
+        //ELIMINAR LOCALIDADES
+        public static void DeleteLocalidad(localitats localidad)
+        {
+            Orm.bdconnection.localitats.Remove(localidad);
+            Orm.bdconnection.SaveChanges();
+        }
+
+
 
         //EVENTOS---------------------------------------------------------
         public static void InsertEvento(esdeveniments _evento)

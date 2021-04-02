@@ -57,6 +57,7 @@
             this.dataGridViewMenores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMenores.Size = new System.Drawing.Size(776, 409);
             this.dataGridViewMenores.TabIndex = 0;
+            this.dataGridViewMenores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMenores_CellContentClick);
             this.dataGridViewMenores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewMenores_CellFormatting);
             // 
             // nomDataGridViewTextBoxColumn
