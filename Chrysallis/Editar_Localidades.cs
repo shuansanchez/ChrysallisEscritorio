@@ -21,5 +21,11 @@ namespace Chrysallis
         {
 
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            AñadirLocalidad localidadForm = new AñadirLocalidad();
+            localidadForm.ShowDialog();
+        }
     }
 }
