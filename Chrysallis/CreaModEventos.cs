@@ -417,7 +417,7 @@ namespace Chrysallis
 
         private void AñadirLocalidad_Click(object sender, EventArgs e)
         {
-            AñadirLocalidad añadir = new AñadirLocalidad(comunidades);
+            Editar_Localidades añadir = new Editar_Localidades();
 
             añadir.ShowDialog();
         }
