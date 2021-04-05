@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace Chrysallis
 {
@@ -16,7 +18,7 @@ namespace Chrysallis
         comunitats co = new comunitats();
         provincies pr = new provincies();
         esdeveniments modificaEvento = new esdeveniments();
-        Boolean modificar, documento;
+        Boolean modificar, documento, imagen;
         public CreaModEventos(Boolean creacion)
         {
             InitializeComponent();
@@ -24,7 +26,11 @@ namespace Chrysallis
             dateTimePickerHora.Format = DateTimePickerFormat.Custom;
             dateTimePickerHora.CustomFormat = "HH:mm"; // Only use hours and minutes
             dateTimePickerHora.ShowUpDown = true;
+
+            //POR DEFECTO NO HAY DOCUMENTO NI IMAGEN
             documento = false;
+            imagen = false;
+
             if (creacion)
             {
                 //añadiremos
@@ -61,8 +67,24 @@ namespace Chrysallis
                 textBoxLatitud.Text = modificaEvento.latitud;
                 textBoxLongitud.Text = modificaEvento.longitud;
 
+                if (ConsultaOrm.SelectDocumentoEvento(modificaEvento).Count > 0)
+                {
+                    documents docuModif = ConsultaOrm.SelectDocumentoEvento(modificaEvento)[0];
+                    labelArchivo.Text = docuModif.nom;
+                }
+                
 
+                /*
+                int imagenBD = (int)modificaEvento.imatge;
 
+                byte[] imageArray = BitConverter.GetBytes(imagenBD);
+
+                MemoryStream ms = new MemoryStream();
+                ms.Seek(0, SeekOrigin.Begin);
+                Bitmap bmp = new Bitmap(ms);
+
+                pictureBoxImagenEvento.Image = bmp;
+                */
 
                 //FALTA ARCHIVO E IMAGEN TAMBIEN
 
@@ -187,7 +209,7 @@ namespace Chrysallis
                 modificaEvento=copiaDatos(modificaEvento);
                 ConsultaOrm.UpdateEvento();
             }
-            else
+            else //CREACION DE EVENTO
             {
                 if (!compruebaDatos()) //arreglar
                 {
@@ -195,12 +217,34 @@ namespace Chrysallis
                 }
                 else
                 {
+                    
+
                     DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
 
                     modificaEvento=copiaDatos(modificaEvento);
                     //-------------------------------------------------------------
-                    //modificaEvento.imatge = ;
+
+                    if (imagen)
+                    {
+                        String destino = modificaEvento.titol.Trim();
+                        destino = destino.Replace(" ", "");
+                        destino = destino.ToLower();
+                        File.Copy(rutaImagen, destino);
+                        rutaImagen = destino;
+
+                        try
+                        {
+                            modificaEvento.imatge = Int32.Parse(rutaImagen);
+                        }
+                        catch (FormatException exc)
+                        {
+                            Console.WriteLine(exc.Message);
+                        }
+
+                        
+                    }
+                    
                     ConsultaOrm.InsertEvento(modificaEvento);                            //INSERCIÓN
 
                     if (documento)
@@ -212,12 +256,14 @@ namespace Chrysallis
                         nuevoDocumento.ruta = rutaCarpeta.FileName;
                         ConsultaOrm.InsertDocumento(nuevoDocumento);
                     }
+
                     
+
                 }
             
                     
             }
-            this.Close();                                           //SE CERRARÁ EL FORMULARIO DE AÑADIR
+            this.Close();   //SE CERRARÁ EL FORMULARIO DE AÑADIR
         }
 
         private bool compruebaDatos()
@@ -261,8 +307,7 @@ namespace Chrysallis
              {
                  MessageBox.Show("Titulo Localidad Direccion mal");
              }*/
-            correcto = true;
-            return correcto;
+            return true;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -314,6 +359,7 @@ namespace Chrysallis
             if (compruebaImagen())
             {
                 //añadimos al picturebox
+                imagen = true;
                 pictureBoxImagenEvento.ImageLocation = rutaImagen;
             }
         }
@@ -397,16 +443,6 @@ namespace Chrysallis
             {
                 textBoxmax.Enabled = false;
             }
-        }
-
-        private void comboBoxLocalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void CreaModEventos_Activated(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)

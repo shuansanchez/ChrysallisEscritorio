@@ -44,6 +44,7 @@
             this.dataGridViewLocalidades.Name = "dataGridViewLocalidades";
             this.dataGridViewLocalidades.RowHeadersWidth = 51;
             this.dataGridViewLocalidades.RowTemplate.Height = 24;
+            this.dataGridViewLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLocalidades.Size = new System.Drawing.Size(776, 408);
             this.dataGridViewLocalidades.TabIndex = 0;
             // 
