@@ -82,7 +82,14 @@ namespace Chrysallis
         {
             if (modificar)
             {
-                
+                bool hayCamposVacios = comprobarCamposVacios();
+                if (hayCamposVacios)
+                {
+                    MessageBox.Show("Hay campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+
                 socioModificar.num = Int32.Parse(textBoxNum.Text);
                 socioModificar.nom = textBoxNombre.Text;
                 socioModificar.actiu = checkBoxActivo.Checked;
@@ -114,9 +121,18 @@ namespace Chrysallis
                 //debe crearse un campo para el nombre de usuario en creaModSocios
                 usuarioModificar.username = textBoxNombreUsuario.Text;
                 ConsultaOrm.UpdateUsuario();
+                }
+               
             }
             else
             {
+
+                bool hayCamposVacios = comprobarCamposVacios();
+                if (hayCamposVacios)
+                {
+                    MessageBox.Show("Hay campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
                 //CREAR
                 //POR AHORA NO SE COMPRUEBA NADA
                 socis nuevoSocio = new socis();
@@ -158,6 +174,20 @@ namespace Chrysallis
                 //--------------------------------------------
             }
             this.Close();
+        }
+
+        private bool comprobarCamposVacios()
+        {
+            //devuelve true si hay campos vacíos, si devuelve false se puede proceder
+            if(textBoxNum.Text.Equals("") || textBoxNombre.Text.Equals("") || textBoxTelefono1.Text.Equals("") || 
+                textBoxEmail.Text.Equals("") || textBoxDNI.Text.Equals("") || textBoxCiudad.Text.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void checkBoxBaja_CheckedChanged(object sender, EventArgs e)
