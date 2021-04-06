@@ -147,8 +147,27 @@ namespace Chrysallis
                 usuaris usuarioSocio = new usuaris();
 
                 //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                usuarioSocio.id_rol = 1;
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
                 usuarioSocio.rols = ConsultaOrm.SelectRolPorNombre(comboBoxRoles.SelectedItem.ToString());
+                switch (comboBoxRoles.SelectedIndex) //ID NO CONCUERDA SE TIENE QUE HACER RESEED DE LA TABLA
+                {
+                    case 0:
+                        //sin comunidades
+                        break;
+                    case 1:
+                        string comunitatsss = comboBoxComunidades.SelectedItem.ToString();
+                        comunitats encontrada = ConsultaOrm.SelectComunidadPorNombre(comunitatsss);
+                        usuarioSocio.comunitats.Add(encontrada);
+                        break;
+                    case 2:
+                        List<comunitats> todas = ConsultaOrm.SelectComunidades();
+                        for(int i=0; i < todas.Count; i++)
+                        {
+                            usuarioSocio.comunitats.Add(todas[i]);
+                        }
+                        break;
+                }
+                
                 //usuarioSocio.id = nuevoSocio.id;
                 
                 usuarioSocio.contrasenya = nuevoSocio.contrasenya;
@@ -156,9 +175,6 @@ namespace Chrysallis
                 
                 usuarioSocio.username = textBoxNombreUsuario.Text;
 
-                string comunitatsss = comboBoxComunidades.SelectedItem.ToString();
-                comunitats encontrada = ConsultaOrm.SelectComunidadPorNombre(comunitatsss);
-                usuarioSocio.comunitats.Add(encontrada);
                 ConsultaOrm.InsertUsuario(usuarioSocio);
                 //--------------------------------------------
             }
