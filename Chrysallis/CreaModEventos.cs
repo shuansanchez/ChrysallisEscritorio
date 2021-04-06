@@ -118,14 +118,15 @@ namespace Chrysallis
                     checkBoxMinima.Checked = false;
                 }
 
-                if (string.IsNullOrEmpty(modificaEvento.meet))
+                if (!string.IsNullOrEmpty(modificaEvento.meet))
                 {
-                    textBoxEnlace.Text = modificaEvento.meet;
+                    
+                    textBoxEnlace.Enabled = false;
+                    checkBoxVirtual.Checked = false;
                 }
                 else
                 {
-                    textBoxEnlace.Enabled = false;
-                    checkBoxVirtual.Checked = false;
+                    textBoxEnlace.Text = modificaEvento.meet;
                 }
 
 

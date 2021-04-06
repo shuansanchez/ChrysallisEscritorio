@@ -147,13 +147,18 @@ namespace Chrysallis
                 usuaris usuarioSocio = new usuaris();
 
                 //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioSocio.id = nuevoSocio.id;
+                usuarioSocio.id_rol = 1;
+                usuarioSocio.rols = ConsultaOrm.SelectRolPorNombre(comboBoxRoles.SelectedItem.ToString());
+                //usuarioSocio.id = nuevoSocio.id;
                 
                 usuarioSocio.contrasenya = nuevoSocio.contrasenya;
                 usuarioSocio.email = nuevoSocio.email;
-                //debe crearse un campo para el nombre de usuario en creaModSocios
+                
                 usuarioSocio.username = textBoxNombreUsuario.Text;
+
+                string comunitatsss = comboBoxComunidades.SelectedItem.ToString();
+                comunitats encontrada = ConsultaOrm.SelectComunidadPorNombre(comunitatsss);
+                usuarioSocio.comunitats.Add(encontrada);
                 ConsultaOrm.InsertUsuario(usuarioSocio);
                 //--------------------------------------------
             }

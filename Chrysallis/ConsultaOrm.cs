@@ -29,6 +29,17 @@ namespace Chrysallis
             return _comunidades;
         }
 
+        public static comunitats SelectComunidadPorNombre(string nombreComunidad)
+        {
+            comunitats _comunidades =
+            (
+                from c in Orm.bdconnection.comunitats
+                where c.nom==nombreComunidad
+                select c
+            ).First();
+            return _comunidades;
+        }
+
         //PROVINCIAS------------------------------------------------------
         public static List<provincies> SelectProvincias(int id)
         {
@@ -229,6 +240,17 @@ namespace Chrysallis
                  from c in Orm.bdconnection.rols
                  select c.nom
              ).ToList();
+            return _roles;
+        }
+
+        public static rols SelectRolPorNombre(string nombreRol)
+        {
+            rols _roles =
+             (
+                 from c in Orm.bdconnection.rols
+                 where c.nom==nombreRol
+                 select c
+             ).First();
             return _roles;
         }
 
