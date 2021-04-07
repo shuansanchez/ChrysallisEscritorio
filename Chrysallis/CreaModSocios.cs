@@ -108,7 +108,7 @@ namespace Chrysallis
                 usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                 //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
                 usuarioModificar.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioModificar.id = socioModificar.id;
+                usuarioModificar.id_socio = socioModificar.id;
                 usuarioModificar.contrasenya = socioModificar.contrasenya;
                 usuarioModificar.email = socioModificar.email;
                 //debe crearse un campo para el nombre de usuario en creaModSocios

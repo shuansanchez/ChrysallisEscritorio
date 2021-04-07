@@ -192,6 +192,15 @@
     <Compile Include="socis.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="usuaris.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>

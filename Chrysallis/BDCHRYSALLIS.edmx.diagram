@@ -15,7 +15,6 @@
         <EntityTypeShape EntityType="CHRYSALLISModel.provincies" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CHRYSALLISModel.rols" Width="1.5" PointX="3.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CHRYSALLISModel.socis" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CHRYSALLISModel.usuaris" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CHRYSALLISModel.valoracions" Width="1.5" PointX="9.75" PointY="10.375" IsExpanded="true" />
         <AssociationConnector Association="CHRYSALLISModel.FK_assistir_esdeveniments" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.FK_assistir_socis" ManuallyRouted="false" />
@@ -27,11 +26,14 @@
         <AssociationConnector Association="CHRYSALLISModel.FK_socis_localitats" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.FK_menors_socis_menors" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.FK_menors_socis_socis" ManuallyRouted="false" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_usuaris_rols" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.FK_valoracions_socis" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.comunitats_socis" ManuallyRouted="false" />
         <AssociationConnector Association="CHRYSALLISModel.preferits" ManuallyRouted="false" />
-        <AssociationConnector Association="CHRYSALLISModel.usuaris_comunitats" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.usuaris" Width="1.5" PointX="10.125" PointY="6.625" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_usuaris_rols" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_usuaris_socis" />
+        <AssociationConnector Association="CHRYSALLISModel.usuaris_comunitats" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

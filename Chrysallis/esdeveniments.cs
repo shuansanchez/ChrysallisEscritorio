@@ -22,7 +22,7 @@ namespace Chrysallis
             this.valoracions = new HashSet<valoracions>();
             this.socis = new HashSet<socis>();
         }
-
+    
         public int id { get; set; }
         public string titol { get; set; }
         public string descripcio { get; set; }
