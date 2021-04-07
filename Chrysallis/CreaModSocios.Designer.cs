@@ -77,11 +77,13 @@
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.labelProvincia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.rolsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
@@ -350,7 +352,8 @@
             // 
             // comboBoxRoles
             // 
-            this.comboBoxRoles.DataSource = this.rolsBindingSource;
+            this.comboBoxRoles.DataSource = this.rolsBindingSource1;
+            this.comboBoxRoles.DisplayMember = "nom";
             this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoles.FormattingEnabled = true;
             this.comboBoxRoles.Location = new System.Drawing.Point(832, 433);
@@ -358,6 +361,7 @@
             this.comboBoxRoles.Name = "comboBoxRoles";
             this.comboBoxRoles.Size = new System.Drawing.Size(211, 24);
             this.comboBoxRoles.TabIndex = 19;
+            this.comboBoxRoles.ValueMember = "id";
             this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
             // 
             // label4
@@ -501,6 +505,10 @@
             this.label6.TabIndex = 65;
             this.label6.Text = "Localidad";
             // 
+            // rolsBindingSource1
+            // 
+            this.rolsBindingSource1.DataSource = typeof(Chrysallis.rols);
+            // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -560,6 +568,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,5 +623,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource localitatsBindingSource;
         private System.Windows.Forms.BindingSource provinciesBindingSource;
+        private System.Windows.Forms.BindingSource rolsBindingSource1;
     }
 }

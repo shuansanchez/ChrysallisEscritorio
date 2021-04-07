@@ -111,6 +111,7 @@ namespace Chrysallis
                 usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                 //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
                 usuarioModificar.id_rol = comboBoxRoles.SelectedIndex;
+                usuarioModificar.rols = (rols)comboBoxRoles.SelectedItem;
                 usuarioModificar.id_socio = socioModificar.id;
                 usuarioModificar.contrasenya = socioModificar.contrasenya;
                 usuarioModificar.email = socioModificar.email;
@@ -147,14 +148,16 @@ namespace Chrysallis
                 nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
 
                 ConsultaOrm.InsertSocio(nuevoSocio);
+                nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
 
                 //-------------------------------------------
                 usuaris usuarioSocio = new usuaris();
 
                 //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioSocio.id = nuevoSocio.id;
-                
+                //hacer reset gente
+                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex+4;
+                usuarioSocio.id_socio = nuevoSocio.id;
+                usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
                 usuarioSocio.contrasenya = nuevoSocio.contrasenya;
                 usuarioSocio.email = nuevoSocio.email;
                 //debe crearse un campo para el nombre de usuario en creaModSocios
@@ -185,7 +188,7 @@ namespace Chrysallis
         private void Modificar_Socios_Load(object sender, EventArgs e)
         {
             comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidades();
-            rolsBindingSource.DataSource = ConsultaOrm.SelectRoles();
+           rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
             co = comunidades[comboBoxComunidad.SelectedIndex];
             provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
 
@@ -196,8 +199,10 @@ namespace Chrysallis
 
         private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
+            rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
             if (comboBoxRoles.SelectedIndex.Equals(1) || comboBoxRoles.SelectedIndex.Equals(2))
             {
+                rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
                 comboBoxComunidades.Enabled = true;
                 comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidadesNombres();
             }

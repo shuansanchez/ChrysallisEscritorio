@@ -156,6 +156,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+
         public static List<usuaris> SelectUsuarios()
         {
             List<usuaris> _usuarios =
@@ -231,6 +232,17 @@ namespace Chrysallis
              ).ToList();
             return _roles;
         }
+        public static rols SelectRol(int id)
+        {
+            rols _rol =
+             (
+                 from c in Orm.bdconnection.rols
+                 where c.id == id
+                 select c
+             ).FirstOrDefault();
+            return _rol;
+        }
+
 
         //VALORACIONES----------------------------------------------------
         public static List<valoracions> SelectValoracionesEvento(esdeveniments _evento)
