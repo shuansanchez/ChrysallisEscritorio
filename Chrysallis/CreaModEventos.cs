@@ -445,6 +445,11 @@ namespace Chrysallis
             }
         }
 
+        private void comboBoxLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             pr = (provincies)comboBoxProvincia.SelectedItem;

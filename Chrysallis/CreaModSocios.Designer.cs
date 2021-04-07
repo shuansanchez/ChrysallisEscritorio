@@ -35,20 +35,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.textBoxCP = new System.Windows.Forms.TextBox();
-            this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.textBoxTelefono1 = new System.Windows.Forms.TextBox();
             this.textBoxDNI = new System.Windows.Forms.TextBox();
-            this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxApellidos = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxNum = new System.Windows.Forms.TextBox();
             this.labelNum = new System.Windows.Forms.Label();
             this.labelCP = new System.Windows.Forms.Label();
-            this.labelLocalidad = new System.Windows.Forms.Label();
             this.labelTelf1 = new System.Windows.Forms.Label();
             this.labelDNI = new System.Windows.Forms.Label();
-            this.labelDireccion = new System.Windows.Forms.Label();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.labelApellidos = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
@@ -72,9 +68,20 @@
             this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
             this.textBoxPassw = new System.Windows.Forms.TextBox();
+            this.ModificarLocalidadButton = new System.Windows.Forms.Button();
+            this.comboBoxLocalidad = new System.Windows.Forms.ComboBox();
+            this.localitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxProvincia = new System.Windows.Forms.ComboBox();
+            this.provinciesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelComunidad = new System.Windows.Forms.Label();
+            this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
+            this.labelProvincia = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
@@ -112,7 +119,7 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
-            this.checkBoxActivo.Location = new System.Drawing.Point(447, 587);
+            this.checkBoxActivo.Location = new System.Drawing.Point(447, 612);
             this.checkBoxActivo.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(68, 21);
@@ -122,23 +129,15 @@
             // 
             // textBoxCP
             // 
-            this.textBoxCP.Location = new System.Drawing.Point(155, 352);
+            this.textBoxCP.Location = new System.Drawing.Point(155, 377);
             this.textBoxCP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCP.Name = "textBoxCP";
             this.textBoxCP.Size = new System.Drawing.Size(467, 22);
             this.textBoxCP.TabIndex = 10;
             // 
-            // textBoxCiudad
-            // 
-            this.textBoxCiudad.Location = new System.Drawing.Point(155, 318);
-            this.textBoxCiudad.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCiudad.Name = "textBoxCiudad";
-            this.textBoxCiudad.Size = new System.Drawing.Size(467, 22);
-            this.textBoxCiudad.TabIndex = 9;
-            // 
             // textBoxTelefono1
             // 
-            this.textBoxTelefono1.Location = new System.Drawing.Point(155, 249);
+            this.textBoxTelefono1.Location = new System.Drawing.Point(155, 208);
             this.textBoxTelefono1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono1.Name = "textBoxTelefono1";
             this.textBoxTelefono1.Size = new System.Drawing.Size(467, 22);
@@ -146,19 +145,11 @@
             // 
             // textBoxDNI
             // 
-            this.textBoxDNI.Location = new System.Drawing.Point(155, 213);
+            this.textBoxDNI.Location = new System.Drawing.Point(155, 178);
             this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(467, 22);
             this.textBoxDNI.TabIndex = 6;
-            // 
-            // textBoxDireccion
-            // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(155, 178);
-            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(467, 22);
-            this.textBoxDireccion.TabIndex = 5;
             // 
             // textBoxEmail
             // 
@@ -195,7 +186,7 @@
             // labelNum
             // 
             this.labelNum.AutoSize = true;
-            this.labelNum.Location = new System.Drawing.Point(36, 39);
+            this.labelNum.Location = new System.Drawing.Point(33, 39);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(76, 17);
             this.labelNum.TabIndex = 31;
@@ -204,25 +195,16 @@
             // labelCP
             // 
             this.labelCP.AutoSize = true;
-            this.labelCP.Location = new System.Drawing.Point(19, 356);
+            this.labelCP.Location = new System.Drawing.Point(33, 380);
             this.labelCP.Name = "labelCP";
             this.labelCP.Size = new System.Drawing.Size(95, 17);
             this.labelCP.TabIndex = 30;
             this.labelCP.Text = "Codigo Postal";
             // 
-            // labelLocalidad
-            // 
-            this.labelLocalidad.AutoSize = true;
-            this.labelLocalidad.Location = new System.Drawing.Point(23, 318);
-            this.labelLocalidad.Name = "labelLocalidad";
-            this.labelLocalidad.Size = new System.Drawing.Size(69, 17);
-            this.labelLocalidad.TabIndex = 29;
-            this.labelLocalidad.Text = "Localidad";
-            // 
             // labelTelf1
             // 
             this.labelTelf1.AutoSize = true;
-            this.labelTelf1.Location = new System.Drawing.Point(20, 249);
+            this.labelTelf1.Location = new System.Drawing.Point(33, 211);
             this.labelTelf1.Name = "labelTelf1";
             this.labelTelf1.Size = new System.Drawing.Size(76, 17);
             this.labelTelf1.TabIndex = 28;
@@ -231,25 +213,16 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(41, 213);
+            this.labelDNI.Location = new System.Drawing.Point(36, 178);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(31, 17);
             this.labelDNI.TabIndex = 27;
             this.labelDNI.Text = "DNI";
             // 
-            // labelDireccion
-            // 
-            this.labelDireccion.AutoSize = true;
-            this.labelDireccion.Location = new System.Drawing.Point(31, 178);
-            this.labelDireccion.Name = "labelDireccion";
-            this.labelDireccion.Size = new System.Drawing.Size(67, 17);
-            this.labelDireccion.TabIndex = 26;
-            this.labelDireccion.Text = "Dirección";
-            // 
             // labelCorreo
             // 
             this.labelCorreo.AutoSize = true;
-            this.labelCorreo.Location = new System.Drawing.Point(41, 144);
+            this.labelCorreo.Location = new System.Drawing.Point(33, 144);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(42, 17);
             this.labelCorreo.TabIndex = 25;
@@ -267,7 +240,7 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(39, 80);
+            this.labelNombre.Location = new System.Drawing.Point(33, 79);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(58, 17);
             this.labelNombre.TabIndex = 23;
@@ -276,7 +249,7 @@
             // checkBoxApp
             // 
             this.checkBoxApp.AutoSize = true;
-            this.checkBoxApp.Location = new System.Drawing.Point(155, 588);
+            this.checkBoxApp.Location = new System.Drawing.Point(155, 613);
             this.checkBoxApp.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxApp.Name = "checkBoxApp";
             this.checkBoxApp.Size = new System.Drawing.Size(129, 21);
@@ -286,7 +259,7 @@
             // 
             // textBoxTelefono2
             // 
-            this.textBoxTelefono2.Location = new System.Drawing.Point(155, 283);
+            this.textBoxTelefono2.Location = new System.Drawing.Point(155, 249);
             this.textBoxTelefono2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono2.Name = "textBoxTelefono2";
             this.textBoxTelefono2.Size = new System.Drawing.Size(467, 22);
@@ -295,7 +268,7 @@
             // labelTelf2
             // 
             this.labelTelf2.AutoSize = true;
-            this.labelTelf2.Location = new System.Drawing.Point(20, 283);
+            this.labelTelf2.Location = new System.Drawing.Point(33, 252);
             this.labelTelf2.Name = "labelTelf2";
             this.labelTelf2.Size = new System.Drawing.Size(76, 17);
             this.labelTelf2.TabIndex = 46;
@@ -304,7 +277,7 @@
             // labelPassw
             // 
             this.labelPassw.AutoSize = true;
-            this.labelPassw.Location = new System.Drawing.Point(24, 427);
+            this.labelPassw.Location = new System.Drawing.Point(33, 446);
             this.labelPassw.Name = "labelPassw";
             this.labelPassw.Size = new System.Drawing.Size(81, 17);
             this.labelPassw.TabIndex = 48;
@@ -313,7 +286,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 463);
+            this.label1.Location = new System.Drawing.Point(33, 485);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 50;
@@ -322,7 +295,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 500);
+            this.label2.Location = new System.Drawing.Point(33, 521);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 52;
@@ -331,7 +304,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 535);
+            this.label3.Location = new System.Drawing.Point(33, 554);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 54;
@@ -342,7 +315,7 @@
             this.checkBoxBaja.AutoSize = true;
             this.checkBoxBaja.Checked = true;
             this.checkBoxBaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBaja.Location = new System.Drawing.Point(630, 528);
+            this.checkBoxBaja.Location = new System.Drawing.Point(630, 553);
             this.checkBoxBaja.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxBaja.Name = "checkBoxBaja";
             this.checkBoxBaja.Size = new System.Drawing.Size(104, 21);
@@ -353,7 +326,7 @@
             // 
             // dateTimePickerNacimiento
             // 
-            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(155, 455);
+            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(155, 480);
             this.dateTimePickerNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerNacimiento.Name = "dateTimePickerNacimiento";
             this.dateTimePickerNacimiento.Size = new System.Drawing.Size(467, 22);
@@ -361,7 +334,7 @@
             // 
             // dateTimePickerAlta
             // 
-            this.dateTimePickerAlta.Location = new System.Drawing.Point(155, 491);
+            this.dateTimePickerAlta.Location = new System.Drawing.Point(155, 516);
             this.dateTimePickerAlta.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerAlta.Name = "dateTimePickerAlta";
             this.dateTimePickerAlta.Size = new System.Drawing.Size(467, 22);
@@ -369,7 +342,7 @@
             // 
             // dateTimePickerBaja
             // 
-            this.dateTimePickerBaja.Location = new System.Drawing.Point(155, 527);
+            this.dateTimePickerBaja.Location = new System.Drawing.Point(155, 552);
             this.dateTimePickerBaja.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerBaja.Name = "dateTimePickerBaja";
             this.dateTimePickerBaja.Size = new System.Drawing.Size(467, 22);
@@ -419,7 +392,7 @@
             // labelNombreUsuario
             // 
             this.labelNombreUsuario.AutoSize = true;
-            this.labelNombreUsuario.Location = new System.Drawing.Point(24, 389);
+            this.labelNombreUsuario.Location = new System.Drawing.Point(33, 413);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
             this.labelNombreUsuario.Size = new System.Drawing.Size(73, 17);
             this.labelNombreUsuario.TabIndex = 64;
@@ -427,7 +400,7 @@
             // 
             // textBoxNombreUsuario
             // 
-            this.textBoxNombreUsuario.Location = new System.Drawing.Point(155, 385);
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(155, 410);
             this.textBoxNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
             this.textBoxNombreUsuario.Size = new System.Drawing.Size(467, 22);
@@ -435,11 +408,98 @@
             // 
             // textBoxPassw
             // 
-            this.textBoxPassw.Location = new System.Drawing.Point(155, 418);
+            this.textBoxPassw.Location = new System.Drawing.Point(155, 443);
             this.textBoxPassw.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassw.Name = "textBoxPassw";
             this.textBoxPassw.Size = new System.Drawing.Size(467, 22);
             this.textBoxPassw.TabIndex = 12;
+            // 
+            // ModificarLocalidadButton
+            // 
+            this.ModificarLocalidadButton.Location = new System.Drawing.Point(630, 341);
+            this.ModificarLocalidadButton.Name = "ModificarLocalidadButton";
+            this.ModificarLocalidadButton.Size = new System.Drawing.Size(93, 24);
+            this.ModificarLocalidadButton.TabIndex = 71;
+            this.ModificarLocalidadButton.Text = "Editar Loc.";
+            this.ModificarLocalidadButton.UseVisualStyleBackColor = true;
+            this.ModificarLocalidadButton.Click += new System.EventHandler(this.ModificarLocalidadButton_Click);
+            // 
+            // comboBoxLocalidad
+            // 
+            this.comboBoxLocalidad.DataSource = this.localitatsBindingSource;
+            this.comboBoxLocalidad.DisplayMember = "nom";
+            this.comboBoxLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLocalidad.FormattingEnabled = true;
+            this.comboBoxLocalidad.Location = new System.Drawing.Point(155, 341);
+            this.comboBoxLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxLocalidad.Name = "comboBoxLocalidad";
+            this.comboBoxLocalidad.Size = new System.Drawing.Size(467, 24);
+            this.comboBoxLocalidad.TabIndex = 70;
+            this.comboBoxLocalidad.ValueMember = "id";
+            this.comboBoxLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocalidad_SelectedIndexChanged);
+            // 
+            // localitatsBindingSource
+            // 
+            this.localitatsBindingSource.DataSource = typeof(Chrysallis.localitats);
+            // 
+            // comboBoxProvincia
+            // 
+            this.comboBoxProvincia.DataSource = this.provinciesBindingSource;
+            this.comboBoxProvincia.DisplayMember = "nom";
+            this.comboBoxProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProvincia.FormattingEnabled = true;
+            this.comboBoxProvincia.Location = new System.Drawing.Point(155, 312);
+            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxProvincia.Name = "comboBoxProvincia";
+            this.comboBoxProvincia.Size = new System.Drawing.Size(467, 24);
+            this.comboBoxProvincia.TabIndex = 69;
+            this.comboBoxProvincia.ValueMember = "id";
+            this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
+            // 
+            // provinciesBindingSource
+            // 
+            this.provinciesBindingSource.DataSource = typeof(Chrysallis.provincies);
+            // 
+            // labelComunidad
+            // 
+            this.labelComunidad.AutoSize = true;
+            this.labelComunidad.Location = new System.Drawing.Point(33, 285);
+            this.labelComunidad.Name = "labelComunidad";
+            this.labelComunidad.Size = new System.Drawing.Size(79, 17);
+            this.labelComunidad.TabIndex = 68;
+            this.labelComunidad.Text = "Comunidad";
+            // 
+            // comboBoxComunidad
+            // 
+            this.comboBoxComunidad.DataSource = this.comunitatsBindingSource;
+            this.comboBoxComunidad.DisplayMember = "nom";
+            this.comboBoxComunidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxComunidad.FormattingEnabled = true;
+            this.comboBoxComunidad.Location = new System.Drawing.Point(155, 282);
+            this.comboBoxComunidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxComunidad.Name = "comboBoxComunidad";
+            this.comboBoxComunidad.Size = new System.Drawing.Size(467, 24);
+            this.comboBoxComunidad.TabIndex = 67;
+            this.comboBoxComunidad.ValueMember = "id";
+            this.comboBoxComunidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxComunidad_SelectedIndexChanged);
+            // 
+            // labelProvincia
+            // 
+            this.labelProvincia.AutoSize = true;
+            this.labelProvincia.Location = new System.Drawing.Point(33, 315);
+            this.labelProvincia.Name = "labelProvincia";
+            this.labelProvincia.Size = new System.Drawing.Size(66, 17);
+            this.labelProvincia.TabIndex = 66;
+            this.labelProvincia.Text = "Provincia";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 344);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 17);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Localidad";
             // 
             // Modificar_Socios
             // 
@@ -447,6 +507,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1132, 703);
+            this.Controls.Add(this.ModificarLocalidadButton);
+            this.Controls.Add(this.comboBoxLocalidad);
+            this.Controls.Add(this.comboBoxProvincia);
+            this.Controls.Add(this.labelComunidad);
+            this.Controls.Add(this.comboBoxComunidad);
+            this.Controls.Add(this.labelProvincia);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxPassw);
             this.Controls.Add(this.textBoxNombreUsuario);
             this.Controls.Add(this.labelNombreUsuario);
@@ -470,20 +537,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxActivo);
             this.Controls.Add(this.textBoxCP);
-            this.Controls.Add(this.textBoxCiudad);
             this.Controls.Add(this.textBoxTelefono1);
             this.Controls.Add(this.textBoxDNI);
-            this.Controls.Add(this.textBoxDireccion);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxApellidos);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxNum);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.labelCP);
-            this.Controls.Add(this.labelLocalidad);
             this.Controls.Add(this.labelTelf1);
             this.Controls.Add(this.labelDNI);
-            this.Controls.Add(this.labelDireccion);
             this.Controls.Add(this.labelCorreo);
             this.Controls.Add(this.labelApellidos);
             this.Controls.Add(this.labelNombre);
@@ -495,6 +558,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,20 +572,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBoxActivo;
         private System.Windows.Forms.TextBox textBoxCP;
-        private System.Windows.Forms.TextBox textBoxCiudad;
         private System.Windows.Forms.TextBox textBoxTelefono1;
         private System.Windows.Forms.TextBox textBoxDNI;
-        private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxApellidos;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxNum;
         private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.Label labelCP;
-        private System.Windows.Forms.Label labelLocalidad;
         private System.Windows.Forms.Label labelTelf1;
         private System.Windows.Forms.Label labelDNI;
-        private System.Windows.Forms.Label labelDireccion;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelApellidos;
         private System.Windows.Forms.Label labelNombre;
@@ -544,5 +605,14 @@
         private System.Windows.Forms.Label labelNombreUsuario;
         private System.Windows.Forms.TextBox textBoxNombreUsuario;
         private System.Windows.Forms.TextBox textBoxPassw;
+        private System.Windows.Forms.Button ModificarLocalidadButton;
+        private System.Windows.Forms.ComboBox comboBoxLocalidad;
+        private System.Windows.Forms.ComboBox comboBoxProvincia;
+        private System.Windows.Forms.Label labelComunidad;
+        private System.Windows.Forms.ComboBox comboBoxComunidad;
+        private System.Windows.Forms.Label labelProvincia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource localitatsBindingSource;
+        private System.Windows.Forms.BindingSource provinciesBindingSource;
     }
 }

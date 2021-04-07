@@ -16,6 +16,9 @@ namespace Chrysallis
     {
         socis socioModificar;
         BindingList<menors> llistaMenors = new BindingList<menors>();
+        BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
+        comunitats co = new comunitats();
+        provincies pr = new provincies();
         Boolean modificar;
         public Modificar_Socios(Boolean modificar)
         {
@@ -122,6 +125,8 @@ namespace Chrysallis
                 socis nuevoSocio = new socis();
 
                 //NOT NULL OBLIGADOS
+                localitats loc = new localitats();
+                loc = (localitats)comboBoxLocalidad.SelectedItem;
                 nuevoSocio.num = Int32.Parse(textBoxNum.Text);
                 nuevoSocio.nom = textBoxNombre.Text;
                 nuevoSocio.actiu = checkBoxActivo.Checked;
@@ -131,7 +136,7 @@ namespace Chrysallis
                 nuevoSocio.dni = textBoxDNI.Text;
                 nuevoSocio.data_alta = dateTimePickerAlta.Value;
                 nuevoSocio.permis_app = false;
-                nuevoSocio.id_localitat = 1; //malgrat de mar
+                nuevoSocio.id_localitat = loc.id;
 
                 //PUEDEN SER NULL
                 nuevoSocio.cognoms = textBoxApellidos.Text;
@@ -179,7 +184,14 @@ namespace Chrysallis
 
         private void Modificar_Socios_Load(object sender, EventArgs e)
         {
+            comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidades();
             rolsBindingSource.DataSource = ConsultaOrm.SelectRoles();
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+
         }
 
         private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
@@ -208,5 +220,32 @@ namespace Chrysallis
             //formMenor.ShowDialog();
         }
 
+        private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+        }
+
+        private void comboBoxLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void comboBoxComunidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+        }
+
+        private void ModificarLocalidadButton_Click(object sender, EventArgs e)
+        {
+            Editar_Localidades añadir = new Editar_Localidades();
+
+            añadir.ShowDialog();
+        }
     }
 }

@@ -455,7 +455,7 @@
             this.comboBoxLocalidad.Size = new System.Drawing.Size(352, 24);
             this.comboBoxLocalidad.TabIndex = 63;
             this.comboBoxLocalidad.ValueMember = "id";
-         
+            this.comboBoxLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocalidad_SelectedIndexChanged);
             // 
             // localitatsBindingSource
             // 
@@ -520,7 +520,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreaModEventos";
             this.Text = "ModificarEventos";
-            
             this.Load += new System.EventHandler(this.CreaModEventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
