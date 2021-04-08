@@ -45,6 +45,7 @@ namespace Chrysallis
 
         private void toolStripButtonEliminar_Click(object sender, EventArgs e)
         {
+            
             socis socioElegido = (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem;
             if (dataGridViewSocios.SelectedRows.Count > 0)
             {
@@ -71,7 +72,14 @@ namespace Chrysallis
                             ConsultaOrm.DeleteMenor(listaMenor[i]);
                         }
                     }
+                    if (ConsultaOrm.SelectUsuarioSocio(socioElegido) != null)
+                    {
+                        usuaris user = new usuaris();
+                        user = ConsultaOrm.SelectUsuarioSocio(socioElegido);
+                        ConsultaOrm.DeleteUser(user);
+                    }
                     ConsultaOrm.DeleteSocio(socioElegido);
+
                     this.Control_de_Usuarios_Activated(sender, e);
                 }
             }

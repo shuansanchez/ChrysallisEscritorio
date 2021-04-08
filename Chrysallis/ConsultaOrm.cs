@@ -215,6 +215,16 @@ namespace Chrysallis
             Orm.bdconnection.socis.Add(socio);
             Orm.bdconnection.SaveChanges();
         }
+        public static socis SelectSocioIgual(socis s)
+        {
+            socis _socio =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.dni == s.dni
+                    select c
+                ).FirstOrDefault();
+            return _socio;
+        }
 
         public static List<socis> SelectSocios()
         {

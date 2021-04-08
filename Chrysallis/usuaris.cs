@@ -28,8 +28,8 @@ namespace Chrysallis
         public Nullable<int> id_socio { get; set; }
     
         public virtual rols rols { get; set; }
-        public virtual socis socis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comunitats> comunitats { get; set; }
+        public virtual socis socis { get; set; }
     }
 }

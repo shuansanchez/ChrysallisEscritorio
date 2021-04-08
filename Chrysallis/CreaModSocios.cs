@@ -119,21 +119,30 @@ namespace Chrysallis
                 socioModificar.contrasenya = textBoxPassw.Text;
                 socioModificar.data_baixa = dateTimePickerBaja.Value;
                 socioModificar.data_naixement = dateTimePickerNacimiento.Value;
+                if (ConsultaOrm.SelectSocioIgual(socioModificar) == null)
+                {
 
-                ConsultaOrm.UpdateSocio(socioModificar);
+                    ConsultaOrm.UpdateSocio(socioModificar);
+                    usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
+                    //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
+
+                    usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
+                    usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
+                    usuarioModificar.id_socio = socioModificar.id;
+                    usuarioModificar.contrasenya = socioModificar.contrasenya;
+                    usuarioModificar.email = socioModificar.email;
+                    //debe crearse un campo para el nombre de usuario en creaModSocios
+                    usuarioModificar.username = textBoxNombreUsuario.Text;
+                    ConsultaOrm.UpdateUsuario(usuarioModificar);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
+                }
 
 
-                usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
-                //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
-
-                usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
-                usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
-                usuarioModificar.id_socio = socioModificar.id;
-                usuarioModificar.contrasenya = socioModificar.contrasenya;
-                usuarioModificar.email = socioModificar.email;
-                //debe crearse un campo para el nombre de usuario en creaModSocios
-                usuarioModificar.username = textBoxNombreUsuario.Text;
-                ConsultaOrm.UpdateUsuario(usuarioModificar);
             }
             else
             {
@@ -152,7 +161,7 @@ namespace Chrysallis
                 nuevoSocio.email = textBoxEmail.Text;
                 nuevoSocio.dni = textBoxDNI.Text;
                 nuevoSocio.data_alta = dateTimePickerAlta.Value;
-                nuevoSocio.permis_app = false;
+                nuevoSocio.permis_app = checkBoxApp.Checked;
                 nuevoSocio.id_localitat = loc.id;
 
                 //PUEDEN SER NULL
@@ -162,26 +171,39 @@ namespace Chrysallis
                 nuevoSocio.contrasenya = textBoxPassw.Text;
                 nuevoSocio.data_baixa = dateTimePickerBaja.Value;
                 nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
+                if (ConsultaOrm.SelectSocioIgual(nuevoSocio) == null)
+                {
+                    ConsultaOrm.InsertSocio(nuevoSocio);
+                    if (nuevoSocio.permis_app == false)
+                    {
+                        nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
+                        usuaris usuarioSocio = new usuaris();
 
-                ConsultaOrm.InsertSocio(nuevoSocio);
-                nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
+                        //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
+                        //hacer reset gente
+                        usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
+                        usuarioSocio.id_socio = nuevoSocio.id;
+                        usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
+                        usuarioSocio.contrasenya = nuevoSocio.contrasenya;
+                        usuarioSocio.email = nuevoSocio.email;
+                        //debe crearse un campo para el nombre de usuario en creaModSocios
+                        usuarioSocio.username = textBoxNombreUsuario.Text;
+                        ConsultaOrm.InsertUsuario(usuarioSocio);
+                       
+                    }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
+                }
+              
 
                 //-------------------------------------------
-                usuaris usuarioSocio = new usuaris();
 
-                //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                //hacer reset gente
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex+4;
-                usuarioSocio.id_socio = nuevoSocio.id;
-                usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
-                usuarioSocio.contrasenya = nuevoSocio.contrasenya;
-                usuarioSocio.email = nuevoSocio.email;
-                //debe crearse un campo para el nombre de usuario en creaModSocios
-                usuarioSocio.username = textBoxNombreUsuario.Text;
-                ConsultaOrm.InsertUsuario(usuarioSocio);
                 //--------------------------------------------
             }
-            this.Close();
+           
         }
 
         private void checkBoxBaja_CheckedChanged(object sender, EventArgs e)
