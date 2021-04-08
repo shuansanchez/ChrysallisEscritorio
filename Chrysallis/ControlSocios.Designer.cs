@@ -32,19 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Usuarios));
             this.buttonValoraciones = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonMenores = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonValoraciones
@@ -81,6 +82,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBoxFiltrar
             // 
@@ -116,12 +118,22 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonCrear,
             this.toolStripButtonModificar,
-            this.toolStripButtonEliminar});
+            this.toolStripButtonEliminar,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1046, 27);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(318, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
             // toolStripButtonCrear
             // 
@@ -150,14 +162,14 @@
             this.toolStripButtonEliminar.Text = "Eliminar";
             this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
-            // label2
+            // toolStripButton2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 397);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 17);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Acciones sobre la fila elegida: ";
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(89, 24);
+            this.toolStripButton2.Text = "Usuarios";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // Control_de_Usuarios
             // 
@@ -178,10 +190,11 @@
             this.Name = "Control_de_Usuarios";
             this.Text = "Control_de_Socios";
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
+            this.Load += new System.EventHandler(this.Control_de_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +227,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonModificar;
         private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

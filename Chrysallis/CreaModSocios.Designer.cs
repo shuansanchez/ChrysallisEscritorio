@@ -60,6 +60,7 @@
             this.dateTimePickerAlta = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerBaja = new System.Windows.Forms.DateTimePicker();
             this.comboBoxRoles = new System.Windows.Forms.ComboBox();
+            this.rolsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.rolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
@@ -77,13 +78,12 @@
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.labelProvincia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rolsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonModificar
@@ -364,6 +364,10 @@
             this.comboBoxRoles.ValueMember = "id";
             this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
             // 
+            // rolsBindingSource1
+            // 
+            this.rolsBindingSource1.DataSource = typeof(Chrysallis.rols);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -505,10 +509,6 @@
             this.label6.TabIndex = 65;
             this.label6.Text = "Localidad";
             // 
-            // rolsBindingSource1
-            // 
-            this.rolsBindingSource1.DataSource = typeof(Chrysallis.rols);
-            // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -564,11 +564,11 @@
             this.Text = "Modificar_Socios";
             this.Load += new System.EventHandler(this.Modificar_Socios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comunitatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

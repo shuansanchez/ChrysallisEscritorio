@@ -87,5 +87,21 @@ namespace Chrysallis
         {
             toolStripButtonModificar_Click(sender, e);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Control_Usuario c = new Control_Usuario();
+            c.ShowDialog();
+        }
+
+        private void Control_de_Usuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
