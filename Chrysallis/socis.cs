@@ -19,6 +19,7 @@ namespace Chrysallis
         {
             this.assistir = new HashSet<assistir>();
             this.menors_socis = new HashSet<menors_socis>();
+            this.usuaris = new HashSet<usuaris>();
             this.valoracions = new HashSet<valoracions>();
             this.comunitats = new HashSet<comunitats>();
             this.esdeveniments = new HashSet<esdeveniments>();
@@ -46,6 +47,8 @@ namespace Chrysallis
         public virtual localitats localitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<menors_socis> menors_socis { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<usuaris> usuaris { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<valoracions> valoracions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
