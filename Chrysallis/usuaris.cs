@@ -25,11 +25,12 @@ namespace Chrysallis
         public int id_rol { get; set; }
         public string username { get; set; }
         public string email { get; set; }
-        public Nullable<int> id_socio { get; set; }
+        public int id_socio { get; set; }
+        public bool actiu { get; set; }
     
         public virtual rols rols { get; set; }
+        public virtual socis socis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comunitats> comunitats { get; set; }
-        public virtual socis socis { get; set; }
     }
 }

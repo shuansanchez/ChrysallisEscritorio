@@ -32,15 +32,16 @@ namespace Chrysallis
         public int id_comunitat { get; set; }
         public string latitud { get; set; }
         public string longitud { get; set; }
-        public Nullable<int> imatge { get; set; }
         public Nullable<int> quantitat_max { get; set; }
         public Nullable<int> quantitat_mínima { get; set; }
         public Nullable<double> preu { get; set; }
-        public Nullable<bool> pagament { get; set; }
+        public bool pagament { get; set; }
         public Nullable<System.DateTime> data_max { get; set; }
         public Nullable<int> cont_assitents { get; set; }
         public string meet { get; set; }
         public Nullable<int> id_localidad { get; set; }
+        public Nullable<System.TimeSpan> hora_max { get; set; }
+        public byte[] imatge { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assistir> assistir { get; set; }

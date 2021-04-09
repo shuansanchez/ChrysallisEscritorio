@@ -149,7 +149,7 @@ namespace Chrysallis
             eventoPasar.longitud = textBoxLongitud.Text;                                //falta añadir este campo en el form
 
 
-            eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
+            //eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
 
 
             eventoPasar.pagament = !checkBoxGratis.Checked;             //esta variable tiene valor al REVÉS de la bd, de ahí el !
@@ -218,8 +218,6 @@ namespace Chrysallis
                 }
                 else
                 {
-                    
-
                     DateTime dt = dateTimePickerHora.Value;                     //Se recoge el valor de hora formato dateTimePicker (fecha)
                     TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);  //Se pasa a formato TimeSpan (hora)
 
@@ -228,6 +226,19 @@ namespace Chrysallis
 
                     if (imagen)
                     {
+
+                        /*
+                        int imagenBD = (int)modificaEvento.imatge;
+
+                        byte[] imageArray = BitConverter.GetBytes(imagenBD);
+
+                        MemoryStream ms = new MemoryStream();
+                        ms.Seek(0, SeekOrigin.Begin);
+                        Bitmap bmp = new Bitmap(ms);
+
+                        pictureBoxImagenEvento.Image = bmp;
+                        */
+
                         String destino = modificaEvento.titol.Trim();
                         destino = destino.Replace(" ", "");
                         destino = destino.ToLower();
@@ -236,14 +247,12 @@ namespace Chrysallis
 
                         try
                         {
-                            modificaEvento.imatge = Int32.Parse(rutaImagen);
+                            //modificaEvento.imatge = Int32.Parse(rutaImagen);
                         }
                         catch (FormatException exc)
                         {
                             Console.WriteLine(exc.Message);
                         }
-
-                        
                     }
                     
                     ConsultaOrm.InsertEvento(modificaEvento);                            //INSERCIÓN
@@ -257,12 +266,7 @@ namespace Chrysallis
                         nuevoDocumento.ruta = rutaCarpeta.FileName;
                         ConsultaOrm.InsertDocumento(nuevoDocumento);
                     }
-
-                    
-
-                }
-            
-                    
+                }                 
             }
             this.Close();   //SE CERRARÁ EL FORMULARIO DE AÑADIR
         }

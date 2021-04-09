@@ -52,15 +52,16 @@
           <Property Name="id_comunitat" Type="int" Nullable="false" />
           <Property Name="latitud" Type="varchar" MaxLength="10" />
           <Property Name="longitud" Type="varchar" MaxLength="10" />
-          <Property Name="imatge" Type="int" />
           <Property Name="quantitat_max" Type="int" />
           <Property Name="quantitat_mínima" Type="int" />
           <Property Name="preu" Type="float" />
-          <Property Name="pagament" Type="bit" />
+          <Property Name="pagament" Type="bit" Nullable="false" />
           <Property Name="data_max" Type="date" />
           <Property Name="cont_assitents" Type="int" />
           <Property Name="meet" Type="varchar" MaxLength="256" />
           <Property Name="id_localidad" Type="int" />
+          <Property Name="hora_max" Type="time" Precision="7" />
+          <Property Name="imatge" Type="image" />
         </EntityType>
         <EntityType Name="localitats">
           <Key>
@@ -139,7 +140,8 @@
           <Property Name="id_rol" Type="int" Nullable="false" />
           <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="id_socio" Type="int" />
+          <Property Name="id_socio" Type="int" Nullable="false" />
+          <Property Name="actiu" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="usuaris_comunitats">
           <Key>
@@ -363,7 +365,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_usuaris_socis">
-          <End Role="socis" Type="Self.socis" Multiplicity="0..1" />
+          <End Role="socis" Type="Self.socis" Multiplicity="1" />
           <End Role="usuaris" Type="Self.usuaris" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="socis">
@@ -508,8 +510,8 @@
           <Property Name="id_esdeveniment" Type="Int32" Nullable="false" />
           <Property Name="quantitat_persones" Type="Int32" Nullable="false" />
           <Property Name="valoracio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_assistir_esdeveniments" FromRole="assistir" ToRole="esdeveniments" />
           <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.FK_assistir_socis" FromRole="assistir" ToRole="socis" />
+          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_assistir_esdeveniments" FromRole="assistir" ToRole="esdeveniments" />
         </EntityType>
         <EntityType Name="comunitats">
           <Key>
@@ -518,9 +520,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="provincies" Relationship="Self.FK_provincies_comunitats" FromRole="comunitats" ToRole="provincies" />
-          <NavigationProperty Name="usuaris" Relationship="Self.usuaris_comunitats" FromRole="comunitats" ToRole="usuaris" />
-          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_esdeveniments_comunitats" FromRole="comunitats" ToRole="esdeveniments" />
           <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.comunitats_socis" FromRole="comunitats" ToRole="socis" />
+          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_esdeveniments_comunitats" FromRole="comunitats" ToRole="esdeveniments" />
+          <NavigationProperty Name="usuaris" Relationship="CHRYSALLISModel.usuaris_comunitats" FromRole="comunitats" ToRole="usuaris" />
         </EntityType>
         <EntityType Name="documents">
           <Key>
@@ -540,8 +542,8 @@
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_provincia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="provincies" Relationship="Self.FK_localitats_provincies" FromRole="localitats" ToRole="provincies" />
-          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_esdeveniments_localitats" FromRole="localitats" ToRole="esdeveniments" />
           <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.FK_socis_localitats" FromRole="localitats" ToRole="socis" />
+          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_esdeveniments_localitats" FromRole="localitats" ToRole="esdeveniments" />
         </EntityType>
         <EntityType Name="menors">
           <Key>
@@ -578,21 +580,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="usuaris" Relationship="Self.FK_usuaris_rols" FromRole="rols" ToRole="usuaris" />
-        </EntityType>
-        <EntityType Name="usuaris">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="contrasenya" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_rol" Type="Int32" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="rols" Relationship="Self.FK_usuaris_rols" FromRole="usuaris" ToRole="rols" />
-          <NavigationProperty Name="comunitats" Relationship="Self.usuaris_comunitats" FromRole="usuaris" ToRole="comunitats" />
-          <Property Name="id_socio" Type="Int32" />
-          <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.FK_usuaris_socis" FromRole="usuaris" ToRole="socis" />
+          <NavigationProperty Name="usuaris" Relationship="CHRYSALLISModel.FK_usuaris_rols" FromRole="rols" ToRole="usuaris" />
         </EntityType>
         <EntityType Name="valoracions">
           <Key>
@@ -602,8 +590,8 @@
           <Property Name="id_soci" Type="Int32" Nullable="false" />
           <Property Name="id_esdeveniment" Type="Int32" Nullable="false" />
           <Property Name="valoracio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_valoracions_esdeveniments" FromRole="valoracions" ToRole="esdeveniments" />
           <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.FK_valoracions_socis" FromRole="valoracions" ToRole="socis" />
+          <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.FK_valoracions_esdeveniments" FromRole="valoracions" ToRole="esdeveniments" />
         </EntityType>
         <Association Name="FK_provincies_comunitats">
           <End Role="comunitats" Type="Self.comunitats" Multiplicity="1" />
@@ -641,22 +629,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_usuaris_rols">
-          <End Role="rols" Type="Self.rols" Multiplicity="1" />
-          <End Role="usuaris" Type="Self.usuaris" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="rols">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="usuaris">
-              <PropertyRef Name="id_rol" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="usuaris_comunitats">
-          <End Role="comunitats" Type="Self.comunitats" Multiplicity="*" />
-          <End Role="usuaris" Type="Self.usuaris" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="CHRYSALLISEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="assistir" EntityType="Self.assistir" />
           <EntitySet Name="comunitats" EntityType="Self.comunitats" />
@@ -666,7 +638,6 @@
           <EntitySet Name="menors_socis" EntityType="Self.menors_socis" />
           <EntitySet Name="provincies" EntityType="Self.provincies" />
           <EntitySet Name="rols" EntityType="Self.rols" />
-          <EntitySet Name="usuaris" EntityType="Self.usuaris" />
           <EntitySet Name="valoracions" EntityType="Self.valoracions" />
           <AssociationSet Name="FK_provincies_comunitats" Association="Self.FK_provincies_comunitats">
             <End Role="comunitats" EntitySet="comunitats" />
@@ -680,22 +651,31 @@
             <End Role="menors" EntitySet="menors" />
             <End Role="menors_socis" EntitySet="menors_socis" />
           </AssociationSet>
-          <AssociationSet Name="FK_usuaris_rols" Association="Self.FK_usuaris_rols">
-            <End Role="rols" EntitySet="rols" />
-            <End Role="usuaris" EntitySet="usuaris" />
-          </AssociationSet>
-          <AssociationSet Name="usuaris_comunitats" Association="Self.usuaris_comunitats">
-            <End Role="comunitats" EntitySet="comunitats" />
-            <End Role="usuaris" EntitySet="usuaris" />
-          </AssociationSet>
-          <EntitySet Name="esdeveniments" EntityType="CHRYSALLISModel.esdeveniments" />
           <EntitySet Name="socis" EntityType="CHRYSALLISModel.socis" />
-          <AssociationSet Name="FK_assistir_esdeveniments" Association="CHRYSALLISModel.FK_assistir_esdeveniments">
-            <End Role="esdeveniments" EntitySet="esdeveniments" />
-            <End Role="assistir" EntitySet="assistir" />
-          </AssociationSet>
           <AssociationSet Name="FK_assistir_socis" Association="CHRYSALLISModel.FK_assistir_socis">
             <End Role="socis" EntitySet="socis" />
+            <End Role="assistir" EntitySet="assistir" />
+          </AssociationSet>
+          <AssociationSet Name="FK_socis_localitats" Association="CHRYSALLISModel.FK_socis_localitats">
+            <End Role="localitats" EntitySet="localitats" />
+            <End Role="socis" EntitySet="socis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_menors_socis_socis" Association="CHRYSALLISModel.FK_menors_socis_socis">
+            <End Role="socis" EntitySet="socis" />
+            <End Role="menors_socis" EntitySet="menors_socis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_valoracions_socis" Association="CHRYSALLISModel.FK_valoracions_socis">
+            <End Role="socis" EntitySet="socis" />
+            <End Role="valoracions" EntitySet="valoracions" />
+          </AssociationSet>
+          <AssociationSet Name="comunitats_socis" Association="CHRYSALLISModel.comunitats_socis">
+            <End Role="comunitats" EntitySet="comunitats" />
+            <End Role="socis" EntitySet="socis" />
+          </AssociationSet>
+          <EntitySet Name="esdeveniments" EntityType="CHRYSALLISModel.esdeveniments" />
+          <EntitySet Name="usuaris" EntityType="CHRYSALLISModel.usuaris" />
+          <AssociationSet Name="FK_assistir_esdeveniments" Association="CHRYSALLISModel.FK_assistir_esdeveniments">
+            <End Role="esdeveniments" EntitySet="esdeveniments" />
             <End Role="assistir" EntitySet="assistir" />
           </AssociationSet>
           <AssociationSet Name="FK_esdeveniments_comunitats" Association="CHRYSALLISModel.FK_esdeveniments_comunitats">
@@ -714,60 +694,23 @@
             <End Role="esdeveniments" EntitySet="esdeveniments" />
             <End Role="valoracions" EntitySet="valoracions" />
           </AssociationSet>
-          <AssociationSet Name="FK_socis_localitats" Association="CHRYSALLISModel.FK_socis_localitats">
-            <End Role="localitats" EntitySet="localitats" />
-            <End Role="socis" EntitySet="socis" />
-          </AssociationSet>
-          <AssociationSet Name="FK_menors_socis_socis" Association="CHRYSALLISModel.FK_menors_socis_socis">
-            <End Role="socis" EntitySet="socis" />
-            <End Role="menors_socis" EntitySet="menors_socis" />
+          <AssociationSet Name="FK_usuaris_rols" Association="CHRYSALLISModel.FK_usuaris_rols">
+            <End Role="rols" EntitySet="rols" />
+            <End Role="usuaris" EntitySet="usuaris" />
           </AssociationSet>
           <AssociationSet Name="FK_usuaris_socis" Association="CHRYSALLISModel.FK_usuaris_socis">
             <End Role="socis" EntitySet="socis" />
             <End Role="usuaris" EntitySet="usuaris" />
           </AssociationSet>
-          <AssociationSet Name="FK_valoracions_socis" Association="CHRYSALLISModel.FK_valoracions_socis">
-            <End Role="socis" EntitySet="socis" />
-            <End Role="valoracions" EntitySet="valoracions" />
-          </AssociationSet>
-          <AssociationSet Name="comunitats_socis" Association="CHRYSALLISModel.comunitats_socis">
-            <End Role="comunitats" EntitySet="comunitats" />
-            <End Role="socis" EntitySet="socis" />
-          </AssociationSet>
           <AssociationSet Name="preferits" Association="CHRYSALLISModel.preferits">
             <End Role="esdeveniments" EntitySet="esdeveniments" />
             <End Role="socis" EntitySet="socis" />
           </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="esdeveniments">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="titol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="descripcio" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="false" />
-          <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="adreca" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="false" />
-          <Property Name="id_comunitat" Type="Int32" Nullable="false" />
-          <Property Name="latitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="longitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="imatge" Type="Int32" />
-          <Property Name="quantitat_max" Type="Int32" />
-          <Property Name="quantitat_mínima" Type="Int32" />
-          <Property Name="preu" Type="Double" />
-          <Property Name="pagament" Type="Boolean" />
-          <Property Name="data_max" Type="DateTime" Precision="0" />
-          <Property Name="cont_assitents" Type="Int32" />
-          <Property Name="meet" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
-          <Property Name="id_localidad" Type="Int32" />
-          <NavigationProperty Name="assistir" Relationship="CHRYSALLISModel.FK_assistir_esdeveniments" FromRole="esdeveniments" ToRole="assistir" />
-          <NavigationProperty Name="comunitats" Relationship="CHRYSALLISModel.FK_esdeveniments_comunitats" FromRole="esdeveniments" ToRole="comunitats" />
-          <NavigationProperty Name="documents" Relationship="CHRYSALLISModel.FK_documents_esdeveniments" FromRole="esdeveniments" ToRole="documents" />
-          <NavigationProperty Name="localitats" Relationship="CHRYSALLISModel.FK_esdeveniments_localitats" FromRole="esdeveniments" ToRole="localitats" />
-          <NavigationProperty Name="valoracions" Relationship="CHRYSALLISModel.FK_valoracions_esdeveniments" FromRole="esdeveniments" ToRole="valoracions" />
-          <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.preferits" FromRole="esdeveniments" ToRole="socis" />
-        </EntityType>
+          <AssociationSet Name="usuaris_comunitats" Association="CHRYSALLISModel.usuaris_comunitats">
+            <End Role="comunitats" EntitySet="comunitats" />
+            <End Role="usuaris" EntitySet="usuaris" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="socis">
           <Key>
             <PropertyRef Name="id" />
@@ -791,10 +734,107 @@
           <NavigationProperty Name="assistir" Relationship="CHRYSALLISModel.FK_assistir_socis" FromRole="socis" ToRole="assistir" />
           <NavigationProperty Name="localitats" Relationship="CHRYSALLISModel.FK_socis_localitats" FromRole="socis" ToRole="localitats" />
           <NavigationProperty Name="menors_socis" Relationship="CHRYSALLISModel.FK_menors_socis_socis" FromRole="socis" ToRole="menors_socis" />
-          <NavigationProperty Name="usuaris" Relationship="CHRYSALLISModel.FK_usuaris_socis" FromRole="socis" ToRole="usuaris" />
           <NavigationProperty Name="valoracions" Relationship="CHRYSALLISModel.FK_valoracions_socis" FromRole="socis" ToRole="valoracions" />
           <NavigationProperty Name="comunitats" Relationship="CHRYSALLISModel.comunitats_socis" FromRole="socis" ToRole="comunitats" />
+          <NavigationProperty Name="usuaris" Relationship="CHRYSALLISModel.FK_usuaris_socis" FromRole="socis" ToRole="usuaris" />
           <NavigationProperty Name="esdeveniments" Relationship="CHRYSALLISModel.preferits" FromRole="socis" ToRole="esdeveniments" />
+        </EntityType>
+        <Association Name="FK_assistir_socis">
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
+          <End Type="CHRYSALLISModel.assistir" Role="assistir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="socis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="assistir">
+              <PropertyRef Name="id_soci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_socis_localitats">
+          <End Type="CHRYSALLISModel.localitats" Role="localitats" Multiplicity="1" />
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="localitats">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="socis">
+              <PropertyRef Name="id_localitat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_menors_socis_socis">
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
+          <End Type="CHRYSALLISModel.menors_socis" Role="menors_socis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="socis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="menors_socis">
+              <PropertyRef Name="id_soci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_valoracions_socis">
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
+          <End Type="CHRYSALLISModel.valoracions" Role="valoracions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="socis">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="valoracions">
+              <PropertyRef Name="id_soci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="comunitats_socis">
+          <End Type="CHRYSALLISModel.comunitats" Role="comunitats" Multiplicity="*" />
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="*" />
+        </Association>
+        <EntityType Name="esdeveniments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="titol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcio" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="adreca" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="false" />
+          <Property Name="id_comunitat" Type="Int32" Nullable="false" />
+          <Property Name="latitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="longitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="quantitat_max" Type="Int32" />
+          <Property Name="quantitat_mínima" Type="Int32" />
+          <Property Name="preu" Type="Double" />
+          <Property Name="pagament" Type="Boolean" Nullable="false" />
+          <Property Name="data_max" Type="DateTime" Precision="0" />
+          <Property Name="cont_assitents" Type="Int32" />
+          <Property Name="meet" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="id_localidad" Type="Int32" />
+          <Property Name="hora_max" Type="Time" Precision="7" />
+          <Property Name="imatge" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="assistir" Relationship="CHRYSALLISModel.FK_assistir_esdeveniments" FromRole="esdeveniments" ToRole="assistir" />
+          <NavigationProperty Name="comunitats" Relationship="CHRYSALLISModel.FK_esdeveniments_comunitats" FromRole="esdeveniments" ToRole="comunitats" />
+          <NavigationProperty Name="documents" Relationship="CHRYSALLISModel.FK_documents_esdeveniments" FromRole="esdeveniments" ToRole="documents" />
+          <NavigationProperty Name="localitats" Relationship="CHRYSALLISModel.FK_esdeveniments_localitats" FromRole="esdeveniments" ToRole="localitats" />
+          <NavigationProperty Name="valoracions" Relationship="CHRYSALLISModel.FK_valoracions_esdeveniments" FromRole="esdeveniments" ToRole="valoracions" />
+          <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.preferits" FromRole="esdeveniments" ToRole="socis" />
+        </EntityType>
+        <EntityType Name="usuaris">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contrasenya" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="id_rol" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_socio" Type="Int32" Nullable="false" />
+          <Property Name="actiu" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="rols" Relationship="CHRYSALLISModel.FK_usuaris_rols" FromRole="usuaris" ToRole="rols" />
+          <NavigationProperty Name="socis" Relationship="CHRYSALLISModel.FK_usuaris_socis" FromRole="usuaris" ToRole="socis" />
+          <NavigationProperty Name="comunitats" Relationship="CHRYSALLISModel.usuaris_comunitats" FromRole="usuaris" ToRole="comunitats" />
         </EntityType>
         <Association Name="FK_assistir_esdeveniments">
           <End Type="CHRYSALLISModel.esdeveniments" Role="esdeveniments" Multiplicity="1" />
@@ -805,18 +845,6 @@
             </Principal>
             <Dependent Role="assistir">
               <PropertyRef Name="id_esdeveniment" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_assistir_socis">
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
-          <End Type="CHRYSALLISModel.assistir" Role="assistir" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="socis">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="assistir">
-              <PropertyRef Name="id_soci" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -868,32 +896,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_socis_localitats">
-          <End Type="CHRYSALLISModel.localitats" Role="localitats" Multiplicity="1" />
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="*" />
+        <Association Name="FK_usuaris_rols">
+          <End Type="CHRYSALLISModel.rols" Role="rols" Multiplicity="1" />
+          <End Type="CHRYSALLISModel.usuaris" Role="usuaris" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="localitats">
+            <Principal Role="rols">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="socis">
-              <PropertyRef Name="id_localitat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_menors_socis_socis">
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
-          <End Type="CHRYSALLISModel.menors_socis" Role="menors_socis" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="socis">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="menors_socis">
-              <PropertyRef Name="id_soci" />
+            <Dependent Role="usuaris">
+              <PropertyRef Name="id_rol" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_usuaris_socis">
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="0..1" />
+          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
           <End Type="CHRYSALLISModel.usuaris" Role="usuaris" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="socis">
@@ -904,27 +920,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_valoracions_socis">
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="1" />
-          <End Type="CHRYSALLISModel.valoracions" Role="valoracions" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="socis">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="valoracions">
-              <PropertyRef Name="id_soci" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="comunitats_socis">
-          <End Type="CHRYSALLISModel.comunitats" Role="comunitats" Multiplicity="*" />
-          <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="*" />
-        </Association>
         <Association Name="preferits">
           <End Type="CHRYSALLISModel.esdeveniments" Role="esdeveniments" Multiplicity="*" />
           <End Type="CHRYSALLISModel.socis" Role="socis" Multiplicity="*" />
         </Association>
-      </Schema>
+        <Association Name="usuaris_comunitats">
+          <End Type="CHRYSALLISModel.comunitats" Role="comunitats" Multiplicity="*" />
+          <End Type="CHRYSALLISModel.usuaris" Role="usuaris" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1001,56 +1005,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="usuaris">
-            <EntityTypeMapping TypeName="CHRYSALLISModel.usuaris">
-              <MappingFragment StoreEntitySet="usuaris">
-                <ScalarProperty Name="id_socio" ColumnName="id_socio" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="contrasenya" ColumnName="contrasenya" />
-                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="valoracions">
             <EntityTypeMapping TypeName="CHRYSALLISModel.valoracions">
               <MappingFragment StoreEntitySet="valoracions">
                 <ScalarProperty Name="id_soci" ColumnName="id_soci" />
                 <ScalarProperty Name="id_esdeveniment" ColumnName="id_esdeveniment" />
                 <ScalarProperty Name="valoracio" ColumnName="valoracio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="usuaris_comunitats" TypeName="CHRYSALLISModel.usuaris_comunitats" StoreEntitySet="usuaris_comunitats">
-            <EndProperty Name="comunitats">
-              <ScalarProperty Name="id" ColumnName="id_comunitat" />
-            </EndProperty>
-            <EndProperty Name="usuaris">
-              <ScalarProperty Name="id" ColumnName="id_usuari" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="esdeveniments">
-            <EntityTypeMapping TypeName="CHRYSALLISModel.esdeveniments">
-              <MappingFragment StoreEntitySet="esdeveniments">
-                <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
-                <ScalarProperty Name="meet" ColumnName="meet" />
-                <ScalarProperty Name="cont_assitents" ColumnName="cont_assitents" />
-                <ScalarProperty Name="data_max" ColumnName="data_max" />
-                <ScalarProperty Name="pagament" ColumnName="pagament" />
-                <ScalarProperty Name="preu" ColumnName="preu" />
-                <ScalarProperty Name="quantitat_mínima" ColumnName="quantitat_mínima" />
-                <ScalarProperty Name="quantitat_max" ColumnName="quantitat_max" />
-                <ScalarProperty Name="imatge" ColumnName="imatge" />
-                <ScalarProperty Name="longitud" ColumnName="longitud" />
-                <ScalarProperty Name="latitud" ColumnName="latitud" />
-                <ScalarProperty Name="id_comunitat" ColumnName="id_comunitat" />
-                <ScalarProperty Name="adreca" ColumnName="adreca" />
-                <ScalarProperty Name="hora" ColumnName="hora" />
-                <ScalarProperty Name="data" ColumnName="data" />
-                <ScalarProperty Name="descripcio" ColumnName="descripcio" />
-                <ScalarProperty Name="titol" ColumnName="titol" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1084,6 +1044,44 @@
               <ScalarProperty Name="id" ColumnName="id_comunitat" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="esdeveniments">
+            <EntityTypeMapping TypeName="CHRYSALLISModel.esdeveniments">
+              <MappingFragment StoreEntitySet="esdeveniments">
+                <ScalarProperty Name="imatge" ColumnName="imatge" />
+                <ScalarProperty Name="hora_max" ColumnName="hora_max" />
+                <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+                <ScalarProperty Name="meet" ColumnName="meet" />
+                <ScalarProperty Name="cont_assitents" ColumnName="cont_assitents" />
+                <ScalarProperty Name="data_max" ColumnName="data_max" />
+                <ScalarProperty Name="pagament" ColumnName="pagament" />
+                <ScalarProperty Name="preu" ColumnName="preu" />
+                <ScalarProperty Name="quantitat_mínima" ColumnName="quantitat_mínima" />
+                <ScalarProperty Name="quantitat_max" ColumnName="quantitat_max" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="latitud" ColumnName="latitud" />
+                <ScalarProperty Name="id_comunitat" ColumnName="id_comunitat" />
+                <ScalarProperty Name="adreca" ColumnName="adreca" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="descripcio" ColumnName="descripcio" />
+                <ScalarProperty Name="titol" ColumnName="titol" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuaris">
+            <EntityTypeMapping TypeName="CHRYSALLISModel.usuaris">
+              <MappingFragment StoreEntitySet="usuaris">
+                <ScalarProperty Name="actiu" ColumnName="actiu" />
+                <ScalarProperty Name="id_socio" ColumnName="id_socio" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="contrasenya" ColumnName="contrasenya" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="preferits" TypeName="CHRYSALLISModel.preferits" StoreEntitySet="preferits">
             <EndProperty Name="socis">
               <ScalarProperty Name="id" ColumnName="id_soci" />
@@ -1092,7 +1090,15 @@
               <ScalarProperty Name="id" ColumnName="id_esdeveniment" />
             </EndProperty>
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          <AssociationSetMapping Name="usuaris_comunitats" TypeName="CHRYSALLISModel.usuaris_comunitats" StoreEntitySet="usuaris_comunitats">
+            <EndProperty Name="usuaris">
+              <ScalarProperty Name="id" ColumnName="id_usuari" />
+            </EndProperty>
+            <EndProperty Name="comunitats">
+              <ScalarProperty Name="id" ColumnName="id_comunitat" />
+            </EndProperty>
+          </AssociationSetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
