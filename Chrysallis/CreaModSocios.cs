@@ -48,6 +48,9 @@ namespace Chrysallis
                 {
                     rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
                     comboBoxRoles.SelectedIndex = usuarioSocio.id_rol - 4;
+                    textBoxContraUser.Text = usuarioSocio.contrasenya;
+                    textBoxUser.Text = usuarioSocio.username;
+                    checkEscritorio.Checked = (bool)usuarioSocio.actiu;
                     //falta guardar la comunidad del admin
                 }
                 //localitats localidad2 = new localitats();
@@ -71,16 +74,7 @@ namespace Chrysallis
                 checkBoxApp.Checked = socioModificar.permis_app;
                 checkBoxBaja.Checked = socioModificar.data_baixa.HasValue;
                 textBoxPassw.Text = socioModificar.contrasenya;
-                
-
-                
-
-                if (usuarioSocio!=null)
-                {
-                    textBoxNombreUsuario.Text = usuarioSocio.username;
-                }
-                
-                
+           
 
                 dateTimePickerNacimiento.Value = socioModificar.data_naixement.Value;
                 dateTimePickerAlta.Value = socioModificar.data_alta;
@@ -94,13 +88,15 @@ namespace Chrysallis
                 }
                 
             }
+
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             if (modificar)
             {
-                
+                localitats loc = new localitats();
+                loc = (localitats)comboBoxLocalidad.SelectedItem;
                 socioModificar.num = Int32.Parse(textBoxNum.Text);
                 socioModificar.nom = textBoxNombre.Text;
                 socioModificar.actiu = checkBoxActivo.Checked;
@@ -109,8 +105,8 @@ namespace Chrysallis
                 socioModificar.email = textBoxEmail.Text;
                 socioModificar.dni = textBoxDNI.Text;
                 socioModificar.data_alta = dateTimePickerAlta.Value;
-                socioModificar.permis_app = false;
-                socioModificar.id_localitat = 1; //malgrat de mar
+                socioModificar.permis_app = checkBoxApp.Checked; 
+                socioModificar.id_localitat = loc.id;
 
                 //PUEDEN SER NULL
                 socioModificar.cognoms = textBoxApellidos.Text;
@@ -125,15 +121,19 @@ namespace Chrysallis
                     ConsultaOrm.UpdateSocio(socioModificar);
                     usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                     //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
+                    if (textBoxUser.Text == "" || textBoxContraUser.Text == "")
+                    {
+                        usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
+                        usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
+                        usuarioModificar.id_socio = socioModificar.id;
+                        usuarioModificar.contrasenya = textBoxContraUser.Text;
+                        usuarioModificar.email = socioModificar.email;
+                        usuarioModificar.actiu = checkEscritorio.Checked;
 
-                    usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
-                    usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
-                    usuarioModificar.id_socio = socioModificar.id;
-                    usuarioModificar.contrasenya = socioModificar.contrasenya;
-                    usuarioModificar.email = socioModificar.email;
-                    //debe crearse un campo para el nombre de usuario en creaModSocios
-                    usuarioModificar.username = textBoxNombreUsuario.Text;
-                    ConsultaOrm.UpdateUsuario(usuarioModificar);
+                        //debe crearse un campo para el nombre de usuario en creaModSocios
+                        usuarioModificar.username = textBoxUser.Text;
+                        ConsultaOrm.UpdateUsuario(usuarioModificar);
+                    }
 
                     this.Close();
                 }
@@ -174,7 +174,7 @@ namespace Chrysallis
                 if (ConsultaOrm.SelectSocioIgual(nuevoSocio) == null)
                 {
                     ConsultaOrm.InsertSocio(nuevoSocio);
-                    if (nuevoSocio.permis_app == false)
+                    if (checkEscritorio.Checked == false)
                     {
                         nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
                         usuaris usuarioSocio = new usuaris();
@@ -186,8 +186,9 @@ namespace Chrysallis
                         usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
                         usuarioSocio.contrasenya = nuevoSocio.contrasenya;
                         usuarioSocio.email = nuevoSocio.email;
+                        usuarioSocio.actiu = checkEscritorio.Checked;
                         //debe crearse un campo para el nombre de usuario en creaModSocios
-                        usuarioSocio.username = textBoxNombreUsuario.Text;
+                        usuarioSocio.username = textBoxUser.Text;
                         ConsultaOrm.InsertUsuario(usuarioSocio);
                        
                     }
@@ -225,7 +226,7 @@ namespace Chrysallis
 
         private void Modificar_Socios_Load(object sender, EventArgs e)
         {
-          
+            //DAVID FEO
                 comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidades();
             
                 rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();

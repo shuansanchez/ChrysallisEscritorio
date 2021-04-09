@@ -37,8 +37,8 @@ namespace Chrysallis
         public virtual DbSet<rols> rols { get; set; }
         public virtual DbSet<valoracions> valoracions { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<usuaris> usuaris { get; set; }
         public virtual DbSet<esdeveniments> esdeveniments { get; set; }
+        public virtual DbSet<usuaris> usuaris { get; set; }
         public virtual DbSet<socis> socis { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

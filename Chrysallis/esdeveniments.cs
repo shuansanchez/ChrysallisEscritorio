@@ -41,6 +41,7 @@ namespace Chrysallis
         public Nullable<int> cont_assitents { get; set; }
         public string meet { get; set; }
         public Nullable<int> id_localidad { get; set; }
+        public Nullable<System.TimeSpan> hora_max { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assistir> assistir { get; set; }

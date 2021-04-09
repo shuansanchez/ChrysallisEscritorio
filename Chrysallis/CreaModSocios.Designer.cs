@@ -66,8 +66,6 @@
             this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.labelNombreUsuario = new System.Windows.Forms.Label();
-            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
             this.textBoxPassw = new System.Windows.Forms.TextBox();
             this.ModificarLocalidadButton = new System.Windows.Forms.Button();
             this.comboBoxLocalidad = new System.Windows.Forms.ComboBox();
@@ -82,6 +80,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxContraUser = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.checkEscritorio = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
@@ -92,7 +91,7 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(827, 597);
+            this.buttonModificar.Location = new System.Drawing.Point(815, 569);
             this.buttonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(110, 49);
@@ -103,7 +102,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(988, 606);
+            this.buttonCancelar.Location = new System.Drawing.Point(987, 578);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(98, 31);
@@ -125,7 +124,7 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
-            this.checkBoxActivo.Location = new System.Drawing.Point(447, 612);
+            this.checkBoxActivo.Location = new System.Drawing.Point(447, 583);
             this.checkBoxActivo.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(68, 21);
@@ -255,7 +254,7 @@
             // checkBoxApp
             // 
             this.checkBoxApp.AutoSize = true;
-            this.checkBoxApp.Location = new System.Drawing.Point(155, 613);
+            this.checkBoxApp.Location = new System.Drawing.Point(155, 584);
             this.checkBoxApp.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxApp.Name = "checkBoxApp";
             this.checkBoxApp.Size = new System.Drawing.Size(129, 21);
@@ -283,7 +282,7 @@
             // labelPassw
             // 
             this.labelPassw.AutoSize = true;
-            this.labelPassw.Location = new System.Drawing.Point(33, 446);
+            this.labelPassw.Location = new System.Drawing.Point(33, 410);
             this.labelPassw.Name = "labelPassw";
             this.labelPassw.Size = new System.Drawing.Size(81, 17);
             this.labelPassw.TabIndex = 48;
@@ -292,7 +291,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 485);
+            this.label1.Location = new System.Drawing.Point(33, 449);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 50;
@@ -301,7 +300,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 521);
+            this.label2.Location = new System.Drawing.Point(33, 485);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 52;
@@ -310,7 +309,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 554);
+            this.label3.Location = new System.Drawing.Point(33, 518);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 54;
@@ -321,7 +320,7 @@
             this.checkBoxBaja.AutoSize = true;
             this.checkBoxBaja.Checked = true;
             this.checkBoxBaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBaja.Location = new System.Drawing.Point(630, 553);
+            this.checkBoxBaja.Location = new System.Drawing.Point(630, 517);
             this.checkBoxBaja.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxBaja.Name = "checkBoxBaja";
             this.checkBoxBaja.Size = new System.Drawing.Size(104, 21);
@@ -332,7 +331,7 @@
             // 
             // dateTimePickerNacimiento
             // 
-            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(155, 480);
+            this.dateTimePickerNacimiento.Location = new System.Drawing.Point(155, 444);
             this.dateTimePickerNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerNacimiento.Name = "dateTimePickerNacimiento";
             this.dateTimePickerNacimiento.Size = new System.Drawing.Size(467, 22);
@@ -340,7 +339,7 @@
             // 
             // dateTimePickerAlta
             // 
-            this.dateTimePickerAlta.Location = new System.Drawing.Point(155, 516);
+            this.dateTimePickerAlta.Location = new System.Drawing.Point(155, 480);
             this.dateTimePickerAlta.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerAlta.Name = "dateTimePickerAlta";
             this.dateTimePickerAlta.Size = new System.Drawing.Size(467, 22);
@@ -348,7 +347,7 @@
             // 
             // dateTimePickerBaja
             // 
-            this.dateTimePickerBaja.Location = new System.Drawing.Point(155, 552);
+            this.dateTimePickerBaja.Location = new System.Drawing.Point(155, 516);
             this.dateTimePickerBaja.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerBaja.Name = "dateTimePickerBaja";
             this.dateTimePickerBaja.Size = new System.Drawing.Size(467, 22);
@@ -401,26 +400,9 @@
             this.label5.TabIndex = 63;
             this.label5.Text = "Comunidad";
             // 
-            // labelNombreUsuario
-            // 
-            this.labelNombreUsuario.AutoSize = true;
-            this.labelNombreUsuario.Location = new System.Drawing.Point(33, 413);
-            this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(73, 17);
-            this.labelNombreUsuario.TabIndex = 64;
-            this.labelNombreUsuario.Text = "Username";
-            // 
-            // textBoxNombreUsuario
-            // 
-            this.textBoxNombreUsuario.Location = new System.Drawing.Point(155, 410);
-            this.textBoxNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
-            this.textBoxNombreUsuario.Size = new System.Drawing.Size(467, 22);
-            this.textBoxNombreUsuario.TabIndex = 11;
-            // 
             // textBoxPassw
             // 
-            this.textBoxPassw.Location = new System.Drawing.Point(155, 443);
+            this.textBoxPassw.Location = new System.Drawing.Point(155, 407);
             this.textBoxPassw.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassw.Name = "textBoxPassw";
             this.textBoxPassw.Size = new System.Drawing.Size(467, 22);
@@ -547,12 +529,23 @@
             this.label8.TabIndex = 75;
             this.label8.Text = "Contraseña";
             // 
+            // checkEscritorio
+            // 
+            this.checkEscritorio.AutoSize = true;
+            this.checkEscritorio.Location = new System.Drawing.Point(832, 371);
+            this.checkEscritorio.Name = "checkEscritorio";
+            this.checkEscritorio.Size = new System.Drawing.Size(182, 21);
+            this.checkEscritorio.TabIndex = 76;
+            this.checkEscritorio.Text = "Usuario escritorio activo";
+            this.checkEscritorio.UseVisualStyleBackColor = true;
+            // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1132, 703);
+            this.Controls.Add(this.checkEscritorio);
             this.Controls.Add(this.textBoxContraUser);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxUser);
@@ -565,8 +558,6 @@
             this.Controls.Add(this.labelProvincia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxPassw);
-            this.Controls.Add(this.textBoxNombreUsuario);
-            this.Controls.Add(this.labelNombreUsuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxComunidades);
             this.Controls.Add(this.label4);
@@ -653,8 +644,6 @@
         private System.Windows.Forms.ComboBox comboBoxComunidades;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelNombreUsuario;
-        private System.Windows.Forms.TextBox textBoxNombreUsuario;
         private System.Windows.Forms.TextBox textBoxPassw;
         private System.Windows.Forms.Button ModificarLocalidadButton;
         private System.Windows.Forms.ComboBox comboBoxLocalidad;
@@ -670,5 +659,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxContraUser;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkEscritorio;
     }
 }

@@ -34,13 +34,6 @@
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.comboFiltros = new System.Windows.Forms.ComboBox();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
-            this.buttonSocios = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.infoFiltroText = new System.Windows.Forms.Label();
             this.titolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +53,16 @@
             this.comunitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esdevenimentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonSocios = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.infoFiltroText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,75 +132,6 @@
             this.dataGridViewEventos.Size = new System.Drawing.Size(776, 347);
             this.dataGridViewEventos.TabIndex = 3;
             this.dataGridViewEventos.DoubleClick += new System.EventHandler(this.dataGridViewEventos_DoubleClick);
-            // 
-            // buttonSocios
-            // 
-            this.buttonSocios.Location = new System.Drawing.Point(587, 396);
-            this.buttonSocios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSocios.Name = "buttonSocios";
-            this.buttonSocios.Size = new System.Drawing.Size(155, 34);
-            this.buttonSocios.TabIndex = 7;
-            this.buttonSocios.Text = "Lista valoraciones";
-            this.buttonSocios.UseVisualStyleBackColor = true;
-            this.buttonSocios.Click += new System.EventHandler(this.buttonSocios_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripButton1,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1016, 31);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
-            this.toolStripButton2.Text = "Crear";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(97, 28);
-            this.toolStripButton1.Text = "Modificar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(87, 28);
-            this.toolStripButton3.Text = "Eliminar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 405);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Acciones sobre la fila elegida: ";
-            // 
-            // infoFiltroText
-            // 
-            this.infoFiltroText.AutoSize = true;
-            this.infoFiltroText.Location = new System.Drawing.Point(801, 92);
-            this.infoFiltroText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.infoFiltroText.Name = "infoFiltroText";
-            this.infoFiltroText.Size = new System.Drawing.Size(0, 17);
-            this.infoFiltroText.TabIndex = 10;
             // 
             // titolDataGridViewTextBoxColumn
             // 
@@ -350,6 +281,76 @@
             // 
             this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
             // 
+            // buttonSocios
+            // 
+            this.buttonSocios.Location = new System.Drawing.Point(587, 396);
+            this.buttonSocios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSocios.Name = "buttonSocios";
+            this.buttonSocios.Size = new System.Drawing.Size(155, 34);
+            this.buttonSocios.TabIndex = 7;
+            this.buttonSocios.Text = "Lista valoraciones";
+            this.buttonSocios.UseVisualStyleBackColor = true;
+            this.buttonSocios.Click += new System.EventHandler(this.buttonSocios_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2,
+            this.toolStripButton1,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1016, 27);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 24);
+            this.toolStripButton2.Text = "Crear";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(97, 24);
+            this.toolStripButton1.Text = "Modificar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButton3.Text = "Eliminar";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(372, 405);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Acciones sobre la fila elegida: ";
+            // 
+            // infoFiltroText
+            // 
+            this.infoFiltroText.AutoSize = true;
+            this.infoFiltroText.Location = new System.Drawing.Point(801, 92);
+            this.infoFiltroText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.infoFiltroText.Name = "infoFiltroText";
+            this.infoFiltroText.Size = new System.Drawing.Size(0, 17);
+            this.infoFiltroText.TabIndex = 10;
+            // 
             // Control_de_Eventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -371,9 +372,9 @@
             this.Activated += new System.EventHandler(this.Control_de_Eventos_Activated);
             this.Load += new System.EventHandler(this.Control_de_Eventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

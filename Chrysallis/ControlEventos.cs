@@ -32,7 +32,7 @@ namespace Chrysallis
         private void Control_de_Eventos_Load(object sender, EventArgs e)
         {
             //dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
-            dataGridViewEventos.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
+            //dataGridViewEventos.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
 
         }
 
@@ -170,6 +170,11 @@ namespace Chrysallis
         private void dataGridViewEventos_DoubleClick(object sender, EventArgs e)
         {
             toolStripButton1_Click(sender, e);
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Chrysallis
         public string username { get; set; }
         public string email { get; set; }
         public Nullable<int> id_socio { get; set; }
+        public Nullable<bool> actiu { get; set; }
     
         public virtual rols rols { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
