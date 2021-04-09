@@ -148,7 +148,7 @@ namespace Chrysallis
             eventoPasar.longitud = textBoxLongitud.Text;                                //falta añadir este campo en el form
 
 
-            eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
+            //eventoPasar.imatge = 0;                                     //¿cuando hay foto toma valor? ¿cuál?
 
 
             eventoPasar.pagament = !checkBoxGratis.Checked;             //esta variable tiene valor al REVÉS de la bd, de ahí el !
@@ -235,7 +235,7 @@ namespace Chrysallis
 
                         try
                         {
-                            modificaEvento.imatge = Int32.Parse(rutaImagen);
+                            //modificaEvento.imatge = Int32.Parse(rutaImagen);
                         }
                         catch (FormatException exc)
                         {

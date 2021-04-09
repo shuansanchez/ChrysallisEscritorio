@@ -25,9 +25,9 @@ namespace Chrysallis
         public string nom { get; set; }
         public int id_provincia { get; set; }
     
-        public virtual provincies provincies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<esdeveniments> esdeveniments { get; set; }
+        public virtual provincies provincies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<socis> socis { get; set; }
     }
