@@ -129,6 +129,12 @@
     <Compile Include="ControlValoraciones.Designer.cs">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control_Usuario.Designer.cs">
+      <DependentUpon>Control_Usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearModMenor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="socis.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="usuaris.cs">
       <DependentUpon>BDCHRYSALLIS.tt</DependentUpon>
     </Compile>
@@ -218,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlValoraciones.resx">
       <DependentUpon>ControlValoraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Usuario.resx">
+      <DependentUpon>Control_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearModMenor.resx">
       <DependentUpon>CrearModMenor.cs</DependentUpon>

@@ -16,6 +16,13 @@ namespace Chrysallis
     {
         socis socioModificar;
         BindingList<menors> llistaMenors = new BindingList<menors>();
+        BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
+        BindingList<provincies> provinciasArray = new BindingList<provincies>(ConsultaOrm.SelectProvinciasTodas());
+        BindingList<localitats> localidadesArray = new BindingList<localitats>(ConsultaOrm.SelectLocalidadesTodas());
+
+
+        comunitats co = new comunitats();
+        provincies pr = new provincies();
         Boolean modificar;
         public Modificar_Socios(Boolean modificar)
         {
@@ -39,11 +46,22 @@ namespace Chrysallis
                 usuarioSocio = ConsultaOrm.SelectUsuarioSocio(socioModificar);
                 if (usuarioSocio!=null)
                 {
+                    rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
                     comboBoxRoles.SelectedIndex = usuarioSocio.id_rol - 4;
+                    textBoxContraUser.Text = usuarioSocio.contrasenya;
+                    textBoxUser.Text = usuarioSocio.username;
+                    checkEscritorio.Checked = (bool)usuarioSocio.actiu;
                     //falta guardar la comunidad del admin
                 }
-
-                textBoxNum.Text = socioModificar.num.ToString();
+                //localitats localidad2 = new localitats();
+                //provincies prov2 = new provincies();
+                //comunitats cominades2 = new comunitats();
+                //for (int i = 0; i < comunidades.Count; i++)
+                //{
+                //    if(comunidades[i].id = ConsultaOrm.IndexSelectComunidad()
+                //    comunidades2 =
+                //}
+                textBoxNum.Text = string.Empty + socioModificar.num;
                 textBoxNombre.Text = socioModificar.nom;
                 textBoxApellidos.Text = socioModificar.cognoms;
                 textBoxEmail.Text = socioModificar.email;
@@ -56,13 +74,7 @@ namespace Chrysallis
                 checkBoxApp.Checked = socioModificar.permis_app;
                 checkBoxBaja.Checked = socioModificar.data_baixa.HasValue;
                 textBoxPassw.Text = socioModificar.contrasenya;
-
-                if (usuarioSocio!=null)
-                {
-                    textBoxNum.Text = usuarioSocio.username;
-                }
-                
-                
+           
 
                 dateTimePickerNacimiento.Value = socioModificar.data_naixement.Value;
                 dateTimePickerAlta.Value = socioModificar.data_alta;
@@ -76,13 +88,15 @@ namespace Chrysallis
                 }
                 
             }
+
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             if (modificar)
             {
-                
+                localitats loc = new localitats();
+                loc = (localitats)comboBoxLocalidad.SelectedItem;
                 socioModificar.num = Int32.Parse(textBoxNum.Text);
                 socioModificar.nom = textBoxNombre.Text;
                 socioModificar.actiu = checkBoxActivo.Checked;
@@ -91,8 +105,8 @@ namespace Chrysallis
                 socioModificar.email = textBoxEmail.Text;
                 socioModificar.dni = textBoxDNI.Text;
                 socioModificar.data_alta = dateTimePickerAlta.Value;
-                socioModificar.permis_app = false;
-                socioModificar.id_localitat = 1; //malgrat de mar
+                socioModificar.permis_app = checkBoxApp.Checked; 
+                socioModificar.id_localitat = loc.id;
 
                 //PUEDEN SER NULL
                 socioModificar.cognoms = textBoxApellidos.Text;
@@ -101,19 +115,34 @@ namespace Chrysallis
                 socioModificar.contrasenya = textBoxPassw.Text;
                 socioModificar.data_baixa = dateTimePickerBaja.Value;
                 socioModificar.data_naixement = dateTimePickerNacimiento.Value;
+                if (ConsultaOrm.SelectSocioIgual(socioModificar) == null)
+                {
 
-                ConsultaOrm.UpdateSocio();
+                    ConsultaOrm.UpdateSocio(socioModificar);
+                    usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
+                    //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
+                    if (textBoxUser.Text == "" || textBoxContraUser.Text == "")
+                    {
+                        usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
+                        usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
+                        usuarioModificar.id_socio = socioModificar.id;
+                        usuarioModificar.contrasenya = textBoxContraUser.Text;
+                        usuarioModificar.email = socioModificar.email;
+                        usuarioModificar.actiu = checkEscritorio.Checked;
+
+                        //debe crearse un campo para el nombre de usuario en creaModSocios
+                        usuarioModificar.username = textBoxUser.Text;
+                        ConsultaOrm.UpdateUsuario(usuarioModificar);
+                    }
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
+                }
 
 
-                usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
-                //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
-                usuarioModificar.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioModificar.id = socioModificar.id;
-                usuarioModificar.contrasenya = socioModificar.contrasenya;
-                usuarioModificar.email = socioModificar.email;
-                //debe crearse un campo para el nombre de usuario en creaModSocios
-                usuarioModificar.username = textBoxNombreUsuario.Text;
-                ConsultaOrm.UpdateUsuario();
             }
             else
             {
@@ -122,6 +151,8 @@ namespace Chrysallis
                 socis nuevoSocio = new socis();
 
                 //NOT NULL OBLIGADOS
+                localitats loc = new localitats();
+                loc = (localitats)comboBoxLocalidad.SelectedItem;
                 nuevoSocio.num = Int32.Parse(textBoxNum.Text);
                 nuevoSocio.nom = textBoxNombre.Text;
                 nuevoSocio.actiu = checkBoxActivo.Checked;
@@ -130,8 +161,8 @@ namespace Chrysallis
                 nuevoSocio.email = textBoxEmail.Text;
                 nuevoSocio.dni = textBoxDNI.Text;
                 nuevoSocio.data_alta = dateTimePickerAlta.Value;
-                nuevoSocio.permis_app = false;
-                nuevoSocio.id_localitat = 1; //malgrat de mar
+                nuevoSocio.permis_app = checkBoxApp.Checked;
+                nuevoSocio.id_localitat = loc.id;
 
                 //PUEDEN SER NULL
                 nuevoSocio.cognoms = textBoxApellidos.Text;
@@ -140,45 +171,40 @@ namespace Chrysallis
                 nuevoSocio.contrasenya = textBoxPassw.Text;
                 nuevoSocio.data_baixa = dateTimePickerBaja.Value;
                 nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
+                if (ConsultaOrm.SelectSocioIgual(nuevoSocio) == null)
+                {
+                    ConsultaOrm.InsertSocio(nuevoSocio);
+                    if (checkEscritorio.Checked == false)
+                    {
+                        nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
+                        usuaris usuarioSocio = new usuaris();
 
-                ConsultaOrm.InsertSocio(nuevoSocio);
+                        //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
+                        //hacer reset gente
+                        usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
+                        usuarioSocio.id_socio = nuevoSocio.id;
+                        usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
+                        usuarioSocio.contrasenya = nuevoSocio.contrasenya;
+                        usuarioSocio.email = nuevoSocio.email;
+                        usuarioSocio.actiu = checkEscritorio.Checked;
+                        //debe crearse un campo para el nombre de usuario en creaModSocios
+                        usuarioSocio.username = textBoxUser.Text;
+                        ConsultaOrm.InsertUsuario(usuarioSocio);
+                       
+                    }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
+                }
+              
 
                 //-------------------------------------------
-                usuaris usuarioSocio = new usuaris();
 
-                //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                usuarioSocio.id_rol = comboBoxRoles.SelectedIndex;
-                usuarioSocio.rols = ConsultaOrm.SelectRolPorNombre(comboBoxRoles.SelectedItem.ToString());
-                switch (comboBoxRoles.SelectedIndex) //ID NO CONCUERDA SE TIENE QUE HACER RESEED DE LA TABLA
-                {
-                    case 0:
-                        //sin comunidades
-                        break;
-                    case 1:
-                        string comunitatsss = comboBoxComunidades.SelectedItem.ToString();
-                        comunitats encontrada = ConsultaOrm.SelectComunidadPorNombre(comunitatsss);
-                        usuarioSocio.comunitats.Add(encontrada);
-                        break;
-                    case 2:
-                        List<comunitats> todas = ConsultaOrm.SelectComunidades();
-                        for(int i=0; i < todas.Count; i++)
-                        {
-                            usuarioSocio.comunitats.Add(todas[i]);
-                        }
-                        break;
-                }
-                
-                //usuarioSocio.id = nuevoSocio.id;
-                
-                usuarioSocio.contrasenya = nuevoSocio.contrasenya;
-                usuarioSocio.email = nuevoSocio.email;
-                
-                usuarioSocio.username = textBoxNombreUsuario.Text;
-
-                ConsultaOrm.InsertUsuario(usuarioSocio);
                 //--------------------------------------------
             }
-            this.Close();
+           
         }
 
         private void checkBoxBaja_CheckedChanged(object sender, EventArgs e)
@@ -200,13 +226,56 @@ namespace Chrysallis
 
         private void Modificar_Socios_Load(object sender, EventArgs e)
         {
-            rolsBindingSource.DataSource = ConsultaOrm.SelectRoles();
+            //DAVID FEO
+                comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidades();
+            
+                rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
+            
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+            if (modificar)
+            {
+                localitats localidMod = new localitats();
+                provincies provMod = new provincies();
+                comunitats comuMod = new comunitats();
+                for (int x = 0; x < localidadesArray.Count; x++)
+                {
+                    if (localidadesArray[x].id == socioModificar.id_localitat)
+                    {
+                         localidMod = localidadesArray[x];
+                    }
+                }
+                for (int i = 0; i < provinciasArray.Count; i++)
+                {
+                    if(provinciasArray[i].id == localidMod.id_provincia)
+                    {
+                        provMod = provinciasArray[i];
+                    }
+                }
+
+                for (int y = 0; y < comunidades.Count; y++)
+                {
+                    if(comunidades[y].id == provMod.id_comunitat)
+                    {
+                        comuMod = comunidades[y];
+                    }
+                }
+
+                comboBoxComunidad.SelectedItem = comuMod;
+                comboBoxProvincia.SelectedItem = provMod;
+                comboBoxLocalidad.SelectedItem = localidMod;
+            }
         }
 
         private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
+           // rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
             if (comboBoxRoles.SelectedIndex.Equals(1) || comboBoxRoles.SelectedIndex.Equals(2))
             {
+                //rolsBindingSource1.DataSource = ConsultaOrm.SelectRoles();
                 comboBoxComunidades.Enabled = true;
                 comunitatsBindingSource.DataSource = ConsultaOrm.SelectComunidadesNombres();
             }
@@ -229,5 +298,33 @@ namespace Chrysallis
             //formMenor.ShowDialog();
         }
 
+        private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+        }
+
+        private void comboBoxLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void comboBoxComunidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            co = comunidades[comboBoxComunidad.SelectedIndex];
+            provinciesBindingSource.DataSource = ConsultaOrm.SelectProvincias(co.id);
+
+            pr = (provincies)comboBoxProvincia.SelectedItem;
+            localitatsBindingSource.DataSource = ConsultaOrm.SelectLocalidades(pr.id);
+        }
+
+        private void ModificarLocalidadButton_Click(object sender, EventArgs e)
+        {
+            Editar_Localidades añadir = new Editar_Localidades();
+
+            añadir.ShowDialog();
+        }
     }
 }

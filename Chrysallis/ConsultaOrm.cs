@@ -19,6 +19,7 @@ namespace Chrysallis
             return _comunidades;
         }
 
+
         public static List<string> SelectComunidadesNombres()
         {
             List<string> _comunidades =
@@ -51,6 +52,16 @@ namespace Chrysallis
             ).ToList();
             return _provincies;
         }
+
+        public static List<provincies> SelectProvinciasTodas()
+        {
+            List<provincies> _provincies =
+            (
+                from c in Orm.bdconnection.provincies
+                select c
+            ).ToList();
+            return _provincies;
+        }
         //LOCALIDADES
         public static List<localitats> SelectLocalidades(int id)
         {
@@ -58,6 +69,16 @@ namespace Chrysallis
             (
                 from c in Orm.bdconnection.localitats
                 where c.id_provincia == id
+                select c
+            ).ToList();
+            return _localitats;
+        }
+
+        public static List<localitats> SelectLocalidadesTodas()
+        {
+            List<localitats> _localitats =
+            (
+                from c in Orm.bdconnection.localitats
                 select c
             ).ToList();
             return _localitats;
@@ -166,6 +187,12 @@ namespace Chrysallis
             Orm.bdconnection.usuaris.Add(usuari);
             Orm.bdconnection.SaveChanges();
         }
+        public static void DeleteUser(usuaris usuari)
+        {
+            Orm.bdconnection.usuaris.Remove(usuari);
+            Orm.bdconnection.SaveChanges();
+        }
+
 
         public static List<usuaris> SelectUsuarios()
         {
@@ -182,13 +209,13 @@ namespace Chrysallis
             usuaris _usuarioSocio =
              (
                  from c in Orm.bdconnection.usuaris
-                 where _modificaSocio.id==c.id
+                 where _modificaSocio.id==c.id_socio    
                  select c
              ).FirstOrDefault();
             return _usuarioSocio;
         }
 
-        public static void UpdateUsuario()
+        public static void UpdateUsuario(usuaris usuarioModificar)
         {
             Orm.bdconnection.SaveChanges();
         }
@@ -198,6 +225,16 @@ namespace Chrysallis
         {
             Orm.bdconnection.socis.Add(socio);
             Orm.bdconnection.SaveChanges();
+        }
+        public static socis SelectSocioIgual(socis s)
+        {
+            socis _socio =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.dni == s.dni
+                    select c
+                ).FirstOrDefault();
+            return _socio;
         }
 
         public static List<socis> SelectSocios()
@@ -227,7 +264,7 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
-        public static void UpdateSocio()
+        public static void UpdateSocio(socis socioModificar)
         {
             Orm.bdconnection.SaveChanges();
         }
@@ -242,6 +279,17 @@ namespace Chrysallis
              ).ToList();
             return _roles;
         }
+        public static rols SelectRol(int id)
+        {
+            rols _rol =
+             (
+                 from c in Orm.bdconnection.rols
+                 where c.id == id
+                 select c
+             ).FirstOrDefault();
+            return _rol;
+        }
+
 
         public static rols SelectRolPorNombre(string nombreRol)
         {

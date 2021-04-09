@@ -17,6 +17,7 @@ namespace Chrysallis
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public localitats()
         {
+            this.esdeveniments = new HashSet<esdeveniments>();
             this.socis = new HashSet<socis>();
             this.esdeveniments = new HashSet<esdeveniments>();
         }
@@ -25,6 +26,8 @@ namespace Chrysallis
         public string nom { get; set; }
         public int id_provincia { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<esdeveniments> esdeveniments { get; set; }
         public virtual provincies provincies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<socis> socis { get; set; }
