@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_Usuario));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtoneActivar = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contrasenyaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +44,7 @@
             this.comunitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usuarisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarisBindingSource1)).BeginInit();
@@ -54,21 +55,21 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonEliminar});
+            this.toolStripButton1,
+            this.toolStripButtoneActivar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(910, 27);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonEliminar
+            // toolStripButtoneActivar
             // 
-            this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
-            this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
-            this.toolStripButtonEliminar.Size = new System.Drawing.Size(87, 24);
-            this.toolStripButtonEliminar.Text = "Eliminar";
-            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
+            this.toolStripButtoneActivar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtoneActivar.Name = "toolStripButtoneActivar";
+            this.toolStripButtoneActivar.Size = new System.Drawing.Size(134, 24);
+            this.toolStripButtoneActivar.Text = "Activar/Desactivar";
+            this.toolStripButtoneActivar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
             // dataGridViewUsers
             // 
@@ -186,6 +187,15 @@
             // 
             this.usuarisBindingSource.DataSource = typeof(Chrysallis.usuaris);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButton1.Text = "Eliminar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // Control_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,7 +221,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
+        private System.Windows.Forms.ToolStripButton toolStripButtoneActivar;
         private System.Windows.Forms.DataGridView dataGridViewUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contrasenyaDataGridViewTextBoxColumn;
@@ -224,5 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comunitatsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usuarisBindingSource;
         private System.Windows.Forms.BindingSource usuarisBindingSource1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

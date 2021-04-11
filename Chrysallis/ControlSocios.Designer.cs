@@ -43,6 +43,14 @@
             this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Permisoapp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socisBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -61,17 +69,31 @@
             // 
             // dataGridViewSocios
             // 
+            this.dataGridViewSocios.AllowUserToAddRows = false;
+            this.dataGridViewSocios.AllowUserToDeleteRows = false;
             this.dataGridViewSocios.AutoGenerateColumns = false;
             this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSocios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.num,
+            this.nombre,
+            this.apellido,
+            this.DNI,
+            this.activo,
+            this.Permisoapp,
+            this.telefono,
+            this.telefono2});
             this.dataGridViewSocios.DataSource = this.socisBindingSource;
+            this.dataGridViewSocios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridViewSocios.Location = new System.Drawing.Point(12, 38);
             this.dataGridViewSocios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewSocios.Name = "dataGridViewSocios";
+            this.dataGridViewSocios.ReadOnly = true;
             this.dataGridViewSocios.RowHeadersWidth = 51;
             this.dataGridViewSocios.RowTemplate.Height = 24;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSocios.Size = new System.Drawing.Size(800, 335);
             this.dataGridViewSocios.TabIndex = 11;
+            this.dataGridViewSocios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewSocios_DataBindingComplete);
             this.dataGridViewSocios.DoubleClick += new System.EventHandler(this.dataGridViewSocios_DoubleClick);
             // 
             // comboBox1
@@ -172,6 +194,78 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Acciones sobre la fila elegida: ";
             // 
+            // num
+            // 
+            this.num.DataPropertyName = "num";
+            this.num.HeaderText = "Numero Socio";
+            this.num.MinimumWidth = 6;
+            this.num.Name = "num";
+            this.num.ReadOnly = true;
+            this.num.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nom";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "cognoms";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 125;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "dni";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.MinimumWidth = 6;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Width = 125;
+            // 
+            // activo
+            // 
+            this.activo.DataPropertyName = "actiu";
+            this.activo.HeaderText = "Activo";
+            this.activo.MinimumWidth = 6;
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            this.activo.Width = 125;
+            // 
+            // Permisoapp
+            // 
+            this.Permisoapp.DataPropertyName = "permis_app";
+            this.Permisoapp.HeaderText = "PermisoApp";
+            this.Permisoapp.MinimumWidth = 6;
+            this.Permisoapp.Name = "Permisoapp";
+            this.Permisoapp.ReadOnly = true;
+            this.Permisoapp.Width = 125;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefon1";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.MinimumWidth = 6;
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 125;
+            // 
+            // telefono2
+            // 
+            this.telefono2.DataPropertyName = "telefon2";
+            this.telefono2.HeaderText = "Telefono2";
+            this.telefono2.MinimumWidth = 6;
+            this.telefono2.Name = "telefono2";
+            this.telefono2.ReadOnly = true;
+            this.telefono2.Width = 125;
+            // 
             // Control_de_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,5 +323,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Permisoapp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono2;
     }
 }

@@ -31,14 +31,15 @@ namespace Chrysallis
                 dataGridViewSocios.ReadOnly = true;
                 dataGridViewSocios.DataSource = null;
                 dataGridViewSocios.DataSource = ConsultaOrm.SelectSociosComunidadUser(socioDelUsuario);
-                dataGridViewSocios.AutoGenerateColumns = true;
+
+                dataGridViewSocios.AutoGenerateColumns = false;
             }
             else if(userLogin.id_rol == 6)
             {
                 dataGridViewSocios.ReadOnly = true;
                 dataGridViewSocios.DataSource = null;
                 dataGridViewSocios.DataSource = ConsultaOrm.SelectSocios();
-                dataGridViewSocios.AutoGenerateColumns = true;
+                dataGridViewSocios.AutoGenerateColumns = false;
             }
         }
 
@@ -56,8 +57,15 @@ namespace Chrysallis
 
         private void toolStripButtonModificar_Click(object sender, EventArgs e)
         {
-            Modificar_Socios cambiaSocio = new Modificar_Socios(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem, userLogin);
-            cambiaSocio.ShowDialog();
+            if (dataGridViewSocios.SelectedRows[0].DataBoundItem == null)
+            {
+                MessageBox.Show("Nada seleccionado");
+            }
+            else
+            {
+                Modificar_Socios cambiaSocio = new Modificar_Socios(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem, userLogin);
+                cambiaSocio.ShowDialog();
+            }
         }
 
         private void toolStripButtonEliminar_Click(object sender, EventArgs e)
@@ -138,7 +146,12 @@ namespace Chrysallis
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            
+        }
 
+        private void dataGridViewSocios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            
         }
     }
 }
