@@ -119,6 +119,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStripCrearMenor);
             this.Controls.Add(this.dataGridViewMenores);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ControlMenores";
             this.Text = "ControlMenores";

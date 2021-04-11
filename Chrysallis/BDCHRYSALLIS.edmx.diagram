@@ -4,31 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="be83d1afb6b941d2b11a9a8d00515af0" Name="Diagram1" ZoomLevel="37">
+      <Diagram DiagramId="be83d1afb6b941d2b11a9a8d00515af0" Name="Diagram1" ZoomLevel="70">
         <EntityTypeShape EntityType="CHRYSALLISModel.assistir" Width="1.5" PointX="9.75" PointY="6.125" />
-        <EntityTypeShape EntityType="CHRYSALLISModel.comunitats" Width="1.5" PointX="0.75" PointY="9.125" />
-        <EntityTypeShape EntityType="CHRYSALLISModel.documents" Width="1.5" PointX="9.75" PointY="21" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.documents" Width="1.5" PointX="9" PointY="17.375" />
         <EntityTypeShape EntityType="CHRYSALLISModel.esdeveniments" Width="1.5" PointX="7.5" PointY="7.25" />
         <EntityTypeShape EntityType="CHRYSALLISModel.localitats" Width="1.5" PointX="5.25" PointY="9.125" />
         <EntityTypeShape EntityType="CHRYSALLISModel.menors" Width="1.5" PointX="12.75" PointY="4.375" />
         <EntityTypeShape EntityType="CHRYSALLISModel.menors_socis" Width="1.5" PointX="15" PointY="9.125" />
         <EntityTypeShape EntityType="CHRYSALLISModel.provincies" Width="1.5" PointX="3" PointY="9.125" />
         <EntityTypeShape EntityType="CHRYSALLISModel.rols" Width="1.5" PointX="15.75" PointY="6.375" />
-        <EntityTypeShape EntityType="CHRYSALLISModel.socis" Width="1.5" PointX="12.75" PointY="7.5" />
         <EntityTypeShape EntityType="CHRYSALLISModel.usuaris" Width="1.5" PointX="18" PointY="8.75" />
         <EntityTypeShape EntityType="CHRYSALLISModel.valoracions" Width="1.5" PointX="9.75" PointY="9.125" />
         <AssociationConnector Association="CHRYSALLISModel.FK_assistir_esdeveniments" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_assistir_socis" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_esdeveniments_comunitats" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_provincies_comunitats" />
         <AssociationConnector Association="CHRYSALLISModel.FK_documents_esdeveniments" />
         <AssociationConnector Association="CHRYSALLISModel.FK_esdeveniments_localitats" />
         <AssociationConnector Association="CHRYSALLISModel.FK_valoracions_esdeveniments" />
         <AssociationConnector Association="CHRYSALLISModel.FK_localitats_provincies" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_socis_localitats" />
         <AssociationConnector Association="CHRYSALLISModel.FK_menors_socis_menors" />
-        <AssociationConnector Association="CHRYSALLISModel.FK_menors_socis_socis" />
         <AssociationConnector Association="CHRYSALLISModel.FK_usuaris_rols" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.comunitats" Width="1.5" PointX="1.125" PointY="6.375" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.socis" Width="1.5" PointX="4.875" PointY="2" />
+        <EntityTypeShape EntityType="CHRYSALLISModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_assistir_socis" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_esdeveniments_comunitats" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_provincies_comunitats" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_socis_comunitats" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_socis_localitats" />
+        <AssociationConnector Association="CHRYSALLISModel.FK_menors_socis_socis" />
         <AssociationConnector Association="CHRYSALLISModel.FK_usuaris_socis" />
         <AssociationConnector Association="CHRYSALLISModel.FK_valoracions_socis" />
         <AssociationConnector Association="CHRYSALLISModel.comunitats_socis" />

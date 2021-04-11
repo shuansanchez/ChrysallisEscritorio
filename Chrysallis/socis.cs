@@ -21,7 +21,7 @@ namespace Chrysallis
             this.menors_socis = new HashSet<menors_socis>();
             this.usuaris = new HashSet<usuaris>();
             this.valoracions = new HashSet<valoracions>();
-            this.comunitats = new HashSet<comunitats>();
+            this.comunitats1 = new HashSet<comunitats>();
             this.esdeveniments = new HashSet<esdeveniments>();
         }
     
@@ -41,9 +41,11 @@ namespace Chrysallis
         public bool permis_app { get; set; }
         public string codi_postal { get; set; }
         public int id_localitat { get; set; }
+        public Nullable<int> id_comunidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assistir> assistir { get; set; }
+        public virtual comunitats comunitats { get; set; }
         public virtual localitats localitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<menors_socis> menors_socis { get; set; }
@@ -52,7 +54,7 @@ namespace Chrysallis
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<valoracions> valoracions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<comunitats> comunitats { get; set; }
+        public virtual ICollection<comunitats> comunitats1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<esdeveniments> esdeveniments { get; set; }
     }

@@ -28,7 +28,6 @@ namespace Chrysallis
         }
     
         public virtual DbSet<assistir> assistir { get; set; }
-        public virtual DbSet<comunitats> comunitats { get; set; }
         public virtual DbSet<documents> documents { get; set; }
         public virtual DbSet<esdeveniments> esdeveniments { get; set; }
         public virtual DbSet<localitats> localitats { get; set; }
@@ -36,9 +35,11 @@ namespace Chrysallis
         public virtual DbSet<menors_socis> menors_socis { get; set; }
         public virtual DbSet<provincies> provincies { get; set; }
         public virtual DbSet<rols> rols { get; set; }
-        public virtual DbSet<socis> socis { get; set; }
         public virtual DbSet<usuaris> usuaris { get; set; }
         public virtual DbSet<valoracions> valoracions { get; set; }
+        public virtual DbSet<comunitats> comunitats { get; set; }
+        public virtual DbSet<socis> socis { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

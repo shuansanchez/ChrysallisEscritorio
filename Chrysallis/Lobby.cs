@@ -12,26 +12,33 @@ namespace Chrysallis
 {
     public partial class Lobby : Form
     {
-        public Lobby()
+        usuaris u = new usuaris();
+        public Lobby(usuaris u )
         {
             InitializeComponent();
+            this.u = u;
         }
 
         private void eventButton_Click(object sender, EventArgs e)
         {
-            Control_de_Eventos nuevoGestionaEventos = new Control_de_Eventos();
+            Control_de_Eventos nuevoGestionaEventos = new Control_de_Eventos(u);
             nuevoGestionaEventos.ShowDialog();
         }
 
         private void UsersButton_Click(object sender, EventArgs e)
         {
-            Control_de_Usuarios nuevoGestionaUsuarios = new Control_de_Usuarios();
+            Control_de_Usuarios nuevoGestionaUsuarios = new Control_de_Usuarios(u);
             nuevoGestionaUsuarios.ShowDialog();
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Lobby_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

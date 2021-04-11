@@ -63,9 +63,7 @@
             this.rolsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.rolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxComunidades = new System.Windows.Forms.ComboBox();
             this.comunitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.textBoxPassw = new System.Windows.Forms.TextBox();
             this.ModificarLocalidadButton = new System.Windows.Forms.Button();
             this.comboBoxLocalidad = new System.Windows.Forms.ComboBox();
@@ -187,6 +185,7 @@
             this.textBoxNum.Name = "textBoxNum";
             this.textBoxNum.Size = new System.Drawing.Size(467, 22);
             this.textBoxNum.TabIndex = 1;
+            this.textBoxNum.TextChanged += new System.EventHandler(this.textBoxNum_TextChanged);
             // 
             // labelNum
             // 
@@ -380,26 +379,6 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Rol";
             // 
-            // comboBoxComunidades
-            // 
-            this.comboBoxComunidades.DataSource = this.comunitatsBindingSource;
-            this.comboBoxComunidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxComunidades.FormattingEnabled = true;
-            this.comboBoxComunidades.Location = new System.Drawing.Point(832, 491);
-            this.comboBoxComunidades.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxComunidades.Name = "comboBoxComunidades";
-            this.comboBoxComunidades.Size = new System.Drawing.Size(242, 24);
-            this.comboBoxComunidades.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(735, 494);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Comunidad";
-            // 
             // textBoxPassw
             // 
             this.textBoxPassw.Location = new System.Drawing.Point(155, 407);
@@ -558,8 +537,6 @@
             this.Controls.Add(this.labelProvincia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxPassw);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBoxComunidades);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxRoles);
             this.Controls.Add(this.dateTimePickerBaja);
@@ -641,9 +618,7 @@
         private System.Windows.Forms.ComboBox comboBoxRoles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource rolsBindingSource;
-        private System.Windows.Forms.ComboBox comboBoxComunidades;
         private System.Windows.Forms.BindingSource comunitatsBindingSource;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPassw;
         private System.Windows.Forms.Button ModificarLocalidadButton;
         private System.Windows.Forms.ComboBox comboBoxLocalidad;

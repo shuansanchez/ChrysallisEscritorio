@@ -34,13 +34,38 @@ namespace Chrysallis
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            TextboxContra.PasswordChar = '*';
         }
 
         private void EntrarButton_Click(object sender, EventArgs e)
         {
-            Lobby nuevoLobby = new Lobby();
-            nuevoLobby.ShowDialog();
+            if (textBoxUser.Text == "" || TextboxContra.Text == "")
+            {
+                MessageBox.Show("Error, faltan datos");
+            }
+            else
+            {
+                usuaris usuarioLogueado = new usuaris();
+                usuarioLogueado = ConsultaOrm.selectLogin(textBoxUser.Text, TextboxContra.Text);
+                if (usuarioLogueado == null)
+                {
+                    MessageBox.Show("Admin no encontrado");
+                }
+                else
+                {
+                    if (usuarioLogueado.actiu == true)
+                    {
+                        Lobby nuevoLobby = new Lobby(usuarioLogueado);
+                        nuevoLobby.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no se encuentra activo en este momento");
+                    }
+                }
+
+            }
         }
     }
 }

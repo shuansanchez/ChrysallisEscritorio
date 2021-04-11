@@ -12,7 +12,8 @@ namespace Chrysallis
 {
     public partial class Control_de_Eventos : Form
     {
-        public Control_de_Eventos()
+        usuaris userL = new usuaris();
+        public Control_de_Eventos(usuaris userL)
         {
             InitializeComponent();
         }

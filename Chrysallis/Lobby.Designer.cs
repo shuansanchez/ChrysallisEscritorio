@@ -69,6 +69,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lobby";
             this.Text = "Lobby";
+            this.Load += new System.EventHandler(this.Lobby_Load);
             this.ResumeLayout(false);
 
         }

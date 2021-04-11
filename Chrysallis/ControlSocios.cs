@@ -12,17 +12,34 @@ namespace Chrysallis
 {
     public partial class Control_de_Usuarios : Form
     {
-        public Control_de_Usuarios()
+        usuaris userLogin = new usuaris();
+        public Control_de_Usuarios(usuaris userLogin)
         {
             InitializeComponent();
+            this.userLogin = userLogin;
         }
+        
+        
 
         private void Control_de_Usuarios_Activated(object sender, EventArgs e)
         {
-            dataGridViewSocios.ReadOnly = true;
-            dataGridViewSocios.DataSource = null;
-            dataGridViewSocios.DataSource = ConsultaOrm.SelectSocios();
-            dataGridViewSocios.AutoGenerateColumns = true;
+            
+            if (userLogin.id_rol == 5)
+            {
+                socis socioDelUsuario = new socis();
+                socioDelUsuario = ConsultaOrm.SelectSociosAdmins(userLogin);
+                dataGridViewSocios.ReadOnly = true;
+                dataGridViewSocios.DataSource = null;
+                dataGridViewSocios.DataSource = ConsultaOrm.SelectSociosComunidadUser(socioDelUsuario);
+                dataGridViewSocios.AutoGenerateColumns = true;
+            }
+            else if(userLogin.id_rol == 6)
+            {
+                dataGridViewSocios.ReadOnly = true;
+                dataGridViewSocios.DataSource = null;
+                dataGridViewSocios.DataSource = ConsultaOrm.SelectSocios();
+                dataGridViewSocios.AutoGenerateColumns = true;
+            }
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
@@ -33,13 +50,13 @@ namespace Chrysallis
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Modificar_Socios nuevoUsuario = new Modificar_Socios(false);
+            Modificar_Socios nuevoUsuario = new Modificar_Socios(false, userLogin);
             nuevoUsuario.ShowDialog();
         }
 
         private void toolStripButtonModificar_Click(object sender, EventArgs e)
         {
-            Modificar_Socios cambiaSocio = new Modificar_Socios(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+            Modificar_Socios cambiaSocio = new Modificar_Socios(true, (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem, userLogin);
             cambiaSocio.ShowDialog();
         }
 
@@ -103,11 +120,23 @@ namespace Chrysallis
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            Control_Usuario c = new Control_Usuario();
-            c.ShowDialog();
+            if (userLogin.id_rol == 6)
+            {
+                Control_Usuario c = new Control_Usuario();
+                c.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permisos");
+            }
         }
 
         private void Control_de_Usuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

@@ -182,6 +182,16 @@ namespace Chrysallis
             Orm.bdconnection.SaveChanges();
         }
 
+        public static usuaris selectLogin(string user, string contra)
+        {
+            usuaris _usu =
+                (
+                from c in Orm.bdconnection.usuaris
+                where c.username == user && c.contrasenya == contra
+                select c
+                ).FirstOrDefault();
+            return _usu;
+        }
 
         public static List<usuaris> SelectUsuarios()
         {
@@ -203,6 +213,26 @@ namespace Chrysallis
              ).FirstOrDefault();
             return _usuarioSocio;
         }
+        public static socis SelectSociosAdmins(usuaris so)
+        {
+            socis _socios =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.id == so.id_socio
+                    select c
+                ).FirstOrDefault();
+            return _socios;
+        }
+        public static List<socis> SelectSociosComunidadUser(socis so)
+        {
+           List<socis> _socios =
+        (
+            from c in Orm.bdconnection.socis
+            where c.id_comunidad == so.id_comunidad
+            select c
+        ).ToList();
+            return _socios;
+        }
 
         public static void UpdateUsuario(usuaris usuarioModificar)
         {
@@ -221,6 +251,37 @@ namespace Chrysallis
                 (
                     from c in Orm.bdconnection.socis
                     where c.dni == s.dni
+                    select c
+                ).FirstOrDefault();
+            return _socio;
+        }
+        public static socis SelectSocioIgualMod(socis s)
+        {
+            socis _socio =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.dni == s.dni && c.id != s.id
+                    select c
+                ).FirstOrDefault();
+            return _socio;
+        }
+
+        public static socis SelectSocioIgualNumeroSMod(socis s)
+        {
+            socis _socio =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.num == s.num && c.id != s.id
+                    select c
+                ).FirstOrDefault();
+            return _socio;
+        }
+        public static socis SelectSocioIgualNumeroS(socis s)
+        {
+            socis _socio =
+                (
+                    from c in Orm.bdconnection.socis
+                    where c.num == s.num 
                     select c
                 ).FirstOrDefault();
             return _socio;
