@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearModMenor));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nomText = new System.Windows.Forms.TextBox();
@@ -58,7 +59,7 @@
             // nomText
             // 
             this.nomText.Location = new System.Drawing.Point(116, 38);
-            this.nomText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomText.Margin = new System.Windows.Forms.Padding(4);
             this.nomText.Name = "nomText";
             this.nomText.Size = new System.Drawing.Size(665, 22);
             this.nomText.TabIndex = 2;
@@ -66,7 +67,7 @@
             // relacioMenor
             // 
             this.relacioMenor.Location = new System.Drawing.Point(116, 102);
-            this.relacioMenor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.relacioMenor.Margin = new System.Windows.Forms.Padding(4);
             this.relacioMenor.Name = "relacioMenor";
             this.relacioMenor.Size = new System.Drawing.Size(665, 22);
             this.relacioMenor.TabIndex = 3;
@@ -74,7 +75,7 @@
             // crearBtn
             // 
             this.crearBtn.Location = new System.Drawing.Point(357, 163);
-            this.crearBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.crearBtn.Name = "crearBtn";
             this.crearBtn.Size = new System.Drawing.Size(100, 28);
             this.crearBtn.TabIndex = 4;
@@ -86,13 +87,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(844, 228);
             this.Controls.Add(this.crearBtn);
             this.Controls.Add(this.relacioMenor);
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CrearModMenor";
             this.Text = "CrearMenor";
             this.Load += new System.EventHandler(this.CrearModMenor_Load);

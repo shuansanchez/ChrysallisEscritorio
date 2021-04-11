@@ -35,7 +35,6 @@
             this.menorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripCrearMenor = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonModMenor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBorrarMenor = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menorsBindingSource)).BeginInit();
@@ -77,7 +76,6 @@
             this.toolStripCrearMenor.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripCrearMenor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2,
-            this.toolStripButtonModMenor,
             this.toolStripButtonBorrarMenor});
             this.toolStripCrearMenor.Location = new System.Drawing.Point(0, 0);
             this.toolStripCrearMenor.Name = "toolStripCrearMenor";
@@ -93,15 +91,6 @@
             this.toolStripButton2.Size = new System.Drawing.Size(68, 24);
             this.toolStripButton2.Text = "Crear";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButtonModMenor
-            // 
-            this.toolStripButtonModMenor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModMenor.Image")));
-            this.toolStripButtonModMenor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonModMenor.Name = "toolStripButtonModMenor";
-            this.toolStripButtonModMenor.Size = new System.Drawing.Size(97, 24);
-            this.toolStripButtonModMenor.Text = "Modificar";
-            this.toolStripButtonModMenor.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonBorrarMenor
             // 
@@ -140,7 +129,6 @@
         private System.Windows.Forms.BindingSource menorsBindingSource;
         private System.Windows.Forms.ToolStrip toolStripCrearMenor;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButtonModMenor;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrarMenor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
     }
