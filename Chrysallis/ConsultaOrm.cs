@@ -213,6 +213,16 @@ namespace Chrysallis
              ).FirstOrDefault();
             return _usuarioSocio;
         }
+        public static socis SelectSocioUser(usuaris _modificaSocio)
+        {
+            socis _usuarioSocio =
+             (
+                 from c in Orm.bdconnection.socis
+                 where _modificaSocio.id_socio == c.id
+                 select c
+             ).FirstOrDefault();
+            return _usuarioSocio;
+        }
         public static socis SelectSociosAdmins(usuaris so)
         {
             socis _socios =

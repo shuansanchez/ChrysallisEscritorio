@@ -299,6 +299,20 @@ namespace Chrysallis
                 comboBoxProvincia.SelectedItem = provMod;
                 comboBoxLocalidad.SelectedItem = localidMod;
             }
+            else
+            {
+                comunitats comuMod = new comunitats();
+                socis socioo = new socis();
+                socioo = ConsultaOrm.SelectSocioUser(UserLogin);
+                for (int y = 0; y < comunidades.Count; y++)
+                {
+                    if (comunidades[y].id == socioo.id_comunidad)
+                    {
+                        comuMod = comunidades[y];
+                    }
+                }
+                comboBoxComunidad.SelectedItem = comuMod;
+            }
         }
 
         private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
