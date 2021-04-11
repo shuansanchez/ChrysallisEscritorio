@@ -22,7 +22,7 @@ namespace Chrysallis
             dataGridViewUsers.ReadOnly = true;
             dataGridViewUsers.DataSource = null;
             dataGridViewUsers.DataSource = ConsultaOrm.SelectUsuarios();
-            dataGridViewUsers.AutoGenerateColumns = true;
+            dataGridViewUsers.AutoGenerateColumns = false;
         }
 
         private void toolStripButtonEliminar_Click(object sender, EventArgs e)
@@ -61,6 +61,11 @@ namespace Chrysallis
                     dataGridViewUsers.DataSource = ConsultaOrm.SelectUsuarios();
                 }
             }
+        }
+
+        private void Control_Usuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
