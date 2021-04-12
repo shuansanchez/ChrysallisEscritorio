@@ -42,7 +42,7 @@
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(579, 103);
             this.UsersButton.TabIndex = 0;
-            this.UsersButton.Text = "Socios";
+            this.UsersButton.Text = "Socies";
             this.UsersButton.UseVisualStyleBackColor = false;
             this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 

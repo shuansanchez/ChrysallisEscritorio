@@ -29,6 +29,16 @@ namespace Chrysallis
             ).ToList();
             return _comunidades;
         }
+        public static comunitats SelectComunidad(socis user)
+        {
+            comunitats _comunidades =
+            (
+                from c in Orm.bdconnection.comunitats
+                where c.id == user.id_comunidad
+                select c
+            ).FirstOrDefault();
+            return _comunidades;
+        }
 
         //PROVINCIAS------------------------------------------------------
         public static List<provincies> SelectProvincias(int id)
@@ -98,6 +108,26 @@ namespace Chrysallis
         {
             Orm.bdconnection.esdeveniments.Add(_evento);
             Orm.bdconnection.SaveChanges();
+        }
+
+        public static List<esdeveniments>SelectEsdeveniments(socis socio)
+        {
+            List<esdeveniments> _esde =
+                (
+            from c in Orm.bdconnection.esdeveniments
+            where c.id_comunitat == socio.id_comunidad
+            select c
+            ).ToList();
+            return _esde;
+        }
+        public static List<esdeveniments> SelectEsdevenimentstodo(socis socio)
+        {
+            List<esdeveniments> _esde =
+                (
+            from c in Orm.bdconnection.esdeveniments
+            select c
+            ).ToList();
+            return _esde;
         }
 
         //LOCALIDADES

@@ -74,7 +74,7 @@ namespace Chrysallis
             socis socioElegido = (socis)dataGridViewSocios.SelectedRows[0].DataBoundItem;
             if (dataGridViewSocios.SelectedRows.Count > 0)
             {
-                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás seguro de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dialogConfirmaBorra = MessageBox.Show("¿Estás segure de borrar?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialogConfirmaBorra == DialogResult.OK)
                 {
                     List<valoracions> listaValoraciones = ConsultaOrm.SelectValoracionesSocio(socioElegido);

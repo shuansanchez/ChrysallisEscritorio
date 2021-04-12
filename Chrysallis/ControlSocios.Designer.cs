@@ -33,9 +33,6 @@
             this.buttonValoraciones = new System.Windows.Forms.Button();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
             this.socisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonMenores = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
@@ -47,8 +44,8 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Permisoapp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Permisoapp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
@@ -91,37 +88,10 @@
             this.dataGridViewSocios.RowHeadersWidth = 51;
             this.dataGridViewSocios.RowTemplate.Height = 24;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSocios.Size = new System.Drawing.Size(800, 335);
+            this.dataGridViewSocios.Size = new System.Drawing.Size(1020, 335);
             this.dataGridViewSocios.TabIndex = 11;
             this.dataGridViewSocios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewSocios_DataBindingComplete);
             this.dataGridViewSocios.DoubleClick += new System.EventHandler(this.dataGridViewSocios_DoubleClick);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(905, 38);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(836, 80);
-            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(190, 22);
-            this.textBoxFiltrar.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(833, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtrar";
             // 
             // buttonMenores
             // 
@@ -144,7 +114,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1046, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1044, 27);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -181,8 +151,8 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(89, 24);
-            this.toolStripButton2.Text = "Usuarios";
+            this.toolStripButton2.Size = new System.Drawing.Size(88, 24);
+            this.toolStripButton2.Text = "Usuaries";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // label2
@@ -237,6 +207,8 @@
             this.activo.MinimumWidth = 6;
             this.activo.Name = "activo";
             this.activo.ReadOnly = true;
+            this.activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.activo.Width = 125;
             // 
             // Permisoapp
@@ -246,6 +218,8 @@
             this.Permisoapp.MinimumWidth = 6;
             this.Permisoapp.Name = "Permisoapp";
             this.Permisoapp.ReadOnly = true;
+            this.Permisoapp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Permisoapp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Permisoapp.Width = 125;
             // 
             // telefono
@@ -271,19 +245,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1046, 440);
+            this.ClientSize = new System.Drawing.Size(1044, 440);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonMenores);
             this.Controls.Add(this.buttonValoraciones);
             this.Controls.Add(this.dataGridViewSocios);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBoxFiltrar);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Control_de_Usuarios";
-            this.Text = "Control_de_Socios";
+            this.Text = "Control_de_Socies";
             this.Activated += new System.EventHandler(this.Control_de_Usuarios_Activated);
             this.Load += new System.EventHandler(this.Control_de_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
@@ -299,9 +270,6 @@
 
         private System.Windows.Forms.Button buttonValoraciones;
         private System.Windows.Forms.DataGridView dataGridViewSocios;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBoxFiltrar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cognomsDataGridViewTextBoxColumn;
@@ -327,8 +295,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Permisoapp;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Permisoapp;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono2;
     }

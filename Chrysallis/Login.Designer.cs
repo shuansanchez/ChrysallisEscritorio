@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TextboxContra = new System.Windows.Forms.TextBox();
             this.textBoxUser = new System.Windows.Forms.TextBox();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.EntrarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,11 +50,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 247);
+            this.label1.Location = new System.Drawing.Point(115, 245);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
+            this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ADMINISTRADOR";
+            this.label1.Text = "USUARIE";
             // 
             // label2
             // 
@@ -82,21 +81,11 @@
             this.textBoxUser.TabIndex = 4;
             this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
             // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(480, 361);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(95, 36);
-            this.buttonCancelar.TabIndex = 5;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
             // EntrarButton
             // 
-            this.EntrarButton.Location = new System.Drawing.Point(365, 361);
+            this.EntrarButton.Location = new System.Drawing.Point(325, 353);
             this.EntrarButton.Name = "EntrarButton";
-            this.EntrarButton.Size = new System.Drawing.Size(95, 36);
+            this.EntrarButton.Size = new System.Drawing.Size(164, 60);
             this.EntrarButton.TabIndex = 6;
             this.EntrarButton.Text = "Entrar";
             this.EntrarButton.UseVisualStyleBackColor = true;
@@ -109,7 +98,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.EntrarButton);
-            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.textBoxUser);
             this.Controls.Add(this.TextboxContra);
             this.Controls.Add(this.label2);
@@ -132,7 +120,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TextboxContra;
         private System.Windows.Forms.TextBox textBoxUser;
-        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button EntrarButton;
     }
 }

@@ -38,7 +38,7 @@
             this.usuarisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarisBindingSource1)).BeginInit();
@@ -53,7 +53,7 @@
             this.toolStripButtoneActivar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(910, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(910, 27);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,7 +62,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(87, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(87, 24);
             this.toolStripButton1.Text = "Eliminar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -70,7 +70,7 @@
             // 
             this.toolStripButtoneActivar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtoneActivar.Name = "toolStripButtoneActivar";
-            this.toolStripButtoneActivar.Size = new System.Drawing.Size(134, 28);
+            this.toolStripButtoneActivar.Size = new System.Drawing.Size(134, 24);
             this.toolStripButtoneActivar.Text = "Activar/Desactivar";
             this.toolStripButtoneActivar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
@@ -128,6 +128,8 @@
             this.Activo.MinimumWidth = 6;
             this.Activo.Name = "Activo";
             this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Activo.Width = 125;
             // 
             // Control_Usuario
@@ -163,6 +165,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
     }
 }

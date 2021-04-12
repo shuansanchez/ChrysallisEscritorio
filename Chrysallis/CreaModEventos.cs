@@ -9,6 +9,7 @@ namespace Chrysallis
 {
     public partial class CreaModEventos : Form
     {
+        usuaris usuarioL = new usuaris();
         //provisional 
         OpenFileDialog rutaCarpeta = new OpenFileDialog();
 
@@ -23,9 +24,19 @@ namespace Chrysallis
         localitats loc = new localitats();
         esdeveniments modificaEvento = new esdeveniments();
         Boolean modificar, documento, imagen;
-        public CreaModEventos(Boolean creacion)
+        public CreaModEventos(Boolean creacion, usuaris usuarioL)
         {
             InitializeComponent();
+            this.usuarioL = usuarioL;
+            if (usuarioL.id_rol == 5)
+            {
+                socis socioUser = new socis();
+                socioUser = ConsultaOrm.SelectSocioUser(usuarioL);
+                comunitats comu = new comunitats();
+                comu = ConsultaOrm.SelectComunidad(socioUser);
+                comboBoxComunidad.SelectedItem = comu;
+                comboBoxComunidad.Enabled = false;
+            }
 
             dateTimePickerHoraInicio.Format = DateTimePickerFormat.Custom;
             dateTimePickerHoraInicio.CustomFormat = "HH:mm"; // Only use hours and minutes
@@ -48,13 +59,15 @@ namespace Chrysallis
             {
                 //modificaremos
                 buttonImagen.Text = "Cargar imagen";
+
             }
         }
 
-        public CreaModEventos(Boolean creacion, esdeveniments modificaEvento)
+        public CreaModEventos(Boolean creacion, esdeveniments modificaEvento, usuaris usuarioL)
         {
             InitializeComponent();
 
+            this.usuarioL = usuarioL;
             dateTimePickerHoraInicio.Format = DateTimePickerFormat.Custom;
             dateTimePickerHoraInicio.CustomFormat = "HH:mm"; // Only use hours and minutes
             dateTimePickerHoraInicio.ShowUpDown = true;
@@ -298,6 +311,10 @@ namespace Chrysallis
 
             if (modificar)
             {
+                if (usuarioL.id_rol == 5)
+                {
+                    comboBoxComunidad.Enabled = false;
+                }
                 //CARGAR EVENTO SIN IMAGEN
                 if (modificaEvento.imatge == null)
                 {
@@ -553,7 +570,18 @@ namespace Chrysallis
             ConsultaOrm.UpdateEvento();
         }
 
-
+        private void CreaModEventos_Activated(object sender, EventArgs e)
+        {
+            if (usuarioL.id_rol == 5)
+            {
+                socis socioUser = new socis();
+                socioUser = ConsultaOrm.SelectSocioUser(usuarioL);
+                comunitats comu = new comunitats();
+                comu = ConsultaOrm.SelectComunidad(socioUser);
+                comboBoxComunidad.SelectedItem = comu;
+                comboBoxComunidad.Enabled = false;
+            }
+        }
 
         private void comboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {

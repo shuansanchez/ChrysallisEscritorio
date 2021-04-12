@@ -180,7 +180,8 @@ namespace Chrysallis
                 //NOT NULL OBLIGADOS
                 localitats loc = new localitats();
                 comunitats comu = new comunitats();
-                comu = (comunitats)comboBoxComunidad.SelectedItem;
+                BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
+                comu = comunidades[comboBoxComunidad.SelectedIndex];
                 loc = (localitats)comboBoxLocalidad.SelectedItem;
                 nuevoSocio.num = Int32.Parse(textBoxNum.Text);
                 nuevoSocio.nom = textBoxNombre.Text;
@@ -374,6 +375,11 @@ namespace Chrysallis
         private void textBoxNum_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxPassw_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

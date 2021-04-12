@@ -386,6 +386,7 @@
             this.textBoxPassw.Name = "textBoxPassw";
             this.textBoxPassw.Size = new System.Drawing.Size(467, 22);
             this.textBoxPassw.TabIndex = 12;
+            this.textBoxPassw.TextChanged += new System.EventHandler(this.textBoxPassw_TextChanged);
             // 
             // ModificarLocalidadButton
             // 

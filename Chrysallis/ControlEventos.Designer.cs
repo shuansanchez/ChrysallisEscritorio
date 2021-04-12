@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Eventos));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
-            this.comboFiltros = new System.Windows.Forms.ComboBox();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
             this.titolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,40 +62,6 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(816, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filtrar por";
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(807, 140);
-            this.textBoxFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(201, 22);
-            this.textBoxFiltrar.TabIndex = 1;
-            this.textBoxFiltrar.Visible = false;
-            this.textBoxFiltrar.TextChanged += new System.EventHandler(this.textBoxFiltrar_TextChanged);
-            // 
-            // comboFiltros
-            // 
-            this.comboFiltros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboFiltros.FormattingEnabled = true;
-            this.comboFiltros.Items.AddRange(new object[] {
-            "Nombre",
-            "C.Autónoma",
-            "Provincia"});
-            this.comboFiltros.Location = new System.Drawing.Point(820, 70);
-            this.comboFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboFiltros.Name = "comboFiltros";
-            this.comboFiltros.Size = new System.Drawing.Size(145, 24);
-            this.comboFiltros.TabIndex = 2;
-            this.comboFiltros.SelectedIndexChanged += new System.EventHandler(this.comboFiltros_SelectedIndexChanged);
-            // 
             // dataGridViewEventos
             // 
             this.dataGridViewEventos.AutoGenerateColumns = false;
@@ -129,7 +92,7 @@
             this.dataGridViewEventos.RowHeadersWidth = 51;
             this.dataGridViewEventos.RowTemplate.Height = 24;
             this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEventos.Size = new System.Drawing.Size(776, 347);
+            this.dataGridViewEventos.Size = new System.Drawing.Size(979, 347);
             this.dataGridViewEventos.TabIndex = 3;
             this.dataGridViewEventos.DoubleClick += new System.EventHandler(this.dataGridViewEventos_DoubleClick);
             // 
@@ -362,9 +325,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonSocios);
             this.Controls.Add(this.dataGridViewEventos);
-            this.Controls.Add(this.comboFiltros);
-            this.Controls.Add(this.textBoxFiltrar);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Control_de_Eventos";
@@ -381,10 +341,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxFiltrar;
-        private System.Windows.Forms.ComboBox comboFiltros;
         private System.Windows.Forms.DataGridView dataGridViewEventos;
         private System.Windows.Forms.Button buttonSocios;
         private System.Windows.Forms.BindingSource esdevenimentsBindingSource;
