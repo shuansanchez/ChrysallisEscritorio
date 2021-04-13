@@ -82,6 +82,7 @@
             this.toolStripCrearMenor.Size = new System.Drawing.Size(800, 27);
             this.toolStripCrearMenor.TabIndex = 1;
             this.toolStripCrearMenor.Text = "toolStrip1";
+            this.toolStripCrearMenor.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripCrearMenor_ItemClicked);
             // 
             // toolStripButton2
             // 

@@ -21,7 +21,7 @@ namespace Chrysallis
 
         private void Editar_Localidades_Load(object sender, EventArgs e)
         {
-           
+            dataGridViewLocalidades.AutoGenerateColumns = false;
             dataGridViewLocalidades.DataSource = ConsultaOrm.SelectMostrarLoc();
         }
 
@@ -50,13 +50,14 @@ namespace Chrysallis
                     localitats borrar = (localitats)dataGridViewLocalidades.CurrentRow.DataBoundItem;
                     ConsultaOrm.DeleteLocalidad(borrar);
                     dataGridViewLocalidades.DataSource = ConsultaOrm.SelectMostrarLoc();
+                    dataGridViewLocalidades.AutoGenerateColumns = false;
                 }
             }
         }
 
         private void Editar_Localidades_Activated(object sender, EventArgs e)
         {
-            
+            dataGridViewLocalidades.AutoGenerateColumns = false;
         }
     }
 }

@@ -79,6 +79,7 @@
             this.textBoxContraUser = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.checkEscritorio = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolsBindingSource)).BeginInit();
@@ -519,12 +520,22 @@
             this.checkEscritorio.Text = "Usuario escritorio activo";
             this.checkEscritorio.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(629, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 17);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Optativo";
+            // 
             // Modificar_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1132, 703);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.checkEscritorio);
             this.Controls.Add(this.textBoxContraUser);
             this.Controls.Add(this.label8);
@@ -636,5 +647,6 @@
         private System.Windows.Forms.TextBox textBoxContraUser;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox checkEscritorio;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -28,20 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editar_Localidades));
             this.dataGridViewLocalidades = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.localitatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocalidades)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewLocalidades
             // 
+            this.dataGridViewLocalidades.AutoGenerateColumns = false;
             this.dataGridViewLocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLocalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomDataGridViewTextBoxColumn});
+            this.dataGridViewLocalidades.DataSource = this.localitatsBindingSource;
             this.dataGridViewLocalidades.Location = new System.Drawing.Point(12, 30);
             this.dataGridViewLocalidades.Name = "dataGridViewLocalidades";
+            this.dataGridViewLocalidades.ReadOnly = true;
             this.dataGridViewLocalidades.RowHeadersWidth = 51;
             this.dataGridViewLocalidades.RowTemplate.Height = 24;
             this.dataGridViewLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -79,6 +90,23 @@
             this.toolStripButton3.Text = "Eliminar";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // localitatsBindingSource
+            // 
+            this.localitatsBindingSource.DataSource = typeof(Chrysallis.localitats);
+            // 
+            // usuarisBindingSource
+            // 
+            this.usuarisBindingSource.DataSource = typeof(Chrysallis.usuaris);
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 125;
+            // 
             // Editar_Localidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -95,6 +123,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocalidades)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.localitatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +136,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.BindingSource localitatsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource usuarisBindingSource;
     }
 }

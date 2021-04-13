@@ -89,7 +89,7 @@ namespace Chrysallis
                     List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio(socioElegido);
                     if (listaRelaciones.Count >= 1)
                     {
-                        //aqui borramos las valoraciones del evento a borrar
+                        //aqui borramos los menores 
                         for (int i = 0; i < listaRelaciones.Count; i++)
                         {
                             List<menors> listaMenor = ConsultaOrm.SelectRelacionMenor(listaRelaciones[i]);
@@ -103,6 +103,13 @@ namespace Chrysallis
                         user = ConsultaOrm.SelectUsuarioSocio(socioElegido);
                         ConsultaOrm.DeleteUser(user);
                     }
+                    //List<menors_socis> listaRelaciones = ConsultaOrm.SelectRelacionesSocio((socis)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    //List<menors> resultado = new List<menors>();
+                    //for (int i = 0; i < listaRelaciones.Count; i++)
+                    //{
+                    //    resultado.Add(ConsultaOrm.SelectRelacionSocio(listaRelaciones[i]));
+                    //}
+
                     ConsultaOrm.DeleteSocio(socioElegido);
 
                     this.Control_de_Usuarios_Activated(sender, e);

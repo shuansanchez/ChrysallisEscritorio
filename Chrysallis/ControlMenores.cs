@@ -86,5 +86,10 @@ namespace Chrysallis
         {
 
         }
+
+        private void toolStripCrearMenor_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

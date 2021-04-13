@@ -112,128 +112,158 @@ namespace Chrysallis
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            if (modificar)
+            if (textBoxNum.Text == "" || textBoxNombre.Text == "" || textBoxDNI.Text == "" || textBoxPassw.Text == "" || textBoxTelefono1.Text == "" || textBoxCP.Text == "" || textBoxEmail.Text == "" ||textBoxApellidos.Text == "")
             {
-                localitats loc = new localitats();
-                loc = (localitats)comboBoxLocalidad.SelectedItem;
-                comunitats comu = new comunitats();
-                comu = (comunitats)comboBoxComunidad.SelectedItem;
-                socioModificar.num = Int32.Parse(textBoxNum.Text);
-                socioModificar.nom = textBoxNombre.Text;
-                socioModificar.actiu = checkBoxActivo.Checked;
-                socioModificar.telefon1 = textBoxTelefono1.Text;
-
-                socioModificar.email = textBoxEmail.Text;
-                socioModificar.dni = textBoxDNI.Text;
-                socioModificar.data_alta = dateTimePickerAlta.Value;
-                socioModificar.permis_app = checkBoxApp.Checked; 
-                socioModificar.id_localitat = loc.id;
-                socioModificar.id_comunidad = comu.id;
-
-                //PUEDEN SER NULL
-                socioModificar.cognoms = textBoxApellidos.Text;
-                socioModificar.codi_postal = textBoxCP.Text;
-                socioModificar.telefon2 = textBoxTelefono2.Text;
-                socioModificar.contrasenya = textBoxPassw.Text;
-                socioModificar.data_baixa = dateTimePickerBaja.Value;
-                socioModificar.data_naixement = dateTimePickerNacimiento.Value;
-                if (ConsultaOrm.SelectSocioIgualMod(socioModificar) == null || ConsultaOrm.SelectSocioIgualNumeroSMod(socioModificar) == null)
+                MessageBox.Show("Faltan datos por introducir");
+            }
+            else 
+            { 
+                if (modificar)
                 {
+                    localitats loc = new localitats();
+                    loc = (localitats)comboBoxLocalidad.SelectedItem;
+                    comunitats comu = new comunitats();
+                    comu = (comunitats)comboBoxComunidad.SelectedItem;
+                    socioModificar.num = Int32.Parse(textBoxNum.Text);
+                    socioModificar.nom = textBoxNombre.Text;
+                    socioModificar.actiu = checkBoxActivo.Checked;
+                    socioModificar.telefon1 = textBoxTelefono1.Text;
 
-                    ConsultaOrm.UpdateSocio(socioModificar);
-                    usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
-                    //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
-                    
-                    if (textBoxUser.Text == "" || textBoxContraUser.Text == "")
+                    socioModificar.email = textBoxEmail.Text;
+                    socioModificar.dni = textBoxDNI.Text;
+                    socioModificar.data_alta = dateTimePickerAlta.Value;
+                    socioModificar.permis_app = checkBoxApp.Checked;
+                    socioModificar.id_localitat = loc.id;
+                    socioModificar.id_comunidad = comu.id;
+
+                    //PUEDEN SER NULL
+                    socioModificar.cognoms = textBoxApellidos.Text;
+                    socioModificar.codi_postal = textBoxCP.Text;
+                    socioModificar.telefon2 = textBoxTelefono2.Text;
+                    socioModificar.contrasenya = textBoxPassw.Text;
+                    socioModificar.data_baixa = dateTimePickerBaja.Value;
+                    socioModificar.data_naixement = dateTimePickerNacimiento.Value;
+                    if (ConsultaOrm.SelectSocioIgualMod(socioModificar) == null || ConsultaOrm.SelectSocioIgualNumeroSMod(socioModificar) == null)
                     {
-    
+
+                        ConsultaOrm.UpdateSocio(socioModificar);
+                        usuaris usuarioModificar = ConsultaOrm.SelectUsuarioSocio(socioModificar);
+                        //no funcionará, debería ir de 1 a 3, no de 4 a 6 (0,1,2) -> (4,5,6)
+                        if (usuarioModificar == null)
+                        {
+                            if (textBoxUser.Text == "" || textBoxContraUser.Text == "")
+                            {
+
+                            }
+                            else
+                            {
+                                usuaris us = new usuaris();
+                                us.id_rol = comboBoxRoles.SelectedIndex + 5;
+                                us.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 5);
+                                us.id_socio = socioModificar.id;
+                                us.contrasenya = textBoxContraUser.Text;
+                                us.email = socioModificar.email;
+                                us.actiu = checkEscritorio.Checked;
+
+                                //debe crearse un campo para el nombre de usuario en creaModSocios
+                                us.username = textBoxUser.Text;
+                                ConsultaOrm.InsertUsuario(us);
+                            }
+                        }
+                        else
+                        {
+                            if (textBoxUser.Text == "" || textBoxContraUser.Text == "")
+                            {
+                                MessageBox.Show("Error faltan datos de Administrador");
+                            }
+                            else
+                            {
+                                usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 5;
+                                usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 5);
+                                usuarioModificar.id_socio = socioModificar.id;
+                                usuarioModificar.contrasenya = textBoxContraUser.Text;
+                                usuarioModificar.email = socioModificar.email;
+                                usuarioModificar.actiu = checkEscritorio.Checked;
+
+                                //debe crearse un campo para el nombre de usuario en creaModSocios
+                                usuarioModificar.username = textBoxUser.Text;
+                                ConsultaOrm.UpdateUsuario(usuarioModificar);
+                            }
+                        }
+
+                        this.Close();
                     }
                     else
                     {
-                        usuarioModificar.id_rol = comboBoxRoles.SelectedIndex + 4;
-                        usuarioModificar.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
-                        usuarioModificar.id_socio = socioModificar.id;
-                        usuarioModificar.contrasenya = textBoxContraUser.Text;
-                        usuarioModificar.email = socioModificar.email;
-                        usuarioModificar.actiu = checkEscritorio.Checked;
-
-                        //debe crearse un campo para el nombre de usuario en creaModSocios
-                        usuarioModificar.username = textBoxUser.Text;
-                        ConsultaOrm.UpdateUsuario(usuarioModificar);
+                        MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
                     }
 
-                    this.Close();
+
                 }
                 else
                 {
-                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
-                }
+                    //CREAR
+                    //POR AHORA NO SE COMPRUEBA NADA
+                    socis nuevoSocio = new socis();
 
+                    //NOT NULL OBLIGADOS
+                    localitats loc = new localitats();
+                    comunitats comu = new comunitats();
+                    BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
+                    comu = comunidades[comboBoxComunidad.SelectedIndex];
+                    loc = (localitats)comboBoxLocalidad.SelectedItem;
+                    nuevoSocio.num = Int32.Parse(textBoxNum.Text);
+                    nuevoSocio.nom = textBoxNombre.Text;
+                    nuevoSocio.actiu = checkBoxActivo.Checked;
+                    nuevoSocio.telefon1 = textBoxTelefono1.Text;
 
-            }
-            else
-            {
-                //CREAR
-                //POR AHORA NO SE COMPRUEBA NADA
-                socis nuevoSocio = new socis();
+                    nuevoSocio.email = textBoxEmail.Text;
+                    nuevoSocio.dni = textBoxDNI.Text;
+                    nuevoSocio.data_alta = dateTimePickerAlta.Value;
+                    nuevoSocio.permis_app = checkBoxApp.Checked;
+                    nuevoSocio.id_comunidad = comu.id;
+                    nuevoSocio.id_localitat = loc.id;
 
-                //NOT NULL OBLIGADOS
-                localitats loc = new localitats();
-                comunitats comu = new comunitats();
-                BindingList<comunitats> comunidades = new BindingList<comunitats>(ConsultaOrm.SelectComunidades());
-                comu = comunidades[comboBoxComunidad.SelectedIndex];
-                loc = (localitats)comboBoxLocalidad.SelectedItem;
-                nuevoSocio.num = Int32.Parse(textBoxNum.Text);
-                nuevoSocio.nom = textBoxNombre.Text;
-                nuevoSocio.actiu = checkBoxActivo.Checked;
-                nuevoSocio.telefon1 = textBoxTelefono1.Text;
-
-                nuevoSocio.email = textBoxEmail.Text;
-                nuevoSocio.dni = textBoxDNI.Text;
-                nuevoSocio.data_alta = dateTimePickerAlta.Value;
-                nuevoSocio.permis_app = checkBoxApp.Checked;
-                nuevoSocio.id_comunidad = comu.id;
-                nuevoSocio.id_localitat = loc.id;
-
-                //PUEDEN SER NULL
-                nuevoSocio.cognoms = textBoxApellidos.Text;
-                nuevoSocio.codi_postal = textBoxCP.Text;
-                nuevoSocio.telefon2 = textBoxTelefono2.Text;
-                nuevoSocio.contrasenya = textBoxPassw.Text;
-                nuevoSocio.data_baixa = dateTimePickerBaja.Value;
-                nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
-                if (ConsultaOrm.SelectSocioIgual(nuevoSocio) == null || ConsultaOrm.SelectSocioIgualNumeroS(nuevoSocio) == null)
-                {
-                    ConsultaOrm.InsertSocio(nuevoSocio);
-                    if (checkEscritorio.Checked == true)
+                    //PUEDEN SER NULL
+                    nuevoSocio.cognoms = textBoxApellidos.Text;
+                    nuevoSocio.codi_postal = textBoxCP.Text;
+                    nuevoSocio.telefon2 = textBoxTelefono2.Text;
+                    nuevoSocio.contrasenya = textBoxPassw.Text;
+                    nuevoSocio.data_baixa = dateTimePickerBaja.Value;
+                    nuevoSocio.data_naixement = dateTimePickerNacimiento.Value;
+                    if (ConsultaOrm.SelectSocioIgual(nuevoSocio) == null || ConsultaOrm.SelectSocioIgualNumeroS(nuevoSocio) == null)
                     {
-                        nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
-                        usuaris usuarioSocio = new usuaris();
+                        ConsultaOrm.InsertSocio(nuevoSocio);
+                        if (checkEscritorio.Checked == true)
+                        {
+                            nuevoSocio = ConsultaOrm.SelectSocio(nuevoSocio);
+                            usuaris usuarioSocio = new usuaris();
 
-                        //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
-                        //hacer reset gente
-                        usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 4;
-                        usuarioSocio.id_socio = nuevoSocio.id;
-                        usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 4);
-                        usuarioSocio.contrasenya = nuevoSocio.contrasenya;
-                        usuarioSocio.email = nuevoSocio.email;
-                        usuarioSocio.actiu = checkEscritorio.Checked;
-                        //debe crearse un campo para el nombre de usuario en creaModSocios
-                        usuarioSocio.username = textBoxUser.Text;
-                        ConsultaOrm.InsertUsuario(usuarioSocio);
-                       
+                            //SUMAR UNO PARA QUE SEA 1...3 EN LUGAR DE 0...2
+                            //hacer reset gente
+                            usuarioSocio.id_rol = comboBoxRoles.SelectedIndex + 5;
+                            usuarioSocio.id_socio = nuevoSocio.id;
+                            usuarioSocio.rols = ConsultaOrm.SelectRol(comboBoxRoles.SelectedIndex + 5);
+                            usuarioSocio.contrasenya = nuevoSocio.contrasenya;
+                            usuarioSocio.email = nuevoSocio.email;
+                            usuarioSocio.actiu = checkEscritorio.Checked;
+                            //debe crearse un campo para el nombre de usuario en creaModSocios
+                            usuarioSocio.username = textBoxUser.Text;
+                            ConsultaOrm.InsertUsuario(usuarioSocio);
+
+                        }
+                        this.Close();
                     }
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
-                }
-              
+                    else
+                    {
+                        MessageBox.Show("Usuarios repetidos, compruebe que los DNI no sean iguales");
+                    }
 
-                //-------------------------------------------
 
-                //--------------------------------------------
+                    //-------------------------------------------
+
+                    //--------------------------------------------
+                }
             }
            
         }

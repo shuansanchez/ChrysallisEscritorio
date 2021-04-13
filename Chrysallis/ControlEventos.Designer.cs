@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_de_Eventos));
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
+            this.buttonSocios = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.infoFiltroText = new System.Windows.Forms.Label();
+            this.esdevenimentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +57,9 @@
             this.assistirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comunitatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esdevenimentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonSocios = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.infoFiltroText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEventos
@@ -96,154 +96,6 @@
             this.dataGridViewEventos.TabIndex = 3;
             this.dataGridViewEventos.DoubleClick += new System.EventHandler(this.dataGridViewEventos_DoubleClick);
             // 
-            // titolDataGridViewTextBoxColumn
-            // 
-            this.titolDataGridViewTextBoxColumn.DataPropertyName = "titol";
-            this.titolDataGridViewTextBoxColumn.HeaderText = "titol";
-            this.titolDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.titolDataGridViewTextBoxColumn.Name = "titolDataGridViewTextBoxColumn";
-            this.titolDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descripcioDataGridViewTextBoxColumn
-            // 
-            this.descripcioDataGridViewTextBoxColumn.DataPropertyName = "descripcio";
-            this.descripcioDataGridViewTextBoxColumn.HeaderText = "descripcio";
-            this.descripcioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descripcioDataGridViewTextBoxColumn.Name = "descripcioDataGridViewTextBoxColumn";
-            this.descripcioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // preuDataGridViewTextBoxColumn
-            // 
-            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
-            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
-            this.preuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
-            this.preuDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "data";
-            this.dataDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // horaDataGridViewTextBoxColumn
-            // 
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "hora";
-            this.horaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            this.horaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // adrecaDataGridViewTextBoxColumn
-            // 
-            this.adrecaDataGridViewTextBoxColumn.DataPropertyName = "adreca";
-            this.adrecaDataGridViewTextBoxColumn.HeaderText = "adreca";
-            this.adrecaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.adrecaDataGridViewTextBoxColumn.Name = "adrecaDataGridViewTextBoxColumn";
-            this.adrecaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // latitudDataGridViewTextBoxColumn
-            // 
-            this.latitudDataGridViewTextBoxColumn.DataPropertyName = "latitud";
-            this.latitudDataGridViewTextBoxColumn.HeaderText = "latitud";
-            this.latitudDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.latitudDataGridViewTextBoxColumn.Name = "latitudDataGridViewTextBoxColumn";
-            this.latitudDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // longitudDataGridViewTextBoxColumn
-            // 
-            this.longitudDataGridViewTextBoxColumn.DataPropertyName = "longitud";
-            this.longitudDataGridViewTextBoxColumn.HeaderText = "longitud";
-            this.longitudDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.longitudDataGridViewTextBoxColumn.Name = "longitudDataGridViewTextBoxColumn";
-            this.longitudDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // imatgeDataGridViewTextBoxColumn
-            // 
-            this.imatgeDataGridViewTextBoxColumn.DataPropertyName = "imatge";
-            this.imatgeDataGridViewTextBoxColumn.HeaderText = "imatge";
-            this.imatgeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.imatgeDataGridViewTextBoxColumn.Name = "imatgeDataGridViewTextBoxColumn";
-            this.imatgeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // quantitatmaxDataGridViewTextBoxColumn
-            // 
-            this.quantitatmaxDataGridViewTextBoxColumn.DataPropertyName = "quantitat_max";
-            this.quantitatmaxDataGridViewTextBoxColumn.HeaderText = "quantitat_max";
-            this.quantitatmaxDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantitatmaxDataGridViewTextBoxColumn.Name = "quantitatmaxDataGridViewTextBoxColumn";
-            this.quantitatmaxDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // quantitatmínimaDataGridViewTextBoxColumn
-            // 
-            this.quantitatmínimaDataGridViewTextBoxColumn.DataPropertyName = "quantitat_mínima";
-            this.quantitatmínimaDataGridViewTextBoxColumn.HeaderText = "quantitat_mínima";
-            this.quantitatmínimaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantitatmínimaDataGridViewTextBoxColumn.Name = "quantitatmínimaDataGridViewTextBoxColumn";
-            this.quantitatmínimaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pagamentDataGridViewTextBoxColumn
-            // 
-            this.pagamentDataGridViewTextBoxColumn.DataPropertyName = "pagament";
-            this.pagamentDataGridViewTextBoxColumn.HeaderText = "pagament";
-            this.pagamentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pagamentDataGridViewTextBoxColumn.Name = "pagamentDataGridViewTextBoxColumn";
-            this.pagamentDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datamaxDataGridViewTextBoxColumn
-            // 
-            this.datamaxDataGridViewTextBoxColumn.DataPropertyName = "data_max";
-            this.datamaxDataGridViewTextBoxColumn.HeaderText = "data_max";
-            this.datamaxDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datamaxDataGridViewTextBoxColumn.Name = "datamaxDataGridViewTextBoxColumn";
-            this.datamaxDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contassitentsDataGridViewTextBoxColumn
-            // 
-            this.contassitentsDataGridViewTextBoxColumn.DataPropertyName = "cont_assitents";
-            this.contassitentsDataGridViewTextBoxColumn.HeaderText = "cont_assitents";
-            this.contassitentsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contassitentsDataGridViewTextBoxColumn.Name = "contassitentsDataGridViewTextBoxColumn";
-            this.contassitentsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // meetDataGridViewTextBoxColumn
-            // 
-            this.meetDataGridViewTextBoxColumn.DataPropertyName = "meet";
-            this.meetDataGridViewTextBoxColumn.HeaderText = "meet";
-            this.meetDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.meetDataGridViewTextBoxColumn.Name = "meetDataGridViewTextBoxColumn";
-            this.meetDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // assistirDataGridViewTextBoxColumn
-            // 
-            this.assistirDataGridViewTextBoxColumn.DataPropertyName = "assistir";
-            this.assistirDataGridViewTextBoxColumn.HeaderText = "assistir";
-            this.assistirDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.assistirDataGridViewTextBoxColumn.Name = "assistirDataGridViewTextBoxColumn";
-            this.assistirDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // comunitatsDataGridViewTextBoxColumn
-            // 
-            this.comunitatsDataGridViewTextBoxColumn.DataPropertyName = "comunitats";
-            this.comunitatsDataGridViewTextBoxColumn.HeaderText = "comunitats";
-            this.comunitatsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.comunitatsDataGridViewTextBoxColumn.Name = "comunitatsDataGridViewTextBoxColumn";
-            this.comunitatsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // documentsDataGridViewTextBoxColumn
-            // 
-            this.documentsDataGridViewTextBoxColumn.DataPropertyName = "documents";
-            this.documentsDataGridViewTextBoxColumn.HeaderText = "documents";
-            this.documentsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.documentsDataGridViewTextBoxColumn.Name = "documentsDataGridViewTextBoxColumn";
-            this.documentsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // esdevenimentsBindingSource
-            // 
-            this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
-            // 
             // buttonSocios
             // 
             this.buttonSocios.Location = new System.Drawing.Point(587, 396);
@@ -264,7 +116,7 @@
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1016, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1016, 31);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -274,7 +126,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(68, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(68, 28);
             this.toolStripButton2.Text = "Crear";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -283,7 +135,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(97, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(97, 28);
             this.toolStripButton1.Text = "Modificar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -292,7 +144,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(87, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(87, 28);
             this.toolStripButton3.Text = "Eliminar";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -314,6 +166,154 @@
             this.infoFiltroText.Size = new System.Drawing.Size(0, 17);
             this.infoFiltroText.TabIndex = 10;
             // 
+            // esdevenimentsBindingSource
+            // 
+            this.esdevenimentsBindingSource.DataSource = typeof(Chrysallis.esdeveniments);
+            // 
+            // titolDataGridViewTextBoxColumn
+            // 
+            this.titolDataGridViewTextBoxColumn.DataPropertyName = "titol";
+            this.titolDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.titolDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.titolDataGridViewTextBoxColumn.Name = "titolDataGridViewTextBoxColumn";
+            this.titolDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descripcioDataGridViewTextBoxColumn
+            // 
+            this.descripcioDataGridViewTextBoxColumn.DataPropertyName = "descripcio";
+            this.descripcioDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descripcioDataGridViewTextBoxColumn.Name = "descripcioDataGridViewTextBoxColumn";
+            this.descripcioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // preuDataGridViewTextBoxColumn
+            // 
+            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
+            this.preuDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.preuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
+            this.preuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.dataDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
+            this.horaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // adrecaDataGridViewTextBoxColumn
+            // 
+            this.adrecaDataGridViewTextBoxColumn.DataPropertyName = "adreca";
+            this.adrecaDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.adrecaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.adrecaDataGridViewTextBoxColumn.Name = "adrecaDataGridViewTextBoxColumn";
+            this.adrecaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // latitudDataGridViewTextBoxColumn
+            // 
+            this.latitudDataGridViewTextBoxColumn.DataPropertyName = "latitud";
+            this.latitudDataGridViewTextBoxColumn.HeaderText = "Latitud";
+            this.latitudDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.latitudDataGridViewTextBoxColumn.Name = "latitudDataGridViewTextBoxColumn";
+            this.latitudDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // longitudDataGridViewTextBoxColumn
+            // 
+            this.longitudDataGridViewTextBoxColumn.DataPropertyName = "longitud";
+            this.longitudDataGridViewTextBoxColumn.HeaderText = "Longitud";
+            this.longitudDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.longitudDataGridViewTextBoxColumn.Name = "longitudDataGridViewTextBoxColumn";
+            this.longitudDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // imatgeDataGridViewTextBoxColumn
+            // 
+            this.imatgeDataGridViewTextBoxColumn.DataPropertyName = "imatge";
+            this.imatgeDataGridViewTextBoxColumn.HeaderText = "Imagen";
+            this.imatgeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.imatgeDataGridViewTextBoxColumn.Name = "imatgeDataGridViewTextBoxColumn";
+            this.imatgeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantitatmaxDataGridViewTextBoxColumn
+            // 
+            this.quantitatmaxDataGridViewTextBoxColumn.DataPropertyName = "quantitat_max";
+            this.quantitatmaxDataGridViewTextBoxColumn.HeaderText = "Cantidad maxima";
+            this.quantitatmaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantitatmaxDataGridViewTextBoxColumn.Name = "quantitatmaxDataGridViewTextBoxColumn";
+            this.quantitatmaxDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantitatmínimaDataGridViewTextBoxColumn
+            // 
+            this.quantitatmínimaDataGridViewTextBoxColumn.DataPropertyName = "quantitat_mínima";
+            this.quantitatmínimaDataGridViewTextBoxColumn.HeaderText = "Cantidad minima";
+            this.quantitatmínimaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantitatmínimaDataGridViewTextBoxColumn.Name = "quantitatmínimaDataGridViewTextBoxColumn";
+            this.quantitatmínimaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pagamentDataGridViewTextBoxColumn
+            // 
+            this.pagamentDataGridViewTextBoxColumn.DataPropertyName = "pagament";
+            this.pagamentDataGridViewTextBoxColumn.HeaderText = "Pagamiento";
+            this.pagamentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pagamentDataGridViewTextBoxColumn.Name = "pagamentDataGridViewTextBoxColumn";
+            this.pagamentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datamaxDataGridViewTextBoxColumn
+            // 
+            this.datamaxDataGridViewTextBoxColumn.DataPropertyName = "data_max";
+            this.datamaxDataGridViewTextBoxColumn.HeaderText = "Fecha maxima";
+            this.datamaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datamaxDataGridViewTextBoxColumn.Name = "datamaxDataGridViewTextBoxColumn";
+            this.datamaxDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // contassitentsDataGridViewTextBoxColumn
+            // 
+            this.contassitentsDataGridViewTextBoxColumn.DataPropertyName = "cont_assitents";
+            this.contassitentsDataGridViewTextBoxColumn.HeaderText = "Contador asistentes";
+            this.contassitentsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contassitentsDataGridViewTextBoxColumn.Name = "contassitentsDataGridViewTextBoxColumn";
+            this.contassitentsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // meetDataGridViewTextBoxColumn
+            // 
+            this.meetDataGridViewTextBoxColumn.DataPropertyName = "meet";
+            this.meetDataGridViewTextBoxColumn.HeaderText = "Meet";
+            this.meetDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.meetDataGridViewTextBoxColumn.Name = "meetDataGridViewTextBoxColumn";
+            this.meetDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // assistirDataGridViewTextBoxColumn
+            // 
+            this.assistirDataGridViewTextBoxColumn.DataPropertyName = "assistir";
+            this.assistirDataGridViewTextBoxColumn.HeaderText = "Asistir";
+            this.assistirDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assistirDataGridViewTextBoxColumn.Name = "assistirDataGridViewTextBoxColumn";
+            this.assistirDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // comunitatsDataGridViewTextBoxColumn
+            // 
+            this.comunitatsDataGridViewTextBoxColumn.DataPropertyName = "comunitats";
+            this.comunitatsDataGridViewTextBoxColumn.HeaderText = "Comunidades";
+            this.comunitatsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.comunitatsDataGridViewTextBoxColumn.Name = "comunitatsDataGridViewTextBoxColumn";
+            this.comunitatsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // documentsDataGridViewTextBoxColumn
+            // 
+            this.documentsDataGridViewTextBoxColumn.DataPropertyName = "documents";
+            this.documentsDataGridViewTextBoxColumn.HeaderText = "Documentos";
+            this.documentsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.documentsDataGridViewTextBoxColumn.Name = "documentsDataGridViewTextBoxColumn";
+            this.documentsDataGridViewTextBoxColumn.Width = 125;
+            // 
             // Control_de_Eventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,9 +332,9 @@
             this.Activated += new System.EventHandler(this.Control_de_Eventos_Activated);
             this.Load += new System.EventHandler(this.Control_de_Eventos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.esdevenimentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
