@@ -43,8 +43,6 @@ namespace Chrysallis
             {
                 dataGridViewEventos.DataSource = ConsultaOrm.SelectEventos();
             }
-            //dataGridViewEventos.DataSource = ConsultaOrm.SelectEventoPorNombre(textBoxFiltrar.Text);
-
         }
 
         private void buttonBorrar_Click(object sender, EventArgs e)

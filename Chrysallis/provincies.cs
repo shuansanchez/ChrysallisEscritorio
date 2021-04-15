@@ -24,8 +24,8 @@ namespace Chrysallis
         public string nom { get; set; }
         public int id_comunitat { get; set; }
     
+        public virtual comunitats comunitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<localitats> localitats { get; set; }
-        public virtual comunitats comunitats { get; set; }
     }
 }

@@ -41,16 +41,16 @@ namespace Chrysallis
         public string meet { get; set; }
         public Nullable<int> id_localidad { get; set; }
         public Nullable<System.TimeSpan> hora_max { get; set; }
-        public byte[] imatge { get; set; }
+        public string imatge { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assistir> assistir { get; set; }
+        public virtual comunitats comunitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<documents> documents { get; set; }
         public virtual localitats localitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<valoracions> valoracions { get; set; }
-        public virtual comunitats comunitats { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<socis> socis { get; set; }
     }

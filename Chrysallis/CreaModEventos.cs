@@ -316,9 +316,9 @@ namespace Chrysallis
                     comboBoxComunidad.Enabled = false;
                 }
                 //CARGAR EVENTO SIN IMAGEN
-                if (modificaEvento.imatge == null)
+                
+                if (modificaEvento.imatge == String.Empty)
                 {
-
                     pictureBoxImagenEvento.Image = null;
                     buttonEliminarImg.Visible = false;
 
@@ -326,10 +326,10 @@ namespace Chrysallis
                 else
                 {
                     //CARGA LA IMAGEN
-                    byte[] img = (byte[])modificaEvento.imatge;
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
-                    pictureBoxImagenEvento.Image = Image.FromStream(ms);
-
+                    /* byte[] img = (byte[])modificaEvento.imatge;
+                     System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
+                     pictureBoxImagenEvento.Image = Image.FromStream(ms);*/
+                    pictureBoxImagenEvento.Image = (Bitmap)Image.FromFile(modificaEvento.imatge);
                 }
                 //CARGAR LAS COMBOBOX LOCALIDAD COMUNIDAD PROVINCIA
                 ComprobarComboBox();
@@ -384,19 +384,50 @@ namespace Chrysallis
             comboBoxProvincia.SelectedItem = provMod;
             comboBoxLocalidad.SelectedItem = localidMod;
         }
-        private Boolean BuscarImagen()
+        private void BuscarImagen()
         {
-            OpenFileDialog fo = new OpenFileDialog();
-            DialogResult rs = fo.ShowDialog();
-            if (rs == DialogResult.OK)
-            {
-                pictureBoxImagenEvento.Image = Image.FromFile(fo.FileName);
-                imagen = true;
+            /* OpenFileDialog fo = new OpenFileDialog();
+             DialogResult rs = fo.ShowDialog();
+             if (rs == DialogResult.OK)
+             {
+                 //pictureBoxImagenEvento.Image = Image.FromFile(fo.FileName);
+                 //File.Copy(rutaImagen, destino);
+                 imagen = true;
 
+             }*/
+
+            if (compruebaImagen())
+            {
+                //añadimos al picturebox
+                pictureBoxImagenEvento.ImageLocation = rutaImagen;
+                modificaEvento.imatge = rutaImagen;
+                //String destino = rutaImagen.Trim();
+                //destino = destino.Replace(" ", "");
+                //destino = destino.ToLower();
+                //File.Copy(rutaImagen, destino);
+                //modificaEvento.imatge = Int32.Parse(destino);
             }
 
-            return imagen;
+            //return imagen;
 
+        }
+
+        private bool compruebaImagen()      //PROVISIONAL
+        {
+            bool correcto = false;
+
+            using (rutaCarpeta = new OpenFileDialog())
+            {
+                rutaCarpeta.Filter = "Image files (*.jpg,  *.png) | *.jpg; *.png";
+                rutaCarpeta.Multiselect = false;
+                if (rutaCarpeta.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(rutaCarpeta.FileName))
+                {
+
+                    rutaImagen = rutaCarpeta.FileName;
+                    correcto = true;
+                }
+            }
+            return correcto;
         }
 
         private void CargarIMGDOC()
@@ -404,13 +435,17 @@ namespace Chrysallis
             if (imagen)
             {
                 //AÑADE IMAGEN 
-                System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                pictureBoxImagenEvento.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
+                //System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                //pictureBoxImagenEvento.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //String destino = modificaEvento.titol.Trim();
+                //destino = destino.Replace(" ", "");
+                //destino = destino.ToLower();
+                //File.Copy(rutaImagen, destino);
+                //rutaImagen = destino;
                 try
                 {
-                    modificaEvento.imatge = ms.GetBuffer();
-
+                    //modificaEvento.imatge = ms.GetBuffer();
+                    modificaEvento.imatge = rutaImagen;
                 }
                 catch (FormatException exc)
                 {
@@ -564,7 +599,7 @@ namespace Chrysallis
 
         private void buttonEliminarImg_Click(object sender, EventArgs e)
         {
-            modificaEvento.imatge = null;
+            modificaEvento.imatge = String.Empty;
             pictureBoxImagenEvento.Image = null;
 
             ConsultaOrm.UpdateEvento();
